@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON D'ESTHÉTIQUE | Premium Clinical Beauty</title>
+    <!-- Premium Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- DESIGN CORE SYSTEM --- */
+        :root {
+            --bg-canvas: #FAF8F5;
+            --surface-card: #FFFFFF;
+            --text-primary: #1C1B19;
+            --text-secondary: #6B6864;
+            --gold-accent: #C5A880;
+            --gold-light: #F4EFEA;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            --ease: cubic-bezier(0.25, 1, 0.5, 1);
+            --transition: all 0.5s var(--ease);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-canvas);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* --- GLOBAL PREMIUM COMPONENTS --- */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            padding: 18px 36px;
+            background-color: var(--text-primary);
+            color: #FFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-gold:hover {
+            background-color: transparent;
+            border-color: var(--gold-accent);
+            color: var(--gold-accent);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title span {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gold-accent);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .section-title h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 248, 245, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-accent);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            padding-top: 150px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 5.5vw, 5rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-text h1 em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--gold-accent);
+        }
+
+        .hero-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 520px;
+            margin-bottom: 45px;
+        }
+
+        .hero-img-frame {
+            position: relative;
+            height: 600px;
+            border-radius: 200px 200px 0 0;
+            overflow: hidden;
+            box-shadow: 0 30px 70px rgba(28, 27, 25, 0.08);
+        }
+
+        .hero-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- TREATMENT CARDS SECTION --- */
+        #treatments {
+            padding: 140px 0;
+        }
+
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .treatment-card {
+            background: var(--surface-card);
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            padding: 40px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(197, 168, 128, 0.12);
+            border-color: var(--gold-accent);
+        }
+
+        .treatment-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .treatment-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        .treatment-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--gold-light);
+            padding-top: 20px;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* --- ADVANCED: BEFORE & AFTER SLIDER --- */
+        #results {
+            padding: 100px 0;
+            background-color: var(--gold-light);
+        }
+
+        .slider-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+            user-select: none;
+        }
+
+        .slider-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slider-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-before {
+            z-index: 1;
+        }
+
+        .img-after {
+            width: 50%; /* Initial split state */
+            z-index: 2;
+            border-right: 3px solid #FFF;
+        }
+
+        .slider-handle {
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: #FFF;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+        }
+
+        .handle-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: #FFF;
+            border-radius: 50%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 14px;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-weight: bold;
+            color: var(--text-primary);
+            font-size: 0.8rem;
+        }
+
+        .label-tag {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(28, 27, 25, 0.8);
+            color: #FFF;
+            padding: 8px 16px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            z-index: 4;
+        }
+
+        .label-before { right: 20px; }
+        .label-after { left: 20px; }
+
+        /* --- ADVANCED: COST ESTIMATOR CALC --- */
+        #estimator {
+            padding: 140px 0;
+        }
+
+        .calc-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--surface-card);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            padding: 50px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.03);
+        }
+
+        .calc-group {
+            margin-bottom: 35px;
+        }
+
+        .calc-group label {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .calc-select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #E0DCD5;
+            background: var(--bg-canvas);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231c1b19' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+        }
+
+        .result-display {
+            background: var(--gold-light);
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .result-price {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--text-primary);
+            color: #FFF;
+            padding: 100px 0 50px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr repeat(3, 1fr);
+            gap: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-logo p {
+            color: #A2A09C;
+            max-width: 280px;
+            font-size: 0.9rem;
+        }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 25px;
+            color: var(--gold-accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #C2C0BC;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: #FFF;
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            color: #72706C;
+            font-size: 0.8rem;
+        }
+
+        /* --- RESPONSIVE ADAPTABILITY --- */
+        @media (max-width: 1024px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px;}
+            .hero-text p { margin: 0 auto 40px auto; }
+            .hero-img-frame { height: 450px; max-width: 450px; margin: 0 auto; }
+            .treatment-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobile structural cleanliness */
+            .treatment-grid { grid-template-columns: 1fr; }
+            .slider-wrapper { height: 350px; }
+            .calc-box { padding: 30px 20px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STICKY BLUR NAVBAR -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">M.D.E</a>
+            <ul class="nav-links">
+                <li><a href="#treatments">Treatments</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#estimator">Cost Calculator</a></li>
+            </ul>
+            <a href="#estimator" class="btn-gold" style="padding: 12px 24px; font-size: 0.75rem;">Book Consultation</a>
+        </div>
+    </nav>
+
+    <!-- HERO PRESTIGE HEADER -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="hero-tag">Kuala Lumpur • Medical Aesthetics</span>
+                <h1>Advanced skin <em>architecture</em>.</h1>
+                <p>Specializing in non-invasive luxury facial sculpting, biological cell regeneration, and high-performance dermatological innovations tailored to your unique anatomical composition.</p>
+                <a href="#treatments" class="btn-gold">Explore Signature Metamorphosis</a>
+            </div>
+            <div class="hero-img-frame">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Premium skincare therapy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SIGNATURE PREMIUM TREATMENTS -->
+    <section id="treatments">
+        <div class="container">
+            <div class="section-header section-title">
+                <span>The Offerings</span>
+                <h2>Clinical Artistry Meets High Luxury</h2>
+            </div>
+            
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <h3>HIFU Sculpt Ultra</h3>
+                    <p>Non-surgical SMAS layer structural lifting to define jawline parameters and boost internal structural collagen matrix production.</p>
+                    <div class="treatment-meta">
+                        <span class="price-label">Investment</span>
+                        <span class="price-value">MYR 2,400</span>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <h3>PicoGlow Precision</h3>
+                    <p>Advanced picosecond laser acoustics targeting hyperpigmentation down to the cellular level for instantaneous porcelain skin reflectivity.</p>
+                    <div class="treatment-meta">
+                        <span class="price-label">Investment</span>
+                        <span class="price-value">MYR 1,800</span>
+                    </div>
+                </div>
+
+                <div class="treatment-card">
+                    <h3>Polynucleotide Cell Reset</h3>
+                    <p>Premium salmon DNA matrix micro-injections to biologically reverse thermal aging parameters and structural skin thinning.</p>
+                    <div class="treatment-meta">
+                        <span class="price-label">Investment</span>
+                        <span class="price-value">MYR 3,200</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE BEFORE/AFTER INTERACTION -->
+    <section id="results">
+        <div class="container">
+            <div class="section-title">
+                <span>Clinical Proof</span>
+                <h2>Verifiable Spatial Transformations</h2>
+            </div>
+
+            <!-- Drag Slider Interactive Container -->
+            <div class="slider-wrapper" id="beforeAfterSlider">
+                <span class="label-tag label-before">Before</span>
+                <span class="label-tag label-after">After 2 Sessions</span>
+                
+                <div class="slider-img img-before">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80" alt="Skin Before Treatment">
+                </div>
+                <div class="slider-img img-after" id="afterImageContainer">
+                    <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1000&q=80" alt="Skin After Treatment" style="width: 800px; max-width: none;">
+                </div>
+                
+                <div class="slider-handle" id="dragHandle">
+                    <div class="handle-button"><span>‹</span><span>›</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUE ADD: ADVANCED PRICE ESTIMATOR -->
+    <section id="estimator">
+        <div class="container">
+            <div class="section-title">
+                <span>Smart Concierge</span>
+                <h2>Tailor Your Financial Treatment Suite</h2>
+            </div>
+
+            <div class="calc-box">
+                <div class="calc-group">
+                    <label for="skinGoal">Primary Anatomical Objective</label>
+                    <select id="skinGoal" class="calc-select" onchange="calculateTotal()">
+                        <option value="0" selected>Select objective...</option>
+                        <option value="2400">Deep Structural Lifting (HIFU)</option>
+                        <option value="1800">Melasma & Tone Clearance (PicoLaser)</option>
+                        <option value="3200">Cellular Elasticity Optimization (Polynucleotides)</option>
+                    </select>
+                </div>
+
+                <div class="calc-group">
+                    <label for="skinTier">Clinical Practitioner Rank</label>
+                    <select id="skinTier" class="calc-select" onchange="calculateTotal()">
+                        <option value="1.0" selected>Senior Aesthetic Clinician (Standard Base)</option>
+                        <option value="1.25">Chief Medical Director (+25% Premium)</option>
+                    </select>
+                </div>
+
+                <div class="result-display">
+                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-secondary);">Estimated Luxury Package Investment</p>
+                    <div class="result-price" id="totalDisplay">MYR 0.00</div>
+                </div>
+                
+                <button class="btn-gold" style="width: 100%; margin-top: 30px; justify-content: center;">Secure Priority Suite Booking</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h3>MAISON D'ESTHÉTIQUE</h3>
+                    <p>Architectural beauty directives engineered by modern medical science frameworks.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="#">Bangsar Village II, KL</a></li>
+                        <li><a href="#">The Gardens Mall, Mid Valley</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Regulatory Compliance</h4>
+                    <ul>
+                        <li><a href="#">KKM Certified Units</a></li>
+                        <li><a href="#">LCP Certified Physicians</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Direct Line</h4>
+                    <ul>
+                        <li><a href="#">+60 3-2284 0000</a></li>
+                        <li><a href="#">concierge@maison.my</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MAISON D'ESTHÉTIQUE Malaysia. High-tier architecture deployment.</p>
+                <p>Strictly Private & Confidential Ecosystems.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE SCRIPTS -->
+    <script>
+        // 1. Dynamic Interactive Cost Estimator Engine
+        function calculateTotal() {
+            const baseTreatmentCost = parseFloat(document.getElementById('skinGoal').value);
+            const tierMultiplier = parseFloat(document.getElementById('skinTier').value);
+            
+            const total = baseTreatmentCost * tierMultiplier;
+            
+            document.getElementById('totalDisplay').innerText = `MYR ${total.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        }
+
+        // 2. High-Performance Before & After Slider Drag System
+        const slider = document.getElementById('beforeAfterSlider');
+        const afterImgContainer = document.getElementById('afterImageContainer');
+        const handle = document.getElementById('dragHandle');
+        let isDragging = false;
+
+        function setSliderPosition(x) {
+            const rect = slider.getBoundingClientRect();
+            let position = ((x - rect.left) / rect.width) * 100;
+            
+            // Constrain positions to canvas bounds
+            if (position < 0) position = 0;
+            if (position > 100) position = 100;
+            
+            afterImgContainer.style.width = `${position}%`;
+            handle.style.left = `${position}%`;
+        }
+
+        // Mouse Operations
+        window.addEventListener('mousedown', (e) => {
+            if (e.target.closest('#dragHandle') || e.target.closest('#beforeAfterSlider')) {
+                isDragging = true;
+                setSliderPosition(e.clientX);
+            }
+        });
+        window.addEventListener('mouseup', () => isDragging = false);
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            setSliderPosition(e.clientX);
+        });
+
+        // Touch Adaptability (Mobile Responsive Execution)
+        window.addEventListener('touchstart', (e) => {
+            if (e.target.closest('#beforeAfterSlider')) {
+                isDragging = true;
+                setSliderPosition(e.touches[0].clientX);
+            }
+        });
+        window.addEventListener('touchend', () => isDragging = false);
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            setSliderPosition(e.touches[0].clientX);
+        });
+    </script>
+</body>
+</html>
