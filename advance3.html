@@ -1,0 +1,4158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Élan Aesthetic Clinic | Advanced Skin & Facial Treatments</title>
+
+  <meta
+    name="description"
+    content="Discover personalised aesthetic treatments, advanced skin solutions and natural-looking results at Élan Aesthetic Clinic."
+  />
+
+  <meta
+    name="keywords"
+    content="aesthetic clinic Malaysia, skin clinic, HIFU, Pico Laser, facial treatment, skin booster, acne scar treatment"
+  />
+
+  <meta name="theme-color" content="#f5f0ea" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* =========================================================
+       ÉLAN AESTHETIC CLINIC
+       Single-file premium landing page
+       ========================================================= */
+
+    :root {
+      --cream: #f7f3ee;
+      --cream-2: #eee6dc;
+      --white: #ffffff;
+      --ink: #1c1c1a;
+      --muted: #77736d;
+      --gold: #b69362;
+      --gold-dark: #8b6b42;
+      --sage: #667164;
+      --sage-dark: #3e493d;
+      --rose: #c39b91;
+      --line: rgba(28, 28, 26, 0.12);
+      --soft-line: rgba(255, 255, 255, 0.24);
+      --shadow: 0 25px 70px rgba(43, 35, 27, 0.12);
+      --shadow-small: 0 14px 35px rgba(43, 35, 27, 0.1);
+      --radius-xl: 36px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --container: 1240px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--gold-dark);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .display-title {
+      font-family: "Italiana", serif;
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.025em;
+    }
+
+    .section-title {
+      max-width: 760px;
+      font-size: clamp(2.7rem, 5vw, 5.4rem);
+    }
+
+    .section-copy {
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading.centered {
+      display: block;
+      text-align: center;
+    }
+
+    .section-heading.centered .section-title,
+    .section-heading.centered .section-copy {
+      margin-inline: auto;
+    }
+
+    .section-heading.centered .section-copy {
+      margin-top: 22px;
+    }
+
+    .btn {
+      min-height: 55px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 0 25px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: var(--white);
+      box-shadow: 0 12px 30px rgba(28, 28, 26, 0.2);
+    }
+
+    .btn-dark:hover {
+      background: var(--gold-dark);
+      box-shadow: 0 16px 35px rgba(139, 107, 66, 0.25);
+    }
+
+    .btn-light {
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .btn-light:hover {
+      background: var(--cream);
+    }
+
+    .btn-outline {
+      border-color: var(--line);
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+      box-shadow: 0 15px 35px rgba(182, 147, 98, 0.25);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dark);
+    }
+
+    .arrow-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover .arrow-icon,
+    .text-link:hover .arrow-icon {
+      transform: translateX(5px);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       REVEAL ANIMATIONS
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       TOP ANNOUNCEMENT
+       ========================================================= */
+
+    .announcement {
+      position: relative;
+      z-index: 1002;
+      min-height: 39px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 45px;
+      background: var(--sage-dark);
+      color: var(--white);
+      text-align: center;
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+    }
+
+    .announcement strong {
+      color: #e8cfab;
+    }
+
+    .announcement-close {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: transparent;
+      color: var(--white);
+      font-size: 1.1rem;
+      opacity: 0.72;
+    }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .site-header {
+      position: absolute;
+      top: 39px;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        top 0.35s ease;
+    }
+
+    .site-header.sticky {
+      position: fixed;
+      top: 0;
+      background: rgba(247, 243, 238, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 8px 30px rgba(43, 35, 27, 0.08);
+    }
+
+    .nav {
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .logo {
+      text-align: center;
+      line-height: 1;
+    }
+
+    .logo-main {
+      display: block;
+      font-family: "Italiana", serif;
+      font-size: 2rem;
+      letter-spacing: 0.09em;
+    }
+
+    .logo-sub {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 0.54rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+    }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .nav-call {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 9px;
+      line-height: 1.25;
+    }
+
+    .nav-call small {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .nav-call strong {
+      font-size: 0.82rem;
+    }
+
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      width: 19px;
+      height: 1.5px;
+      display: block;
+      background: var(--ink);
+      transition: 0.3s ease;
+    }
+
+    .menu-toggle span {
+      position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-toggle span::before {
+      top: -6px;
+    }
+
+    .menu-toggle span::after {
+      top: 6px;
+    }
+
+    .menu-toggle.active span {
+      background: transparent;
+    }
+
+    .menu-toggle.active span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.active span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      z-index: 999;
+      width: min(420px, 100%);
+      height: 100vh;
+      padding: 125px 35px 35px;
+      background: var(--cream);
+      box-shadow: -25px 0 70px rgba(43, 35, 27, 0.15);
+      transition: right 0.4s ease;
+    }
+
+    .mobile-menu.active {
+      right: 0;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      font-family: "Italiana", serif;
+      font-size: 1.9rem;
+    }
+
+    .mobile-menu .btn {
+      margin-top: 28px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 940px;
+      padding: 150px 0 65px;
+      background:
+        radial-gradient(circle at 14% 22%, rgba(255, 255, 255, 0.9), transparent 27%),
+        linear-gradient(135deg, #f8f4ef 0%, #e9dfd4 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: -8%;
+      width: 350px;
+      height: 350px;
+      border: 1px solid rgba(182, 147, 98, 0.22);
+      border-radius: 50%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: 5%;
+      width: 260px;
+      height: 260px;
+      background: rgba(182, 147, 98, 0.1);
+      border-radius: 50%;
+      filter: blur(5px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding-top: 45px;
+    }
+
+    .hero-title {
+      max-width: 620px;
+      margin-bottom: 27px;
+      font-size: clamp(4rem, 7vw, 7.8rem);
+    }
+
+    .hero-title em {
+      color: var(--gold-dark);
+      font-weight: 400;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .avatar-stack {
+      display: flex;
+    }
+
+    .avatar-stack img {
+      width: 42px;
+      height: 42px;
+      margin-left: -10px;
+      border: 3px solid var(--cream);
+      border-radius: 50%;
+    }
+
+    .avatar-stack img:first-child {
+      margin-left: 0;
+    }
+
+    .trust-rating {
+      line-height: 1.3;
+    }
+
+    .stars {
+      color: var(--gold-dark);
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
+    }
+
+    .trust-rating p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 680px;
+    }
+
+    .hero-main-image {
+      position: absolute;
+      top: 35px;
+      right: 0;
+      width: 82%;
+      height: 590px;
+      overflow: hidden;
+      border-radius: 240px 240px var(--radius-xl) var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-main-image img {
+      height: 100%;
+    }
+
+    .hero-main-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 48%,
+        rgba(27, 25, 21, 0.18)
+      );
+    }
+
+    .hero-secondary-image {
+      position: absolute;
+      left: 0;
+      bottom: 15px;
+      z-index: 3;
+      width: 230px;
+      height: 295px;
+      overflow: hidden;
+      border: 9px solid var(--cream);
+      border-radius: 120px 120px var(--radius-lg) var(--radius-lg);
+      box-shadow: var(--shadow-small);
+    }
+
+    .hero-secondary-image img {
+      height: 100%;
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      right: -10px;
+      bottom: 25px;
+      z-index: 4;
+      width: 260px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-small);
+    }
+
+    .hero-floating-card .icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: var(--sage-dark);
+      color: var(--white);
+    }
+
+    .hero-floating-card h3 {
+      margin-bottom: 6px;
+      font-family: "Italiana", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+
+    .hero-floating-card p {
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.6;
+    }
+
+    .hero-badge {
+      position: absolute;
+      top: 105px;
+      left: 6px;
+      z-index: 5;
+      width: 115px;
+      height: 115px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--white);
+      text-align: center;
+      animation: floatBadge 4s ease-in-out infinite;
+    }
+
+    .hero-badge span {
+      width: 80px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    @keyframes floatBadge {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-6deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(-2deg);
+      }
+    }
+
+    .trust-strip {
+      position: relative;
+      z-index: 5;
+      margin-top: 45px;
+      padding: 26px 30px;
+      border: 1px solid rgba(28, 28, 26, 0.08);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.44);
+      backdrop-filter: blur(12px);
+    }
+
+    .trust-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      padding: 5px 18px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--gold-dark);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 0.8rem;
+    }
+
+    .trust-item small {
+      color: var(--muted);
+      font-size: 0.68rem;
+    }
+
+    /* =========================================================
+       MARQUEE
+       ========================================================= */
+
+    .marquee {
+      overflow: hidden;
+      padding: 20px 0;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .marquee-track {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      animation: marquee 24s linear infinite;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-right: 30px;
+      font-family: "Italiana", serif;
+      font-size: 1.35rem;
+      white-space: nowrap;
+    }
+
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* =========================================================
+       INTRODUCTION
+       ========================================================= */
+
+    .intro {
+      padding: 125px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 95px;
+    }
+
+    .intro-gallery {
+      position: relative;
+      min-height: 650px;
+    }
+
+    .intro-img-large {
+      width: 78%;
+      height: 600px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-img-large img {
+      height: 100%;
+    }
+
+    .intro-img-small {
+      position: absolute;
+      right: 0;
+      bottom: -20px;
+      width: 48%;
+      height: 340px;
+      overflow: hidden;
+      border: 8px solid var(--cream);
+      border-radius: 180px 180px var(--radius-lg) var(--radius-lg);
+      box-shadow: var(--shadow-small);
+    }
+
+    .intro-img-small img {
+      height: 100%;
+    }
+
+    .experience-seal {
+      position: absolute;
+      top: 35px;
+      right: 2%;
+      z-index: 3;
+      width: 145px;
+      height: 145px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--sage-dark);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .experience-seal strong {
+      display: block;
+      font-family: "Italiana", serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .experience-seal span {
+      display: block;
+      width: 90px;
+      margin-top: 7px;
+      font-size: 0.64rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .intro-content .section-title {
+      margin-bottom: 26px;
+    }
+
+    .intro-content .section-copy {
+      margin-bottom: 24px;
+    }
+
+    .intro-note {
+      margin: 32px 0;
+      padding: 22px 23px;
+      border-left: 2px solid var(--gold);
+      background: rgba(255, 255, 255, 0.52);
+      color: var(--sage-dark);
+      font-family: "Italiana", serif;
+      font-size: 1.42rem;
+      line-height: 1.45;
+    }
+
+    .intro-checks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 35px;
+    }
+
+    .intro-check {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .check-circle {
+      width: 26px;
+      height: 26px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(102, 113, 100, 0.12);
+      color: var(--sage-dark);
+      font-size: 0.75rem;
+    }
+
+    /* =========================================================
+       TREATMENTS
+       ========================================================= */
+
+    .treatments {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .treatment-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .treatment-card {
+      position: relative;
+      min-height: 490px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--cream);
+      box-shadow: 0 10px 40px rgba(43, 35, 27, 0.07);
+      transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+    }
+
+    .treatment-card.hidden {
+      display: none;
+    }
+
+    .treatment-card:hover {
+      transform: translateY(-9px);
+      box-shadow: var(--shadow-small);
+    }
+
+    .treatment-image {
+      height: 265px;
+      overflow: hidden;
+    }
+
+    .treatment-image img {
+      height: 100%;
+      transition: transform 0.7s ease;
+    }
+
+    .treatment-card:hover .treatment-image img {
+      transform: scale(1.06);
+    }
+
+    .treatment-tag {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      color: var(--ink);
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .treatment-content {
+      padding: 25px;
+    }
+
+    .treatment-content h3 {
+      margin-bottom: 9px;
+      font-family: "Italiana", serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+    }
+
+    .treatment-content p {
+      min-height: 66px;
+      margin-bottom: 19px;
+      color: var(--muted);
+      font-size: 0.79rem;
+      line-height: 1.7;
+    }
+
+    .treatment-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+    }
+
+    .treatment-meta span {
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .circle-arrow {
+      width: 37px;
+      height: 37px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      transition: 0.3s ease;
+    }
+
+    .treatment-card:hover .circle-arrow {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    /* =========================================================
+       PROMOTION
+       ========================================================= */
+
+    .promotion {
+      padding: 90px 0;
+      background: var(--white);
+    }
+
+    .promotion-card {
+      position: relative;
+      min-height: 465px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: var(--sage-dark);
+      color: var(--white);
+    }
+
+    .promotion-content {
+      position: relative;
+      z-index: 2;
+      padding: 72px;
+    }
+
+    .promotion-content .eyebrow {
+      color: #ddc8a7;
+    }
+
+    .promotion-content h2 {
+      max-width: 590px;
+      margin-bottom: 20px;
+      font-size: clamp(3rem, 5vw, 5.2rem);
+    }
+
+    .promotion-content p {
+      max-width: 510px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .promotion-value {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .promotion-value strong {
+      font-family: "Italiana", serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+    }
+
+    .promotion-value span {
+      max-width: 150px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.72rem;
+      line-height: 1.5;
+    }
+
+    .promotion-image {
+      position: relative;
+      min-height: 465px;
+    }
+
+    .promotion-image img {
+      height: 100%;
+    }
+
+    .promotion-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        var(--sage-dark) 0%,
+        transparent 45%
+      );
+    }
+
+    .promotion-label {
+      position: absolute;
+      right: 35px;
+      bottom: 35px;
+      z-index: 2;
+      width: 125px;
+      height: 125px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--soft-line);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+
+    .promotion-label strong {
+      display: block;
+      font-family: "Italiana", serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+
+    .promotion-label small {
+      display: block;
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* =========================================================
+       BEFORE AND AFTER
+       ========================================================= */
+
+    .results {
+      padding: 120px 0;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .results-copy .section-title {
+      margin-bottom: 24px;
+    }
+
+    .results-copy .section-copy {
+      margin-bottom: 28px;
+    }
+
+    .results-disclaimer {
+      display: flex;
+      gap: 11px;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.69rem;
+      line-height: 1.6;
+    }
+
+    .results-disclaimer span:first-child {
+      color: var(--gold-dark);
+      font-size: 1rem;
+    }
+
+    .comparison-wrap {
+      position: relative;
+    }
+
+    .comparison {
+      position: relative;
+      height: 590px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      user-select: none;
+      touch-action: none;
+    }
+
+    .comparison img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-position: center;
+    }
+
+    .comparison-before {
+      z-index: 1;
+    }
+
+    .comparison-after-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 50%;
+      overflow: hidden;
+    }
+
+    .comparison-after-wrap img {
+      width: 100vw;
+      max-width: none;
+    }
+
+    .comparison-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      z-index: 4;
+      width: 2px;
+      background: var(--white);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .comparison-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border: 3px solid var(--white);
+      border-radius: 50%;
+      background: var(--sage-dark);
+      color: var(--white);
+      box-shadow: 0 8px 25px rgba(28, 28, 26, 0.2);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .comparison-label {
+      position: absolute;
+      top: 22px;
+      z-index: 5;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(10px);
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .comparison-label.before {
+      left: 22px;
+    }
+
+    .comparison-label.after {
+      right: 22px;
+    }
+
+    .result-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 22px;
+      padding: 0 8px;
+    }
+
+    .result-caption strong {
+      display: block;
+      font-family: "Italiana", serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    .result-caption span {
+      color: var(--muted);
+      font-size: 0.73rem;
+    }
+
+    .slider-hint {
+      text-align: right;
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    /* =========================================================
+       BENEFITS
+       ========================================================= */
+
+    .benefits {
+      padding: 120px 0;
+      background: #e9e0d6;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--line);
+    }
+
+    .benefit-card {
+      min-height: 280px;
+          padding: 38px;
+      background: var(--cream);
+      transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .benefit-card:hover {
+      background: var(--white);
+    }
+
+    .benefit-number {
+      margin-bottom: 48px;
+      color: var(--gold-dark);
+      font-family: "Italiana", serif;
+      font-size: 1rem;
+    }
+
+    .benefit-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 25px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--sage-dark);
+      font-size: 1.2rem;
+    }
+
+    .benefit-card h3 {
+      margin-bottom: 12px;
+      font-family: "Italiana", serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       TREATMENT PROCESS
+       ========================================================= */
+
+    .process {
+      padding: 125px 0;
+      background: var(--white);
+    }
+
+    .process-list {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+
+    .process-list::before {
+      content: "";
+      position: absolute;
+      top: 35px;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .process-step {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .process-number {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 25px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--gold-dark);
+      font-family: "Italiana", serif;
+      font-size: 1.45rem;
+      transition: 0.35s ease;
+    }
+
+    .process-step:hover .process-number {
+      border-color: var(--sage-dark);
+      background: var(--sage-dark);
+      color: var(--white);
+      transform: translateY(-6px);
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+      font-family: "Italiana", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    .process-step p {
+      max-width: 190px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       DOCTOR SECTION
+       ========================================================= */
+
+    .doctor {
+      padding: 120px 0;
+      background: var(--sage-dark);
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .doctor::before {
+      content: "";
+      position: absolute;
+      top: -180px;
+      right: -160px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 50%;
+    }
+
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      align-items: center;
+      gap: 85px;
+    }
+
+    .doctor-image-wrap {
+      position: relative;
+      min-height: 650px;
+    }
+
+    .doctor-image {
+      width: 86%;
+      height: 620px;
+      overflow: hidden;
+      border-radius: 250px 250px var(--radius-xl) var(--radius-xl);
+    }
+
+    .doctor-image img {
+      height: 100%;
+    }
+
+    .doctor-award {
+      position: absolute;
+      right: 0;
+      bottom: 35px;
+      width: 220px;
+      padding: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+    }
+
+    .doctor-award strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Italiana", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+    }
+
+    .doctor-award span {
+      color: rgba(255, 255, 255, 0.67);
+      font-size: 0.7rem;
+    }
+
+    .doctor-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .doctor-content .eyebrow {
+      color: #dcc5a2;
+    }
+
+    .doctor-content .section-title {
+      margin-bottom: 27px;
+    }
+
+    .doctor-content .section-copy {
+      color: rgba(255, 255, 255, 0.67);
+    }
+
+    .doctor-quote {
+      margin: 32px 0;
+      padding: 28px 0 28px 30px;
+      border-left: 1px solid rgba(255, 255, 255, 0.28);
+      font-family: "Italiana", serif;
+      font-size: 1.7rem;
+      line-height: 1.45;
+    }
+
+    .doctor-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    .doctor-detail {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-md);
+    }
+
+    .doctor-detail strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.82rem;
+    }
+
+    .doctor-detail span {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.68rem;
+    }
+
+    /* =========================================================
+       PACKAGES
+       ========================================================= */
+
+    .packages {
+      padding: 125px 0;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .package-card {
+      position: relative;
+      padding: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-small);
+    }
+
+    .package-card.featured {
+      background: var(--ink);
+      color: var(--white);
+      transform: translateY(-15px);
+    }
+
+    .package-card.featured:hover {
+      transform: translateY(-22px);
+    }
+
+    .package-badge {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.59rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .package-name {
+      margin-bottom: 12px;
+      color: var(--gold-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .package-card.featured .package-name {
+      color: #dcc5a2;
+    }
+
+    .package-card h3 {
+      margin-bottom: 11px;
+      font-family: "Italiana", serif;
+      font-size: 2.1rem;
+      font-weight: 400;
+    }
+
+    .package-description {
+      min-height: 65px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.7;
+    }
+
+    .package-card.featured .package-description {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .package-price {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin: 28px 0;
+    }
+
+    .package-price strong {
+      font-family: "Italiana", serif;
+      font-size: 3.25rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .package-price span {
+      color: var(--muted);
+      font-size: 0.7rem;
+    }
+
+    .package-card.featured .package-price span {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .package-list {
+      margin-bottom: 32px;
+    }
+
+    .package-list li {
+      display: flex;
+      gap: 11px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.77rem;
+    }
+
+    .package-card.featured .package-list li {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .package-list li span:first-child {
+      color: var(--gold-dark);
+    }
+
+    .package-card.featured .package-list li span:first-child {
+      color: #dcc5a2;
+    }
+
+    .package-card .btn {
+      width: 100%;
+    }
+
+    /* =========================================================
+       TESTIMONIALS
+       ========================================================= */
+
+    .testimonials {
+      padding: 120px 0;
+      background: #e9e0d6;
+    }
+
+    .testimonial-stage {
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: var(--white);
+      box-shadow: var(--shadow-small);
+    }
+
+    .testimonial-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 0.65fr 1.35fr;
+      align-items: center;
+      gap: 55px;
+      padding: 55px;
+      opacity: 0;
+      transform: translateX(35px);
+      pointer-events: none;
+      transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+    }
+
+    .testimonial-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .testimonial-photo {
+      height: 280px;
+      overflow: hidden;
+      border-radius: 180px 180px var(--radius-lg) var(--radius-lg);
+    }
+
+    .testimonial-photo img {
+      height: 100%;
+    }
+
+    .testimonial-stars {
+      margin-bottom: 19px;
+      color: var(--gold-dark);
+      letter-spacing: 0.17em;
+    }
+
+    .testimonial-quote {
+      margin-bottom: 25px;
+      font-family: "Italiana", serif;
+      font-size: clamp(1.8rem, 3vw, 2.9rem);
+      line-height: 1.35;
+    }
+
+    .testimonial-author strong {
+      display: block;
+      font-size: 0.88rem;
+    }
+
+    .testimonial-author span {
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    .testimonial-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .testimonial-dot {
+      width: 9px;
+      height: 9px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(28, 28, 26, 0.2);
+      transition: 0.3s ease;
+    }
+
+    .testimonial-dot.active {
+      width: 28px;
+      border-radius: 999px;
+      background: var(--ink);
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq {
+      padding: 125px 0;
+      background: var(--white);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 100px;
+    }
+
+    .faq-intro {
+      position: sticky;
+      top: 130px;
+      align-self: start;
+    }
+
+    .faq-intro .section-title {
+      margin-bottom: 24px;
+    }
+
+    .faq-intro .section-copy {
+      margin-bottom: 28px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 24px 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+    }
+
+    .faq-question span:first-child {
+      font-family: "Italiana", serif;
+      font-size: 1.45rem;
+    }
+
+    .faq-plus {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: 0.3s ease;
+    }
+
+    .faq-item.active .faq-plus {
+      background: var(--ink);
+      color: var(--white);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 55px 24px 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       BOOKING
+       ========================================================= */
+
+    .booking {
+      padding: 120px 0;
+      background: var(--cream);
+    }
+
+    .booking-shell {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .booking-info {
+      position: relative;
+      min-height: 680px;
+      padding: 70px;
+      background:
+        linear-gradient(rgba(62, 73, 61, 0.88), rgba(62, 73, 61, 0.94)),
+        url("https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85")
+          center/cover;
+      color: var(--white);
+    }
+
+    .booking-info .eyebrow {
+      color: #e0caa8;
+    }
+
+    .booking-info h2 {
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 5vw, 5.4rem);
+    }
+
+    .booking-info > p {
+      max-width: 450px;
+      margin-bottom: 42px;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .booking-contact {
+      display: grid;
+      gap: 16px;
+    }
+
+    .booking-contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .booking-contact-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .booking-contact-item strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 0.78rem;
+    }
+
+    .booking-contact-item span {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 0.7rem;
+    }
+
+    .booking-form-wrap {
+      padding: 70px;
+      background: var(--white);
+    }
+
+    .booking-form-wrap h3 {
+      margin-bottom: 10px;
+      font-family: "Italiana", serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+    }
+
+    .booking-form-wrap > p {
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      outline: none;
+      background: var(--cream);
+      color: var(--ink);
+      transition:
+        border 0.3s ease,
+        background 0.3s ease;
+    }
+
+    .form-group input,
+    .form-group select {
+      height: 53px;
+      padding: 0 16px;
+    }
+
+    .form-group textarea {
+      min-height: 115px;
+      padding: 15px 16px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      background: var(--white);
+    }
+
+    .form-consent {
+      display: flex;
+      gap: 10px;
+      margin: 18px 0 24px;
+      color: var(--muted);
+      font-size: 0.66rem;
+      line-height: 1.55;
+    }
+
+    .form-consent input {
+      margin-top: 3px;
+      accent-color: var(--sage-dark);
+    }
+
+    .booking-form-wrap .btn {
+      width: 100%;
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      background: rgba(102, 113, 100, 0.12);
+      color: var(--sage-dark);
+      font-size: 0.78rem;
+    }
+
+    .form-message.show {
+      display: block;
+    }
+
+    /* =========================================================
+       INSTAGRAM
+       ========================================================= */
+
+    .instagram {
+      padding: 115px 0 0;
+      background: var(--white);
+    }
+
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .instagram-item {
+      position: relative;
+      height: 260px;
+      overflow: hidden;
+    }
+
+    .instagram-item img {
+      height: 100%;
+      transition: transform 0.55s ease;
+    }
+
+    .instagram-item::after {
+      content: "View";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(28, 28, 26, 0.44);
+      color: var(--white);
+      font-size: 0.74rem;
+      font-weight: 700;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .instagram-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .instagram-item:hover::after {
+      opacity: 1;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .footer {
+      padding: 75px 0 32px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 0.75fr);
+      gap: 65px;
+      padding-bottom: 55px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .footer-brand .logo {
+      text-align: left;
+    }
+
+    .footer-brand .logo-sub {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-brand p {
+      max-width: 370px;
+      margin: 24px 0;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.76rem;
+      line-height: 1.75;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      font-size: 0.72rem;
+      transition: 0.3s ease;
+    }
+
+    .social-link:hover {
+      border-color: var(--gold);
+      background: var(--gold);
+    }
+
+    .footer-column h4 {
+      margin-bottom: 20px;
+      color: #ddc7a6;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .footer-column a,
+    .footer-column span {
+      display: block;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.75rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 28px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.66rem;
+    }
+
+    /* =========================================================
+       FLOATING BUTTONS
+       ========================================================= */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 900;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #25d366;
+      color: var(--white);
+      box-shadow: 0 13px 30px rgba(37, 211, 102, 0.28);
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+
+    .mobile-sticky-cta {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 850;
+      display: none;
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+      background: rgba(247, 243, 238, 0.9);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 35px rgba(28, 28, 26, 0.15);
+    }
+
+    .mobile-sticky-cta .btn {
+      width: 100%;
+      min-height: 50px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1100px) {
+      .nav-links,
+      .nav-call {
+        display: none;
+      }
+
+      .nav {
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .logo {
+        text-align: left;
+      }
+
+      .menu-toggle {
+        display: grid;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+      }
+
+      .hero-main-image {
+        width: 90%;
+      }
+
+      .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-list {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 45px;
+      }
+
+      .process-list::before {
+        display: none;
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+        margin: 0 auto;
+      }
+
+      .package-card.featured {
+        transform: none;
+      }
+
+      .package-card.featured:hover {
+        transform: translateY(-8px);
+      }
+
+      .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading .section-copy {
+        margin-top: 20px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 130px;
+      }
+
+      .hero-grid,
+      .intro-grid,
+      .results-grid,
+      .doctor-grid,
+      .faq-grid,
+      .booking-shell,
+      .promotion-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding-top: 20px;
+      }
+
+      .hero-title {
+        max-width: 700px;
+      }
+
+      .hero-visual {
+        min-height: 620px;
+      }
+
+      .hero-main-image {
+        left: 12%;
+        right: auto;
+        width: 76%;
+      }
+
+      .hero-secondary-image {
+        left: 2%;
+      }
+
+      .hero-floating-card {
+        right: 1%;
+      }
+
+      .trust-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 0;
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .intro-gallery {
+        min-height: 620px;
+      }
+
+      .promotion-content {
+        padding: 55px;
+      }
+
+      .promotion-image {
+        min-height: 400px;
+      }
+
+      .comparison {
+        height: 520px;
+      }
+
+      .doctor-image-wrap {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .doctor-content {
+        max-width: 700px;
+      }
+
+      .faq-intro {
+        position: static;
+      }
+
+      .booking-info {
+        min-height: auto;
+      }
+
+      .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .announcement {
+        padding-inline: 38px;
+        font-size: 0.65rem;
+      }
+
+      .site-header {
+        top: 39px;
+      }
+
+      .nav {
+        min-height: 74px;
+      }
+
+      .logo-main {
+        font-size: 1.6rem;
+      }
+
+      .hero {
+        padding-bottom: 35px;
+      }
+
+      .hero-title {
+        font-size: 3.45rem;
+      }
+
+      .hero-description {
+        font-size: 0.9rem;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-trust {
+        align-items: flex-start;
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .hero-main-image {
+        top: 15px;
+        left: 9%;
+        width: 84%;
+        height: 430px;
+      }
+
+      .hero-secondary-image {
+        width: 145px;
+        height: 195px;
+        border-width: 5px;
+      }
+
+      .hero-floating-card {
+        width: 190px;
+        padding: 18px;
+      }
+
+      .hero-badge {
+        width: 86px;
+        height: 86px;
+      }
+
+      .hero-badge span {
+        width: 65px;
+        font-size: 0.53rem;
+      }
+
+      .trust-strip {
+        padding: 22px 15px;
+      }
+
+      .trust-strip-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        justify-content: flex-start;
+        border-right: 0;
+      }
+
+      .section-title {
+        font-size: 2.75rem;
+      }
+
+      .intro,
+      .treatments,
+      .results,
+      .benefits,
+      .process,
+      .doctor,
+      .packages,
+      .testimonials,
+      .faq,
+      .booking {
+        padding: 85px 0;
+      }
+
+      .intro-gallery {
+        min-height: 490px;
+      }
+
+      .intro-img-large {
+        width: 88%;
+        height: 450px;
+      }
+
+      .intro-img-small {
+        width: 48%;
+        height: 230px;
+      }
+
+      .experience-seal {
+        width: 105px;
+        height: 105px;
+      }
+
+      .experience-seal strong {
+        font-size: 2rem;
+      }
+
+      .experience-seal span {
+        width: 70px;
+        font-size: 0.52rem;
+      }
+
+      .intro-checks,
+      .treatments-grid,
+      .benefits-grid,
+      .process-list,
+      .doctor-details,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .treatment-card {
+        min-height: auto;
+      }
+
+      .treatment-content p {
+        min-height: auto;
+      }
+
+      .promotion {
+        padding: 65px 0;
+      }
+
+      .promotion-content,
+      .booking-info,
+      .booking-form-wrap {
+        padding: 40px 25px;
+      }
+
+      .promotion-content h2 {
+        font-size: 3rem;
+      }
+
+      .promotion-image {
+        min-height: 320px;
+      }
+
+      .comparison {
+        height: 430px;
+      }
+
+      .result-caption {
+        display: block;
+      }
+
+      .slider-hint {
+        margin-top: 10px;
+        text-align: left;
+      }
+
+      .doctor-image-wrap {
+        min-height: 500px;
+      }
+
+      .doctor-image {
+        width: 92%;
+        height: 470px;
+      }
+
+      .doctor-award {
+        width: 175px;
+      }
+
+      .package-card {
+        padding: 30px 24px;
+      }
+
+      .testimonial-stage {
+        min-height: 650px;
+      }
+
+      .testimonial-slide {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 30px 24px;
+      }
+
+      .testimonial-photo {
+        height: 260px;
+      }
+
+      .faq-question span:first-child {
+        font-size: 1.22rem;
+      }
+
+      .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .instagram-item {
+        height: 190px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .footer-bottom {
+        display: block;
+      }
+
+      .footer-bottom span {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .whatsapp-float {
+        display: none;
+      }
+
+      .mobile-sticky-cta {
+        display: block;
+      }
+
+      body {
+        padding-bottom: 78px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="announcement" id="announcement">
+    First visit special:
+    <strong>&nbsp;Complimentary skin analysis worth RM199</strong>
+    <button class="announcement-close" id="announcementClose" aria-label="Close announcement">
+      ×
+    </button>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav">
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#treatments">Treatments</a>
+        <a href="#results">Results</a>
+        <a href="#doctor">Our Doctor</a>
+      </nav>
+
+      <a href="#home" class="logo" aria-label="Élan Aesthetic Clinic home">
+        <span class="logo-main">ÉLAN</span>
+        <span class="logo-sub">Aesthetic Clinic</span>
+      </a>
+
+      <div class="nav-actions">
+        <a class="nav-call" href="tel:+60312345678">
+          <small>Call our clinic</small>
+          <strong>+603 1234 5678</strong>
+        </a>
+
+        <a href="#booking" class="btn btn-dark">
+          Book Consultation
+          <span class="arrow-icon">→</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#treatments">Treatments</a>
+    <a href="#results">Results</a>
+    <a href="#doctor">Our Doctor</a>
+    <a href="#packages">Packages</a>
+    <a href="#faq">FAQ</a>
+    <a href="#booking" class="btn btn-dark">Book Consultation</a>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal">
+            <div class="eyebrow">Premium aesthetic care in Kuala Lumpur</div>
+
+            <h1 class="display-title hero-title">
+              Reveal your most <em>radiant</em> self.
+            </h1>
+
+            <p class="hero-description">
+              Personalised aesthetic treatments designed to restore confidence,
+              rejuvenate your skin and enhance your natural features with subtle,
+              beautiful results.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#booking" class="btn btn-dark">
+                Book Free Consultation
+                <span class="arrow-icon">→</span>
+              </a>
+
+              <a href="#treatments" class="btn btn-outline">
+                Explore Treatments
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <div class="avatar-stack">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Client" />
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Client" />
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=100&q=80" alt="Client" />
+              </div>
+
+              <div class="trust-rating">
+                <div class="stars">★★★★★</div>
+                <p>Rated 4.9 by more than 5,000 clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-main-image">
+              <img
+                src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=85"
+                alt="Aesthetic clinic facial treatment"
+              />
+            </div>
+
+            <div class="hero-secondary-image">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=85"
+                alt="Skin consultation"
+              />
+            </div>
+
+            <div class="hero-badge">
+              <span>Doctor-led aesthetic clinic</span>
+            </div>
+
+            <div class="hero-floating-card">
+              <div class="icon">✦</div>
+              <h3>Natural results</h3>
+              <p>
+                Treatments are personalised to enhance your unique beauty without
+                changing who you are.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-strip reveal">
+          <div class="trust-strip-grid">
+            <div class="trust-item">
+              <div class="trust-item-icon">✓</div>
+              <div>
+                <strong>Certified Doctors</strong>
+                <small>Qualified aesthetic physicians</small>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-item-icon">✦</div>
+              <div>
+                <strong>Advanced Technology</strong>
+                <small>Premium medical-grade equipment</small>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-item-icon">15+</div>
+              <div>
+                <strong>Years of Experience</strong>
+                <small>Trusted aesthetic expertise</small>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-item-icon">5K</div>
+              <div>
+                <strong>Happy Clients</strong>
+                <small>Personalised care and results</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee">
+      <div class="marquee-track">
+        <div class="marquee-item">
+          Pico Laser <span class="marquee-dot"></span>
+          HIFU Lifting <span class="marquee-dot"></span>
+          Skin Booster <span class="marquee-dot"></span>
+          Dermal Fillers <span class="marquee-dot"></span>
+          HydraFacial <span class="marquee-dot"></span>
+          Acne Scar Treatment <span class="marquee-dot"></span>
+        </div>
+
+        <div class="marquee-item" aria-hidden="true">
+          Pico Laser <span class="marquee-dot"></span>
+          HIFU Lifting <span class="marquee-dot"></span>
+          Skin Booster <span class="marquee-dot"></span>
+          Dermal Fillers <span class="marquee-dot"></span>
+          HydraFacial <span class="marquee-dot"></span>
+          Acne Scar Treatment <span class="marquee-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <section class="intro">
+      <div class="container intro-grid">
+        <div class="intro-gallery reveal">
+          <div class="intro-img-large">
+            <img
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85"
+              alt="Modern aesthetic clinic interior"
+            />
+          </div>
+
+          <div class="intro-img-small">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=85"
+              alt="Aesthetic doctor consultation"
+            />
+          </div>
+
+          <div class="experience-seal">
+            <div>
+              <strong>15+</strong>
+              <span>Years of aesthetic excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-content reveal">
+          <div class="eyebrow">A more personal approach</div>
+
+          <h2 class="display-title section-title">
+            Science-led care, created around you.
+          </h2>
+
+          <p class="section-copy">
+            Every face and every skin journey is different. Our doctors take the
+            time to understand your concerns, assess your skin and design a
+            treatment plan that feels completely personal.
+          </p>
+
+          <p class="section-copy">
+            We focus on gradual, natural-looking improvements using medical-grade
+            technology and carefully selected products.
+          </p>
+
+          <div class="intro-note">
+            “Our philosophy is not to change your face, but to help you look
+            refreshed, confident and beautifully yourself.”
+          </div>
+
+          <div class="intro-checks">
+            <div class="intro-check">
+              <span class="check-circle">✓</span>
+              Personalised consultation
+            </div>
+
+            <div class="intro-check">
+              <span class="check-circle">✓</span>
+              Medical-grade technology
+            </div>
+
+            <div class="intro-check">
+              <span class="check-circle">✓</span>
+              Minimal downtime options
+            </div>
+
+            <div class="intro-check">
+              <span class="check-circle">✓</span>
+              Dedicated aftercare
+            </div>
+          </div>
+
+          <a href="#doctor" class="text-link">
+            Meet our medical director
+            <span class="arrow-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="treatments" id="treatments">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Our signature treatments</div>
+          <h2 class="display-title section-title">
+            Advanced solutions for your skin and confidence.
+          </h2>
+          <p class="section-copy">
+            Explore our most requested treatments, carefully selected to support
+            skin health, facial rejuvenation and natural enhancement.
+          </p>
+        </div>
+
+        <div class="treatment-filters reveal">
+          <button class="filter-btn active" data-filter="all">All Treatments</button>
+          <button class="filter-btn" data-filter="face">Face</button>
+          <button class="filter-btn" data-filter="skin">Skin</button>
+          <button class="filter-btn" data-filter="body">Body</button>
+        </div>
+
+        <div class="treatments-grid">
+          <article class="treatment-card reveal" data-category="face">
+            <span class="treatment-tag">Face Lifting</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=85"
+                alt="HIFU lifting treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>HIFU Lifting</h3>
+              <p>
+                Non-invasive ultrasound lifting designed to firm, contour and
+                improve facial definition.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM1,288</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="skin">
+            <span class="treatment-tag">Brightening</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=800&q=85"
+                alt="Pico laser treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Pico Laser</h3>
+              <p>
+                Advanced laser treatment for pigmentation, dullness, uneven tone
+                and overall skin clarity.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM688</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="face">
+            <span class="treatment-tag">Anti-Ageing</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=85"
+                alt="Skin booster treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Skin Booster</h3>
+              <p>
+                Deep hydration treatment created to improve radiance, smoothness
+                and skin elasticity.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM988</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="skin">
+            <span class="treatment-tag">Deep Cleansing</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85"
+                alt="HydraFacial treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>HydraFacial</h3>
+              <p>
+                Multi-step cleansing, exfoliation and hydration for an immediate,
+                healthy-looking glow.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM388</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="face">
+            <span class="treatment-tag">Facial Contouring</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1534143826428-81fc61582afd?auto=format&fit=crop&w=800&q=85"
+                alt="Dermal filler treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Dermal Fillers</h3>
+              <p>
+                Personalised facial contouring to restore volume and improve
+                harmony with subtle results.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM1,288</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="skin">
+            <span class="treatment-tag">Acne Solution</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=800&q=85"
+                alt="Acne scar treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Acne Scar Renewal</h3>
+              <p>
+                A combined treatment programme to smooth texture and improve the
+                appearance of acne scars.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM888</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="body">
+            <span class="treatment-tag">Body Contouring</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=85"
+                alt="Body contouring treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Body Sculpting</h3>
+              <p>
+                Non-surgical body contouring to target stubborn areas and support
+                a more defined silhouette.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM788</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card reveal" data-category="body">
+            <span class="treatment-tag">Hair Removal</span>
+            <div class="treatment-image">
+              <img
+                src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=85"
+                alt="Laser hair removal treatment"
+              />
+            </div>
+            <div class="treatment-content">
+              <h3>Laser Hair Removal</h3>
+              <p>
+                Comfortable, advanced laser technology for smoother skin and
+                long-lasting hair reduction.
+              </p>
+              <div class="treatment-meta">
+                <span>From RM188</span>
+                <a href="#booking" class="circle-arrow">→</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promotion">
+      <div class="container">
+        <div class="promotion-card reveal">
+          <div class="promotion-content">
+            <div class="eyebrow">New client privilege</div>
+            <h2 class="display-title">Begin with clarity.</h2>
+            <p>
+              Receive a complimentary digital skin analysis and personalised
+              consultation during your first visit.
+            </p>
+
+            <div class="promotion-value">
+              <strong>RM199</strong>
+              <span>Complimentary skin assessment for first-time clients</span>
+            </div>
+
+            <a href="#booking" class="btn btn-light">
+              Claim First Visit Special
+              <span class="arrow-icon">→</span>
+            </a>
+          </div>
+
+          <div class="promotion-image">
+            <img
+              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1100&q=85"
+              alt="Professional skin assessment"
+            />
+
+            <div class="promotion-label">
+              <div>
+                <strong>Free</strong>
+                <small>Skin analysis</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="container results-grid">
+        <div class="results-copy reveal">
+          <div class="eyebrow">Real client journeys</div>
+          <h2 class="display-title section-title">
+            Results that still look like you.
+          </h2>
+
+          <p class="section-copy">
+            Our approach is focused on refined, believable improvements. Drag the
+            slider to explore an example treatment result.
+          </p>
+
+          <a href="#booking" class="btn btn-dark">
+            Discuss Your Concerns
+            <span class="arrow-icon">→</span>
+          </a>
+
+          <div class="results-disclaimer">
+            <span>ⓘ</span>
+            <p>
+              Results vary between individuals. Images are for demonstration
+              purposes and should be replaced with authorised clinic results.
+            </p>
+          </div>
+        </div>
+
+        <div class="comparison-wrap reveal">
+          <div class="comparison" id="comparison">
+            <img
+              class="comparison-before"
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=85"
+              alt="Before treatment example"
+            />
+
+            <div class="comparison-after-wrap" id="comparisonAfter">
+              <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=95&sat=15&con=10"
+                alt="After treatment example"
+              />
+            </div>
+
+            <div class="comparison-line" id="comparisonLine"></div>
+            <div class="comparison-handle" id="comparisonHandle">↔</div>
+
+            <span class="comparison-label before">Before</span>
+            <span class="comparison-label after">After</span>
+          </div>
+
+          <div class="result-caption">
+            <div>
+              <strong>Skin Rejuvenation Programme</strong>
+              <span>Three sessions over eight weeks</span>
+            </div>
+            <div class="slider-hint">Drag left or right to compare</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Why clients choose Élan</div>
+            <h2 class="display-title section-title">
+              Beautiful care at every step.
+            </h2>
+          </div>
+
+          <p class="section-copy">
+            From consultation to aftercare, every detail is designed to make your
+            experience calm, transparent and genuinely personal.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <div class="benefit-number">01</div>
+            <div class="benefit-icon">✦</div>
+            <h3>Doctor-Led Care</h3>
+            <p>
+              Every treatment plan is assessed and supervised by qualified
+              aesthetic physicians.
+            </p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-number">02</div>
+            <div class="benefit-icon">⌁</div>
+            <h3>Personalised Plans</h3>
+            <p>
+              Your plan is created around your skin condition, concerns, goals
+              and lifestyle.
+            </p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-number">03</div>
+            <div class="benefit-icon">✓</div>
+            <h3>Trusted Technology</h3>
+            <p>
+              We invest in reputable medical-grade equipment and carefully
+              selected products.
+            </p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-number">04</div>
+            <div class="benefit-icon">♡</div>
+            <h3>Natural Results</h3>
+            <p>
+              Our goal is to help you appear refreshed and confident, never
+              overdone.
+            </p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-number">05</div>
+            <div class="benefit-icon">◎</div>
+            <h3>Private Environment</h3>
+            <p>
+              Relax in a discreet, comfortable space designed around your privacy.
+            </p>
+          </article>
+
+          <article class="benefit-card reveal">
+            <div class="benefit-number">06</div>
+            <div class="benefit-icon">↗</div>
+            <h3>Ongoing Aftercare</h3>
+            <p>
+              Our team remains available after your treatment to support your
+              recovery and progress.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Your treatment journey</div>
+          <h2 class="display-title section-title">
+            Thoughtful from consultation to follow-up.
+          </h2>
+        </div>
+
+        <div class="process-list">
+          <article class="process-step reveal">
+            <div class="process-number">01</div>
+            <h3>Consultation</h3>
+            <p>Tell us about your concerns, goals and previous treatments.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-number">02</div>
+            <h3>Skin Analysis</h3>
+            <p>We examine your skin condition using professional technology.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-number">03</div>
+            <h3>Treatment Plan</h3>
+            <p>Your doctor recommends a personalised and transparent plan.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-number">04</div>
+            <h3>Treatment</h3>
+            <p>Your procedure is delivered with comfort and safety in mind.</p>
+          </article>
+
+          <article class="process-step reveal">
+            <div class="process-number">05</div>
+            <h3>Aftercare</h3>
+            <p>Receive clear aftercare guidance and follow-up support.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="doctor" id="doctor">
+      <div class="container doctor-grid">
+        <div class="doctor-image-wrap reveal">
+          <div class="doctor-image">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85"
+              alt="Dr Emily Wong, medical director"
+            />
+          </div>
+
+          <div class="doctor-award">
+            <strong>Medical Excellence</strong>
+            <span>
+              Recognised for patient-centred aesthetic care and natural results.
+            </span>
+          </div>
+        </div>
+
+        <div class="doctor-content reveal">
+          <div class="eyebrow">Meet our medical director</div>
+
+          <h2 class="display-title section-title">Dr Emily Wong</h2>
+
+          <p class="section-copy">
+            Dr Emily Wong is a certified aesthetic physician with more than 15
+            years of experience in facial rejuvenation, skin health and
+            non-surgical aesthetic medicine.
+          </p>
+
+          <blockquote class="doctor-quote">
+            “The best result is one that makes you feel more confident while
+            still looking completely like yourself.”
+          </blockquote>
+
+          <div class="doctor-details">
+            <div class="doctor-detail">
+              <strong>15+ Years</strong>
+              <span>Clinical aesthetic experience</span>
+            </div>
+
+            <div class="doctor-detail">
+              <strong>Certified Physician</strong>
+              <span>Professional aesthetic training</span>
+            </div>
+
+            <div class="doctor-detail">
+              <strong>5,000+ Clients</strong>
+              <span>Personalised treatment journeys</span>
+            </div>
+
+            <div class="doctor-detail">
+              <strong>Advanced Techniques</strong>
+              <span>Continuous medical education</span>
+            </div>
+          </div>
+
+          <a href="#booking" class="btn btn-light">
+            Book With Dr Emily
+            <span class="arrow-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="packages" id="packages">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Curated skin programmes</div>
+          <h2 class="display-title section-title">
+            Choose a journey designed for your goals.
+          </h2>
+          <p class="section-copy">
+            These sample packages can be customised after your consultation and
+            skin analysis.
+          </p>
+        </div>
+
+        <div class="package-grid">
+          <article class="package-card reveal">
+            <div class="package-name">Essential</div>
+            <h3>Glow Reset</h3>
+            <p class="package-description">
+              A refreshing introduction for dull, tired or dehydrated skin.
+            </p>
+
+            <div class="package-price">
+              <strong>RM688</strong>
+              <span>per package</span>
+            </div>
+
+            <ul class="package-list">
+              <li><span>✓</span><span>Digital skin analysis</span></li>
+              <li><span>✓</span><span>HydraFacial treatment</span></li>
+              <li><span>✓</span><span>LED recovery session</span></li>
+              <li><span>✓</span><span>Personalised home-care advice</span></li>
+            </ul>
+
+            <a href="#booking" class="btn btn-outline">Choose Glow Reset</a>
+          </article>
+
+          <article class="package-card featured reveal">
+            <div class="package-badge">Most Popular</div>
+            <div class="package-name">Signature</div>
+            <h3>Radiance Renewal</h3>
+            <p class="package-description">
+              A targeted programme for pigmentation, texture and uneven skin tone.
+            </p>
+
+            <div class="package-price">
+              <strong>RM1,888</strong>
+              <span>per package</span>
+            </div>
+
+            <ul class="package-list">
+              <li><span>✓</span><span>Comprehensive consultation</span></li>
+              <li><span>✓</span><span>Two Pico Laser sessions</span></li>
+              <li><span>✓</span><span>One medical-grade facial</span></li>
+              <li><span>✓</span><span>Post-treatment recovery kit</span></li>
+            </ul>
+
+            <a href="#booking" class="btn btn-gold">Choose Radiance Renewal</a>
+          </article>
+
+          <article class="package-card reveal">
+            <div class="package-name">Premium</div>
+            <h3>Ultimate Rejuvenation</h3>
+            <p class="package-description">
+              A complete rejuvenation journey combining lifting, hydration and
+              skin renewal.
+            </p>
+
+            <div class="package-price">
+              <strong>RM3,888</strong>
+              <span>per package</span>
+            </div>
+
+            <ul class="package-list">
+              <li><span>✓</span><span>Doctor consultation and analysis</span></li>
+              <li><span>✓</span><span>Full-face HIFU lifting</span></li>
+              <li><span>✓</span><span>Premium skin booster</span></li>
+              <li><span>✓</span><span>Two follow-up sessions</span></li>
+            </ul>
+
+            <a href="#booking" class="btn btn-outline">
+              Choose Rejuvenation
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Client experiences</div>
+          <h2 class="display-title section-title">
+            Confidence, in their own words.
+          </h2>
+        </div>
+
+        <div class="testimonial-stage reveal">
+          <article class="testimonial-slide active">
+            <div class="testimonial-photo">
+              <img
+                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=85"
+                alt="Client testimonial"
+              />
+            </div>
+
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “The team listened carefully and never pressured me. My skin looks
+                brighter, smoother and still completely natural.”
+              </p>
+              <div class="testimonial-author">
+                <strong>Sarah Lim</strong>
+                <span>Pico Laser and skin booster client</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-slide">
+            <div class="testimonial-photo">
+              <img
+                src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=85"
+                alt="Client testimonial"
+              />
+            </div>
+
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “The consultation was very detailed. I understood every step and
+                felt comfortable throughout my entire treatment.”
+              </p>
+              <div class="testimonial-author">
+                <strong>Michelle Tan</strong>
+                <span>HIFU lifting client</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-slide">
+            <div class="testimonial-photo">
+              <img
+                src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=700&q=85"
+                alt="Client testimonial"
+              />
+            </div>
+
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-quote">
+                “I finally found a clinic that prioritises subtle results. I look
+                refreshed rather than different.”
+              </p>
+              <div class="testimonial-author">
+                <strong>Joanne Lee</strong>
+                <span>Facial contouring client</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="testimonial-controls">
+          <button class="testimonial-dot active" data-slide="0" aria-label="Show testimonial 1"></button>
+          <button class="testimonial-dot" data-slide="1" aria-label="Show testimonial 2"></button>
+          <button class="testimonial-dot" data-slide="2" aria-label="Show testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro reveal">
+          <div class="eyebrow">Frequently asked questions</div>
+          <h2 class="display-title section-title">Before your first visit.</h2>
+          <p class="section-copy">
+            Find answers to common questions about consultations, treatment
+            comfort, downtime and results.
+          </p>
+
+          <a href="#booking" class="btn btn-dark">
+            Ask Our Team
+            <span class="arrow-icon">→</span>
+          </a>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item active">
+            <button class="faq-question">
+              <span>What happens during the first consultation?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Your doctor will discuss your concerns, review your medical and
+                treatment history, analyse your skin and recommend suitable
+                options. You are never required to proceed immediately.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Are aesthetic treatments painful?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Comfort levels vary depending on the treatment and individual.
+                Where appropriate, numbing cream or other comfort measures may be
+                used to make the experience more comfortable.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>How much downtime should I expect?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Many treatments have little or no downtime, while others may
+                involve temporary redness, swelling or sensitivity. Your doctor
+                will explain this before treatment.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>How quickly will I see results?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Some treatments provide an immediate glow, while collagen-based
+                or regenerative treatments develop gradually over several weeks
+                or months.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Can different treatments be combined?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes, combination treatment plans are often used to address
+                multiple concerns. Your doctor will determine the correct
+                sequence and timing for safety and effectiveness.
+              </p>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question">
+              <span>Are consultation and treatment prices transparent?</span>
+              <span class="faq-plus">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. You will receive a clear explanation of the recommended
+                treatment, estimated number of sessions and total cost before
+                making a decision.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="container">
+        <div class="booking-shell reveal">
+          <div class="booking-info">
+            <div class="eyebrow">Start your journey</div>
+            <h2 class="display-title">Book your consultation.</h2>
+            <p>
+              Share your concerns with our team and receive personalised guidance
+              in a calm, private environment.
+            </p>
+
+            <div class="booking-contact">
+              <div class="booking-contact-item">
+                <div class="booking-contact-icon">⌖</div>
+                <div>
+                  <strong>Élan Aesthetic Clinic</strong>
+                  <span>Level 8, The Gardens, Kuala Lumpur, Malaysia</span>
+                </div>
+              </div>
+
+              <div class="booking-contact-item">
+                <div class="booking-contact-icon">☎</div>
+                <div>
+                  <strong>Call or WhatsApp</strong>
+                  <span>+603 1234 5678 · +6012 345 6789</span>
+                </div>
+              </div>
+
+              <div class="booking-contact-item">
+                <div class="booking-contact-icon">◷</div>
+                <div>
+                  <strong>Opening Hours</strong>
+                  <span>Monday–Saturday, 10:00 AM–7:00 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-form-wrap">
+            <h3>Request an appointment</h3>
+            <p>
+              Complete the form and our care coordinator will contact you shortly.
+            </p>
+
+            <form id="bookingForm">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" name="phone" type="tel" placeholder="+60" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input id="email" name="email" type="email" placeholder="you@email.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="treatment">Interested Treatment</label>
+                  <select id="treatment" name="treatment" required>
+                    <option value="">Select a treatment</option>
+                    <option>Skin Consultation</option>
+                    <option>HIFU Lifting</option>
+                    <option>Pico Laser</option>
+                    <option>Skin Booster</option>
+                    <option>HydraFacial</option>
+                    <option>Dermal Fillers</option>
+                    <option>Acne Scar Treatment</option>
+                    <option>Body Sculpting</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="date">Preferred Date</label>
+                  <input id="date" name="date" type="date" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="time">Preferred Time</label>
+                  <select id="time" name="time" required>
+                    <option value="">Select a time</option>
+                    <option>10:00 AM</option>
+                    <option>11:30 AM</option>
+                    <option>1:00 PM</option>
+                    <option>2:30 PM</option>
+                    <option>4:00 PM</option>
+                    <option>5:30 PM</option>
+                  </select>
+                </div>
+
+                <div class="form-group full">
+                  <label for="message">Tell Us About Your Concerns</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="For example: pigmentation, acne scars, lifting or skin hydration..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <label class="form-consent">
+                <input type="checkbox" required />
+                <span>
+                  I agree to be contacted by Élan Aesthetic Clinic regarding my
+                  appointment request and understand that submitting this form
+                  does not confirm an appointment.
+                </span>
+              </label>
+
+              <button type="submit" class="btn btn-dark">
+                Submit Appointment Request
+                <span class="arrow-icon">→</span>
+              </button>
+
+              <div class="form-message" id="formMessage">
+                Thank you. Your request has been received. Our care coordinator
+                will contact you shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <div class="eyebrow">Follow our journey</div>
+          <h2 class="display-title section-title">@elanaestheticclinic</h2>
+        </div>
+      </div>
+
+      <div class="instagram-grid">
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80" alt="Facial treatment" />
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=600&q=80" alt="Clinic interior" />
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Skin treatment" />
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80" alt="Aesthetic treatment" />
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Doctor consultation" />
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Beauty treatment" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="logo-main">ÉLAN</span>
+            <span class="logo-sub">Aesthetic Clinic</span>
+          </a>
+
+          <p>
+            Doctor-led aesthetic care combining advanced technology, thoughtful
+            consultation and natural-looking results.
+          </p>
+
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+            <a href="#" class="social-link" aria-label="Facebook">FB</a>
+            <a href="#" class="social-link" aria-label="TikTok">TK</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#treatments">Treatments</a>
+          <a href="#results">Results</a>
+          <a href="#doctor">Our Doctor</a>
+          <a href="#packages">Packages</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Clinic</h4>
+          <a href="#booking">Book Consultation</a>
+          <a href="#faq">Frequently Asked Questions</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms and Conditions</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <span>+603 1234 5678</span>
+          <span>+6012 345 6789</span>
+          <span>hello@elanaesthetic.my</span>
+          <span>Level 8, The Gardens, Kuala Lumpur</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Élan Aesthetic Clinic. All rights reserved.</span>
+        <span>
+          Medical results vary between individuals. Consultation is required
+          before treatment.
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/60123456789?text=Hello%20Élan%20Aesthetic%20Clinic,%20I%20would%20like%20to%20book%20a%20consultation."
+    target="_blank"
+    rel="noopener"
+    aria-label="Contact us on WhatsApp"
+  >
+    WA
+  </a>
+
+  <div class="mobile-sticky-cta">
+    <a href="#booking" class="btn btn-dark">Book Free Consultation</a>
+  </div>
+
+  <script>
+    const announcement = document.getElementById("announcement");
+    const announcementClose = document.getElementById("announcementClose");
+    const siteHeader = document.getElementById("siteHeader");
+
+    announcementClose.addEventListener("click", () => {
+      announcement.style.display = "none";
+      siteHeader.style.top = "0";
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        siteHeader.classList.add("sticky");
+      } else {
+        siteHeader.classList.remove("sticky");
+      }
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      });
+    });
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach((element) => revealObserver.observe(element));
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const treatmentCards = document.querySelectorAll(".treatment-card");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        treatmentCards.forEach((card) => {
+          const category = card.dataset.category;
+          const shouldShow = filter === "all" || category === filter;
+          card.classList.toggle("hidden", !shouldShow);
+        });
+      });
+    });
+
+    const comparison = document.getElementById("comparison");
+    const comparisonAfter = document.getElementById("comparisonAfter");
+    const comparisonLine = document.getElementById("comparisonLine");
+    const comparisonHandle = document.getElementById("comparisonHandle");
+
+    function updateComparison(clientX) {
+      const rect = comparison.getBoundingClientRect();
+      let position = ((clientX - rect.left) / rect.width) * 100;
+      position = Math.max(0, Math.min(100, position));
+
+      comparisonAfter.style.width = position + "%";
+      comparisonLine.style.left = position + "%";
+      comparisonHandle.style.left = position + "%";
+    }
+
+    let dragging = false;
+
+    comparison.addEventListener("pointerdown", (event) => {
+      dragging = true;
+      comparison.setPointerCapture(event.pointerId);
+      updateComparison(event.clientX);
+    });
+
+    comparison.addEventListener("pointermove", (event) => {
+      if (dragging) {
+        updateComparison(event.clientX);
+      }
+    });
+
+    comparison.addEventListener("pointerup", () => {
+      dragging = false;
+    });
+
+    comparison.addEventListener("pointercancel", () => {
+      dragging = false;
+    });
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      if (item.classList.contains("active")) {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active");
+
+        faqItems.forEach((otherItem) => {
+          otherItem.classList.remove("active");
+          otherItem.querySelector(".faq-answer").style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add("active");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+    const testimonialDots = document.querySelectorAll(".testimonial-dot");
+    let currentTestimonial = 0;
+    let testimonialTimer;
+
+    function showTestimonial(index) {
+      testimonialSlides.forEach((slide) => slide.classList.remove("active"));
+      testimonialDots.forEach((dot) => dot.classList.remove("active"));
+
+      testimonialSlides[index].classList.add("active");
+      testimonialDots[index].classList.add("active");
+      currentTestimonial = index;
+    }
+
+    function startTestimonialTimer() {
+      testimonialTimer = setInterval(() => {
+        const nextIndex = (currentTestimonial + 1) % testimonialSlides.length;
+        showTestimonial(nextIndex);
+      }, 6000);
+    }
+
+    testimonialDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        clearInterval(testimonialTimer);
+        showTestimonial(Number(dot.dataset.slide));
+        startTestimonialTimer();
+      });
+    });
+
+    startTestimonialTimer();
+
+    const bookingForm = document.getElementById("bookingForm");
+    const formMessage = document.getElementById("formMessage");
+    const dateInput = document.getElementById("date");
+
+    const today = new Date();
+    const minimumDate = today.toISOString().split("T")[0];
+    dateInput.min = minimumDate;
+
+    bookingForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      formMessage.classList.add("show");
+      bookingForm.reset();
+      dateInput.min = minimumDate;
+
+      setTimeout(() => {
+        formMessage.classList.remove("show");
+      }, 7000);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (event) {
+        const targetId = this.getAttribute("href");
+
+        if (!targetId || targetId === "#") {
+          return;
+        }
+
+        const target = document.querySelector(targetId);
+
+        if (target) {
+          event.preventDefault();
+
+          const offset = siteHeader.offsetHeight;
+          const targetPosition =
+            target.getBoundingClientRect().top + window.scrollY - offset + 2;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
