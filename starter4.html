@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-MY" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON LUMINA | Luxury Medical Aesthetics Bangsar & Mont Kiara</title>
+    <meta name="description" content="Kuala Lumpur's premier luxury medical aesthetic boutique. LCP certified physicians specializing in Pico Laser, Profhilo, and Ultherapy.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#FBF9F5',
+                            100: '#F5F1EA',
+                            200: '#E6DEC0',
+                            800: '#3D3833',
+                            900: '#211E1B',
+                        },
+                        champagne: {
+                            400: '#D4AF37',
+                            500: '#C5A059',
+                            600: '#AB8541',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .editorial-border {
+            border-color: rgba(197, 160, 89, 0.2);
+        }
+        .glass-card {
+            background: rgba(251, 249, 245, 0.85);
+            backdrop-filter: blur(12px);
+        }
+        .dossier-tab.active {
+            border-bottom: 2px solid #C5A059;
+            color: #211E1B;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-champagne-500 selection:text-white">
+
+    <!-- Announcement Bar -->
+    <div class="bg-stone-900 text-stone-200 text-[10px] font-medium tracking-[0.25em] uppercase py-2.5 text-center border-b border-champagne-500/30">
+        MOH Registered • LCP Certified Physicians • Bangsar & Mont Kiara
+    </div>
+
+    <!-- MAIN SPLIT ARCHITECTURAL CONTAINER -->
+    <div class="min-h-screen lg:grid lg:grid-cols-12">
+
+        <!-- LEFT PANEL: Fixed Brand & Dynamic Visuals (Col 5) -->
+        <aside class="lg:col-span-5 lg:sticky lg:top-0 lg:h-screen bg-stone-100 p-8 lg:p-12 flex flex-col justify-between border-r border-stone-200/80 relative overflow-hidden">
+            <!-- Background Watermark -->
+            <div class="absolute -bottom-10 -left-10 text-[160px] font-serif text-stone-200/40 select-none pointer-events-none italic">L</div>
+
+            <div class="space-y-8 relative z-10">
+                <!-- Brand Header -->
+                <a href="#home" class="block">
+                    <span class="text-[10px] tracking-[0.3em] text-champagne-600 uppercase font-semibold block mb-1">Maison De Beauté</span>
+                    <h1 class="font-serif text-3xl lg:text-4xl font-normal text-stone-900 tracking-wide">LUMINA</h1>
+                    <span class="text-[9px] tracking-[0.2em] text-stone-500 uppercase block">Medical Aesthetics KL</span>
+                </a>
+
+                <!-- Left Panel Dynamic Highlight Card -->
+                <div class="hidden lg:block relative rounded-2xl overflow-hidden shadow-2xl border border-stone-200/80 group">
+                    <img id="dynamic-visual" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Lumina Aesthetic Lounge" class="w-full h-80 object-cover transition-transform duration-1000 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                        <span class="text-[9px] font-mono text-champagne-400 tracking-widest uppercase">Bangsar Suite</span>
+                        <p class="font-serif text-lg text-white italic">Clinical Precision Meets Bespoke Luxury</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left Panel Navigation & Contact -->
+            <div class="pt-8 space-y-6 relative z-10 border-t border-stone-200">
+                <nav class="flex flex-col space-y-3 text-xs tracking-widest uppercase font-medium">
+                    <a href="#treatments" onclick="updateLeftVisual('treatments')" class="hover:text-champagne-600 transition flex items-center justify-between group">
+                        <span>01 / Treatment Dossier</span>
+                        <span class="opacity-0 group-hover:opacity-100 transition">&rarr;</span>
+                    </a>
+                    <a href="#analysis" onclick="updateLeftVisual('analysis')" class="hover:text-champagne-600 transition flex items-center justify-between group">
+                        <span>02 / Pigmentation Estimator</span>
+                        <span class="opacity-0 group-hover:opacity-100 transition">&rarr;</span>
+                    </a>
+                    <a href="#doctors" onclick="updateLeftVisual('doctors')" class="hover:text-champagne-600 transition flex items-center justify-between group">
+                        <span>03 / LCP Medical Directors</span>
+                        <span class="opacity-0 group-hover:opacity-100 transition">&rarr;</span>
+                    </a>
+                </nav>
+
+                <div class="pt-2">
+                    <a href="https://wa.me/60123456789?text=Hi%20Lumina%20Clinic,%20I%20would%20like%20to%20reserve%20a%20private%20consultation." target="_blank" class="block w-full text-center bg-stone-900 hover:bg-champagne-600 text-stone-50 font-medium text-xs tracking-widest uppercase py-4 rounded-xl transition duration-500 shadow-xl">
+                        Reserve Consultation
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- RIGHT PANEL: Scrollable Editorial Content (Col 7) -->
+        <main class="lg:col-span-7 p-6 lg:p-16 space-y-24">
+
+            <!-- HERO SECTION -->
+            <section id="home" class="space-y-6 pt-4">
+                <span class="text-xs font-mono text-champagne-600 tracking-widest uppercase bg-stone-100 px-3 py-1 rounded-full border border-stone-200">Bangsar • Mont Kiara</span>
+                <h2 class="font-serif text-4xl lg:text-6xl text-stone-900 leading-tight">
+                    Refining Natural Beauty Through <span class="italic font-serif text-champagne-600">Evidence-Based</span> Aesthetics.
+                </h2>
+                <p class="text-stone-600 text-xs lg:text-sm leading-relaxed max-w-xl">
+                    Spearheaded by Ministry of Health LCP-certified physicians, Maison LUMINA harmonizes state-of-the-art dermatological lasers with artful facial bio-remodeling for Asian skin tones.
+                </p>
+            </section>
+
+            <!-- 01: TREATMENT DOSSIER (Interactive Tabs) -->
+            <section id="treatments" class="space-y-8 scroll-mt-12">
+                <div class="border-b border-stone-200 pb-4 flex justify-between items-end">
+                    <div>
+                        <span class="text-[10px] text-stone-400 font-mono tracking-widest uppercase block">Portfolio</span>
+                        <h3 class="font-serif text-2xl text-stone-900">Treatment Dossier</h3>
+                    </div>
+                </div>
+
+                <!-- Interactive Dossier Switcher -->
+                <div class="flex gap-8 border-b border-stone-200 text-xs tracking-widest uppercase pb-2">
+                    <button onclick="switchDossier('pico')" id="tab-pico" class="dossier-tab active py-2 text-stone-500 transition">Pico Laser</button>
+                    <button onclick="switchDossier('profhilo')" id="tab-profhilo" class="dossier-tab py-2 text-stone-500 transition">Profhilo® HA</button>
+                    <button onclick="switchDossier('ultherapy')" id="tab-ultherapy" class="dossier-tab py-2 text-stone-500 transition">Ultherapy®</button>
+                </div>
+
+                <!-- Dossier Content: Pico -->
+                <div id="dossier-pico" class="dossier-content space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <img src="https://www.drkclinic.com.my/wp-content/uploads/2023/06/picolaser-4.png" alt="Pico Laser Treatment" class="rounded-xl border border-stone-200 object-cover h-64 w-full shadow-sm">
+                        <div class="space-y-4">
+                            <span class="text-[10px] text-champagne-600 font-mono uppercase">Target: Melasma & Scars</span>
+                            <h4 class="font-serif text-xl text-stone-900">Picosecond Pigment Disruption</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed">Employs ultra-short picosecond energy pulses to fragment melanin deep within the dermis without thermal skin damage.</p>
+                            <div class="p-4 bg-stone-100 rounded-lg border border-stone-200">
+                                <span class="text-[10px] text-stone-500 block uppercase">Transparent MYR Pricing</span>
+                                <span class="text-sm font-mono font-bold text-stone-900">RM 680 / session</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dossier Content: Profhilo -->
+                <div id="dossier-profhilo" class="dossier-content hidden space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <img src="https://www.bayclinic.sg/wp-content/uploads/2023/02/Profhilo.png" alt="Profhilo Booster" class="rounded-xl border border-stone-200 object-cover h-64 w-full shadow-sm">
+                        <div class="space-y-4">
+                            <span class="text-[10px] text-champagne-600 font-mono uppercase">Target: Crepey Skin & Hydration</span>
+                            <h4 class="font-serif text-xl text-stone-900">Profhilo® Bio-Remodeling</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed">Pure Hyaluronic Acid injected at 10 Bio-Aesthetic Points to stimulate 4 types of collagen and elastin.</p>
+                            <div class="p-4 bg-stone-100 rounded-lg border border-stone-200">
+                                <span class="text-[10px] text-stone-500 block uppercase">Transparent MYR Pricing</span>
+                                <span class="text-sm font-mono font-bold text-stone-900">RM 2,200 / syringe (2ml)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dossier Content: Ultherapy -->
+                <div id="dossier-ultherapy" class="dossier-content hidden space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <img src="https://www.skinceuticals.com/dw/image/v2/AANG_PRD/on/demandware.static/-/Sites-skinc-us-Library/default/dwda3d0514/images/treatment-detail-page/ultherapy/23_1019_PRO_TREATMENT_PAGES_ARTICLE_DETAIL_HERO_BANNER_ULTHERAPY_D.jpg?sw=400&sh=400&sm=cut&q=70" alt="Ultherapy Lift" class="rounded-xl border border-stone-200 object-cover h-64 w-full shadow-sm">
+                        <div class="space-y-4">
+                            <span class="text-[10px] text-champagne-600 font-mono uppercase">Target: Sagging Jowls & Double Chin</span>
+                            <h4 class="font-serif text-xl text-stone-900">Ultherapy® Non-Surgical Lift</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed">Micro-focused ultrasound energy to trigger natural collagen building at precise dermal depths.</p>
+                            <div class="p-4 bg-stone-100 rounded-lg border border-stone-200">
+                                <span class="text-[10px] text-stone-500 block uppercase">Transparent MYR Pricing</span>
+                                <span class="text-sm font-mono font-bold text-stone-900">RM 4,500 / protocol</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02: PIGMENTATION ESTIMATOR WIDGET -->
+            <section id="analysis" class="bg-stone-100 p-8 rounded-2xl border border-stone-200 space-y-6 scroll-mt-12">
+                <div>
+                    <span class="text-[10px] text-champagne-600 font-mono tracking-widest uppercase block">Interactive Tool</span>
+                    <h3 class="font-serif text-2xl text-stone-900">Pigmentation & Laser Protocol Estimator</h3>
+                    <p class="text-xs text-stone-500 mt-1">Select your skin concern to receive an instant recommended clinical session plan.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <label class="block text-xs font-semibold text-stone-700">Select Primary Skin Concern:</label>
+                    <select id="concern-selector" onchange="calculateProtocol()" class="w-full bg-stone-50 border border-stone-300 rounded-xl p-3 text-xs text-stone-800 focus:outline-none focus:border-champagne-600">
+                        <option value="freckles">Mild Sun Spots & Freckles</option>
+                        <option value="melasma">Dermal Melasma & Hormonal Pigment</option>
+                        <option value="acne-scars">Post-Acne Scars & Pores</option>
+                    </select>
+                </div>
+
+                <div id="protocol-result" class="p-4 bg-stone-50 rounded-xl border border-stone-200 space-y-2">
+                    <span class="text-[10px] font-mono text-champagne-600 uppercase block">Recommended Protocol</span>
+                    <p id="protocol-title" class="text-xs font-bold text-stone-900">3 Sessions Pico Laser + Calming Facials</p>
+                    <p id="protocol-price" class="text-sm font-mono text-stone-800 font-semibold">Estimated Investment: RM 1,900 MYR</p>
+                </div>
+            </section>
+
+            <!-- 03: LCP MEDICAL DIRECTORS -->
+            <section id="doctors" class="space-y-6 scroll-mt-12">
+                <div class="border-b border-stone-200 pb-4">
+                    <span class="text-[10px] text-stone-400 font-mono tracking-widest uppercase block">Accreditation</span>
+                    <h3 class="font-serif text-2xl text-stone-900">MOH Registered Doctors</h3>
+                </div>
+
+                <div class="bg-stone-100 border border-stone-200 p-6 rounded-2xl flex items-center gap-6">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Dr Sarah Tan" class="w-20 h-20 rounded-full object-cover border-2 border-champagne-500">
+                    <div>
+                        <span class="text-[9px] bg-champagne-500/10 text-champagne-600 font-mono px-2 py-0.5 rounded">LCP NO: AMP/2018/042</span>
+                        <h4 class="font-serif text-lg text-stone-900 mt-1">Dr. Sarah Tan</h4>
+                        <p class="text-xs text-stone-500">Medical Director & Senior Aesthetic Physician</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="pt-12 border-t border-stone-200 text-center text-xs text-stone-400 space-y-2">
+                <p>© 2026 Maison LUMINA Medical Aesthetics Sdn. Bhd. All rights reserved.</p>
+                <p class="text-[10px]">18, Jalan Telawi 3, Bangsar Baru, 59100 Kuala Lumpur</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        function switchDossier(tab) {
+            document.querySelectorAll('.dossier-content').forEach(c => c.classList.add('hidden'));
+            document.querySelectorAll('.dossier-tab').forEach(t => t.classList.remove('active'));
+
+            document.getElementById('dossier-' + tab).classList.remove('hidden');
+            document.getElementById('tab-' + tab).classList.add('active');
+        }
+
+        function updateLeftVisual(section) {
+            const visualImg = document.getElementById('dynamic-visual');
+            if(section === 'treatments') {
+                visualImg.src = "https://www.drkclinic.com.my/wp-content/uploads/2023/06/picolaser-4.png";
+            } else if(section === 'doctors') {
+                visualImg.src = "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1000&q=80";
+            } else {
+                visualImg.src = "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80";
+            }
+        }
+
+        function calculateProtocol() {
+            const concern = document.getElementById('concern-selector').value;
+            const title = document.getElementById('protocol-title');
+            const price = document.getElementById('protocol-price');
+
+            if(concern === 'freckles') {
+                title.innerText = "3 Sessions Pico Laser Pigment Protocol";
+                price.innerText = "Estimated Investment: RM 1,900 MYR";
+            } else if(concern === 'melasma') {
+                title.innerText = "5 Sessions Pico Laser + Profhilo Bio-Remodeling";
+                price.innerText = "Estimated Investment: RM 4,800 MYR";
+            } else if(concern === 'acne-scars') {
+                title.innerText = "4 Sessions Pico Fractional Laser + Rejuran PDRN";
+                price.innerText = "Estimated Investment: RM 3,900 MYR";
+            }
+        }
+    </script>
+</body>
+</html>
