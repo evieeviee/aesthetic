@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Medical Aesthetics | Modern Skin & Body Care</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Header Navigation -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="w-8 h-8 bg-emerald-600 text-white font-bold flex items-center justify-center rounded-lg shadow-sm">A</span>
+                <span class="text-xl font-bold tracking-tight text-slate-900">AURA <span class="text-emerald-600 font-light">CLINIC</span></span>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
+                <a href="#services" class="hover:text-emerald-600 transition-colors">Treatments</a>
+                <a href="#about" class="hover:text-emerald-600 transition-colors">Why Choose Us</a>
+                <a href="#faq" class="hover:text-emerald-600 transition-colors">FAQs</a>
+            </nav>
+            <a href="#book" class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-all shadow-sm">
+                Book Consultation
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                <span>✨ Board-Certified Care</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                Reveal Your Natural Radiance with Expert Precision.
+            </h1>
+            <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                Advanced, non-invasive facial and body treatments designed to enhance your unique features—delivering subtle, effortless, and natural-looking results.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                <a href="#book" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center font-semibold px-6 py-3.5 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    Book Your Consultation
+                </a>
+                <a href="#services" class="bg-white hover:bg-slate-100 text-slate-700 font-semibold px-6 py-3.5 rounded-lg border border-slate-200 text-center transition-colors">
+                    Explore Treatments
+                </a>
+            </div>
+            <div class="flex items-center gap-4 text-sm text-slate-500">
+                <div class="flex text-amber-400">★★★★★</div>
+                <span><strong>4.9/5 Stars</strong> (500+ Verified Patient Reviews)</span>
+            </div>
+        </div>
+        <div class="relative">
+            <div class="absolute -inset-2 bg-gradient-to-r from-emerald-400 to-teal-200 rounded-2xl blur-xl opacity-30"></div>
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Skin Care Treatment" class="relative rounded-2xl shadow-xl w-full object-cover aspect-[4/3]">
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section id="services" class="bg-white py-20 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Signature Treatments</h2>
+                <p class="text-slate-600">Tailored, evidence-based dermatological procedures tailored to your skin goals.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=600&q=80" alt="Injectables" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Facial Injectables</h3>
+                        <p class="text-sm text-slate-600 mb-4">Smooth fine lines and restore natural youthful volume with precision Botox and Dermal Fillers.</p>
+                        <a href="#book" class="text-emerald-600 font-semibold text-sm hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1512290900676-26c2a6a095ae?auto=format&fit=crop&w=600&q=80" alt="Laser Resurfacing" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Laser & Resurfacing</h3>
+                        <p class="text-sm text-slate-600 mb-4">Target acne scars, hyperpigmentation, and texture irregularities with minimal downtime.</p>
+                        <a href="#book" class="text-emerald-600 font-semibold text-sm hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Body Sculpting" class="h-48 w-full object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Body Contouring</h3>
+                        <p class="text-sm text-slate-600 mb-4">Non-invasive technology engineered to sculpt stubborn areas and tighten sagging skin.</p>
+                        <a href="#book" class="text-emerald-600 font-semibold text-sm hover:underline">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Form Section -->
+    <section id="book" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="bg-slate-900 rounded-3xl p-8 md:p-14 text-white grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Start Your Journey</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">Book Your Personal Skin Analysis</h2>
+                <p class="text-slate-300 leading-relaxed mb-6">Schedule a 1-on-1 consultation with our medical specialists. We will design a customized treatment roadmap tailored specifically to your aesthetic vision.</p>
+                <div class="space-y-3 text-sm text-slate-300">
+                    <div class="flex items-center gap-3">✓ 100% Medical Doctor & Dermatologist-Led</div>
+                    <div class="flex items-center gap-3">✓ Personalized Treatment Plan</div>
+                    <div class="flex items-center gap-3">✓ FDA-Approved Technology</div>
+                </div>
+            </div>
+            <form class="bg-white text-slate-900 p-6 md:p-8 rounded-2xl shadow-xl space-y-4" onsubmit="event.preventDefault();">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name</label>
+                    <input type="text" placeholder="Jane Doe" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address</label>
+                    <input type="email" placeholder="jane@example.com" class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Primary Interest</label>
+                    <select class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 text-sm">
+                        <option>Facial Injectables</option>
+                        <option>Laser Skin Resurfacing</option>
+                        <option>Body Contouring</option>
+                        <option>General Skin Consultation</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-lg shadow transition-colors">
+                    Claim Consultation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Aura Medical Aesthetics. All Rights Reserved. Procedures performed by certified medical professionals.</p>
+    </footer>
+
+</body>
+</html>
