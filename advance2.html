@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA Medical Aesthetics | Bangsar & Mont Kiara, KL</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: { 50: '#fffbeb', 100: '#fef3c7', 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        slate: { 850: '#151e2e', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .page-view { display: none; }
+        .page-view.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-gold-500 selection:text-slate-900">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600 text-slate-950 text-xs font-semibold py-2 px-4 text-center">
+        ✨ <strong>Raya & Year-End Glow Campaign:</strong> Complimentary Visia™ 3D Skin Analysis worth RM250 with any Laser treatment.
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="javascript:void(0)" onclick="switchPage('home')" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center font-serif text-slate-950 font-bold text-xl">L</div>
+                <div>
+                    <span class="font-serif text-xl font-bold tracking-wider text-white block leading-none">LUMINA</span>
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-amber-400">Aesthetics KL</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <button onclick="switchPage('home')" class="nav-btn text-amber-400 hover:text-amber-400 transition" id="nav-home">Home</button>
+                <button onclick="switchPage('treatments')" class="nav-btn text-slate-300 hover:text-amber-400 transition" id="nav-treatments">Treatments & Pricing</button>
+                <button onclick="switchPage('doctors')" class="nav-btn text-slate-300 hover:text-amber-400 transition" id="nav-doctors">LCP Doctors</button>
+                <button onclick="switchPage('contact')" class="nav-btn text-slate-300 hover:text-amber-400 transition" id="nav-contact">Contact & Location</button>
+            </nav>
+
+            <!-- Book Consultation Action -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/60123456789" target="_blank" class="hidden lg:flex items-center gap-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-lg text-xs font-semibold hover:bg-emerald-600/30 transition">
+                    <span>💬 WhatsApp</span>
+                </a>
+                <button onclick="switchPage('book')" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-lg shadow-lg shadow-amber-500/10 transition">
+                    Book Consult
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= PAGE 1: HOME ================= -->
+    <main id="page-home" class="page-view active">
+        <!-- Hero Section -->
+        <section class="relative py-20 lg:py-28 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-amber-400 text-xs font-semibold">
+                        🏆 KKM & LCP Board-Certified Medical Aesthetic Clinic
+                    </div>
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white leading-tight">
+                        Elegance in Precision, <br>
+                        <span class="italic text-amber-400 font-serif">Naturally Yours.</span>
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-xl">
+                        Kuala Lumpur's premier destination for evidence-based skin rejuvenation, non-surgical facelifts, and body contouring. Delivered by MOH-accredited LCP aesthetic doctors.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button onclick="switchPage('book')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-8 py-3.5 rounded-xl transition shadow-lg shadow-amber-500/20 text-sm">
+                            Schedule Appointment
+                        </button>
+                        <button onclick="switchPage('treatments')" class="bg-slate-800 hover:bg-slate-700 text-white font-medium px-8 py-3.5 rounded-xl border border-slate-700 transition text-sm">
+                            View Price List (MYR)
+                        </button>
+                    </div>
+                    <div class="pt-8 border-t border-slate-800 grid grid-cols-3 gap-4 text-xs text-slate-400">
+                        <div><strong class="block text-white text-base font-serif">12,000+</strong> Patients Served</div>
+                        <div><strong class="block text-white text-base font-serif">2 Outlets</strong> Bangsar & Mont Kiara</div>
+                        <div><strong class="block text-white text-base font-serif">4.9/5★</strong> Google Verified</div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-3xl blur-2xl opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Lumina Aesthetic Room" class="relative rounded-2xl border border-slate-700 object-cover w-full h-[480px] shadow-2xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights Bar -->
+        <section class="bg-slate-850 py-12 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-2xl">🩺</div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">LCP Accredited</h4>
+                        <p class="text-xs text-slate-400">MOH Certified Doctors</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-2xl">⚡</div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">FDA Approved</h4>
+                        <p class="text-xs text-slate-400">Medical-Grade Tech</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-2xl">💎</div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Zero Hard Selling</h4>
+                        <p class="text-xs text-slate-400">Honest Medical Consults</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-amber-500/10 text-amber-400 rounded-xl text-2xl">🔒</div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Strict Privacy</h4>
+                        <p class="text-xs text-slate-400">Private VIP Suites</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= PAGE 2: TREATMENTS & PRICING ================= -->
+    <main id="page-treatments" class="page-view">
+        <section class="py-16 max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Transparent Pricing</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-white mt-2">Clinical Treatment Menu</h2>
+                <p class="text-slate-400 text-sm mt-3">All procedures are performed exclusively by registered medical doctors. Prices in Malaysian Ringgit (MYR).</p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-850 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-serif text-white">PicoSure® Laser Rejuvenation</h3>
+                            <span class="bg-amber-500/10 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">Popular</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-6">Pico-second laser targetting stubborn pigmentation, melasma, acne scars, and pore refinement with zero downtime.</p>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">Single Trial Session</span>
+                            <span class="font-bold text-white">RM 680</span>
+                        </div>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">Package (5 Sessions)</span>
+                            <span class="font-bold text-amber-400">RM 2,800</span>
+                        </div>
+                    </div>
+                    <button onclick="switchPage('book')" class="w-full mt-6 bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold text-xs py-3 rounded-lg transition">
+                        Select & Book
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-850 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-serif text-white">Profhilo® Bio-Remodeling</h3>
+                            <span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded">Anti-Aging</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-6">Ultra-pure Hyaluronic Acid injection that cures crepey skin, lifts sagging tissue, and boosts hydration drastically.</p>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">1 Syringe (2ml)</span>
+                            <span class="font-bold text-white">RM 2,200</span>
+                        </div>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">2 Syringes (Full Protocol)</span>
+                            <span class="font-bold text-amber-400">RM 3,900</span>
+                        </div>
+                    </div>
+                    <button onclick="switchPage('book')" class="w-full mt-6 bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold text-xs py-3 rounded-lg transition">
+                        Select & Book
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-850 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-serif text-white">Ultherapy® Non-Surgical Lift</h3>
+                            <span class="bg-amber-500/10 text-amber-400 text-xs font-bold px-2.5 py-1 rounded">FDA Lift</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-6">Micro-focused ultrasound technology to stimulate deep collagen production and lift jowls and sagging neck lines.</p>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">Lower Face & Jawline</span>
+                            <span class="font-bold text-white">RM 4,500</span>
+                        </div>
+                        <div class="border-t border-slate-800 py-3 flex justify-between text-xs">
+                            <span class="text-slate-400">Full Face & Neck (800 Lines)</span>
+                            <span class="font-bold text-amber-400">RM 7,800</span>
+                        </div>
+                    </div>
+                    <button onclick="switchPage('book')" class="w-full mt-6 bg-slate-800 hover:bg-amber-500 hover:text-slate-950 text-white font-semibold text-xs py-3 rounded-lg transition">
+                        Select & Book
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= PAGE 3: DOCTORS & LCP ACCREDITATION ================= -->
+    <main id="page-doctors" class="page-view">
+        <section class="py-16 max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Ministry of Health Certified</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-white mt-2">Meet Our Aesthetic Physicians</h2>
+                <p class="text-slate-400 text-sm mt-3">Our medical directors hold official Letter of Credentialing & Privilege (LCP) licenses issued by the Ministry of Health Malaysia.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Doctor Profile 1 -->
+                <div class="bg-slate-850 rounded-2xl border border-slate-800 p-8 flex flex-col sm:flex-row gap-6">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" alt="Dr. Sarah Tan" class="w-32 h-32 rounded-xl object-cover border border-amber-500/30">
+                    <div class="space-y-3">
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 font-mono px-2 py-0.5 rounded">LCP No: AMP/2018/042</span>
+                        <h3 class="text-xl font-serif text-white">Dr. Sarah Tan</h3>
+                        <p class="text-xs text-amber-400">Medical Director & Senior Aesthetic Physician</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">MBBS (Malaya), Dip. Practical Dermatology (Cardiff, UK), Member of American Academy of Aesthetic Medicine (AAAM).</p>
+                    </div>
+                </div>
+
+                <!-- Doctor Profile 2 -->
+                <div class="bg-slate-850 rounded-2xl border border-slate-800 p-8 flex flex-col sm:flex-row gap-6">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80" alt="Dr. Marcus Lim" class="w-32 h-32 rounded-xl object-cover border border-amber-500/30">
+                    <div class="space-y-3">
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 font-mono px-2 py-0.5 rounded">LCP No: AMP/2020/118</span>
+                        <h3 class="text-xl font-serif text-white">Dr. Marcus Lim</h3>
+                        <p class="text-xs text-amber-400">Consultant Aesthetic & Laser Physician</p>
+                        <p class="text-xs text-slate-400 leading-relaxed">MD (UKM), PgDip in Clinical Dermatology (London), Specialist in Facial Sculpting & Non-Surgical Rhinoplasty.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= PAGE 4: CONTACT & LOCATIONS ================= -->
+    <main id="page-contact" class="page-view">
+        <section class="py-16 max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Kuala Lumpur Outlets</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-normal text-white mt-2">Visit Our Suites</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Bangsar Flagship -->
+                <div class="bg-slate-850 border border-slate-800 p-8 rounded-2xl">
+                    <span class="text-xs text-amber-400 font-semibold uppercase">Flagship Outlet</span>
+                    <h3 class="font-serif text-2xl text-white mt-1 mb-4">Bangsar Baru</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">No. 18, Jalan Telawi 3, Bangsar Baru, 59100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur.</p>
+                    <p class="text-xs text-slate-400 mb-1"><strong>Operating Hours:</strong> Mon - Sat: 10:00 AM – 7:00 PM</p>
+                    <p class="text-xs text-slate-400 mb-6"><strong>Phone:</strong> +60 3-2284 9988</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block text-xs bg-slate-800 hover:bg-slate-700 text-white font-semibold px-4 py-2 rounded-lg border border-slate-700">Open in Google Maps ↗</a>
+                </div>
+
+                <!-- Mont Kiara Branch -->
+                <div class="bg-slate-850 border border-slate-800 p-8 rounded-2xl">
+                    <span class="text-xs text-amber-400 font-semibold uppercase">Premium Branch</span>
+                    <h3 class="font-serif text-2xl text-white mt-1 mb-4">Mont Kiara (1 Mont Kiara)</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">L2-08, 1 Mont Kiara, No. 1, Jalan Kiara, Mont Kiara, 50480 Kuala Lumpur.</p>
+                    <p class="text-xs text-slate-400 mb-1"><strong>Operating Hours:</strong> Daily: 10:30 AM – 8:00 PM</p>
+                    <p class="text-xs text-slate-400 mb-6"><strong>Phone:</strong> +60 3-6201 1122</p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-block text-xs bg-slate-800 hover:bg-slate-700 text-white font-semibold px-4 py-2 rounded-lg border border-slate-700">Open in Google Maps ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= PAGE 5: BOOK CONSULTATION ================= -->
+    <main id="page-book" class="page-view">
+        <section class="py-16 max-w-3xl mx-auto px-6">
+            <div class="bg-slate-850 border border-slate-800 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">Direct Appointment Booking</span>
+                    <h2 class="font-serif text-3xl font-normal text-white mt-2">Schedule Your Medical Consultation</h2>
+                    <p class="text-slate-400 text-xs mt-2">Select your preferred branch and time slot. Our patient care team will confirm your booking within 2 hours.</p>
+                </div>
+
+                <form class="space-y-6" onsubmit="alert('Thank you! Your appointment request has been submitted. Our clinic executive will contact you shortly via WhatsApp.'); event.preventDefault();">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Full Name</label>
+                            <input type="text" required placeholder="e.g. Tan Sri / Dato / Ms. Lee" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Malaysian Mobile No.</label>
+                            <input type="tel" required placeholder="+60 12-345 6789" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Preferred Clinic Outlet</label>
+                            <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500">
+                                <option>Bangsar Baru (Jalan Telawi)</option>
+                                <option>Mont Kiara (1 Mont Kiara)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Primary Aesthetic Concern</label>
+                            <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500">
+                                <option>Pigmentation & Melasma (Pico Laser)</option>
+                                <option>Facial Lifting (Ultherapy / HIFU)</option>
+                                <option>Skin Hydration & Aging (Profhilo)</option>
+                                <option>Acne Scars & Texture</option>
+                                <option>General Doctor Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Preferred Date</label>
+                        <input type="date" required class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-amber-500">
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold py-4 rounded-xl shadow-lg transition text-xs uppercase tracking-wider">
+                        Confirm Consultation Request
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-12 text-slate-500 text-xs">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div>
+                <span class="font-serif text-lg font-bold text-white block mb-2">LUMINA AESTHETICS</span>
+                <p class="leading-relaxed">Fully registered and compliant aesthetic medical clinic under Ministry of Health Malaysia (KKM) guidelines.</p>
+            </div>
+            <div>
+                <strong class="text-white block mb-2">Quick Navigation</strong>
+                <ul class="space-y-1">
+                    <li><a href="javascript:void(0)" onclick="switchPage('treatments')" class="hover:text-amber-400">Pico Laser & Pigmentation</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchPage('treatments')" class="hover:text-amber-400">Ultherapy Face Lifting</a></li>
+                    <li><a href="javascript:void(0)" onclick="switchPage('doctors')" class="hover:text-amber-400">LCP Physician Verification</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong class="text-white block mb-2">Emergency Contact</strong>
+                <p>24/7 WhatsApp Hotline: +60 12-345 6789</p>
+                <p class="mt-2">&copy; 2026 Lumina Medical Aesthetics Sdn. Bhd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Single Page Router Script -->
+    <script>
+        function switchPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+            // Show selected page
+            const target = document.getElementById('page-' + pageId);
+            if(target) target.classList.add('active');
+
+            // Reset navigation styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-amber-400');
+                btn.classList.add('text-slate-300');
+            });
+            
+            const activeNav = document.getElementById('nav-' + pageId);
+            if(activeNav) {
+                activeNav.classList.add('text-amber-400');
+                activeNav.classList.remove('text-slate-300');
+            }
+
+            // Scroll smoothly back to top on page switch
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
