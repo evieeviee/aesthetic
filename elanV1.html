@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ÉLAN Aesthetic Clinic Malaysia — refined, personalised aesthetic treatments in Kuala Lumpur." />
+  <title>ÉLAN Aesthetic Clinic | Malaysia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#f7f1ea;
+      --sand:#eadfd3;
+      --rose:#d8b7ad;
+      --rose-deep:#a56f63;
+      --ink:#2e2825;
+      --muted:#756a65;
+      --white:#fffdf9;
+      --line:rgba(46,40,37,.13);
+      --shadow:0 24px 70px rgba(73,54,47,.13);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;font-family:"DM Sans","Noto Sans SC",sans-serif;background:var(--ivory);color:var(--ink)}
+    body{overflow-x:hidden}
+    button,a{font:inherit}
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+    h1,h2,h3,p{margin-top:0}
+
+    .site{
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(216,183,173,.30), transparent 30%),
+        radial-gradient(circle at 100% 100%, rgba(234,223,211,.55), transparent 30%),
+        var(--ivory);
+    }
+
+    .grain{
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.045;
+      z-index:1;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    }
+
+    .header{
+      position:fixed;
+      top:0;left:0;right:0;
+      z-index:1000;
+      padding:16px 4vw;
+    }
+
+    .nav-shell{
+      max-width:1420px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+      min-height:72px;
+      padding:10px 12px 10px 20px;
+      background:rgba(255,253,249,.84);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:20px;
+      box-shadow:0 14px 45px rgba(75,56,49,.08);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      cursor:pointer;
+      min-width:220px;
+    }
+
+    .brand-mark{
+      width:46px;height:46px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#e8cfc6,#fff9f5);
+      border:1px solid rgba(165,111,99,.2);
+      color:var(--rose-deep);
+      font-family:"Libre Caslon Display",serif;
+      font-size:23px;
+    }
+
+    .brand-copy strong{
+      display:block;
+      font-family:"Libre Caslon Display",serif;
+      font-size:20px;
+      letter-spacing:.8px;
+    }
+
+    .brand-copy span{
+      display:block;
+      margin-top:3px;
+      font-size:9px;
+      letter-spacing:2.4px;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .desktop-nav{
+      display:flex;
+      align-items:center;
+      gap:4px;
+    }
+
+    .nav-link{
+      border:0;
+      background:transparent;
+      color:var(--muted);
+      padding:11px 13px;
+      border-radius:12px;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active{
+      background:var(--ink);
+      color:#fff;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .lang-switch{
+      display:flex;
+      background:#f0e7df;
+      border-radius:12px;
+      padding:4px;
+    }
+
+    .lang-btn{
+      border:0;
+      background:transparent;
+      color:var(--muted);
+      border-radius:9px;
+      padding:8px 10px;
+      font-size:11px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .lang-btn.active{
+      background:#fff;
+      color:var(--ink);
+      box-shadow:0 5px 14px rgba(75,56,49,.08);
+    }
+
+    .top-cta{
+      min-height:44px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:0 16px;
+      border-radius:12px;
+      background:var(--rose-deep);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+      box-shadow:0 12px 24px rgba(165,111,99,.22);
+    }
+
+    .menu-btn{
+      display:none;
+      width:44px;height:44px;
+      border:0;
+      border-radius:12px;
+      background:var(--ink);
+      color:#fff;
+      cursor:pointer;
+    }
+
+    .mobile-drawer{
+      position:fixed;
+      inset:0;
+      z-index:950;
+      background:rgba(46,40,37,.4);
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+    }
+
+    .mobile-drawer.open{
+      opacity:1;
+      visibility:visible;
+    }
+
+    .drawer-panel{
+      position:absolute;
+      top:92px;left:16px;right:16px;
+      padding:18px;
+      border-radius:24px;
+      background:rgba(255,253,249,.97);
+      box-shadow:var(--shadow);
+      transform:translateY(-10px);
+      transition:.25s ease;
+    }
+
+    .mobile-drawer.open .drawer-panel{transform:none}
+
+    .drawer-link{
+      width:100%;
+      padding:15px 12px;
+      border:0;
+      border-bottom:1px solid var(--line);
+      background:transparent;
+      text-align:left;
+      color:var(--ink);
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .drawer-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    main{min-height:100vh}
+    .page{
+      display:none;
+      min-height:100vh;
+      padding:112px 4vw 34px;
+      animation:pageIn .45s ease;
+    }
+
+    .page.active{display:block}
+    @keyframes pageIn{
+      from{opacity:0;transform:translateY(12px)}
+      to{opacity:1;transform:none}
+    }
+
+    .shell{
+      max-width:1420px;
+      margin:auto;
+      min-height:calc(100vh - 146px);
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2.1px;
+      text-transform:uppercase;
+      color:var(--rose-deep);
+    }
+
+    .eyebrow:before{
+      content:"";
+      width:34px;height:1px;
+      background:var(--rose-deep);
+    }
+
+    .display{
+      font-family:"Libre Caslon Display","Noto Sans SC",serif;
+      font-size:clamp(56px,7vw,108px);
+      line-height:.94;
+      letter-spacing:-3.5px;
+      margin:22px 0 24px;
+      max-width:850px;
+    }
+
+    .section-title{
+      font-family:"Libre Caslon Display","Noto Sans SC",serif;
+      font-size:clamp(42px,5vw,74px);
+      line-height:1;
+      letter-spacing:-2px;
+      margin:18px 0;
+    }
+
+    .lead{
+      max-width:640px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.75;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:30px;
+    }
+
+    .btn{
+      min-height:54px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:0 22px;
+      border-radius:14px;
+      border:1px solid transparent;
+      font-weight:800;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .btn-primary{
+      background:var(--ink);
+      color:#fff;
+      box-shadow:0 14px 30px rgba(46,40,37,.16);
+    }
+
+    .btn-primary:hover{transform:translateY(-2px)}
+    .btn-soft{
+      background:rgba(255,253,249,.74);
+      border-color:var(--line);
+      color:var(--ink);
+    }
+
+    /* HOME */
+    .hero{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:24px;
+      min-height:calc(100vh - 146px);
+      align-items:stretch;
+    }
+
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:4vh 2vw 4vh 0;
+    }
+
+    .hero-note{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+      margin-top:34px;
+    }
+
+    .note-card{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,253,249,.72);
+    }
+
+    .note-card strong{
+      display:block;
+      font-family:"Libre Caslon Display",serif;
+      font-size:23px;
+      margin-bottom:4px;
+    }
+
+    .note-card span{
+      color:var(--muted);
+      font-size:11px;
+    }
+
+    .hero-gallery{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      min-height:650px;
+    }
+
+    .hero-main{
+      position:relative;
+      overflow:hidden;
+      border-radius:34px;
+      background:
+        linear-gradient(to top,rgba(46,40,37,.55),transparent 58%),
+        url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=88") center/cover;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-main:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg,rgba(216,183,173,.12),transparent 45%);
+    }
+
+    .hero-caption{
+      position:absolute;
+      left:24px;right:24px;bottom:24px;
+      z-index:2;
+      color:#fff;
+    }
+
+    .hero-caption strong{
+      display:block;
+      font-family:"Libre Caslon Display",serif;
+      font-size:28px;
+      margin-bottom:6px;
+    }
+
+    .hero-caption span{
+      font-size:12px;
+      color:rgba(255,255,255,.75);
+    }
+
+    .side-stack{
+      display:grid;
+      grid-template-rows:1fr 1fr;
+      gap:16px;
+    }
+
+    .side-photo,
+    .side-quote{
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+
+    .side-photo{
+      background:url("https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=88") center/cover;
+    }
+
+    .side-quote{
+      padding:28px;
+      background:linear-gradient(145deg,#d9b8ae,#b98073);
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .side-quote .quote-mark{
+      font-family:"Libre Caslon Display",serif;
+      font-size:66px;
+      line-height:.7;
+      opacity:.5;
+    }
+
+    .side-quote p{
+      font-family:"Libre Caslon Display",serif;
+      font-size:26px;
+      line-height:1.2;
+      margin-bottom:18px;
+    }
+
+    .side-quote span{
+      font-size:11px;
+      letter-spacing:1.4px;
+      text-transform:uppercase;
+      opacity:.82;
+    }
+
+    /* INNER */
+    .page-head{
+      display:grid;
+      grid-template-columns:1fr .75fr;
+      align-items:end;
+      gap:30px;
+      padding:30px 0 24px;
+    }
+
+    .page-head .lead{justify-self:end}
+
+    .treatment-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .treatment-card{
+      position:relative;
+      min-height:340px;
+      padding:26px;
+      border-radius:28px;
+      background:rgba(255,253,249,.82);
+      border:1px solid rgba(46,40,37,.08);
+      box-shadow:0 16px 42px rgba(75,56,49,.08);
+      overflow:hidden;
+      transition:.3s ease;
+    }
+
+    .treatment-card:hover{transform:translateY(-6px)}
+    .treatment-card:nth-child(2){background:#ead9d2}
+    .treatment-card:nth-child(4){background:#2f2926;color:#fff}
+    .treatment-card:nth-child(6){background:#e7dacb}
+
+    .treatment-no{
+      font-size:11px;
+      letter-spacing:2px;
+      font-weight:800;
+      opacity:.55;
+    }
+
+    .treatment-icon{
+      width:56px;height:56px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(46,40,37,.09);
+      font-size:22px;
+      margin-top:38px;
+    }
+
+    .treatment-card h3{
+      font-family:"Libre Caslon Display",serif;
+      font-size:31px;
+      margin:28px 0 10px;
+    }
+
+    .treatment-card p{
+      color:inherit;
+      opacity:.7;
+      line-height:1.65;
+      font-size:13px;
+      margin-bottom:0;
+    }
+
+    .approach-layout{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:22px;
+      margin-top:22px;
+    }
+
+    .approach-photo{
+      min-height:590px;
+      border-radius:34px;
+      background:url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1400&q=88") center/cover;
+      box-shadow:var(--shadow);
+    }
+
+    .approach-panel{
+      border-radius:34px;
+      background:#2f2926;
+      color:#fff;
+      padding:40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .approach-panel .lead{color:rgba(255,255,255,.68)}
+
+    .step-list{
+      display:grid;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:42px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:14px 0;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+
+    .step-no{
+      width:42px;height:42px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--rose);
+      color:var(--ink);
+      font-weight:800;
+    }
+
+    .step strong{display:block;margin-bottom:4px}
+    .step span{font-size:12px;color:rgba(255,255,255,.62);line-height:1.5}
+
+    .doctor-layout{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      margin-top:22px;
+    }
+
+    .doctor-feature{
+      position:relative;
+      min-height:620px;
+      border-radius:34px;
+      overflow:hidden;
+      background:
+        linear-gradient(to top,rgba(46,40,37,.62),transparent 58%),
+        url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1400&q=88") center/cover;
+      box-shadow:var(--shadow);
+    }
+
+    .doctor-feature-info{
+      position:absolute;
+      left:26px;right:26px;bottom:26px;
+      color:#fff;
+    }
+
+    .doctor-feature-info h3{
+      font-family:"Libre Caslon Display",serif;
+      font-size:39px;
+      margin-bottom:6px;
+    }
+
+    .doctor-feature-info p{
+      color:rgba(255,255,255,.76);
+      margin-bottom:0;
+    }
+
+    .doctor-list{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+
+    .doctor-card{
+      background:rgba(255,253,249,.84);
+      border:1px solid rgba(46,40,37,.08);
+      border-radius:26px;
+      padding:18px;
+      box-shadow:0 12px 34px rgba(75,56,49,.07);
+    }
+
+    .doctor-card img{
+      height:210px;
+      object-fit:cover;
+      border-radius:18px;
+      margin-bottom:16px;
+    }
+
+    .doctor-card h4{
+      font-family:"Libre Caslon Display",serif;
+      font-size:24px;
+      margin:0 0 6px;
+    }
+
+    .doctor-card p{
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.55;
+      margin-bottom:0;
+    }
+
+    .contact-layout{
+      display:grid;
+      grid-template-columns:.82fr 1.18fr;
+      gap:22px;
+      margin-top:22px;
+      min-height:600px;
+    }
+
+    .contact-card{
+      padding:38px;
+      border-radius:32px;
+      background:rgba(255,253,249,.88);
+      border:1px solid rgba(46,40,37,.08);
+      box-shadow:var(--shadow);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .contact-card h3{
+      font-family:"Libre Caslon Display",serif;
+      font-size:36px;
+      margin-bottom:10px;
+    }
+
+    .contact-card>div>p{
+      color:var(--muted);
+      line-height:1.7;
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin-top:26px;
+    }
+
+    .contact-item{
+      display:grid;
+      grid-template-columns:46px 1fr;
+      gap:14px;
+      align-items:start;
+      padding:15px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .contact-icon{
+      width:46px;height:46px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:#ead9d2;
+      color:var(--rose-deep);
+      font-weight:800;
+    }
+
+    .contact-item strong{display:block;margin-bottom:4px}
+    .contact-item span{font-size:13px;color:var(--muted);line-height:1.5}
+
+    .map-wrap{
+      min-height:600px;
+      border-radius:32px;
+      overflow:hidden;
+      border:8px solid rgba(255,253,249,.7);
+      box-shadow:var(--shadow);
+    }
+
+    .map-wrap iframe{
+      width:100%;
+      height:100%;
+      min-height:600px;
+      border:0;
+    }
+
+    .wa-float{
+      position:fixed;
+      right:24px;
+      bottom:24px;
+      z-index:900;
+      width:60px;height:60px;
+      border-radius:50%;
+      display:grid;place-items:center;
+      background:#25D366;
+      color:#fff;
+      border:5px solid rgba(255,253,249,.85);
+      box-shadow:0 16px 34px rgba(37,211,102,.25);
+      font-size:24px;
+      transition:.25s ease;
+    }
+
+    .wa-float:hover{transform:translateY(-4px)}
+
+    @media(max-width:1080px){
+      .desktop-nav,.top-cta{display:none}
+      .menu-btn{display:grid;place-items:center}
+      .hero,.page-head,.approach-layout,.doctor-layout,.contact-layout{grid-template-columns:1fr}
+      .page-head .lead{justify-self:start}
+      .hero-gallery{min-height:560px}
+      .treatment-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-layout{min-height:auto}
+      .map-wrap,.map-wrap iframe{min-height:480px}
+    }
+
+    @media(max-width:700px){
+      .header{padding:12px}
+      .nav-shell{padding:9px 10px 9px 13px}
+      .brand{min-width:0}
+      .brand-copy strong{font-size:16px}
+      .brand-copy span{font-size:8px}
+      .brand-mark{width:42px;height:42px}
+      .lang-switch.desktop-only{display:none}
+      .page{padding:96px 14px 24px}
+      .display{font-size:55px;letter-spacing:-2.5px}
+      .section-title{font-size:44px}
+      .lead{font-size:15px}
+      .hero{gap:18px}
+      .hero-copy{padding-top:30px}
+      .hero-note{grid-template-columns:1fr 1fr}
+      .hero-gallery{grid-template-columns:1fr;min-height:auto}
+      .hero-main{min-height:430px}
+      .side-stack{grid-template-columns:1fr 1fr;grid-template-rows:none}
+      .side-photo,.side-quote{min-height:220px}
+      .side-quote p{font-size:21px}
+      .treatment-grid,.doctor-list{grid-template-columns:1fr}
+      .treatment-card{min-height:270px}
+      .approach-photo{min-height:420px}
+      .approach-panel,.contact-card{padding:28px;border-radius:26px}
+      .doctor-feature{min-height:470px}
+      .map-wrap{border-radius:26px}
+      .wa-float{right:16px;bottom:16px;width:56px;height:56px}
+    }
+  </style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="site">
+
+  <header class="header">
+    <div class="nav-shell">
+      <div class="brand" onclick="showPage('home')">
+        <div class="brand-mark">É</div>
+        <div class="brand-copy">
+          <strong>ÉLAN AESTHETICS</strong>
+          <span data-i18n="brandSub">Aesthetic Clinic Malaysia</span>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <button class="nav-link active" data-page="home" data-i18n="navHome">Home</button>
+        <button class="nav-link" data-page="treatments" data-i18n="navTreatments">Treatments</button>
+        <button class="nav-link" data-page="approach" data-i18n="navApproach">Our Approach</button>
+        <button class="nav-link" data-page="doctors" data-i18n="navDoctors">Doctors</button>
+        <button class="nav-link" data-page="contact" data-i18n="navContact">Contact</button>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch desktop-only">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+
+        <!-- REPLACE WHATSAPP NUMBER -->
+        <a class="top-cta" href="https://wa.me/60123456789?text=Hi%20%C3%89LAN%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank">
+          <span>✦</span>
+          <span data-i18n="bookNow">Book Consultation</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-panel">
+      <button class="drawer-link" data-page="home" data-i18n="navHome">Home</button>
+      <button class="drawer-link" data-page="treatments" data-i18n="navTreatments">Treatments</button>
+      <button class="drawer-link" data-page="approach" data-i18n="navApproach">Our Approach</button>
+      <button class="drawer-link" data-page="doctors" data-i18n="navDoctors">Doctors</button>
+      <button class="drawer-link" data-page="contact" data-i18n="navContact">Contact</button>
+
+      <div class="drawer-bottom">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+        <a class="btn btn-primary" style="min-height:44px;padding:0 15px" href="https://wa.me/60123456789" target="_blank" data-i18n="whatsappUs">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="page active" id="home">
+      <div class="shell hero">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="homeEyebrow">Refined aesthetic care in Kuala Lumpur</div>
+          <h1 class="display" data-i18n="homeTitle">Subtle refinement. Naturally you.</h1>
+          <p class="lead" data-i18n="homeLead">
+            Personalised aesthetic treatments designed to enhance your natural features with restraint, precision and care.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20%C3%89LAN%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" data-i18n="consultBtn">Consult via WhatsApp</a>
+            <button class="btn btn-soft" onclick="showPage('treatments')" data-i18n="exploreBtn">Explore Treatments</button>
+          </div>
+
+          <div class="hero-note">
+            <div class="note-card">
+              <strong>4.9★</strong>
+              <span data-i18n="statOne">Client satisfaction</span>
+            </div>
+            <div class="note-card">
+              <strong>1-to-1</strong>
+              <span data-i18n="statTwo">Personalised planning</span>
+            </div>
+            <div class="note-card">
+              <strong>EN / 中文</strong>
+              <span data-i18n="statThree">Bilingual consultation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-gallery">
+          <div class="hero-main">
+            <div class="hero-caption">
+              <strong data-i18n="heroCaptionTitle">Beauty, considered carefully.</strong>
+              <span data-i18n="heroCaptionText">Every treatment begins with an honest conversation.</span>
+            </div>
+          </div>
+
+          <div class="side-stack">
+            <div class="side-photo"></div>
+            <div class="side-quote">
+              <div class="quote-mark">“</div>
+              <p data-i18n="quoteText">The best result still looks like you.</p>
+              <span data-i18n="quoteSub">ÉLAN treatment philosophy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="treatments">
+      <div class="shell">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="treatEyebrow">Our aesthetic treatments</div>
+            <h2 class="section-title" data-i18n="treatTitle">Tailored for your skin, features and goals.</h2>
+          </div>
+          <p class="lead" data-i18n="treatLead">
+            We recommend treatments only after understanding your concerns, lifestyle and preferred level of change.
+          </p>
+        </div>
+
+        <div class="treatment-grid">
+          <article class="treatment-card">
+            <div class="treatment-no">01</div>
+            <div class="treatment-icon">✦</div>
+            <h3 data-i18n="s1Title">Skin Rejuvenation</h3>
+            <p data-i18n="s1Text">Targeted plans to improve hydration, texture, dullness and overall skin quality.</p>
+          </article>
+
+          <article class="treatment-card">
+            <div class="treatment-no">02</div>
+            <div class="treatment-icon">◌</div>
+            <h3 data-i18n="s2Title">Facial Contouring</h3>
+            <p data-i18n="s2Text">Subtle, proportion-focused treatment planning for a more balanced appearance.</p>
+          </article>
+
+          <article class="treatment-card">
+            <div class="treatment-no">03</div>
+            <div class="treatment-icon">◇</div>
+            <h3 data-i18n="s3Title">Pigmentation Care</h3>
+            <p data-i18n="s3Text">Personalised approaches for uneven tone, sun spots and post-inflammatory marks.</p>
+          </article>
+
+          <article class="treatment-card">
+            <div class="treatment-no">04</div>
+            <div class="treatment-icon">✚</div>
+            <h3 data-i18n="s4Title">Acne & Scar Programme</h3>
+            <p data-i18n="s4Text">A structured treatment journey to support active acne, congestion and visible scarring.</p>
+          </article>
+
+          <article class="treatment-card">
+            <div class="treatment-no">05</div>
+            <div class="treatment-icon">☼</div>
+            <h3 data-i18n="s5Title">Age-Defying Care</h3>
+            <p data-i18n="s5Text">Natural-looking support for fine lines, firmness and facial freshness.</p>
+          </article>
+
+          <article class="treatment-card">
+            <div class="treatment-no">06</div>
+            <div class="treatment-icon">♡</div>
+            <h3 data-i18n="s6Title">Body Aesthetic Care</h3>
+            <p data-i18n="s6Text">Selected non-surgical options for body contouring, skin texture and confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="approach">
+      <div class="shell">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="approachEyebrow">Our philosophy</div>
+            <h2 class="section-title" data-i18n="approachTitle">Thoughtful treatment, never overdone.</h2>
+          </div>
+          <p class="lead" data-i18n="approachLead">
+            Our approach is built around honest recommendations, natural outcomes and long-term skin health.
+          </p>
+        </div>
+
+        <div class="approach-layout">
+          <div class="approach-photo"></div>
+
+          <div class="approach-panel">
+            <div>
+              <div class="eyebrow" style="color:var(--rose)" data-i18n="journeyEyebrow">Your treatment journey</div>
+              <h3 class="section-title" style="font-size:48px" data-i18n="journeyTitle">Clear, calm and personalised.</h3>
+              <p class="lead" data-i18n="journeyText">
+                We take time to understand what you want, what you do not want and what will suit you best.
+              </p>
+            </div>
+
+            <div class="step-list">
+              <div class="step">
+                <div class="step-no">01</div>
+                <div>
+                  <strong data-i18n="step1Title">Private Consultation</strong>
+                  <span data-i18n="step1Text">Discuss your concerns, preferences and treatment expectations.</span>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-no">02</div>
+                <div>
+                  <strong data-i18n="step2Title">Personalised Plan</strong>
+                  <span data-i18n="step2Text">Receive a clear recommendation with suitable options and realistic outcomes.</span>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-no">03</div>
+                <div>
+                  <strong data-i18n="step3Title">Gentle Treatment</strong>
+                  <span data-i18n="step3Text">Experience careful treatment in a private, comfortable clinical setting.</span>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="step-no">04</div>
+                <div>
+                  <strong data-i18n="step4Title">Review & Support</strong>
+                  <span data-i18n="step4Text">Follow-up guidance helps maintain results and support your long-term goals.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="doctors">
+      <div class="shell">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="doctorsEyebrow">Meet our doctors</div>
+            <h2 class="section-title" data-i18n="doctorsTitle">Medical expertise with an artistic eye.</h2>
+          </div>
+          <p class="lead" data-i18n="doctorsLead">
+            Our doctors combine clinical knowledge, careful judgement and a natural aesthetic philosophy.
+          </p>
+        </div>
+
+        <div class="doctor-layout">
+          <div class="doctor-feature">
+            <div class="doctor-feature-info">
+              <h3 data-i18n="docMainName">Dr. Elaine Lim</h3>
+              <p data-i18n="docMainRole">Medical Director · Aesthetic Medicine · Skin Rejuvenation</p>
+            </div>
+          </div>
+
+          <div class="doctor-list">
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" alt="Aesthetic doctor">
+              <h4 data-i18n="doc2Name">Dr. Michelle Tan</h4>
+              <p data-i18n="doc2Role">Facial Contouring · Injectables · Natural Aesthetic Planning</p>
+            </article>
+
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=85" alt="Aesthetic doctor">
+              <h4 data-i18n="doc3Name">Dr. Chloe Lee</h4>
+              <p data-i18n="doc3Role">Pigmentation · Acne Care · Laser Treatments</p>
+            </article>
+
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85" alt="Aesthetic doctor">
+              <h4 data-i18n="doc4Name">Dr. Jason Wong</h4>
+              <p data-i18n="doc4Role">Body Aesthetics · Skin Tightening · Regenerative Care</p>
+            </article>
+
+            <article class="doctor-card">
+              <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=900&q=85" alt="Aesthetic doctor">
+              <h4 data-i18n="doc5Name">Dr. Daniel Goh</h4>
+              <p data-i18n="doc5Role">Men's Aesthetics · Anti-Ageing · Skin Health</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="contact">
+      <div class="shell">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow" data-i18n="contactEyebrow">Visit ÉLAN Aesthetics</div>
+            <h2 class="section-title" data-i18n="contactTitle">Begin with a private consultation.</h2>
+          </div>
+          <p class="lead" data-i18n="contactLead">
+            Message our care team on WhatsApp for consultation, pricing guidance or appointment availability.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div class="contact-card">
+            <div>
+              <h3 data-i18n="contactCardTitle">Clinic Information</h3>
+              <p data-i18n="contactCardText">A private aesthetic clinic in Kuala Lumpur with convenient access and nearby parking.</p>
+
+              <div class="contact-list">
+                <div class="contact-item">
+                  <div class="contact-icon">⌖</div>
+                  <div>
+                    <strong data-i18n="addressLabel">Address</strong>
+                    <span data-i18n="addressText">Bangsar South, Kuala Lumpur, Malaysia</span>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">◷</div>
+                  <div>
+                    <strong data-i18n="hoursLabel">Opening Hours</strong>
+                    <span data-i18n="hoursText">Monday–Saturday, 10:00 AM–7:00 PM</span>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">✆</div>
+                  <div>
+                    <strong data-i18n="phoneLabel">WhatsApp / Phone</strong>
+                    <span>+60 12-345 6789</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn btn-primary" style="width:100%;margin-top:28px" href="https://wa.me/60123456789?text=Hi%20%C3%89LAN%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" data-i18n="contactBtn">Book via WhatsApp</a>
+          </div>
+
+          <div class="map-wrap">
+            <!-- REPLACE THIS GOOGLE MAP EMBED WITH THE REAL CLINIC LOCATION -->
+            <iframe
+              src="https://www.google.com/maps?q=Bangsar%20South%20Kuala%20Lumpur&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="ÉLAN Aesthetics Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="wa-float" href="https://wa.me/60123456789?text=Hi%20%C3%89LAN%20Aesthetics%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" aria-label="WhatsApp">✆</a>
+</div>
+
+<script>
+  const translations = {
+    en:{
+      brandSub:"Aesthetic Clinic Malaysia",
+      navHome:"Home",
+      navTreatments:"Treatments",
+      navApproach:"Our Approach",
+      navDoctors:"Doctors",
+      navContact:"Contact",
+      bookNow:"Book Consultation",
+      whatsappUs:"WhatsApp Us",
+
+      homeEyebrow:"Refined aesthetic care in Kuala Lumpur",
+      homeTitle:"Subtle refinement. Naturally you.",
+      homeLead:"Personalised aesthetic treatments designed to enhance your natural features with restraint, precision and care.",
+      consultBtn:"Consult via WhatsApp",
+      exploreBtn:"Explore Treatments",
+      statOne:"Client satisfaction",
+      statTwo:"Personalised planning",
+      statThree:"Bilingual consultation",
+      heroCaptionTitle:"Beauty, considered carefully.",
+      heroCaptionText:"Every treatment begins with an honest conversation.",
+      quoteText:"The best result still looks like you.",
+      quoteSub:"ÉLAN treatment philosophy",
+
+      treatEyebrow:"Our aesthetic treatments",
+      treatTitle:"Tailored for your skin, features and goals.",
+      treatLead:"We recommend treatments only after understanding your concerns, lifestyle and preferred level of change.",
+      s1Title:"Skin Rejuvenation",
+      s1Text:"Targeted plans to improve hydration, texture, dullness and overall skin quality.",
+      s2Title:"Facial Contouring",
+      s2Text:"Subtle, proportion-focused treatment planning for a more balanced appearance.",
+      s3Title:"Pigmentation Care",
+      s3Text:"Personalised approaches for uneven tone, sun spots and post-inflammatory marks.",
+      s4Title:"Acne & Scar Programme",
+      s4Text:"A structured treatment journey to support active acne, congestion and visible scarring.",
+      s5Title:"Age-Defying Care",
+      s5Text:"Natural-looking support for fine lines, firmness and facial freshness.",
+      s6Title:"Body Aesthetic Care",
+      s6Text:"Selected non-surgical options for body contouring, skin texture and confidence.",
+
+      approachEyebrow:"Our philosophy",
+      approachTitle:"Thoughtful treatment, never overdone.",
+      approachLead:"Our approach is built around honest recommendations, natural outcomes and long-term skin health.",
+      journeyEyebrow:"Your treatment journey",
+      journeyTitle:"Clear, calm and personalised.",
+      journeyText:"We take time to understand what you want, what you do not want and what will suit you best.",
+      step1Title:"Private Consultation",
+      step1Text:"Discuss your concerns, preferences and treatment expectations.",
+      step2Title:"Personalised Plan",
+      step2Text:"Receive a clear recommendation with suitable options and realistic outcomes.",
+      step3Title:"Gentle Treatment",
+      step3Text:"Experience careful treatment in a private, comfortable clinical setting.",
+      step4Title:"Review & Support",
+      step4Text:"Follow-up guidance helps maintain results and support your long-term goals.",
+
+      doctorsEyebrow:"Meet our doctors",
+      doctorsTitle:"Medical expertise with an artistic eye.",
+      doctorsLead:"Our doctors combine clinical knowledge, careful judgement and a natural aesthetic philosophy.",
+      docMainName:"Dr. Elaine Lim",
+      docMainRole:"Medical Director · Aesthetic Medicine · Skin Rejuvenation",
+      doc2Name:"Dr. Michelle Tan",
+      doc2Role:"Facial Contouring · Injectables · Natural Aesthetic Planning",
+      doc3Name:"Dr. Chloe Lee",
+      doc3Role:"Pigmentation · Acne Care · Laser Treatments",
+      doc4Name:"Dr. Jason Wong",
+      doc4Role:"Body Aesthetics · Skin Tightening · Regenerative Care",
+      doc5Name:"Dr. Daniel Goh",
+      doc5Role:"Men's Aesthetics · Anti-Ageing · Skin Health",
+
+      contactEyebrow:"Visit ÉLAN Aesthetics",
+      contactTitle:"Begin with a private consultation.",
+      contactLead:"Message our care team on WhatsApp for consultation, pricing guidance or appointment availability.",
+      contactCardTitle:"Clinic Information",
+      contactCardText:"A private aesthetic clinic in Kuala Lumpur with convenient access and nearby parking.",
+      addressLabel:"Address",
+      addressText:"Bangsar South, Kuala Lumpur, Malaysia",
+      hoursLabel:"Opening Hours",
+      hoursText:"Monday–Saturday, 10:00 AM–7:00 PM",
+      phoneLabel:"WhatsApp / Phone",
+      contactBtn:"Book via WhatsApp"
+    },
+
+    zh:{
+      brandSub:"马来西亚医美诊所",
+      navHome:"首页",
+      navTreatments:"医美疗程",
+      navApproach:"我们的理念",
+      navDoctors:"医生团队",
+      navContact:"联系我们",
+      bookNow:"预约咨询",
+      whatsappUs:"WhatsApp 咨询",
+
+      homeEyebrow:"吉隆坡精致医美护理",
+      homeTitle:"自然精致，依然是你。",
+      homeLead:"以克制、精准与细心为核心，为您规划个性化医美疗程，自然提升原有轮廓与肤质。",
+      consultBtn:"WhatsApp 咨询",
+      exploreBtn:"查看医美疗程",
+      statOne:"顾客满意度",
+      statTwo:"一对一专属规划",
+      statThree:"中英文双语咨询",
+      heroCaptionTitle:"美，需要被认真对待。",
+      heroCaptionText:"每项疗程，都从坦诚沟通开始。",
+      quoteText:"最好的效果，依然像你自己。",
+      quoteSub:"ÉLAN 医美理念",
+
+      treatEyebrow:"我们的医美疗程",
+      treatTitle:"根据您的肤质、轮廓与目标定制。",
+      treatLead:"在充分了解您的困扰、生活方式与期望变化程度后，我们才会提出合适的疗程建议。",
+      s1Title:"肌肤焕活",
+      s1Text:"针对保湿、肤质、暗沉与整体肌肤状态制定个人化护理方案。",
+      s2Title:"面部轮廓调整",
+      s2Text:"以比例与自然感为核心，规划更协调平衡的面部轮廓。",
+      s3Title:"色素与斑点护理",
+      s3Text:"为肤色不均、晒斑与炎症后色沉制定合适护理方向。",
+      s4Title:"痘痘与痘疤管理",
+      s4Text:"通过阶段式疗程支持活跃痘痘、毛孔堵塞与明显痘疤问题。",
+      s5Title:"抗老焕颜护理",
+      s5Text:"自然改善细纹、紧致度与疲惫感，保留个人特色。",
+      s6Title:"身体美学护理",
+      s6Text:"提供部分非手术身体塑形与肤质改善方案，提升自信。",
+
+      approachEyebrow:"我们的理念",
+      approachTitle:"认真规划，不过度治疗。",
+      approachLead:"我们坚持诚实建议、自然效果与长期肌肤健康。",
+      journeyEyebrow:"您的疗程过程",
+      journeyTitle:"清楚、安心、专属。",
+      journeyText:"我们会先了解您想改变什么、不希望改变什么，以及什么最适合您。",
+      step1Title:"私人咨询",
+      step1Text:"讨论您的困扰、偏好与疗程期待。",
+      step2Title:"专属方案",
+      step2Text:"获得清楚建议、适合选项与合理效果说明。",
+      step3Title:"细致疗程",
+      step3Text:"在私密舒适的临床环境中接受细心治疗。",
+      step4Title:"复诊与跟进",
+      step4Text:"通过后续护理建议维持效果，并支持长期目标。",
+
+      doctorsEyebrow:"认识我们的医生团队",
+      doctorsTitle:"医学专业，也具备审美判断。",
+      doctorsLead:"我们的医生结合医学知识、谨慎判断与自然医美理念。",
+      docMainName:"林医生 Dr. Elaine Lim",
+      docMainRole:"医疗总监 · 医美医学 · 肌肤焕活",
+      doc2Name:"陈医生 Dr. Michelle Tan",
+      doc2Role:"面部轮廓 · 注射疗程 · 自然美学规划",
+      doc3Name:"李医生 Dr. Chloe Lee",
+      doc3Role:"色素护理 · 痘痘管理 · 激光疗程",
+      doc4Name:"黄医生 Dr. Jason Wong",
+      doc4Role:"身体美学 · 紧致疗程 · 再生护理",
+      doc5Name:"吴医生 Dr. Daniel Goh",
+      doc5Role:"男士医美 · 抗老护理 · 肌肤健康",
+
+      contactEyebrow:"到访 ÉLAN Aesthetics",
+      contactTitle:"从一次私人咨询开始。",
+      contactLead:"欢迎通过 WhatsApp 查询疗程、价格范围或预约时间。",
+      contactCardTitle:"诊所资料",
+      contactCardText:"位于吉隆坡的私人医美诊所，交通方便，附近设有停车空间。",
+      addressLabel:"地址",
+      addressText:"马来西亚吉隆坡 Bangsar South",
+      hoursLabel:"营业时间",
+      hoursText:"星期一至星期六，上午 10:00 至晚上 7:00",
+      phoneLabel:"WhatsApp / 电话",
+      contactBtn:"通过 WhatsApp 预约"
+    }
+  };
+
+  const pages = document.querySelectorAll(".page");
+  const navLinks = document.querySelectorAll("[data-page]");
+  const langButtons = document.querySelectorAll("[data-lang]");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+  const menuBtn = document.getElementById("menuBtn");
+
+  function showPage(pageId){
+    pages.forEach(page => page.classList.toggle("active", page.id === pageId));
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+      link.classList.toggle("active", link.dataset.page === pageId);
+    });
+
+    mobileDrawer.classList.remove("open");
+    window.scrollTo({top:0,behavior:"smooth"});
+    history.replaceState(null,"","#" + pageId);
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => showPage(link.dataset.page));
+  });
+
+  menuBtn.addEventListener("click", () => mobileDrawer.classList.toggle("open"));
+
+  mobileDrawer.addEventListener("click", e => {
+    if(e.target === mobileDrawer) mobileDrawer.classList.remove("open");
+  });
+
+  function setLanguage(lang){
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      if(translations[lang][key]) el.textContent = translations[lang][key];
+    });
+
+    langButtons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+
+    localStorage.setItem("elanAestheticLanguage",lang);
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  const savedLanguage = localStorage.getItem("elanAestheticLanguage") || "en";
+  setLanguage(savedLanguage);
+
+  const initialPage = location.hash.replace("#","") || "home";
+  if(document.getElementById(initialPage)) showPage(initialPage);
+</script>
+</body>
+</html>
