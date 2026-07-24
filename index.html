@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="description"
+  content="Explore elegant Essential and Signature website designs created for aesthetic clinics, beauty studios and wellness brands."
+>
+
+<title>Aesthetic Website Collection | Plannique Design Co</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+:root{
+  --bg:#f5f1eb;
+  --bg-soft:#fbf9f6;
+  --white:#ffffff;
+  --ink:#25211e;
+  --muted:#756e68;
+  --rose:#b98280;
+  --rose-dark:#8f605f;
+  --rose-soft:#ead5d2;
+  --gold:#b39369;
+  --sage:#7f8979;
+  --line:#ded5cc;
+  --dark:#272321;
+  --green:#25d366;
+  --shadow:0 24px 70px rgba(60,46,39,.13);
+  --shadow-soft:0 15px 40px rgba(60,46,39,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  font-family:"DM Sans",Arial,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 5%,rgba(185,130,128,.12),transparent 27%),
+    linear-gradient(180deg,#f5f1eb 0%,#fbf9f6 40%,#ffffff 100%);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+body.menu-open{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.wrap{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+.section{
+  padding:95px 0;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--rose-dark);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.eyebrow:before{
+  content:"";
+  width:30px;
+  height:1px;
+  background:currentColor;
+}
+
+.section-title{
+  margin-top:13px;
+  max-width:820px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(39px,5vw,65px);
+  line-height:1.06;
+  letter-spacing:-1px;
+}
+
+.section-copy{
+  margin-top:18px;
+  max-width:760px;
+  color:var(--muted);
+  font-size:17px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  min-height:50px;
+  padding:13px 21px;
+  border:0;
+  border-radius:999px;
+  font-weight:800;
+  transition:.25s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+.btn-dark{
+  background:var(--dark);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(39,35,33,.18);
+}
+
+.btn-light{
+  background:#fff;
+  border:1px solid var(--line);
+}
+
+.btn-rose{
+  background:var(--rose-dark);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(143,96,95,.22);
+}
+
+.btn-wa{
+  background:var(--green);
+  color:#fff;
+  box-shadow:0 14px 30px rgba(37,211,102,.22);
+}
+
+/* NAVIGATION */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(245,241,235,.92);
+  border-bottom:1px solid rgba(222,213,204,.86);
+  backdrop-filter:blur(18px);
+}
+
+.nav{
+  min-height:80px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--rose-dark),var(--gold));
+  color:#fff;
+  font-family:"Playfair Display",serif;
+  font-size:20px;
+  font-weight:700;
+}
+
+.brand-copy strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:19px;
+  line-height:1.1;
+}
+
+.brand-copy span{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.nav-links a{
+  color:#504943;
+  font-size:13px;
+  font-weight:800;
+}
+
+.nav-links a:hover{
+  color:var(--rose-dark);
+}
+
+.nav-cta{
+  padding:11px 17px;
+  border-radius:999px;
+  background:var(--dark);
+  color:#fff !important;
+}
+
+.menu-btn{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:#fff;
+  font-size:21px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:130px 0 75px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  border:1px solid rgba(185,130,128,.22);
+  border-radius:50%;
+  right:-220px;
+  top:-180px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.03fr .97fr;
+  gap:70px;
+  align-items:center;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 13px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.76);
+  color:var(--rose-dark);
+  font-size:12px;
+  font-weight:800;
+}
+
+.hero h1{
+  margin-top:22px;
+  max-width:760px;
+  font-family:"Playfair Display",serif;
+  font-size:clamp(52px,7vw,88px);
+  line-height:.98;
+  letter-spacing:-2px;
+}
+
+.hero h1 em{
+  color:var(--rose-dark);
+  font-weight:600;
+}
+
+.hero p{
+  margin-top:23px;
+  max-width:660px;
+  color:var(--muted);
+  font-size:18px;
+}
+
+.hero-actions{
+  margin-top:31px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.hero-points{
+  margin-top:27px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.hero-points span{
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:rgba(255,255,255,.7);
+  color:#6c625b;
+  font-size:11px;
+  font-weight:800;
+}
+
+.hero-visual{
+  min-height:620px;
+  position:relative;
+}
+
+.hero-image{
+  position:absolute;
+  top:0;
+  right:0;
+  width:86%;
+  height:555px;
+  border-radius:210px 210px 30px 30px;
+  background:
+    linear-gradient(to top,rgba(35,26,23,.5),transparent 56%),
+    url("https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=88")
+    center/cover;
+  box-shadow:var(--shadow);
+}
+
+.hero-card{
+  position:absolute;
+  left:0;
+  bottom:42px;
+  width:260px;
+  padding:23px;
+  border-radius:22px;
+  background:rgba(255,255,255,.96);
+  box-shadow:var(--shadow);
+}
+
+.hero-card small{
+  display:block;
+  color:var(--rose-dark);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+.hero-card strong{
+  display:block;
+  margin-top:8px;
+  font-family:"Playfair Display",serif;
+  font-size:26px;
+  line-height:1.1;
+}
+
+.hero-card p{
+  margin-top:9px;
+  font-size:12px;
+}
+
+.hero-price{
+  position:absolute;
+  right:3px;
+  bottom:26px;
+  width:235px;
+  padding:21px;
+  border-radius:21px;
+  background:rgba(39,35,33,.94);
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+
+.hero-price span{
+  display:block;
+  color:#d8cfca;
+  font-size:11px;
+  font-weight:700;
+}
+
+.hero-price strong{
+  display:block;
+  margin-top:3px;
+  font-family:"Playfair Display",serif;
+  font-size:31px;
+}
+
+/* PACKAGE SELECTOR */
+
+.package-selector{
+  position:relative;
+  z-index:5;
+  margin-top:-45px;
+}
+
+.selector-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.selector-card{
+  min-height:210px;
+  padding:30px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:22px;
+  align-items:center;
+  transition:.25s;
+}
+
+.selector-card:first-child{
+  border-right:1px solid var(--line);
+}
+
+.selector-card:hover{
+  background:#fcfaf7;
+}
+
+.selector-label{
+  color:var(--rose-dark);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+}
+
+.selector-card h2{
+  margin-top:7px;
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  line-height:1.1;
+}
+
+.selector-card p{
+  margin-top:9px;
+  max-width:430px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.selector-price{
+  min-width:132px;
+  text-align:right;
+}
+
+.selector-price small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.selector-price strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:37px;
+  color:var(--rose-dark);
+}
+
+/* INTRO */
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:70px;
+  align-items:center;
+}
+
+.intro-visual{
+  min-height:540px;
+  position:relative;
+}
+
+.intro-main{
+  position:absolute;
+  left:0;
+  top:0;
+  width:80%;
+  height:480px;
+  object-fit:cover;
+  border-radius:28px;
+  box-shadow:var(--shadow-soft);
+}
+
+.intro-small{
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:48%;
+  height:270px;
+  object-fit:cover;
+  border:10px solid var(--bg-soft);
+  border-radius:24px;
+}
+
+.intro-list{
+  margin-top:27px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.intro-item{
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:17px;
+  background:#fff;
+}
+
+.intro-item strong{
+  display:block;
+  font-size:14px;
+}
+
+.intro-item span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* PORTFOLIO */
+
+.portfolio-section{
+  background:#eee6df;
+}
+
+.portfolio-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.portfolio-tools{
+  margin-top:34px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.tabs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.tab{
+  padding:11px 16px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:900;
+}
+
+.tab.active{
+  background:var(--dark);
+  border-color:var(--dark);
+  color:#fff;
+}
+
+.search-box{
+  position:relative;
+  min-width:260px;
+  max-width:390px;
+  flex:1;
+}
+
+.search-box span{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:var(--muted);
+}
+
+.search-box input{
+  width:100%;
+  padding:13px 16px 13px 44px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  outline:none;
+}
+
+.search-box input:focus{
+  border-color:var(--rose);
+  box-shadow:0 0 0 4px rgba(185,130,128,.12);
+}
+
+.collection-block{
+  margin-top:55px;
+}
+
+.collection-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(143,96,95,.22);
+}
+
+.collection-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.collection-icon{
+  width:50px;
+  height:50px;
+  display:grid;
+  place-items:center;
+  border-radius:16px;
+  background:#fff;
+  font-size:22px;
+  box-shadow:var(--shadow-soft);
+}
+
+.collection-title h3{
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  line-height:1;
+}
+
+.collection-title p{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.collection-count{
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:900;
+}
+
+.design-grid{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.design-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
+  transition:.28s ease;
+}
+
+.design-card:hover{
+  transform:translateY(-7px);
+  box-shadow:var(--shadow);
+}
+
+.design-preview{
+  height:270px;
+  position:relative;
+  overflow:hidden;
+  background:#ded5cc;
+}
+
+.design-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.45s ease;
+}
+
+.design-card:hover .design-preview img{
+  transform:scale(1.05);
+}
+
+.design-preview:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(26,21,19,.42),transparent 55%);
+}
+
+.package-tag{
+  position:absolute;
+  left:14px;
+  top:14px;
+  z-index:2;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  color:var(--ink);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.design-code{
+  position:absolute;
+  right:14px;
+  top:14px;
+  z-index:2;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(39,35,33,.88);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.8px;
+}
+
+.design-style{
+  position:absolute;
+  left:15px;
+  bottom:14px;
+  z-index:2;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+}
+
+.design-body{
+  padding:22px;
+}
+
+.design-body h4{
+  font-family:"Playfair Display",serif;
+  font-size:29px;
+  line-height:1.08;
+}
+
+.design-description{
+  margin-top:7px;
+  min-height:43px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.design-meta{
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+}
+
+.design-meta span{
+  padding:6px 8px;
+  border-radius:999px;
+  background:#f3eee8;
+  color:#6f655e;
+  font-size:9px;
+  font-weight:800;
+}
+
+.design-package{
+  margin-top:16px;
+  padding:12px 13px;
+  border-radius:13px;
+  background:#fbf8f4;
+  border:1px solid #eee6df;
+}
+
+.design-package strong{
+  display:block;
+  font-size:12px;
+}
+
+.design-package span{
+  display:block;
+  margin-top:2px;
+  color:var(--muted);
+  font-size:10px;
+}
+
+.design-actions{
+  margin-top:17px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.design-btn{
+  min-height:43px;
+  padding:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:999px;
+  font-size:11px;
+  font-weight:900;
+  transition:.22s;
+}
+
+.design-btn:hover{
+  transform:translateY(-2px);
+}
+
+.design-btn.demo{
+  background:var(--dark);
+  border-color:var(--dark);
+  color:#fff;
+}
+
+.design-btn.choose{
+  background:#fff;
+}
+
+.empty-state{
+  display:none;
+  margin-top:28px;
+  padding:45px 20px;
+  border:1px dashed var(--line);
+  border-radius:20px;
+  background:rgba(255,255,255,.5);
+  text-align:center;
+  color:var(--muted);
+}
+
+/* PACKAGE DETAILS */
+
+.package-grid{
+  margin-top:43px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:23px;
+}
+
+.package-card{
+  position:relative;
+  padding:37px;
+  border:1px solid var(--line);
+  border-radius:27px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
+}
+
+.package-card.signature{
+  background:var(--dark);
+  color:#fff;
+  border-color:var(--dark);
+}
+
+.package-badge{
+  display:inline-flex;
+  padding:7px 10px;
+  border-radius:999px;
+  background:#f2e7e4;
+  color:var(--rose-dark);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.signature .package-badge{
+  background:var(--rose-dark);
+  color:#fff;
+}
+
+.package-card h3{
+  margin-top:14px;
+  font-family:"Playfair Display",serif;
+  font-size:39px;
+  line-height:1.05;
+}
+
+.package-price{
+  margin-top:17px;
+  font-size:52px;
+  font-weight:800;
+  line-height:1;
+}
+
+.package-price span{
+  font-size:15px;
+}
+
+.package-subtitle{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.signature .package-subtitle{
+  color:#c9c0ba;
+}
+
+.feature-list{
+  margin-top:25px;
+  display:grid;
+  gap:11px;
+}
+
+.feature{
+  display:flex;
+  gap:10px;
+  font-size:13px;
+}
+
+.feature:before{
+  content:"✓";
+  color:var(--rose-dark);
+  font-weight:900;
+}
+
+.signature .feature:before{
+  color:#e6bbb8;
+}
+
+.package-card .btn{
+  width:100%;
+  margin-top:28px;
+}
+
+.popular{
+  position:absolute;
+  top:19px;
+  right:19px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#fff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+/* FREE BONUSES */
+
+.bonus-section{
+  background:var(--dark);
+  color:#fff;
+}
+
+.bonus-section .section-copy{
+  color:#c8c0ba;
+}
+
+.bonus-grid{
+  margin-top:38px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.bonus-card{
+  padding:24px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:19px;
+  background:rgba(255,255,255,.045);
+}
+
+.bonus-icon{
+  font-size:27px;
+}
+
+.bonus-card h3{
+  margin-top:12px;
+  font-family:"Playfair Display",serif;
+  font-size:23px;
+}
+
+.bonus-card p{
+  margin-top:7px;
+  color:#c8c0ba;
+  font-size:12px;
+}
+
+/* BILINGUAL */
+
+.language-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:55px;
+  align-items:center;
+}
+
+.language-demo{
+  padding:25px;
+  border:1px solid var(--line);
+  border-radius:25px;
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+
+.demo-browser{
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:19px;
+  background:#fbf9f6;
+}
+
+.demo-bar{
+  padding:12px 15px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+
+.demo-dots{
+  display:flex;
+  gap:5px;
+}
+
+.demo-dots i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#d7ccc4;
+}
+
+.lang-switch{
+  display:flex;
+  gap:5px;
+}
+
+.lang-switch button{
+  padding:7px 10px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:#fff;
+  font-size:9px;
+  font-weight:900;
+}
+
+.lang-switch button.active{
+  background:var(--dark);
+  border-color:var(--dark);
+  color:#fff;
+}
+
+.demo-content{
+  min-height:315px;
+  padding:28px;
+  background:
+    linear-gradient(rgba(39,35,33,.66),rgba(39,35,33,.66)),
+    url("https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+  color:#fff;
+}
+
+.demo-content small{
+  color:#f1d6d3;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+
+.demo-content h3{
+  margin-top:12px;
+  max-width:390px;
+  font-family:"Playfair Display",serif;
+  font-size:36px;
+  line-height:1.08;
+}
+
+.demo-content p{
+  margin-top:12px;
+  max-width:400px;
+  color:#eee7e2;
+  font-size:12px;
+}
+
+.language-notes{
+  margin-top:24px;
+  display:grid;
+  gap:11px;
+}
+
+.language-note{
+  padding:14px 16px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+}
+
+.language-note strong{
+  display:block;
+  font-size:13px;
+}
+
+.language-note span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* COMPARISON */
+
+.compare-wrap{
+  margin-top:42px;
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:23px;
+  background:#fff;
+  box-shadow:var(--shadow-soft);
+}
+
+.compare{
+  width:100%;
+  min-width:760px;
+  border-collapse:collapse;
+}
+
+.compare th,
+.compare td{
+  padding:16px 18px;
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  font-size:12px;
+}
+
+.compare th{
+  background:#f6f1ec;
+  font-size:13px;
+}
+
+.compare th:first-child,
+.compare td:first-child{
+  text-align:left;
+  font-weight:700;
+}
+
+.compare tr:last-child td{
+  border-bottom:0;
+}
+
+.yes{
+  color:var(--rose-dark);
+  font-weight:900;
+}
+
+.no{
+  color:#b9afa8;
+}
+
+/* CUSTOM CTA */
+
+.custom-box{
+  padding:48px;
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:35px;
+  align-items:center;
+  border:1px solid var(--line);
+  border-radius:29px;
+  background:
+    radial-gradient(circle at 92% 10%,rgba(185,130,128,.2),transparent 27%),
+    #fff;
+  box-shadow:var(--shadow);
+}
+
+.custom-box h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(36px,5vw,55px);
+  line-height:1.05;
+}
+
+.custom-box p{
+  margin-top:12px;
+  max-width:700px;
+  color:var(--muted);
+}
+
+.custom-actions{
+  display:grid;
+  gap:10px;
+  min-width:220px;
+}
+
+/* FOOTER */
+
+footer{
+  padding:58px 0 28px;
+  background:#1f1c1a;
+  color:#bfb6b0;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr .7fr .7fr;
+  gap:45px;
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:#fff;
+}
+
+.footer-copy{
+  margin-top:17px;
+  max-width:460px;
+  font-size:13px;
+}
+
+footer h4{
+  color:#fff;
+  font-size:13px;
+}
+
+footer a{
+  display:block;
+  margin-top:10px;
+  font-size:12px;
+}
+
+footer a:hover{
+  color:#fff;
+}
+
+.footer-bottom{
+  margin-top:35px;
+  padding-top:21px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:11px;
+}
+
+/* FLOATING WHATSAPP */
+
+.float-wa{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:999;
+  padding:14px 18px;
+  border-radius:999px;
+  background:var(--green);
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+  box-shadow:0 18px 40px rgba(37,211,102,.3);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .nav-links{
+    position:fixed;
+    top:80px;
+    left:18px;
+    right:18px;
+    max-height:calc(100vh - 100px);
+    overflow:auto;
+    padding:22px;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .nav-links a{
+    padding:10px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .hero-grid,
+  .intro-grid,
+  .language-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-visual{
+    min-height:600px;
+  }
+
+  .selector-grid,
+  .package-grid{
+    grid-template-columns:1fr;
+  }
+
+  .selector-card:first-child{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .design-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .bonus-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .custom-box{
+    grid-template-columns:1fr;
+  }
+
+  .custom-actions{
+    display:flex;
+    flex-wrap:wrap;
+  }
+}
+
+@media(max-width:650px){
+
+  .wrap{
+    width:min(100% - 28px,1180px);
+  }
+
+  .section{
+    padding:72px 0;
+  }
+
+  .brand-copy span{
+    display:none;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:115px;
+  }
+
+  .hero h1{
+    font-size:51px;
+  }
+
+  .hero-visual{
+    min-height:510px;
+  }
+
+  .hero-image{
+    width:94%;
+    height:450px;
+  }
+
+  .hero-card{
+    width:205px;
+    padding:18px;
+    bottom:30px;
+  }
+
+  .hero-card strong{
+    font-size:22px;
+  }
+
+  .hero-price{
+    width:190px;
+    padding:17px;
+  }
+
+  .selector-card{
+    grid-template-columns:1fr;
+  }
+
+  .selector-price{
+    text-align:left;
+  }
+
+  .intro-visual{
+    min-height:470px;
+  }
+
+  .intro-main{
+    width:90%;
+    height:410px;
+  }
+
+  .intro-small{
+    width:52%;
+    height:220px;
+  }
+
+  .intro-list,
+  .design-grid,
+  .bonus-grid{
+    grid-template-columns:1fr;
+  }
+
+  .portfolio-header{
+    display:block;
+  }
+
+  .portfolio-tools{
+    align-items:stretch;
+  }
+
+  .search-box{
+    max-width:none;
+    width:100%;
+  }
+
+  .collection-head{
+    align-items:flex-start;
+  }
+
+  .collection-count{
+    display:none;
+  }
+
+  .design-preview{
+    height:245px;
+  }
+
+  .package-card{
+    padding:28px 23px;
+  }
+
+  .language-demo{
+    padding:14px;
+  }
+
+  .demo-content{
+    padding:22px;
+  }
+
+  .demo-content h3{
+    font-size:31px;
+  }
+
+  .custom-box{
+    padding:30px 24px;
+  }
+
+  .custom-actions{
+    display:grid;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+
+  .float-wa{
+    width:59px;
+    height:59px;
+    padding:0;
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    font-size:0;
+  }
+
+  .float-wa:after{
+    content:"💬";
+    font-size:23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="wrap nav">
+
+    <a class="brand" href="#home" aria-label="Aesthetic Website Collection">
+      <span class="brand-mark">P</span>
+
+      <span class="brand-copy">
+        <strong>Plannique</strong>
+        <span>Aesthetic Website Collection</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#essential">Essential</a>
+      <a href="#signature">Signature</a>
+      <a href="#packages">Packages</a>
+      <a href="#languages">Languages</a>
+
+      <a
+        class="nav-cta"
+        href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20to%20ask%20about%20an%20aesthetic%20website."
+        target="_blank"
+      >
+        Start a Project
+      </a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+
+    <div>
+      <div class="hero-badge">
+        ✦ Website designs for aesthetic and wellness brands
+      </div>
+
+      <h1>
+        A refined website for a more <em>trusted</em> brand.
+      </h1>
+
+      <p>
+        Explore elegant one-page and multi-page website designs created for
+        aesthetic clinics, beauty studios, skincare centres and wellness brands.
+        Choose a theme, select your package and customise it for your business.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#portfolio">
+          Explore Designs
+        </a>
+
+        <a class="btn btn-light" href="#packages">
+          Compare Packages
+        </a>
+      </div>
+
+      <div class="hero-points">
+        <span>One-page and multi-page options</span>
+        <span>Mobile responsive</span>
+        <span>WhatsApp integration</span>
+        <span>Bilingual-ready</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-image"></div>
+
+      <div class="hero-card">
+        <small>Choose your style</small>
+
+        <strong>
+          Designed for trust, beauty and enquiries.
+        </strong>
+
+        <p>
+          Every theme can be personalised using your brand colours,
+          content, images and services.
+        </p>
+      </div>
+
+      <div class="hero-price">
+        <span>Website packages from</span>
+        <strong>RM499</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUICK PACKAGE SELECTOR -->
+
+<div class="package-selector">
+  <div class="wrap">
+    <div class="selector-grid">
+
+      <a class="selector-card" href="#essential">
+        <div>
+          <div class="selector-label">One-page collection</div>
+          <h2>Essential</h2>
+          <p>
+            A complete scrolling website for businesses that need a clear,
+            elegant and affordable online presence.
+          </p>
+        </div>
+
+        <div class="selector-price">
+          <small>Package price</small>
+          <strong>RM499</strong>
+        </div>
+      </a>
+
+      <a class="selector-card" href="#signature">
+        <div>
+          <div class="selector-label">Multi-page collection</div>
+          <h2>Signature</h2>
+          <p>
+            A richer multi-page website experience with premium presentation,
+            bilingual functionality and enquiry tools.
+          </p>
+        </div>
+
+        <div class="selector-price">
+          <small>Package price</small>
+          <strong>RM1,299</strong>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+
+<section class="section">
+  <div class="wrap intro-grid">
+
+    <div class="intro-visual">
+      <img
+        class="intro-main"
+        src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1100&q=85"
+        alt="Premium aesthetic clinic interior"
+      >
+
+      <img
+        class="intro-small"
+        src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=700&q=85"
+        alt="Aesthetic skincare consultation"
+      >
+    </div>
+
+    <div>
+      <div class="eyebrow">How It Works</div>
+
+      <h2 class="section-title">
+        Choose the look. We personalise the experience.
+      </h2>
+
+      <p class="section-copy">
+        The designs below are visual starting points. Your selected theme will
+        be customised using your logo, brand colours, treatments, promotions,
+        photographs, contact details and preferred functions.
+      </p>
+
+      <div class="intro-list">
+
+        <div class="intro-item">
+          <strong>01. Choose a collection</strong>
+          <span>Select Essential or Signature based on your website needs.</span>
+        </div>
+
+        <div class="intro-item">
+          <strong>02. Choose a theme</strong>
+          <span>Open the live demos and select your preferred visual style.</span>
+        </div>
+
+        <div class="intro-item">
+          <strong>03. Send your content</strong>
+          <span>Provide your logo, services, images and contact information.</span>
+        </div>
+
+        <div class="intro-item">
+          <strong>04. Review and launch</strong>
+          <span>Review the customised version before the website is published.</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="section portfolio-section" id="portfolio">
+  <div class="wrap">
+
+    <div class="portfolio-header">
+      <div>
+        <div class="eyebrow">Aesthetic Portfolio</div>
+
+        <h2 class="section-title">
+          Find the right style for your business
+        </h2>
+
+        <p class="section-copy">
+          Filter by package or search by theme name. Every design includes a
+          live demonstration and a direct enquiry option.
+        </p>
+      </div>
+    </div>
+
+    <div class="portfolio-tools">
+
+      <div class="tabs">
+        <button class="tab active" data-filter="all">All Designs</button>
+        <button class="tab" data-filter="essential">Essential</button>
+        <button class="tab" data-filter="signature">Signature</button>
+        <button class="tab" data-filter="bilingual">Bilingual-Ready</button>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span>
+
+        <input
+          id="designSearch"
+          type="search"
+          placeholder="Search Aura, Élan, minimal..."
+          aria-label="Search designs"
+        >
+      </div>
+
+    </div>
+
+    <!-- ESSENTIAL COLLECTION -->
+
+    <div class="collection-block" id="essential">
+
+      <div class="collection-head">
+        <div class="collection-title">
+          <div class="collection-icon">✦</div>
+
+          <div>
+            <h3>Essential Collection</h3>
+            <p>RM499 · One-page website designs</p>
+          </div>
+        </div>
+
+        <div class="collection-count">
+          5 Themes
+        </div>
+      </div>
+
+      <div class="design-grid" id="essentialGrid"></div>
+
+    </div>
+
+    <!-- SIGNATURE COLLECTION -->
+
+    <div class="collection-block" id="signature">
+
+      <div class="collection-head">
+        <div class="collection-title">
+          <div class="collection-icon">◆</div>
+
+          <div>
+            <h3>Signature Collection</h3>
+            <p>RM1,299 · Multi-page and bilingual-ready designs</p>
+          </div>
+        </div>
+
+        <div class="collection-count">
+          8 Themes
+        </div>
+      </div>
+
+      <div class="design-grid" id="signatureGrid"></div>
+
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      No design matches your search. Try another theme name or filter.
+    </div>
+
+  </div>
+</section>
+
+<!-- PACKAGE DETAILS -->
+
+<section class="section" id="packages">
+  <div class="wrap">
+
+    <div class="eyebrow">Website Packages</div>
+
+    <h2 class="section-title">
+      Choose how complete you want your website to be
+    </h2>
+
+    <p class="section-copy">
+      Essential is designed for a focused one-page presence. Signature provides
+      a richer multi-page experience with additional features and support.
+    </p>
+
+    <div class="package-grid">
+
+      <article class="package-card">
+
+        <div class="package-badge">
+          Essential
+        </div>
+
+        <h3>One-Page Website</h3>
+
+        <div class="package-price">
+          <span>RM</span>499
+        </div>
+
+        <p class="package-subtitle">
+          For new, independent or growing businesses that need a professional
+          online presence.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature">One complete scrolling page</div>
+          <div class="feature">Up to 7 website sections</div>
+          <div class="feature">One language</div>
+          <div class="feature">Mobile-responsive design</div>
+          <div class="feature">Business introduction and services</div>
+          <div class="feature">Promotion or featured treatment section</div>
+          <div class="feature">Basic image gallery</div>
+          <div class="feature">WhatsApp enquiry button</div>
+          <div class="feature">Google Maps integration</div>
+          <div class="feature">Basic search-engine setup</div>
+          <div class="feature">One revision round</div>
+          <div class="feature">7 days minor support after launch</div>
+        </div>
+
+        <a
+          class="btn btn-light"
+          href="https://wa.me/60189079798?text=Hi%2C%20I%20am%20interested%20in%20the%20Essential%20RM499%20aesthetic%20website%20package."
+          target="_blank"
+        >
+          Choose Essential
+        </a>
+
+      </article>
+
+      <article class="package-card signature">
+
+        <div class="popular">MOST COMPLETE</div>
+
+        <div class="package-badge">
+          Signature
+        </div>
+
+        <h3>Multi-Page Website</h3>
+
+        <div class="package-price">
+          <span>RM</span>1,299
+        </div>
+
+        <p class="package-subtitle">
+          For businesses that need a stronger brand presentation, more content
+          and a complete customer enquiry journey.
+        </p>
+
+        <div class="feature-list">
+          <div class="feature">Up to 6 page views</div>
+          <div class="feature">Premium visual direction</div>
+          <div class="feature">Two-language website setup</div>
+          <div class="feature">Desktop and mobile language switcher</div>
+          <div class="feature">Detailed treatment and service pages</div>
+          <div class="feature">Specialist or team profiles</div>
+          <div class="feature">Promotions and testimonial sections</div>
+          <div class="feature">Advanced image gallery</div>
+          <div class="feature">WhatsApp and smart enquiry form</div>
+          <div class="feature">Google Maps integration</div>
+          <div class="feature">Google Analytics setup</div>
+          <div class="feature">Google Search Console setup</div>
+          <div class="feature">Three revision rounds</div>
+          <div class="feature">3 months minor support</div>
+        </div>
+
+        <a
+          class="btn btn-rose"
+          href="https://wa.me/60189079798?text=Hi%2C%20I%20am%20interested%20in%20the%20Signature%20RM1299%20aesthetic%20website%20package."
+          target="_blank"
+        >
+          Choose Signature
+        </a>
+
+      </article>
+
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare">
+
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Essential</th>
+            <th>Signature</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Website structure</td>
+            <td>One page</td>
+            <td>Multiple page views</td>
+          </tr>
+
+          <tr>
+            <td>Number of sections or pages</td>
+            <td>Up to 7 sections</td>
+            <td>Up to 6 page views</td>
+          </tr>
+
+          <tr>
+            <td>Mobile responsive</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>WhatsApp integration</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Google Maps</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Included languages</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+
+          <tr>
+            <td>Language-switching function</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Smart enquiry form</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Specialist profiles</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Google Analytics setup</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Google Search Console setup</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>Revision rounds</td>
+            <td>1</td>
+            <td>3</td>
+          </tr>
+
+          <tr>
+            <td>Minor support</td>
+            <td>7 days</td>
+            <td>3 months</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- FREE BONUSES -->
+
+<section class="section bonus-section">
+  <div class="wrap">
+
+    <div class="eyebrow" style="color:#e5bbb8">
+      Included with Signature
+    </div>
+
+    <h2 class="section-title">
+      Extra value at no additional design fee
+    </h2>
+
+    <p class="section-copy">
+      Signature includes supporting tools that help the website feel more
+      complete and make it easier to understand customer activity.
+    </p>
+
+    <div class="bonus-grid">
+
+      <article class="bonus-card">
+        <div class="bonus-icon">🎁</div>
+        <h3>Google Analytics Setup</h3>
+        <p>
+          Track website visits, device types and general visitor behaviour.
+        </p>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-icon">🔎</div>
+        <h3>Search Console Setup</h3>
+        <p>
+          Connect the website to Google Search Console for search visibility
+          monitoring.
+        </p>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-icon">💬</div>
+        <h3>WhatsApp Click Tracking</h3>
+        <p>
+          Track how often visitors click the website's main WhatsApp buttons.
+        </p>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-icon">◼</div>
+        <h3>Business QR Code</h3>
+        <p>
+          Receive a simple QR code that directs customers to the website.
+        </p>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-icon">🌐</div>
+        <h3>Bilingual Setup</h3>
+        <p>
+          Language-switching functionality for two sets of client-provided
+          approved content.
+        </p>
+      </article>
+
+      <article class="bonus-card">
+        <div class="bonus-icon">🛠</div>
+        <h3>3 Months Minor Support</h3>
+        <p>
+          Minor text, contact-detail and image replacements after launch.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- LANGUAGE SECTION -->
+
+<section class="section" id="languages">
+  <div class="wrap language-grid">
+
+    <div>
+      <div class="eyebrow">Bilingual Experience</div>
+
+      <h2 class="section-title">
+        Let visitors browse in their preferred language
+      </h2>
+
+      <p class="section-copy">
+        Signature websites can include a language switcher for two languages.
+        Visitors remain on the same page while navigation, headings, buttons,
+        descriptions and forms change immediately.
+      </p>
+
+      <div class="language-notes">
+
+        <div class="language-note">
+          <strong>Two-language setup included</strong>
+          <span>
+            Choose any two required languages based on your target audience.
+          </span>
+        </div>
+
+        <div class="language-note">
+          <strong>Language preference remains active</strong>
+          <span>
+            The selected language can remain active while visitors move between
+            website pages.
+          </span>
+        </div>
+
+        <div class="language-note">
+          <strong>Final content must be approved</strong>
+          <span>
+            Clients should provide final approved wording in both languages.
+            Translation writing can be quoted separately.
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="language-demo">
+
+      <div class="demo-browser">
+
+        <div class="demo-bar">
+          <div class="demo-dots">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <div class="lang-switch">
+            <button class="active" data-language="en">EN</button>
+            <button data-language="second">中文</button>
+          </div>
+        </div>
+
+        <div class="demo-content">
+
+          <small id="demoEyebrow">
+            Personalised Aesthetic Care
+          </small>
+
+          <h3 id="demoTitle">
+            Confidence begins with care designed around you.
+          </h3>
+
+          <p id="demoText">
+            Explore personalised aesthetic treatments delivered in a calm,
+            professional and welcoming environment.
+          </p>
+
+          <button
+            class="btn btn-light"
+            id="demoButton"
+            type="button"
+            style="margin-top:21px"
+          >
+            Book a Consultation
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CUSTOM DESIGN CTA -->
+
+<section class="section">
+  <div class="wrap">
+
+    <div class="custom-box">
+
+      <div>
+        <div class="eyebrow">Customisation</div>
+
+        <h2>
+          Like the style, but need something different?
+        </h2>
+
+        <p>
+          Choose the closest theme and tell us what you would like to change.
+          Colours, images, page order, wording and selected sections can be
+          adjusted to better match your brand.
+        </p>
+      </div>
+
+      <div class="custom-actions">
+
+        <a
+          class="btn btn-wa"
+          href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20help%20choosing%20an%20aesthetic%20website%20design."
+          target="_blank"
+        >
+          💬 Help Me Choose
+        </a>
+
+        <a class="btn btn-light" href="#portfolio">
+          Browse Designs
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <span class="brand-mark">P</span>
+          <strong>Plannique Design Co</strong>
+        </div>
+
+        <p class="footer-copy">
+          Elegant, practical website designs for aesthetic, beauty and wellness
+          businesses seeking a stronger online presence.
+        </p>
+      </div>
+
+      <div>
+        <h4>Portfolio</h4>
+        <a href="#portfolio">All Designs</a>
+        <a href="#essential">Essential Collection</a>
+        <a href="#signature">Signature Collection</a>
+      </div>
+
+      <div>
+        <h4>Information</h4>
+        <a href="#packages">Packages</a>
+        <a href="#languages">Bilingual Websites</a>
+
+        <a
+          href="https://wa.me/60189079798"
+          target="_blank"
+        >
+          WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Plannique Design Co.</span>
+      <span>Aesthetic Website Collection</span>
+    </div>
+
+  </div>
+</footer>
+
+<a
+  class="float-wa"
+  href="https://wa.me/60189079798?text=Hi%2C%20I%20would%20like%20to%20ask%20about%20an%20aesthetic%20website."
+  target="_blank"
+>
+  💬 Enquire
+</a>
+
+<script>
+const whatsappNumber = "60189079798";
+
+/*
+  The customer-facing theme names are different from the existing filenames.
+
+  You can rename the actual HTML files later.
+  For now, these links continue to use your existing filenames.
+*/
+
+const designs = [
+  {
+    package: "essential",
+    name: "Muse",
+    code: "AES-MUS-01",
+    file: "starter.html",
+    style: "Soft Minimal",
+    description: "A calm and modern layout for boutique aesthetic and skincare businesses.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85",
+    tags: ["One Page", "Minimal", "Mobile Ready"],
+    bilingual: false
+  },
+  {
+    package: "essential",
+    name: "Serene",
+    code: "AES-SER-01",
+    file: "starter1.html",
+    style: "Natural Wellness",
+    description: "A warm, welcoming design with soft visual details and clear service sections.",
+    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85",
+    tags: ["One Page", "Warm Style", "WhatsApp"],
+    bilingual: false
+  },
+  {
+    package: "essential",
+    name: "Ivory",
+    code: "AES-IVO-01",
+    file: "starter2.html",
+    style: "Clean Clinical",
+    description: "A clean one-page presentation suited to professional treatment providers.",
+    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85",
+    tags: ["One Page", "Professional", "Google Map"],
+    bilingual: false
+  },
+  {
+    package: "essential",
+    name: "Bloom",
+    code: "AES-BLO-01",
+    file: "starter3.html",
+    style: "Modern Feminine",
+    description: "A stylish visual direction for beauty studios and personal care brands.",
+    image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85",
+    tags: ["One Page", "Feminine", "Gallery"],
+    bilingual: false
+  },
+  {
+    package: "essential",
+    name: "Claire",
+    code: "AES-CLA-01",
+    file: "starter4.html",
+    style: "Editorial Light",
+    description: "An elegant editorial-style landing page with a refined and spacious layout.",
+    image: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85",
+    tags: ["One Page", "Editorial", "Responsive"],
+    bilingual: false
+  },
+
+  {
+    package: "signature",
+    name: "Lumina",
+    code: "AES-LUM-01",
+    file: "advance.html",
+    style: "Luxury Clinical",
+    description: "A premium multi-page clinic experience with services, specialists and enquiries.",
+    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Premium", "Enquiry Form"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Velora",
+    code: "AES-VEL-01",
+    file: "advance1.html",
+    style: "Luxury Wellness",
+    description: "A polished wellness design combining editorial content and conversion sections.",
+    image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Bilingual", "Specialists"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Solenne",
+    code: "AES-SOL-01",
+    file: "advance2.html",
+    style: "Contemporary Editorial",
+    description: "A high-end editorial website experience designed for established brands.",
+    image: "https://images.unsplash.com/photo-1619451334792-150fd785ee74?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Editorial", "Analytics"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Aura Noir",
+    code: "AES-AUR-02",
+    file: "advance3.html",
+    style: "Dark Luxury",
+    description: "A dramatic luxury aesthetic with strong contrast and premium presentation.",
+    image: "https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Dark Theme", "Bilingual"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Élan Editorial",
+    code: "AES-ELA-02",
+    file: "advance4.html",
+    style: "Fashion Editorial",
+    description: "A bold editorial website inspired by premium beauty and fashion campaigns.",
+    image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Creative", "Premium"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Nova",
+    code: "AES-NOV-01",
+    file: "advance5.html",
+    style: "Modern Technology",
+    description: "A contemporary clinic website combining clinical trust with modern visual energy.",
+    image: "https://images.unsplash.com/photo-1580281658628-02b17b55a66b?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Modern", "Smart Form"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Aura",
+    code: "AES-AUR-01",
+    file: "auraV1.html",
+    style: "Soft Luxury",
+    description: "A sophisticated signature theme with gentle colours and refined typography.",
+    image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Soft Luxury", "Bilingual"],
+    bilingual: true
+  },
+  {
+    package: "signature",
+    name: "Élan",
+    code: "AES-ELA-01",
+    file: "elanV1.html",
+    style: "Minimal Prestige",
+    description: "A clean prestige design created for modern aesthetic and wellness brands.",
+    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85",
+    tags: ["Multi-Page", "Minimal", "Bilingual"],
+    bilingual: true
+  }
+];
+
+const essentialGrid = document.getElementById("essentialGrid");
+const signatureGrid = document.getElementById("signatureGrid");
+const searchInput = document.getElementById("designSearch");
+const emptyState = document.getElementById("emptyState");
+
+let activeFilter = "all";
+
+function createDesignCard(design){
+
+  const packageName =
+    design.package === "essential"
+      ? "Essential · RM499"
+      : "Signature · RM1,299";
+
+  const structure =
+    design.package === "essential"
+      ? "One-page website"
+      : "Multi-page website";
+
+  const message =
+`Hi, I am interested in the ${design.name} aesthetic website theme.
+
+Design code: ${design.code}
+Package: ${packageName}
+
+I would like to know more about customising this design for my business.`;
+
+  return `
+    <article
+      class="design-card"
+      data-package="${design.package}"
+      data-bilingual="${design.bilingual}"
+      data-search="${(
+        design.name + " " +
+        design.code + " " +
+        design.style + " " +
+        design.description + " " +
+        design.tags.join(" ")
+      ).toLowerCase()}"
+    >
+
+      <div class="design-preview">
+
+        <img
+          src="${design.image}"
+          alt="${design.name} aesthetic website design"
+        >
+
+        <span class="package-tag">
+          ${design.package}
+        </span>
+
+        <span class="design-code">
+          ${design.code}
+        </span>
+
+        <span class="design-style">
+          ${design.style}
+        </span>
+
+      </div>
+
+      <div class="design-body">
+
+        <h4>${design.name}</h4>
+
+        <p class="design-description">
+          ${design.description}
+        </p>
+
+        <div class="design-meta">
+          ${design.tags.map(tag => `<span>✓ ${tag}</span>`).join("")}
+        </div>
+
+        <div class="design-package">
+          <strong>${packageName}</strong>
+          <span>${structure}</span>
+        </div>
+
+        <div class="design-actions">
+
+          <a
+            class="design-btn demo"
+            href="${design.file}"
+            target="_blank"
+            rel="noopener"
+          >
+            View Live Demo
+          </a>
+
+          <a
+            class="design-btn choose"
+            href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}"
+            target="_blank"
+          >
+            Choose Theme
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+  `;
+}
+
+function renderDesigns(){
+
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  const filteredDesigns = designs.filter(design => {
+
+    const searchableText = (
+      design.name + " " +
+      design.code + " " +
+      design.style + " " +
+      design.description + " " +
+      design.tags.join(" ")
+    ).toLowerCase();
+
+    const matchesSearch = searchableText.includes(searchTerm);
+
+    let matchesFilter = true;
+
+    if(activeFilter === "essential"){
+      matchesFilter = design.package === "essential";
+    }
+
+    if(activeFilter === "signature"){
+      matchesFilter = design.package === "signature";
+    }
+
+    if(activeFilter === "bilingual"){
+      matchesFilter = design.bilingual === true;
+    }
+
+    return matchesSearch && matchesFilter;
+  });
+
+  const essentialDesigns = filteredDesigns.filter(
+    design => design.package === "essential"
+  );
+
+  const signatureDesigns = filteredDesigns.filter(
+    design => design.package === "signature"
+  );
+
+  essentialGrid.innerHTML = essentialDesigns
+    .map(createDesignCard)
+    .join("");
+
+  signatureGrid.innerHTML = signatureDesigns
+    .map(createDesignCard)
+    .join("");
+
+  document.getElementById("essential").style.display =
+    essentialDesigns.length ? "block" : "none";
+
+  document.getElementById("signature").style.display =
+    signatureDesigns.length ? "block" : "none";
+
+  emptyState.style.display =
+    filteredDesigns.length ? "none" : "block";
+}
+
+document.querySelectorAll(".tab").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    activeFilter = button.dataset.filter;
+
+    renderDesigns();
+  });
+
+});
+
+searchInput.addEventListener("input",renderDesigns);
+
+renderDesigns();
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+  document.body.classList.toggle("menu-open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    document.body.classList.remove("menu-open");
+  });
+});
+
+/* BILINGUAL DEMONSTRATION */
+
+const languageContent = {
+  en: {
+    eyebrow:"Personalised Aesthetic Care",
+    title:"Confidence begins with care designed around you.",
+    text:"Explore personalised aesthetic treatments delivered in a calm, professional and welcoming environment.",
+    button:"Book a Consultation"
+  },
+
+  second: {
+    eyebrow:"专属美学护理",
+    title:"自信，源于为您量身打造的专业护理。",
+    text:"探索个性化美容疗程，在舒适、专业且温馨的环境中，开启您的美丽旅程。",
+    button:"预约咨询"
+  }
+};
+
+document.querySelectorAll("[data-language]").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelectorAll("[data-language]").forEach(item => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    const language = languageContent[button.dataset.language];
+
+    document.getElementById("demoEyebrow").textContent =
+      language.eyebrow;
+
+    document.getElementById("demoTitle").textContent =
+      language.title;
+
+    document.getElementById("demoText").textContent =
+      language.text;
+
+    document.getElementById("demoButton").textContent =
+      language.button;
+  });
+
+});
+</script>
+
+</body>
+</html>
