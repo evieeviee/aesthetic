@@ -1,712 +1,2000 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAISON D'ESTHÉTIQUE | Premium Clinical Beauty</title>
-    <!-- Premium Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- DESIGN CORE SYSTEM --- */
-        :root {
-            --bg-canvas: #FAF8F5;
-            --surface-card: #FFFFFF;
-            --text-primary: #1C1B19;
-            --text-secondary: #6B6864;
-            --gold-accent: #C5A880;
-            --gold-light: #F4EFEA;
-            --font-serif: 'Cormorant Garamond', serif;
-            --font-sans: 'Inter', sans-serif;
-            --ease: cubic-bezier(0.25, 1, 0.5, 1);
-            --transition: all 0.5s var(--ease);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+  <title>Maison d'Esthétique | Premium Clinical Beauty</title>
+  <meta
+    name="description"
+    content="Premium consultation-led aesthetic care in Kuala Lumpur with advanced skin, facial and body treatments."
+  >
 
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-canvas);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+  <meta property="og:title" content="Maison d'Esthétique">
+  <meta
+    property="og:description"
+    content="Luxury medical aesthetics with advanced treatments, private consultations and premium care."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?auto=format&fit=crop&w=1400&q=85&fm=jpg"
+  >
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        /* --- GLOBAL PREMIUM COMPONENTS --- */
-        .btn-gold {
-            display: inline-flex;
-            align-items: center;
-            padding: 18px 36px;
-            background-color: var(--text-primary);
-            color: #FFF;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            transition: var(--transition);
-            border: 1px solid transparent;
-            cursor: pointer;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-        .btn-gold:hover {
-            background-color: transparent;
-            border-color: var(--gold-accent);
-            color: var(--gold-accent);
-            transform: translateY(-3px);
-        }
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #ffffff;
+      --surface-soft: #f4efe9;
+      --text: #1c1b19;
+      --muted: #6b6864;
+      --gold: #c5a880;
+      --gold-dark: #a7865d;
+      --line: rgba(197, 168, 128, 0.22);
+      --shadow: 0 24px 70px rgba(40, 33, 24, 0.1);
+      --serif: "Cormorant Garamond", serif;
+      --sans: "Inter", sans-serif;
+      --ease: cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 70px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .section-title span {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--gold-accent);
-            display: block;
-            margin-bottom: 12px;
-        }
+    html,
+    body {
+      min-height: 100%;
+    }
 
-        .section-title h2 {
-            font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-            font-weight: 300;
-            line-height: 1.2;
-        }
+    body {
+      background:
+        radial-gradient(circle at 8% 10%, rgba(197, 168, 128, 0.08), transparent 30%),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(250, 248, 245, 0.85);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(197, 168, 128, 0.15);
-        }
+    body.modal-open {
+      overflow: hidden;
+    }
 
-        .nav-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-        .logo {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            letter-spacing: 0.08em;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 400;
-        }
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
+    a {
+      color: inherit;
+    }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transition: var(--transition);
-        }
+    .shell {
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+    }
 
-        .nav-links a:hover {
-            color: var(--gold-accent);
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      border-bottom: 1px solid var(--line);
+      background: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
 
-        /* --- HERO SECTION --- */
-        #hero {
-            padding-top: 150px;
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
+    .nav-wrap {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 60px;
-            align-items: center;
-        }
+    .brand {
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
 
-        .hero-tag {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--gold-accent);
-            margin-bottom: 20px;
-            display: block;
-        }
+    .brand small {
+      display: block;
+      margin-top: -4px;
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
 
-        .hero-text h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(3rem, 5.5vw, 5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
 
-        .hero-text h1 em {
-            font-style: italic;
-            font-weight: 300;
-            color: var(--gold-accent);
-        }
+    .desktop-nav button,
+    .mobile-nav button {
+      border: 0;
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
 
-        .hero-text p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 520px;
-            margin-bottom: 45px;
-        }
+    .desktop-nav button:hover,
+    .desktop-nav button.active,
+    .mobile-nav button.active {
+      color: var(--gold-dark);
+    }
 
-        .hero-img-frame {
-            position: relative;
-            height: 600px;
-            border-radius: 200px 200px 0 0;
-            overflow: hidden;
-            box-shadow: 0 30px 70px rgba(28, 27, 25, 0.08);
-        }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .hero-img-frame img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      cursor: pointer;
+    }
 
-        /* --- TREATMENT CARDS SECTION --- */
-        #treatments {
-            padding: 140px 0;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: 0.35s var(--ease);
+    }
 
-        .treatment-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
+    .btn-dark {
+      background: var(--text);
+      color: #fff;
+    }
 
-        .treatment-card {
-            background: var(--surface-card);
-            border: 1px solid rgba(197, 168, 128, 0.1);
-            padding: 40px;
-            transition: var(--transition);
-            position: relative;
-        }
+    .btn-dark:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
 
-        .treatment-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(197, 168, 128, 0.12);
-            border-color: var(--gold-accent);
-        }
+    .btn-light {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--text);
+    }
 
-        .treatment-card h3 {
-            font-family: var(--font-serif);
-            font-size: 1.7rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-        }
+    .btn-light:hover {
+      border-color: var(--gold);
+      color: var(--gold-dark);
+      transform: translateY(-2px);
+    }
 
-        .treatment-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 30px;
-        }
+    .mobile-nav {
+      display: none;
+      padding: 16px 20px 22px;
+      border-top: 1px solid var(--line);
+      background: var(--bg);
+    }
 
-        .treatment-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--gold-light);
-            padding-top: 20px;
-        }
+    .mobile-nav.open {
+      display: grid;
+      gap: 14px;
+    }
 
-        .price-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-        }
+    .app-main {
+      min-height: calc(100vh - 88px);
+    }
 
-        .price-value {
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
+    .page {
+      display: none;
+      min-height: calc(100vh - 88px);
+      padding: 56px 0 70px;
+      animation: pageIn 0.5s var(--ease);
+    }
 
-        /* --- ADVANCED: BEFORE & AFTER SLIDER --- */
-        #results {
-            padding: 100px 0;
-            background-color: var(--gold-light);
-        }
+    .page.active {
+      display: block;
+    }
 
-        .slider-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
-            user-select: none;
-        }
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
 
-        .slider-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .slider-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--gold-dark);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
 
-        .img-before {
-            z-index: 1;
-        }
+    .display {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 7vw, 6.5rem);
+      font-weight: 300;
+      line-height: 0.94;
+      letter-spacing: -0.025em;
+    }
 
-        .img-after {
-            width: 50%; /* Initial split state */
-            z-index: 2;
-            border-right: 3px solid #FFF;
-        }
+    .display em {
+      color: var(--gold-dark);
+      font-weight: 300;
+    }
 
-        .slider-handle {
-            position: absolute;
-            z-index: 3;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: #FFF;
-            cursor: ew-resize;
-            transform: translateX(-50%);
-        }
+    .page-title {
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 4.7rem);
+      font-weight: 300;
+      line-height: 1;
+    }
 
-        .handle-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 48px;
-            height: 48px;
-            background: #FFF;
-            border-radius: 50%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 14px;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            font-weight: bold;
-            color: var(--text-primary);
-            font-size: 0.8rem;
-        }
+    .lead {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
 
-        .label-tag {
-            position: absolute;
-            bottom: 20px;
-            background: rgba(28, 27, 25, 0.8);
-            color: #FFF;
-            padding: 8px 16px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            z-index: 4;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 70px;
+      align-items: center;
+      min-height: calc(100vh - 230px);
+    }
 
-        .label-before { right: 20px; }
-        .label-after { left: 20px; }
+    .hero-copy .lead {
+      margin: 28px 0 34px;
+    }
 
-        /* --- ADVANCED: COST ESTIMATOR CALC --- */
-        #estimator {
-            padding: 140px 0;
-        }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-        .calc-box {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--surface-card);
-            border: 1px solid rgba(197, 168, 128, 0.2);
-            padding: 50px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.03);
-        }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      border-radius: 260px 260px 24px 24px;
+      box-shadow: var(--shadow);
+    }
 
-        .calc-group {
-            margin-bottom: 35px;
-        }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+    }
 
-        .calc-group label {
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-            font-weight: 500;
-        }
+    .hero-floating {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+      width: min(310px, calc(100% - 48px));
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
 
-        .calc-select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #E0DCD5;
-            background: var(--bg-canvas);
-            font-family: var(--font-sans);
-            font-size: 0.95rem;
-            outline: none;
-            appearance: none;
-            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%231c1b19' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-        }
+    .hero-floating strong {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
 
-        .result-display {
-            background: var(--gold-light);
-            padding: 30px;
-            text-align: center;
-            margin-top: 40px;
-        }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 55px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
 
-        .result-price {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
-            color: var(--gold-accent);
-            margin-top: 10px;
-            font-weight: 400;
-        }
+    .stat {
+      padding: 24px;
+      background: var(--surface);
+    }
 
-        /* --- FOOTER --- */
-        footer {
-            background: var(--text-primary);
-            color: #FFF;
-            padding: 100px 0 50px 0;
-        }
+    .stat strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr repeat(3, 1fr);
-            gap: 50px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 60px;
-            margin-bottom: 40px;
-        }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.69rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
 
-        .footer-logo h3 {
-            font-family: var(--font-serif);
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: 0.05em;
-        }
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 42px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
 
-        .footer-logo p {
-            color: #A2A09C;
-            max-width: 280px;
-            font-size: 0.9rem;
-        }
+    .page-header .lead {
+      max-width: 430px;
+      font-size: 0.9rem;
+    }
 
-        .footer-col h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 25px;
-            color: var(--gold-accent);
-        }
+    .treatment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
 
-        .footer-col ul {
-            list-style: none;
-        }
+    .treatment-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      cursor: pointer;
+      transition: 0.45s var(--ease);
+    }
 
-        .footer-col li {
-            margin-bottom: 12px;
-        }
+    .treatment-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: var(--gold);
+    }
 
-        .footer-col a {
-            color: #C2C0BC;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
+    .treatment-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      transition: 0.7s var(--ease);
+    }
 
-        .footer-col a:hover {
-            color: #FFF;
-            padding-left: 4px;
-        }
+    .treatment-card:hover img {
+      transform: scale(1.05);
+    }
 
-        .footer-bottom {
-            display: flex;
-            justify-content: space-between;
-            color: #72706C;
-            font-size: 0.8rem;
-        }
+    .treatment-body {
+      padding: 30px;
+    }
 
-        /* --- RESPONSIVE ADAPTABILITY --- */
-        @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px;}
-            .hero-text p { margin: 0 auto 40px auto; }
-            .hero-img-frame { height: 450px; max-width: 450px; margin: 0 auto; }
-            .treatment-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+    .treatment-number {
+      color: var(--gold-dark);
+      font-size: 0.67rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
 
-        @media (max-width: 768px) {
-            .nav-links { display: none; } /* Mobile structural cleanliness */
-            .treatment-grid { grid-template-columns: 1fr; }
-            .slider-wrapper { height: 350px; }
-            .calc-box { padding: 30px 20px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
-        }
-    </style>
+    .treatment-card h3 {
+      margin: 12px 0;
+      font-family: var(--serif);
+      font-size: 1.85rem;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .treatment-card p {
+      min-height: 92px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .treatment-meta {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .treatment-meta small {
+      color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .treatment-meta strong {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .view-detail {
+      color: var(--gold-dark);
+      font-size: 0.67rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .about-grid,
+    .doctor-grid,
+    .results-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 58px;
+      align-items: center;
+    }
+
+    .image-panel {
+      overflow: hidden;
+      min-height: 560px;
+      box-shadow: var(--shadow);
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .feature-item span {
+      color: var(--gold-dark);
+      font-family: var(--serif);
+      font-size: 1.7rem;
+    }
+
+    .feature-item h4 {
+      margin-bottom: 5px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .feature-item p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .doctor-card {
+      padding: 40px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .doctor-badge {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      background: var(--surface-soft);
+      color: var(--gold-dark);
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .doctor-card h3 {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .doctor-card .role {
+      margin: 12px 0 24px;
+      color: var(--gold-dark);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .doctor-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .results-gallery {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+    }
+
+    .result-large,
+    .result-small {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .result-large {
+      min-height: 580px;
+    }
+
+    .result-small-wrap {
+      display: grid;
+      gap: 20px;
+    }
+
+    .result-small {
+      min-height: 280px;
+    }
+
+    .results-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .result-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 15px 18px;
+      background: rgba(28, 27, 25, 0.78);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+
+    .result-caption small {
+      color: #d8c3a5;
+      font-size: 0.63rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .result-caption strong {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      padding: 32px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .stars {
+      margin-bottom: 22px;
+      color: var(--gold-dark);
+      letter-spacing: 0.18em;
+    }
+
+    .review-card blockquote {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      line-height: 1.35;
+    }
+
+    .review-card footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .faq-list {
+      max-width: 920px;
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+      border: 0;
+      background: none;
+      color: var(--text);
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+    }
+
+    .faq-answer {
+      display: none;
+      max-width: 760px;
+      padding: 0 0 26px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: 0.3s ease;
+    }
+
+    .contact-card {
+      padding: 42px;
+      background: var(--text);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .contact-card p {
+      margin: 18px 0 26px;
+      color: #c7c2bb;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: #d8d3cc;
+      font-size: 0.82rem;
+    }
+
+    .social-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 28px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .social-strip a {
+      padding: 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: 0.3s ease;
+    }
+
+    .social-strip a:last-child {
+      border-right: 0;
+    }
+
+    .social-strip a:hover {
+      background: var(--gold-dark);
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 16px;
+      padding: 36px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: 0.64rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 14px 15px;
+      border: 1px solid #ded8cf;
+      background: var(--bg);
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(28, 27, 25, 0.68);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: 0.35s ease;
+    }
+
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-dialog {
+      width: min(980px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      background: var(--surface);
+      box-shadow: 0 35px 90px rgba(0,0,0,0.3);
+      transform: translateY(18px) scale(0.98);
+      transition: 0.4s var(--ease);
+    }
+
+    .modal.open .modal-dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .modal-image {
+      min-height: 640px;
+      background: var(--surface-soft);
+    }
+
+    .modal-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      object-fit: cover;
+    }
+
+    .modal-content {
+      position: relative;
+      padding: 48px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      cursor: pointer;
+      font-size: 1.4rem;
+    }
+
+    .modal-content h3 {
+      margin: 8px 0 18px;
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .modal-content > p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.85;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 28px 0;
+    }
+
+    .detail-box {
+      padding: 18px;
+      background: var(--surface-soft);
+    }
+
+    .detail-box small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 0.61rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .detail-box strong {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .modal-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      list-style: none;
+    }
+
+    .modal-list li::before {
+      content: "—";
+      margin-right: 10px;
+      color: var(--gold-dark);
+    }
+
+    .floating-social {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 70;
+      display: flex;
+      gap: 8px;
+    }
+
+    .floating-social a {
+      min-width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.92);
+      text-decoration: none;
+      font-size: 0.63rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      transition: 0.3s ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-social a:hover {
+      background: var(--text);
+      color: white;
+    }
+
+    @media (max-width: 1024px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .doctor-grid,
+      .results-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        min-height: 520px;
+      }
+
+      .hero-image img {
+        min-height: 520px;
+      }
+
+      .treatment-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 24px, 1240px);
+      }
+
+      .site-header .btn-dark {
+        display: none;
+      }
+
+      .nav-wrap {
+        min-height: 76px;
+      }
+
+      .page {
+        padding-top: 34px;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .hero-image {
+        min-height: 430px;
+        border-radius: 180px 180px 18px 18px;
+      }
+
+      .hero-image img {
+        min-height: 430px;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .page-header {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .treatment-grid,
+      .reviews-grid,
+      .results-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .result-large,
+      .result-small {
+        min-height: 340px;
+      }
+
+      .form-row,
+      .detail-grid,
+      .social-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .social-strip a {
+        border-right: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .social-strip a:last-child {
+        border-bottom: 0;
+      }
+
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-image {
+        min-height: 300px;
+      }
+
+      .modal-image img {
+        min-height: 300px;
+      }
+
+      .modal-content {
+        padding: 34px 24px 28px;
+      }
+
+      .modal-content h3 {
+        font-size: 2.35rem;
+      }
+
+      .floating-social {
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .floating-social a {
+        min-width: 42px;
+        height: 42px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a href="#home" class="brand" data-route="home">
+        M.D.E
+        <small>Maison d'Esthétique</small>
+      </a>
 
-    <!-- STICKY BLUR NAVBAR -->
-    <nav>
-        <div class="container nav-inner">
-            <a href="#" class="logo">M.D.E</a>
-            <ul class="nav-links">
-                <li><a href="#treatments">Treatments</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#estimator">Cost Calculator</a></li>
-            </ul>
-            <a href="#estimator" class="btn-gold" style="padding: 12px 24px; font-size: 0.75rem;">Book Consultation</a>
-        </div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <button data-route="home">Home</button>
+        <button data-route="treatments">Treatments</button>
+        <button data-route="about">About</button>
+        <button data-route="doctor">Doctor</button>
+        <button data-route="results">Results</button>
+        <button data-route="reviews">Reviews</button>
+        <button data-route="contact">Contact</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-dark" data-route="contact">
+          Book Consultation
+        </button>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation"
+        >
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <button data-route="home">Home</button>
+      <button data-route="treatments">Treatments</button>
+      <button data-route="about">About</button>
+      <button data-route="doctor">Doctor</button>
+      <button data-route="results">Results</button>
+      <button data-route="reviews">Reviews</button>
+      <button data-route="contact">Contact</button>
     </nav>
+  </header>
 
-    <!-- HERO PRESTIGE HEADER -->
-    <section id="hero">
-        <div class="container hero-grid">
-            <div class="hero-text">
-                <span class="hero-tag">Kuala Lumpur • Medical Aesthetics</span>
-                <h1>Advanced skin <em>architecture</em>.</h1>
-                <p>Specializing in non-invasive luxury facial sculpting, biological cell regeneration, and high-performance dermatological innovations tailored to your unique anatomical composition.</p>
-                <a href="#treatments" class="btn-gold">Explore Signature Metamorphosis</a>
+  <main class="app-main">
+
+    <!-- PAGE 1: HOME -->
+    <section class="page active" id="page-home" data-page="home">
+      <div class="shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Kuala Lumpur · Premium Aesthetics</span>
+
+            <h1 class="display">
+              Advanced skin
+              <em>architecture.</em>
+            </h1>
+
+            <p class="lead">
+              A private clinical beauty experience combining refined consultation, modern treatment planning and naturally balanced outcomes.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-dark" data-route="treatments">
+                Explore Treatments
+              </button>
+
+              <button class="btn btn-light" data-route="contact">
+                Reserve Consultation
+              </button>
             </div>
-            <div class="hero-img-frame">
-                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Premium skincare therapy">
+
+            <div class="stats-row">
+              <div class="stat">
+                <strong>Private</strong>
+                <span>Consultation-led care</span>
+              </div>
+
+              <div class="stat">
+                <strong>Bespoke</strong>
+                <span>Personalised protocols</span>
+              </div>
+
+              <div class="stat">
+                <strong>Refined</strong>
+                <span>Natural-looking focus</span>
+              </div>
             </div>
+          </div>
+
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?auto=format&fit=crop&w=1200&q=85&fm=jpg"
+              alt="Luxury aesthetic clinic interior"
+              loading="eager"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="hero-floating">
+              <span class="eyebrow">The Maison Standard</span>
+              <strong>Clinical precision with quiet luxury.</strong>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- SIGNATURE PREMIUM TREATMENTS -->
-    <section id="treatments">
-        <div class="container">
-            <div class="section-header section-title">
-                <span>The Offerings</span>
-                <h2>Clinical Artistry Meets High Luxury</h2>
-            </div>
-            
-            <div class="treatment-grid">
-                <div class="treatment-card">
-                    <h3>HIFU Sculpt Ultra</h3>
-                    <p>Non-surgical SMAS layer structural lifting to define jawline parameters and boost internal structural collagen matrix production.</p>
-                    <div class="treatment-meta">
-                        <span class="price-label">Investment</span>
-                        <span class="price-value">MYR 2,400</span>
-                    </div>
-                </div>
+    <!-- PAGE 2: TREATMENTS -->
+    <section class="page" id="page-treatments" data-page="treatments">
+      <div class="shell">
+        <div class="page-header">
+          <div>
+            <span class="eyebrow">Signature Treatments</span>
+            <h2 class="page-title">The treatment portfolio</h2>
+          </div>
 
-                <div class="treatment-card">
-                    <h3>PicoGlow Precision</h3>
-                    <p>Advanced picosecond laser acoustics targeting hyperpigmentation down to the cellular level for instantaneous porcelain skin reflectivity.</p>
-                    <div class="treatment-meta">
-                        <span class="price-label">Investment</span>
-                        <span class="price-value">MYR 1,800</span>
-                    </div>
-                </div>
-
-                <div class="treatment-card">
-                    <h3>Polynucleotide Cell Reset</h3>
-                    <p>Premium salmon DNA matrix micro-injections to biologically reverse thermal aging parameters and structural skin thinning.</p>
-                    <div class="treatment-meta">
-                        <span class="price-label">Investment</span>
-                        <span class="price-value">MYR 3,200</span>
-                    </div>
-                </div>
-            </div>
+          <p class="lead">
+            Select any treatment to open the detailed protocol, suitability notes, expected experience and direct enquiry option.
+          </p>
         </div>
+
+        <div class="treatment-grid">
+          <article class="treatment-card" data-treatment="hifu" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="HIFU facial lifting treatment"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">01 / Structural Lift</span>
+              <h3>HIFU Sculpt Ultra</h3>
+              <p>
+                A focused lifting protocol designed to support jawline definition and firmer-looking facial contours.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Investment from</small>
+                  <strong>MYR 2,400</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-treatment="pico" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Pico laser skin treatment"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">02 / Skin Clarity</span>
+              <h3>PicoGlow Precision</h3>
+              <p>
+                A targeted skin-renewal approach focused on tone, texture and the appearance of visible pigmentation.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Investment from</small>
+                  <strong>MYR 1,800</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-treatment="pdrn" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Skin rejuvenation treatment"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">03 / Skin Renewal</span>
+              <h3>Polynucleotide Cell Reset</h3>
+              <p>
+                A regenerative skin-quality protocol created for hydration, texture and overall skin resilience.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Investment from</small>
+                  <strong>MYR 3,200</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-treatment="contour" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Body contouring treatment"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">04 / Body</span>
+              <h3>Contour Form</h3>
+              <p>
+                Non-invasive body-focused care designed to support contour, tone and a smoother appearance.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Investment from</small>
+                  <strong>MYR 1,200</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-treatment="facial" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Luxury facial treatment"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">05 / Facial</span>
+              <h3>Maison Radiance Facial</h3>
+              <p>
+                A premium facial ritual designed to refresh, hydrate and restore a polished-looking complexion.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Investment from</small>
+                  <strong>MYR 480</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="treatment-card" data-treatment="consult" tabindex="0">
+            <img
+              src="https://images.unsplash.com/photo-1631217872822-1c2546d6b864?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Private aesthetic consultation"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="treatment-body">
+              <span class="treatment-number">06 / Consultation</span>
+              <h3>Private Skin Mapping</h3>
+              <p>
+                A detailed consultation designed to identify priorities and shape a personalised treatment roadmap.
+              </p>
+
+              <div class="treatment-meta">
+                <div>
+                  <small>Consultation</small>
+                  <strong>By appointment</strong>
+                </div>
+
+                <span class="view-detail">View details ↗</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- INTERACTIVE BEFORE/AFTER INTERACTION -->
-    <section id="results">
-        <div class="container">
-            <div class="section-title">
-                <span>Clinical Proof</span>
-                <h2>Verifiable Spatial Transformations</h2>
+    <!-- PAGE 3: ABOUT -->
+    <section class="page" id="page-about" data-page="about">
+      <div class="shell about-grid">
+        <div class="image-panel">
+          <img
+            src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?auto=format&fit=crop&w=1100&q=85&fm=jpg"
+            alt="Maison d'Esthétique clinic interior"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          >
+        </div>
+
+        <div>
+          <span class="eyebrow">About the Maison</span>
+          <h2 class="page-title">Beauty, carefully considered</h2>
+
+          <p class="lead" style="margin-top: 26px;">
+            Maison d'Esthétique is designed around private consultation, thoughtful treatment planning and a calm, premium client journey.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <span>01</span>
+              <div>
+                <h4>Consultation before treatment</h4>
+                <p>Every recommendation begins with a discussion of concerns, suitability and expectations.</p>
+              </div>
             </div>
 
-            <!-- Drag Slider Interactive Container -->
-            <div class="slider-wrapper" id="beforeAfterSlider">
-                <span class="label-tag label-before">Before</span>
-                <span class="label-tag label-after">After 2 Sessions</span>
-                
-                <div class="slider-img img-before">
-                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=80" alt="Skin Before Treatment">
-                </div>
-                <div class="slider-img img-after" id="afterImageContainer">
-                    <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1000&q=80" alt="Skin After Treatment" style="width: 800px; max-width: none;">
-                </div>
-                
-                <div class="slider-handle" id="dragHandle">
-                    <div class="handle-button"><span>‹</span><span>›</span></div>
-                </div>
+            <div class="feature-item">
+              <span>02</span>
+              <div>
+                <h4>Personalised planning</h4>
+                <p>Protocols are shaped around the individual rather than offered as one-size-fits-all packages.</p>
+              </div>
             </div>
+
+            <div class="feature-item">
+              <span>03</span>
+              <div>
+                <h4>Refined client experience</h4>
+                <p>From enquiry to aftercare, the experience is designed to feel calm, clear and discreet.</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- VALUE ADD: ADVANCED PRICE ESTIMATOR -->
-    <section id="estimator">
-        <div class="container">
-            <div class="section-title">
-                <span>Smart Concierge</span>
-                <h2>Tailor Your Financial Treatment Suite</h2>
+    <!-- PAGE 4: DOCTOR -->
+    <section class="page" id="page-doctor" data-page="doctor">
+      <div class="shell doctor-grid">
+        <div>
+          <span class="eyebrow">Medical Direction</span>
+          <h2 class="page-title">Meet the lead aesthetic physician</h2>
+
+          <div class="doctor-card" style="margin-top: 34px;">
+            <span class="doctor-badge">Medical Director</span>
+
+            <h3>Dr. Amelia Tan</h3>
+            <p class="role">Aesthetic Physician · Facial & Skin Focus</p>
+
+            <p>
+              Dr. Amelia's approach centres on natural-looking refinement, clear communication and treatment plans that respect individual facial balance and skin needs.
+            </p>
+
+            <div class="feature-list">
+              <div class="feature-item">
+                <span>01</span>
+                <div>
+                  <h4>Consultation-led decisions</h4>
+                  <p>Recommendations are discussed only after understanding the client's priorities and suitability.</p>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <span>02</span>
+                <div>
+                  <h4>Natural-looking philosophy</h4>
+                  <p>The focus is on refreshed, balanced and proportionate outcomes rather than dramatic change.</p>
+                </div>
+              </div>
             </div>
-
-            <div class="calc-box">
-                <div class="calc-group">
-                    <label for="skinGoal">Primary Anatomical Objective</label>
-                    <select id="skinGoal" class="calc-select" onchange="calculateTotal()">
-                        <option value="0" selected>Select objective...</option>
-                        <option value="2400">Deep Structural Lifting (HIFU)</option>
-                        <option value="1800">Melasma & Tone Clearance (PicoLaser)</option>
-                        <option value="3200">Cellular Elasticity Optimization (Polynucleotides)</option>
-                    </select>
-                </div>
-
-                <div class="calc-group">
-                    <label for="skinTier">Clinical Practitioner Rank</label>
-                    <select id="skinTier" class="calc-select" onchange="calculateTotal()">
-                        <option value="1.0" selected>Senior Aesthetic Clinician (Standard Base)</option>
-                        <option value="1.25">Chief Medical Director (+25% Premium)</option>
-                    </select>
-                </div>
-
-                <div class="result-display">
-                    <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text-secondary);">Estimated Luxury Package Investment</p>
-                    <div class="result-price" id="totalDisplay">MYR 0.00</div>
-                </div>
-                
-                <button class="btn-gold" style="width: 100%; margin-top: 30px; justify-content: center;">Secure Priority Suite Booking</button>
-            </div>
+          </div>
         </div>
+
+        <div class="image-panel">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85&fm=jpg"
+            alt="Lead aesthetic physician"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+          >
+        </div>
+      </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-logo">
-                    <h3>MAISON D'ESTHÉTIQUE</h3>
-                    <p>Architectural beauty directives engineered by modern medical science frameworks.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Locations</h4>
-                    <ul>
-                        <li><a href="#">Bangsar Village II, KL</a></li>
-                        <li><a href="#">The Gardens Mall, Mid Valley</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Regulatory Compliance</h4>
-                    <ul>
-                        <li><a href="#">KKM Certified Units</a></li>
-                        <li><a href="#">LCP Certified Physicians</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Direct Line</h4>
-                    <ul>
-                        <li><a href="#">+60 3-2284 0000</a></li>
-                        <li><a href="#">concierge@maison.my</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 MAISON D'ESTHÉTIQUE Malaysia. High-tier architecture deployment.</p>
-                <p>Strictly Private & Confidential Ecosystems.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- PAGE 5: RESULTS -->
+    <section class="page" id="page-results" data-page="results">
+      <div class="shell">
+        <div class="page-header">
+          <div>
+            <span class="eyebrow">Results & Experience</span>
+            <h2 class="page-title">A closer look at the journey</h2>
+          </div>
 
-    <!-- INTERACTIVE SCRIPTS -->
-    <script>
-        // 1. Dynamic Interactive Cost Estimator Engine
-        function calculateTotal() {
-            const baseTreatmentCost = parseFloat(document.getElementById('skinGoal').value);
-            const tierMultiplier = parseFloat(document.getElementById('skinTier').value);
-            
-            const total = baseTreatmentCost * tierMultiplier;
-            
-            document.getElementById('totalDisplay').innerText = `MYR ${total.toLocaleString('en-MY', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+          <p class="lead">
+            Use this gallery for consultation rooms, treatment moments, skin-improvement details or approved before-and-after content.
+          </p>
+        </div>
+
+        <div class="results-gallery">
+          <div class="result-large">
+            <img
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1100&q=85&fm=jpg"
+              alt="Facial treatment experience"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+
+            <div class="result-caption">
+              <small>Skin Experience</small>
+              <strong>Consultation-led facial rejuvenation</strong>
+            </div>
+          </div>
+
+          <div class="result-small-wrap">
+            <div class="result-small">
+              <img
+                src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Skin renewal treatment"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <div class="result-caption">
+                <small>Skin Renewal</small>
+                <strong>Texture and radiance focus</strong>
+              </div>
+            </div>
+
+            <div class="result-small">
+              <img
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Body treatment experience"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+
+              <div class="result-caption">
+                <small>Body Care</small>
+                <strong>Contour and tone support</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6: REVIEWS + FAQ -->
+    <section class="page" id="page-reviews" data-page="reviews">
+      <div class="shell">
+        <div class="page-header">
+          <div>
+            <span class="eyebrow">Client Experience</span>
+            <h2 class="page-title">Reviews and common questions</h2>
+          </div>
+
+          <p class="lead">
+            Social proof and clear answers help prospective clients feel more confident before making contact.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “The consultation felt calm, detailed and never rushed.”
+            </blockquote>
+            <footer>Client Review · Bangsar</footer>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “I appreciated the natural approach and clear explanation.”
+            </blockquote>
+            <footer>Client Review · Kuala Lumpur</footer>
+          </article>
+
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>
+              “The space feels private, polished and thoughtfully designed.”
+            </blockquote>
+            <footer>Client Review · Mid Valley</footer>
+          </article>
+        </div>
+
+        <div style="height: 58px;"></div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              How do I know which treatment is suitable?
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              Suitability should be assessed during consultation. The physician will discuss your concerns, expectations and relevant history before recommending an option.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              Are the listed prices final?
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              The displayed amounts are starting references. Final pricing may vary depending on treatment area, protocol and individual requirements.
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-question" type="button">
+              Can I book directly through WhatsApp?
+              <span class="faq-icon">+</span>
+            </button>
+
+            <div class="faq-answer">
+              Yes. The WhatsApp buttons can be connected to the clinic's actual number with a pre-filled enquiry message.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: CONTACT -->
+    <section class="page" id="page-contact" data-page="contact">
+      <div class="shell contact-grid">
+        <div class="contact-card">
+          <span class="eyebrow">Private Concierge</span>
+          <h3>Reserve your consultation</h3>
+
+          <p>
+            Speak with the Maison team about treatment options, clinic availability or your preferred consultation time.
+          </p>
+
+          <div class="contact-list">
+            <span>Bangsar Village II · Kuala Lumpur</span>
+            <span>The Gardens Mall · Mid Valley</span>
+            <span>Monday – Saturday · 10:00 AM – 7:00 PM</span>
+            <span>+60 12-345 6789</span>
+            <span>concierge@maison.my</span>
+          </div>
+
+          <div class="social-strip">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+
+            <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <form class="booking-form" id="bookingForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" type="text" required>
+            </div>
+
+            <div class="field">
+              <label for="phone">WhatsApp number</label>
+              <input id="phone" type="tel" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="location">Preferred location</label>
+              <select id="location">
+                <option>Bangsar Village II</option>
+                <option>The Gardens Mall</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="interest">Treatment interest</label>
+              <select id="interest">
+                <option>Not sure yet</option>
+                <option>HIFU Sculpt Ultra</option>
+                <option>PicoGlow Precision</option>
+                <option>Polynucleotide Cell Reset</option>
+                <option>Body Contouring</option>
+                <option>Luxury Facial</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Share your main concern or preferred appointment time."></textarea>
+          </div>
+
+          <button class="btn btn-dark" type="submit">
+            Continue on WhatsApp
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- TREATMENT MODAL -->
+  <div class="modal" id="treatmentModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-grid">
+        <div class="modal-image">
+          <img id="modalImage" src="" alt="">
+        </div>
+
+        <div class="modal-content">
+          <button class="modal-close" id="modalClose" type="button" aria-label="Close">
+            ×
+          </button>
+
+          <span class="eyebrow" id="modalCategory"></span>
+          <h3 id="modalTitle"></h3>
+          <p id="modalDescription"></p>
+
+          <div class="detail-grid">
+            <div class="detail-box">
+              <small>Investment</small>
+              <strong id="modalPrice"></strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Typical appointment</small>
+              <strong id="modalDuration"></strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Downtime</small>
+              <strong id="modalDowntime"></strong>
+            </div>
+
+            <div class="detail-box">
+              <small>Best for</small>
+              <strong id="modalBestFor"></strong>
+            </div>
+          </div>
+
+          <ul class="modal-list" id="modalList"></ul>
+
+          <a
+            id="modalWhatsapp"
+            class="btn btn-dark"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ask About This Treatment
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="floating-social">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      IG
+    </a>
+
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      FB
+    </a>
+
+    <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      WA
+    </a>
+  </div>
+
+  <script>
+    const validPages = [
+      "home",
+      "treatments",
+      "about",
+      "doctor",
+      "results",
+      "reviews",
+      "contact"
+    ];
+
+    function navigateTo(page, updateHash = true) {
+      if (!validPages.includes(page)) {
+        page = "home";
+      }
+
+      document.querySelectorAll(".page").forEach(section => {
+        section.classList.toggle(
+          "active",
+          section.dataset.page === page
+        );
+      });
+
+      document.querySelectorAll("[data-route]").forEach(button => {
+        button.classList.toggle(
+          "active",
+          button.dataset.route === page
+        );
+      });
+
+      if (updateHash) {
+        history.pushState(
+          { page },
+          "",
+          "#" + page
+        );
+      }
+
+      document.getElementById("mobileNav").classList.remove("open");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    document.querySelectorAll("[data-route]").forEach(element => {
+      element.addEventListener("click", event => {
+        event.preventDefault();
+        navigateTo(element.dataset.route);
+      });
+    });
+
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("mobileNav").classList.toggle("open");
+    });
+
+    window.addEventListener("popstate", () => {
+      navigateTo(location.hash.replace("#", "") || "home", false);
+    });
+
+    const treatmentData = {
+      hifu: {
+        category: "Structural Lift",
+        title: "HIFU Sculpt Ultra",
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A consultation-led lifting protocol focused on supporting facial definition and firmer-looking contours without creating an overdone appearance.",
+        price: "From MYR 2,400",
+        duration: "60–90 minutes",
+        downtime: "Minimal",
+        bestFor: "Jawline and lower face",
+        points: [
+          "Personal facial assessment before treatment",
+          "Targeted treatment planning based on concern area",
+          "Aftercare guidance discussed during consultation"
+        ]
+      },
+      pico: {
+        category: "Skin Clarity",
+        title: "PicoGlow Precision",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A skin-renewal protocol focused on visible pigmentation, uneven tone and overall clarity while maintaining a refined treatment experience.",
+        price: "From MYR 1,800",
+        duration: "45–60 minutes",
+        downtime: "Varies by protocol",
+        bestFor: "Tone and texture",
+        points: [
+          "Skin concern review and suitability assessment",
+          "Protocol tailored to visible pigmentation and texture",
+          "Post-treatment care instructions provided"
+        ]
+      },
+      pdrn: {
+        category: "Skin Renewal",
+        title: "Polynucleotide Cell Reset",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A premium skin-quality treatment designed to support hydration, smoother-looking texture and a more refreshed overall appearance.",
+        price: "From MYR 3,200",
+        duration: "45–75 minutes",
+        downtime: "Short-term visible marks possible",
+        bestFor: "Skin quality and hydration",
+        points: [
+          "Individual skin-quality assessment",
+          "Treatment areas discussed before proceeding",
+          "Aftercare and expected recovery explained clearly"
+        ]
+      },
+      contour: {
+        category: "Body",
+        title: "Contour Form",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A body-focused consultation and treatment pathway designed to support contour, tone and confidence in selected areas.",
+        price: "From MYR 1,200",
+        duration: "45–90 minutes",
+        downtime: "Usually minimal",
+        bestFor: "Selected body areas",
+        points: [
+          "Target-area consultation",
+          "Personalised suitability review",
+          "Treatment frequency discussed individually"
+        ]
+      },
+      facial: {
+        category: "Facial",
+        title: "Maison Radiance Facial",
+        image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A premium facial experience designed to support hydration, comfort and a polished-looking complexion.",
+        price: "From MYR 480",
+        duration: "60–75 minutes",
+        downtime: "None expected",
+        bestFor: "Refresh and maintenance",
+        points: [
+          "Skin condition review",
+          "Customised facial steps",
+          "Home-care guidance after treatment"
+        ]
+      },
+      consult: {
+        category: "Consultation",
+        title: "Private Skin Mapping",
+        image: "https://images.unsplash.com/photo-1631217872822-1c2546d6b864?auto=format&fit=crop&w=1100&q=85&fm=jpg",
+        description: "A detailed private consultation designed to clarify your goals and create a suitable treatment roadmap.",
+        price: "By appointment",
+        duration: "30–45 minutes",
+        downtime: "None",
+        bestFor: "First-time clients",
+        points: [
+          "Concern and goal discussion",
+          "Treatment suitability review",
+          "Personalised next-step recommendations"
+        ]
+      }
+    };
+
+    const modal = document.getElementById("treatmentModal");
+
+    function openTreatment(key) {
+      const data = treatmentData[key];
+
+      document.getElementById("modalImage").src = data.image;
+      document.getElementById("modalImage").alt = data.title;
+      document.getElementById("modalCategory").textContent = data.category;
+      document.getElementById("modalTitle").textContent = data.title;
+      document.getElementById("modalDescription").textContent = data.description;
+      document.getElementById("modalPrice").textContent = data.price;
+      document.getElementById("modalDuration").textContent = data.duration;
+      document.getElementById("modalDowntime").textContent = data.downtime;
+      document.getElementById("modalBestFor").textContent = data.bestFor;
+
+      document.getElementById("modalList").innerHTML = data.points
+        .map(point => `<li>${point}</li>`)
+        .join("");
+
+      document.getElementById("modalWhatsapp").href =
+        "https://wa.me/60123456789?text=" +
+        encodeURIComponent(
+          "Hello Maison d'Esthétique, I would like to ask about " +
+          data.title +
+          "."
+        );
+
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeTreatment() {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll("[data-treatment]").forEach(card => {
+      card.addEventListener("click", () => {
+        openTreatment(card.dataset.treatment);
+      });
+
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openTreatment(card.dataset.treatment);
         }
+      });
+    });
 
-        // 2. High-Performance Before & After Slider Drag System
-        const slider = document.getElementById('beforeAfterSlider');
-        const afterImgContainer = document.getElementById('afterImageContainer');
-        const handle = document.getElementById('dragHandle');
-        let isDragging = false;
+    document.getElementById("modalClose").addEventListener("click", closeTreatment);
 
-        function setSliderPosition(x) {
-            const rect = slider.getBoundingClientRect();
-            let position = ((x - rect.left) / rect.width) * 100;
-            
-            // Constrain positions to canvas bounds
-            if (position < 0) position = 0;
-            if (position > 100) position = 100;
-            
-            afterImgContainer.style.width = `${position}%`;
-            handle.style.left = `${position}%`;
-        }
+    modal.addEventListener("click", event => {
+      if (event.target === modal) {
+        closeTreatment();
+      }
+    });
 
-        // Mouse Operations
-        window.addEventListener('mousedown', (e) => {
-            if (e.target.closest('#dragHandle') || e.target.closest('#beforeAfterSlider')) {
-                isDragging = true;
-                setSliderPosition(e.clientX);
-            }
-        });
-        window.addEventListener('mouseup', () => isDragging = false);
-        window.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            setSliderPosition(e.clientX);
-        });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeTreatment();
+      }
+    });
 
-        // Touch Adaptability (Mobile Responsive Execution)
-        window.addEventListener('touchstart', (e) => {
-            if (e.target.closest('#beforeAfterSlider')) {
-                isDragging = true;
-                setSliderPosition(e.touches[0].clientX);
-            }
-        });
-        window.addEventListener('touchend', () => isDragging = false);
-        window.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            setSliderPosition(e.touches[0].clientX);
-        });
-    </script>
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        button.closest(".faq-item").classList.toggle("open");
+      });
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const locationChoice = document.getElementById("location").value;
+      const interest = document.getElementById("interest").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Hello Maison d'Esthétique, I would like to request a consultation.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+        "Preferred location: " + encodeURIComponent(locationChoice) + "%0A" +
+        "Treatment interest: " + encodeURIComponent(interest) + "%0A" +
+        "Message: " + encodeURIComponent(message || "No additional message");
+
+      window.open(
+        "https://wa.me/60123456789?text=" + text,
+        "_blank",
+        "noopener"
+      );
+    });
+
+    navigateTo(location.hash.replace("#", "") || "home", false);
+  </script>
 </body>
 </html>
