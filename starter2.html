@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta
     property="og:image"
-    content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85&fm=jpg"
+    content="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=85&fm=jpg"
   >
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -76,6 +76,28 @@
       background:
         radial-gradient(circle at 15% 18%, rgba(122, 139, 123, 0.12), transparent 30%),
         radial-gradient(circle at 84% 72%, rgba(200, 125, 85, 0.10), transparent 28%);
+    }
+
+    .modal-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .modal-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-panel-hidden {
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+    }
+
+    .modal-panel-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
     }
   </style>
 </head>
@@ -168,8 +190,8 @@
           <div class="absolute -inset-4 rounded-[2rem] bg-sage-500/10 blur-3xl"></div>
 
           <img
-            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85&fm=jpg"
-            alt="Modern aesthetic treatment room"
+            src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=85&fm=jpg"
+            alt="Modern aesthetic clinic consultation space"
             loading="eager"
             decoding="async"
             referrerpolicy="no-referrer"
@@ -220,89 +242,137 @@
           </h2>
 
           <p class="mt-4 text-sm leading-7 text-sand-800/70">
-            Every treatment begins with a consultation to understand your goals and suitability.
+            Click any treatment to learn more about the focus, suitability and consultation process.
           </p>
         </div>
 
         <div class="mt-12 grid gap-7 md:grid-cols-3">
 
-          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg"
-              alt="Skin renewal treatment"
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer"
-              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3ESkin Renewal%3C/text%3E%3C/svg%3E';"
-              class="h-64 w-full bg-sand-200 object-cover"
-            >
+          <button
+            type="button"
+            onclick="openTreatment('skin')"
+            class="group overflow-hidden rounded-3xl border border-sand-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Skin renewal treatment"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3ESkin Renewal%3C/text%3E%3C/svg%3E';"
+                class="h-64 w-full bg-sand-200 object-cover transition duration-500 group-hover:scale-105"
+              >
+            </div>
 
             <div class="p-6">
               <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
                 Skin
               </span>
 
-              <h3 class="font-serif mt-2 text-2xl text-sage-900">
-                Skin Renewal
-              </h3>
+              <div class="mt-2 flex items-center justify-between gap-4">
+                <h3 class="font-serif text-2xl text-sage-900">
+                  Skin Renewal
+                </h3>
+
+                <span class="text-lg text-sage-500 transition group-hover:translate-x-1">
+                  ↗
+                </span>
+              </div>
 
               <p class="mt-3 text-sm leading-6 text-sand-800/70">
                 Support brighter-looking skin, smoother texture and a more even appearance.
               </p>
-            </div>
-          </article>
 
-          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg"
-              alt="Facial rejuvenation treatment"
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer"
-              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EFacial Care%3C/text%3E%3C/svg%3E';"
-              class="h-64 w-full bg-sand-200 object-cover"
-            >
+              <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-600">
+                View treatment details
+              </p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onclick="openTreatment('face')"
+            class="group overflow-hidden rounded-3xl border border-sand-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Facial rejuvenation treatment"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EFacial Care%3C/text%3E%3C/svg%3E';"
+                class="h-64 w-full bg-sand-200 object-cover transition duration-500 group-hover:scale-105"
+              >
+            </div>
 
             <div class="p-6">
               <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
                 Face
               </span>
 
-              <h3 class="font-serif mt-2 text-2xl text-sage-900">
-                Facial Rejuvenation
-              </h3>
+              <div class="mt-2 flex items-center justify-between gap-4">
+                <h3 class="font-serif text-2xl text-sage-900">
+                  Facial Rejuvenation
+                </h3>
+
+                <span class="text-lg text-sage-500 transition group-hover:translate-x-1">
+                  ↗
+                </span>
+              </div>
 
               <p class="mt-3 text-sm leading-6 text-sand-800/70">
                 Refresh tired-looking features while maintaining a soft and natural appearance.
               </p>
-            </div>
-          </article>
 
-          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
-            <img
-              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg"
-              alt="Body contouring treatment"
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer"
-              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EBody Care%3C/text%3E%3C/svg%3E';"
-              class="h-64 w-full bg-sand-200 object-cover"
-            >
+              <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-600">
+                View treatment details
+              </p>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            onclick="openTreatment('body')"
+            class="group overflow-hidden rounded-3xl border border-sand-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Body contouring treatment"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EBody Care%3C/text%3E%3C/svg%3E';"
+                class="h-64 w-full bg-sand-200 object-cover transition duration-500 group-hover:scale-105"
+              >
+            </div>
 
             <div class="p-6">
               <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
                 Body
               </span>
 
-              <h3 class="font-serif mt-2 text-2xl text-sage-900">
-                Body Contouring
-              </h3>
+              <div class="mt-2 flex items-center justify-between gap-4">
+                <h3 class="font-serif text-2xl text-sage-900">
+                  Body Contouring
+                </h3>
+
+                <span class="text-lg text-sage-500 transition group-hover:translate-x-1">
+                  ↗
+                </span>
+              </div>
 
               <p class="mt-3 text-sm leading-6 text-sand-800/70">
-                Non-invasive options designed to support contour, tone and skin appearance.
+                Non-invasive options that support contour, tone and skin appearance.
+              </p>
+
+              <p class="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-600">
+                View treatment details
               </p>
             </div>
-          </article>
+          </button>
         </div>
       </div>
     </section>
@@ -449,6 +519,86 @@
     </p>
   </footer>
 
+  <!-- Treatment Modal -->
+  <div
+    id="treatmentModal"
+    class="modal-hidden fixed inset-0 z-[100] flex items-center justify-center bg-sage-900/70 p-4 backdrop-blur-sm transition duration-300"
+    aria-hidden="true"
+    onclick="closeTreatmentFromBackdrop(event)"
+  >
+    <div
+      id="treatmentPanel"
+      class="modal-panel-hidden relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-sand-50 shadow-2xl transition duration-300"
+    >
+      <button
+        type="button"
+        onclick="closeTreatment()"
+        aria-label="Close treatment details"
+        class="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-xl text-sage-900 shadow-md transition hover:bg-sand-100"
+      >
+        ×
+      </button>
+
+      <div class="grid md:grid-cols-2">
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+          class="h-72 w-full bg-sand-200 object-cover md:h-full md:min-h-[520px]"
+        >
+
+        <div class="p-7 sm:p-10">
+          <span
+            id="modalCategory"
+            class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta"
+          ></span>
+
+          <h3
+            id="modalTitle"
+            class="font-serif mt-3 text-3xl text-sage-900"
+          ></h3>
+
+          <p
+            id="modalIntro"
+            class="mt-5 text-sm leading-7 text-sand-800/75"
+          ></p>
+
+          <div class="mt-7">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-sage-900">
+              Common concerns
+            </p>
+
+            <ul
+              id="modalConcerns"
+              class="mt-3 space-y-2 text-sm text-sand-800/70"
+            ></ul>
+          </div>
+
+          <div class="mt-7 rounded-2xl bg-sand-100 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.16em] text-sage-900">
+              What to expect
+            </p>
+
+            <p
+              id="modalExpect"
+              class="mt-3 text-sm leading-6 text-sand-800/70"
+            ></p>
+          </div>
+
+          <a
+            id="modalWhatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-sage-900 px-7 py-4 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-sage-600"
+          >
+            Ask About This Treatment
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Floating WhatsApp -->
   <a
     href="https://wa.me/60123456789?text=Hello%20Solis%20Aesthetics%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
@@ -461,6 +611,110 @@
   </a>
 
   <script>
+    const treatmentData = {
+      skin: {
+        category: "Skin",
+        title: "Skin Renewal",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85&fm=jpg",
+        intro: "A consultation-led approach focused on improving the visible appearance of skin tone, texture and overall radiance.",
+        concerns: [
+          "Dull or tired-looking skin",
+          "Uneven-looking tone",
+          "Visible texture and enlarged-looking pores",
+          "Post-acne marks and general skin maintenance"
+        ],
+        expect: "Your consultation will review your concerns, skin condition and suitability before any treatment plan is recommended."
+      },
+      face: {
+        category: "Face",
+        title: "Facial Rejuvenation",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85&fm=jpg",
+        intro: "Personalised facial care designed to refresh tired-looking features while supporting a soft, balanced and natural result.",
+        concerns: [
+          "Tired-looking facial appearance",
+          "Fine lines and visible signs of ageing",
+          "Loss of facial definition",
+          "General facial refresh and maintenance"
+        ],
+        expect: "The consultation focuses on your facial proportions, personal goals and preferred level of change before discussing suitable options."
+      },
+      body: {
+        category: "Body",
+        title: "Body Contouring",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=85&fm=jpg",
+        intro: "Non-invasive body treatment options aimed at supporting contour, tone and the visible appearance of targeted areas.",
+        concerns: [
+          "Areas that feel difficult to tone",
+          "Body contour definition",
+          "Visible skin texture",
+          "General body-care maintenance"
+        ],
+        expect: "A personal assessment is required to discuss your target area, expectations and whether a suggested option is suitable for you."
+      }
+    };
+
+    function openTreatment(type) {
+      const data = treatmentData[type];
+      const modal = document.getElementById("treatmentModal");
+      const panel = document.getElementById("treatmentPanel");
+      const concerns = document.getElementById("modalConcerns");
+
+      document.getElementById("modalCategory").textContent = data.category;
+      document.getElementById("modalTitle").textContent = data.title;
+      document.getElementById("modalIntro").textContent = data.intro;
+      document.getElementById("modalExpect").textContent = data.expect;
+
+      const modalImage = document.getElementById("modalImage");
+      modalImage.src = data.image;
+      modalImage.alt = data.title;
+
+      concerns.innerHTML = data.concerns
+        .map(item => `<li class="flex gap-3"><span class="mt-1 text-terracotta">•</span><span>${item}</span></li>`)
+        .join("");
+
+      document.getElementById("modalWhatsapp").href =
+        "https://wa.me/60123456789?text=" +
+        encodeURIComponent("Hello Solis Aesthetics, I would like to ask about " + data.title + ".");
+
+      modal.classList.remove("modal-hidden");
+      modal.classList.add("modal-visible");
+      modal.setAttribute("aria-hidden", "false");
+
+      setTimeout(() => {
+        panel.classList.remove("modal-panel-hidden");
+        panel.classList.add("modal-panel-visible");
+      }, 10);
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeTreatment() {
+      const modal = document.getElementById("treatmentModal");
+      const panel = document.getElementById("treatmentPanel");
+
+      panel.classList.remove("modal-panel-visible");
+      panel.classList.add("modal-panel-hidden");
+
+      setTimeout(() => {
+        modal.classList.remove("modal-visible");
+        modal.classList.add("modal-hidden");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }, 220);
+    }
+
+    function closeTreatmentFromBackdrop(event) {
+      if (event.target.id === "treatmentModal") {
+        closeTreatment();
+      }
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeTreatment();
+      }
+    });
+
     document.getElementById("year").textContent =
       new Date().getFullYear();
   </script>
