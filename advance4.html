@@ -1,311 +1,1866 @@
+
 <!DOCTYPE html>
 <html lang="en-MY">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMINA Aesthetic Clinic Bangsar & Mont Kiara KL | MOH LCP Certified</title>
-    <meta name="description" content="Kuala Lumpur's premier KKM & LCP certified medical aesthetic clinic. Specializing in Pico Laser, Profhilo, Ultherapy, and Botox in Bangsar & Mont Kiara. View transparent MYR price menu.">
-    <meta name="keywords" content="Aesthetic Clinic KL, Pico Laser Bangsar, Profhilo Price Malaysia, Ultherapy Mont Kiara, LCP Aesthetic Doctor Kuala Lumpur, Botulinum Toxin Malaysia">
-    <link rel="canonical" href="https://luminaaesthetics.com.my">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Open Graph / Social SEO -->
-    <meta property="og:type" content="business.business">
-    <meta property="og:title" content="LUMINA Aesthetic Clinic KL | LCP Certified Doctors">
-    <meta property="og:description" content="Evidence-based medical aesthetics in Bangsar & Mont Kiara. Pico Laser, Profhilo, and Ultherapy by MOH-registered physicians.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80">
+  <title>Atelier Dermique | Signature Aesthetic Clinic</title>
+  <meta
+    name="description"
+    content="A premium seven-page medical aesthetics experience with personalised consultation, treatment detail drawers, doctor profiles, results, reviews and WhatsApp booking."
+  >
 
-    <!-- Schema.org Structured Data (Google Rich Results SEO) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      "name": "LUMINA Medical Aesthetics",
-      "image": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80",
-      "telephone": "+60322849988",
-      "priceRange": "MYR 300 - MYR 8000",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "18, Jalan Telawi 3, Bangsar Baru",
-        "addressLocality": "Kuala Lumpur",
-        "addressRegion": "Wilayah Persekutuan",
-        "postalCode": "59100",
-        "addressCountry": "MY"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "520"
-      },
-      "medicalSpecialty": "Dermatology"
+  <meta property="og:title" content="Atelier Dermique">
+  <meta
+    property="og:description"
+    content="Modern aesthetic care with personalised skin, facial and body treatment planning."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85&fm=jpg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --ivory: #f4f0e9;
+      --paper: #fffdf8;
+      --graphite: #242421;
+      --muted: #77736d;
+      --copper: #b86f47;
+      --copper-soft: #ead6c8;
+      --olive: #6c7463;
+      --line: rgba(36, 36, 33, 0.12);
+      --shadow: 0 30px 90px rgba(50, 42, 35, 0.12);
+      --sans: "Manrope", sans-serif;
+      --serif: "Newsreader", serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
     }
-    </script>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .page-node { display: none; }
-        .page-node.active { display: block; }
-    </style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      background: var(--ivory);
+      color: var(--graphite);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+    body.drawer-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 230px 1fr;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 24px;
+      border-right: 1px solid var(--line);
+      background: rgba(244, 240, 233, 0.94);
+      backdrop-filter: blur(18px);
+      z-index: 60;
+    }
+
+    .brand {
+      display: inline-block;
+    }
+
+    .brand-mark {
+      display: inline-flex;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: var(--graphite);
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+    }
+
+    .brand-name {
+      display: block;
+      margin-top: 18px;
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      line-height: .95;
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .side-nav {
+      display: grid;
+      gap: 10px;
+      margin: 36px 0;
+    }
+
+    .side-nav button {
+      position: relative;
+      width: 100%;
+      padding: 12px 14px 12px 40px;
+      border: 0;
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .side-nav button::before {
+      content: attr(data-index);
+      position: absolute;
+      left: 14px;
+      color: #aaa39b;
+      font-size: .62rem;
+    }
+
+    .side-nav button:hover,
+    .side-nav button.active {
+      background: var(--paper);
+      color: var(--graphite);
+      box-shadow: 0 10px 30px rgba(50,42,35,.06);
+    }
+
+    .sidebar-bottom {
+      display: grid;
+      gap: 14px;
+    }
+
+    .side-social {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .side-social a {
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      font-size: .62rem;
+      font-weight: 700;
+      transition: .3s ease;
+    }
+
+    .side-social a:hover {
+      background: var(--graphite);
+      color: white;
+    }
+
+    .sidebar-note {
+      color: var(--muted);
+      font-size: .66rem;
+      line-height: 1.6;
+    }
+
+    .mobile-header {
+      display: none;
+    }
+
+    .main {
+      min-width: 0;
+    }
+
+    .page {
+      display: none;
+      min-height: 100vh;
+      padding: 34px;
+      animation: pageIn .55s var(--ease);
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--copper);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .display {
+      font-family: var(--serif);
+      font-size: clamp(3.7rem, 7vw, 8rem);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.05em;
+    }
+
+    .display em {
+      color: var(--copper);
+      font-style: italic;
+    }
+
+    .title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.03em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .35s var(--ease);
+    }
+
+    .btn-dark {
+      background: var(--graphite);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      background: var(--copper);
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      border-color: var(--line);
+      background: var(--paper);
+    }
+
+    .btn-light:hover {
+      border-color: var(--copper);
+      color: var(--copper);
+      transform: translateY(-2px);
+    }
+
+    /* HOME */
+    .home-grid {
+      min-height: calc(100vh - 68px);
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+    }
+
+    .home-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 54px;
+      border-radius: 32px;
+      background: var(--paper);
+      box-shadow: 0 18px 60px rgba(50,42,35,.06);
+    }
+
+    .home-copy .lead {
+      max-width: 610px;
+      margin: 28px 0 34px;
+    }
+
+    .home-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 44px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--line);
+    }
+
+    .metric {
+      padding: 18px;
+      background: #fbf7f1;
+    }
+
+    .metric strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: .62rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .home-visual {
+      display: grid;
+      grid-template-rows: 1.15fr .85fr;
+      gap: 24px;
+    }
+
+    .visual-large,
+    .visual-small {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-large img,
+    .visual-small img {
+      height: 100%;
+    }
+
+    .visual-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,253,248,.86);
+      backdrop-filter: blur(14px);
+    }
+
+    .visual-caption strong {
+      display: block;
+      margin-top: 6px;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    /* generic page header */
+    .page-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 30px;
+      padding: 8px 4px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-head .lead {
+      max-width: 430px;
+      font-size: .9rem;
+    }
+
+    /* treatment bento */
+    .treatment-bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .treatment-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      border-radius: 28px;
+      background: var(--paper);
+      box-shadow: 0 18px 50px rgba(50,42,35,.06);
+      cursor: pointer;
+      transition: .45s var(--ease);
+    }
+
+    .treatment-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .treatment-card.large {
+      grid-column: span 7;
+      min-height: 520px;
+    }
+
+    .treatment-card.medium {
+      grid-column: span 5;
+      min-height: 520px;
+    }
+
+    .treatment-card.small {
+      grid-column: span 4;
+    }
+
+    .treatment-card img {
+      height: 100%;
+      transition: .7s var(--ease);
+    }
+
+    .treatment-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .treatment-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 38%, rgba(22,22,20,.74));
+    }
+
+    .treatment-info {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      color: white;
+    }
+
+    .treatment-info span {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #f1c6ab;
+    }
+
+    .treatment-info h3 {
+      margin: 8px 0 10px;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .treatment-info p {
+      max-width: 520px;
+      color: rgba(255,255,255,.72);
+      font-size: .8rem;
+      line-height: 1.6;
+    }
+
+    .treatment-price {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      backdrop-filter: blur(8px);
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    /* ABOUT */
+    .about-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      min-height: calc(100vh - 68px);
+    }
+
+    .about-copy,
+    .about-values {
+      padding: 44px;
+      border-radius: 32px;
+      background: var(--paper);
+    }
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-copy .lead {
+      margin-top: 24px;
+    }
+
+    .about-image {
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: 26px;
+      margin-top: 34px;
+    }
+
+    .about-image img {
+      height: 100%;
+      min-height: 420px;
+    }
+
+    .about-values {
+      display: grid;
+      gap: 16px;
+      align-content: center;
+      background: var(--copper-soft);
+    }
+
+    .value-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.58);
+    }
+
+    .value-card span {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: var(--copper);
+    }
+
+    .value-card h4 {
+      margin-bottom: 5px;
+      font-size: .9rem;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.7;
+    }
+
+    /* DOCTOR */
+    .doctor-layout {
+      min-height: calc(100vh - 68px);
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+    }
+
+    .doctor-visual {
+      position: relative;
+      overflow: hidden;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .doctor-visual img {
+      height: 100%;
+      min-height: 660px;
+    }
+
+    .doctor-quote {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(36,36,33,.78);
+      color: white;
+      backdrop-filter: blur(14px);
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.4;
+    }
+
+    .doctor-copy {
+      padding: 48px;
+      border-radius: 32px;
+      background: var(--paper);
+    }
+
+    .doctor-copy .lead {
+      margin: 22px 0 30px;
+    }
+
+    .doctor-specs {
+      display: grid;
+      gap: 14px;
+    }
+
+    .doctor-spec {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fbf7f1;
+    }
+
+    .doctor-spec strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: .85rem;
+    }
+
+    .doctor-spec span {
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    /* RESULTS */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+    }
+
+    .result-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      background: var(--paper);
+    }
+
+    .result-card.big {
+      min-height: 650px;
+    }
+
+    .result-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .result-card.small {
+      min-height: 316px;
+    }
+
+    .result-card img {
+      height: 100%;
+    }
+
+    .result-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,253,248,.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .result-label span {
+      color: var(--copper);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .result-label strong {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+
+    /* REVIEWS */
+    .reviews-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+    }
+
+    .reviews-column,
+    .faq-column {
+      padding: 36px;
+      border-radius: 30px;
+      background: var(--paper);
+    }
+
+    .review-card {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .review-card:last-child {
+      border-bottom: 0;
+    }
+
+    .stars {
+      color: var(--copper);
+      letter-spacing: .14em;
+    }
+
+    .review-card blockquote {
+      margin-top: 16px;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      line-height: 1.35;
+    }
+
+    .review-card footer {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: .67rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 0 22px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-icon {
+      transition: .3s ease;
+    }
+
+    /* CONTACT */
+    .contact-layout {
+      min-height: calc(100vh - 68px);
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 24px;
+    }
+
+    .contact-panel {
+      padding: 42px;
+      border-radius: 32px;
+      background: var(--graphite);
+      color: white;
+    }
+
+    .contact-panel .eyebrow {
+      color: #efb891;
+    }
+
+    .contact-panel .lead {
+      margin: 22px 0 28px;
+      color: rgba(255,255,255,.62);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: rgba(255,255,255,.8);
+      font-size: .82rem;
+    }
+
+    .social-list {
+      display: grid;
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+    }
+
+    .social-list a {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .social-list a:last-child {
+      border-bottom: 0;
+    }
+
+    .social-list a:hover {
+      background: rgba(255,255,255,.08);
+      padding-left: 21px;
+    }
+
+    .booking-form {
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      padding: 44px;
+      border-radius: 32px;
+      background: var(--paper);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: .63rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 14px 15px;
+      border: 1px solid #ddd4c8;
+      border-radius: 14px;
+      background: #fbf7f1;
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--copper);
+      background: white;
+    }
+
+    /* drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 140;
+      background: rgba(20,20,18,.58);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .35s ease;
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 150;
+      width: min(620px, 100%);
+      height: 100vh;
+      overflow-y: auto;
+      background: var(--paper);
+      box-shadow: -30px 0 80px rgba(0,0,0,.2);
+      transform: translateX(100%);
+      transition: .45s var(--ease);
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-image {
+      height: 360px;
+      background: var(--cream-deep);
+    }
+
+    .drawer-image img {
+      height: 100%;
+    }
+
+    .drawer-content {
+      position: relative;
+      padding: 34px;
+    }
+
+    .drawer-close {
+      position: absolute;
+      top: -22px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--graphite);
+      color: white;
+      font-size: 1.3rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+
+    .drawer-content h3 {
+      margin: 10px 0 18px;
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 400;
+      line-height: .95;
+    }
+
+    .drawer-content > p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.85;
+    }
+
+    .drawer-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .fact {
+      padding: 16px;
+      border-radius: 14px;
+      background: var(--ivory);
+    }
+
+    .fact small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: .6rem;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .fact strong {
+      font-size: .82rem;
+    }
+
+    .drawer-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: .82rem;
+      list-style: none;
+    }
+
+    .drawer-list li::before {
+      content: "—";
+      margin-right: 9px;
+      color: var(--copper);
+    }
+
+    @media (max-width: 1100px) {
+      .app {
+        display: block;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .mobile-header {
+        position: sticky;
+        top: 0;
+        z-index: 70;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(244,240,233,.94);
+        backdrop-filter: blur(16px);
+      }
+
+      .mobile-brand {
+        font-family: var(--serif);
+        font-size: 1.5rem;
+      }
+
+      .mobile-menu-btn {
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--paper);
+      }
+
+      .mobile-drawer-nav {
+        position: fixed;
+        inset: 70px 12px auto;
+        z-index: 75;
+        display: none;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .mobile-drawer-nav.open {
+        display: grid;
+        gap: 10px;
+      }
+
+      .mobile-drawer-nav button {
+        padding: 12px;
+        border: 0;
+        border-radius: 10px;
+        background: #fbf7f1;
+        text-align: left;
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      .page {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        padding: 18px;
+      }
+
+      .home-grid,
+      .about-layout,
+      .doctor-layout,
+      .reviews-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .home-copy {
+        padding: 32px;
+      }
+
+      .home-visual {
+        min-height: 640px;
+      }
+
+      .metric-row {
+        grid-template-columns: 1fr;
+      }
+
+      .page-head {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .treatment-card.large,
+      .treatment-card.medium,
+      .treatment-card.small {
+        grid-column: span 12;
+        min-height: 420px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-card.big,
+      .result-card.small {
+        min-height: 360px;
+      }
+
+      .form-row,
+      .drawer-facts {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Top Announcement Bar (Local SEO Keyword Hook) -->
-    <div class="bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600 text-slate-950 text-xs font-semibold py-2 px-4 text-center">
-        🏆 KKM Approved & LCP Certified Medical Aesthetics | Bangsar & Mont Kiara Outlets
+<body>
+  <div class="mobile-header">
+    <div class="mobile-brand">ATELIER DERMIQUE</div>
+    <button id="mobileMenuBtn" class="mobile-menu-btn" type="button">☰</button>
+  </div>
+
+  <nav id="mobileDrawerNav" class="mobile-drawer-nav">
+    <button data-route="home">Home</button>
+    <button data-route="treatments">Treatments</button>
+    <button data-route="about">About</button>
+    <button data-route="doctor">Doctor</button>
+    <button data-route="results">Results</button>
+    <button data-route="reviews">Reviews</button>
+    <button data-route="contact">Contact</button>
+  </nav>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div>
+        <a href="#home" class="brand" data-route="home">
+          <span class="brand-mark">A</span>
+          <span class="brand-name">Atelier<br>Dermique</span>
+          <span class="brand-sub">Medical Aesthetics KL</span>
+        </a>
+
+        <nav class="side-nav">
+          <button class="active" data-route="home" data-index="01">Home</button>
+          <button data-route="treatments" data-index="02">Treatments</button>
+          <button data-route="about" data-index="03">About</button>
+          <button data-route="doctor" data-index="04">Doctor</button>
+          <button data-route="results" data-index="05">Results</button>
+          <button data-route="reviews" data-index="06">Reviews</button>
+          <button data-route="contact" data-index="07">Contact</button>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="side-social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">IG</a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">FB</a>
+          <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer">WA</a>
+        </div>
+        <p class="sidebar-note">
+          Private consultation-led care in Bangsar and Mont Kiara.
+        </p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- HOME -->
+      <section class="page active" id="page-home" data-page="home">
+        <div class="home-grid">
+          <div class="home-copy">
+            <div>
+              <span class="eyebrow">Signature aesthetic experience</span>
+              <h1 class="display">Clinical care, <em>composed beautifully.</em></h1>
+              <p class="lead">
+                A modern medical aesthetics studio combining personal consultation, refined treatment planning and quietly confident results.
+              </p>
+              <div class="home-actions">
+                <button class="btn btn-dark" data-route="contact">Reserve Consultation</button>
+                <button class="btn btn-light" data-route="treatments">View Treatments</button>
+              </div>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric">
+                <strong>Private</strong>
+                <span>Consultation-led care</span>
+              </div>
+              <div class="metric">
+                <strong>Bespoke</strong>
+                <span>Personalised treatment plans</span>
+              </div>
+              <div class="metric">
+                <strong>Refined</strong>
+                <span>Natural-looking focus</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-visual">
+            <div class="visual-large">
+              <img
+                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85&fm=jpg"
+                alt="Contemporary aesthetic clinic"
+                loading="eager"
+                referrerpolicy="no-referrer"
+              >
+              <div class="visual-caption">
+                <span class="eyebrow">The Atelier Space</span>
+                <strong>Modern care in a calm, private setting.</strong>
+              </div>
+            </div>
+
+            <div class="visual-small">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg"
+                alt="Facial treatment"
+                loading="eager"
+                referrerpolicy="no-referrer"
+              >
+              <div class="visual-caption">
+                <span class="eyebrow">The Atelier Philosophy</span>
+                <strong>Enhance, never overwhelm.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TREATMENTS -->
+      <section class="page" id="page-treatments" data-page="treatments">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Treatment Portfolio</span>
+            <h2 class="title">A curated clinical collection</h2>
+          </div>
+          <p class="lead">
+            Select any treatment to open a detailed side drawer with pricing, downtime, appointment duration and direct WhatsApp enquiry.
+          </p>
+        </div>
+
+        <div class="treatment-bento">
+          <article class="treatment-card large" data-treatment="hifu" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85&fm=jpg" alt="HIFU lifting treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span>Structural Lift</span>
+              <h3>HIFU Sculpt</h3>
+              <p>Focused ultrasound care designed to support facial firmness and contour.</p>
+              <div class="treatment-price">From RM 1,288</div>
+            </div>
+          </article>
+
+          <article class="treatment-card medium" data-treatment="pico" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85&fm=jpg" alt="Pico laser treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span>Skin Clarity</span>
+              <h3>Pico Radiance</h3>
+              <p>A targeted skin-renewal approach focused on tone and visible pigmentation.</p>
+              <div class="treatment-price">From RM 688</div>
+            </div>
+          </article>
+
+          <article class="treatment-card small" data-treatment="booster" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg" alt="Skin booster treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span>Hydration</span>
+              <h3>Skin Booster</h3>
+              <div class="treatment-price">From RM 988</div>
+            </div>
+          </article>
+
+          <article class="treatment-card small" data-treatment="facial" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85&fm=jpg" alt="Luxury facial">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span>Facial</span>
+              <h3>Signature Facial</h3>
+              <div class="treatment-price">From RM 388</div>
+            </div>
+          </article>
+
+          <article class="treatment-card small" data-treatment="body" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg" alt="Body contouring treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span>Body</span>
+              <h3>Contour Form</h3>
+              <div class="treatment-price">From RM 788</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page" id="page-about" data-page="about">
+        <div class="about-layout">
+          <div class="about-copy">
+            <div>
+              <span class="eyebrow">About the Atelier</span>
+              <h2 class="title">A quieter, more personal approach</h2>
+              <p class="lead">
+                Atelier Dermique is built around clear consultation, thoughtful treatment planning and a premium client experience from first enquiry to aftercare.
+              </p>
+            </div>
+
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1631248055158-edec7a3c072b?auto=format&fit=crop&w=1100&q=85&fm=jpg"
+                alt="Atelier Dermique clinic interior"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+              >
+            </div>
+          </div>
+
+          <div class="about-values">
+            <article class="value-card">
+              <span>01</span>
+              <div>
+                <h4>Consultation before treatment</h4>
+                <p>Every recommendation begins with a clear conversation about goals, suitability and expectations.</p>
+              </div>
+            </article>
+
+            <article class="value-card">
+              <span>02</span>
+              <div>
+                <h4>Personalised planning</h4>
+                <p>Treatment pathways are shaped around the individual instead of offered as standardised packages.</p>
+              </div>
+            </article>
+
+            <article class="value-card">
+              <span>03</span>
+              <div>
+                <h4>Refined client experience</h4>
+                <p>The full journey is designed to feel calm, discreet, considered and clearly communicated.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOCTOR -->
+      <section class="page" id="page-doctor" data-page="doctor">
+        <div class="doctor-layout">
+          <div class="doctor-visual">
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85&fm=jpg"
+              alt="Lead aesthetic physician"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+            >
+            <div class="doctor-quote">
+              “The most elegant result is one that still feels completely like you.”
+            </div>
+          </div>
+
+          <div class="doctor-copy">
+            <span class="eyebrow">Medical Direction</span>
+            <h2 class="title">Dr. Emily Wong</h2>
+            <p class="lead">
+              Dr. Emily’s approach centres on natural-looking refinement, clear communication and treatment plans that respect individual facial balance and skin needs.
+            </p>
+
+            <div class="doctor-specs">
+              <div class="doctor-spec">
+                <strong>Facial rejuvenation focus</strong>
+                <span>Natural balance, proportion and subtle refinement</span>
+              </div>
+              <div class="doctor-spec">
+                <strong>Skin health focus</strong>
+                <span>Consultation-led treatment pathways and ongoing care</span>
+              </div>
+              <div class="doctor-spec">
+                <strong>Private consultation style</strong>
+                <span>Clear explanation before any treatment decision</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESULTS -->
+      <section class="page" id="page-results" data-page="results">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow">Results & Experience</span>
+            <h2 class="title">A visual treatment journal</h2>
+          </div>
+          <p class="lead">
+            Replace these examples with approved clinic photography, authorised results or verified before-and-after content.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-card big">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85&fm=jpg" alt="Facial treatment experience">
+            <div class="result-label">
+              <span>Facial Rejuvenation</span>
+              <strong>Consultation-led skin and facial care</strong>
+            </div>
+          </div>
+
+          <div class="result-stack">
+            <div class="result-card small">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg" alt="Skin renewal experience">
+              <div class="result-label">
+                <span>Skin Renewal</span>
+                <strong>Tone and texture focus</strong>
+              </div>
+            </div>
+
+            <div class="result-card small">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg" alt="Body care experience">
+              <div class="result-label">
+                <span>Body Care</span>
+                <strong>Contour and tone support</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REVIEWS -->
+      <section class="page" id="page-reviews" data-page="reviews">
+        <div class="reviews-layout">
+          <div class="reviews-column">
+            <span class="eyebrow">Client Experience</span>
+            <h2 class="title">What clients remember</h2>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“The consultation felt detailed, calm and never rushed.”</blockquote>
+              <footer>Client Review · Bangsar</footer>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“I appreciated the natural approach and clear explanation.”</blockquote>
+              <footer>Client Review · Kuala Lumpur</footer>
+            </article>
+
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <blockquote>“The space feels private, polished and thoughtfully designed.”</blockquote>
+              <footer>Client Review · Mont Kiara</footer>
+            </article>
+          </div>
+
+          <div class="faq-column">
+            <span class="eyebrow">Frequently Asked</span>
+            <h2 class="title">Before your first visit</h2>
+
+            <div style="margin-top:28px;">
+              <article class="faq-item">
+                <button class="faq-question" type="button">
+                  How do I know which treatment is suitable?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Suitability should be assessed during consultation. Your concerns, expectations and relevant history should be reviewed before a recommendation is made.
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-question" type="button">
+                  Are the displayed prices final?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  The amounts are starting references. Final pricing may vary depending on treatment area, protocol and individual requirements.
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-question" type="button">
+                  Can I book directly through WhatsApp?
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                  Yes. The treatment drawer and booking form both open WhatsApp with a pre-filled enquiry.
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="page" id="page-contact" data-page="contact">
+        <div class="contact-layout">
+          <div class="contact-panel">
+            <span class="eyebrow">Private Concierge</span>
+            <h2 class="title">Reserve your consultation</h2>
+            <p class="lead">
+              Speak with the Atelier team about treatments, availability or your preferred consultation time.
+            </p>
+
+            <div class="contact-list">
+              <span>Bangsar · Kuala Lumpur</span>
+              <span>Mont Kiara · Kuala Lumpur</span>
+              <span>Monday – Saturday · 10:00 AM – 7:00 PM</span>
+              <span>+60 12-345 6789</span>
+              <span>hello@atelierdermique.my</span>
+            </div>
+
+            <div class="social-list">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>↗</span></a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span>Facebook</span><span>↗</span></a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><span>TikTok</span><span>↗</span></a>
+              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span>↗</span></a>
+            </div>
+          </div>
+
+          <form id="bookingForm" class="booking-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" required>
+              </div>
+              <div class="field">
+                <label for="phone">WhatsApp number</label>
+                <input id="phone" type="tel" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="location">Preferred location</label>
+                <select id="location">
+                  <option>Bangsar</option>
+                  <option>Mont Kiara</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="interest">Treatment interest</label>
+                <select id="interest">
+                  <option>Not sure yet</option>
+                  <option>HIFU Sculpt</option>
+                  <option>Pico Radiance</option>
+                  <option>Skin Booster</option>
+                  <option>Signature Facial</option>
+                  <option>Contour Form</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Share your main concern or preferred appointment time."></textarea>
+            </div>
+
+            <button class="btn btn-dark" type="submit">Continue on WhatsApp</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+  <aside id="treatmentDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-image">
+      <img id="drawerImage" src="" alt="">
     </div>
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="javascript:void(0)" onclick="routePage('home')" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 to-amber-600 flex items-center justify-center font-serif text-slate-950 font-bold text-xl">L</div>
-                <div>
-                    <span class="font-serif text-xl font-bold tracking-wider text-white block leading-none">LUMINA</span>
-                    <span class="text-[9px] uppercase tracking-[0.2em] text-amber-400">Medical Aesthetics KL</span>
-                </div>
-            </a>
+    <div class="drawer-content">
+      <button id="drawerClose" class="drawer-close" type="button">×</button>
 
-            <!-- SEO Friendly Navigation Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-xs font-medium uppercase tracking-wider">
-                <button onclick="routePage('home')" class="nav-link text-amber-400 hover:text-amber-400 transition" id="nl-home">Home</button>
-                <button onclick="routePage('pico-laser')" class="nav-link text-slate-300 hover:text-amber-400 transition" id="nl-pico-laser">Pico Laser</button>
-                <button onclick="routePage('profhilo')" class="nav-link text-slate-300 hover:text-amber-400 transition" id="nl-profhilo">Profhilo & Fillers</button>
-                <button onclick="routePage('pricing')" class="nav-link text-slate-300 hover:text-amber-400 transition" id="nl-pricing">MYR Price Menu</button>
-                <button onclick="routePage('doctors')" class="nav-link text-slate-300 hover:text-amber-400 transition" id="nl-doctors">LCP Doctors</button>
-            </nav>
+      <span id="drawerCategory" class="eyebrow"></span>
+      <h3 id="drawerTitle"></h3>
+      <p id="drawerDescription"></p>
 
-            <div class="flex items-center gap-3">
-                <a href="https://wa.me/60123456789?text=Hi%20Lumina%20Clinic,%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" class="hidden sm:flex items-center gap-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 px-3.5 py-2 rounded-lg text-xs font-semibold hover:bg-emerald-600/30 transition">
-                    <span>💬 WhatsApp Us</span>
-                </a>
-                <button onclick="routePage('book')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs uppercase tracking-wider px-4 py-2.5 rounded-lg transition">
-                    Book Consult
-                </button>
-            </div>
+      <div class="drawer-facts">
+        <div class="fact">
+          <small>Investment</small>
+          <strong id="drawerPrice"></strong>
         </div>
-    </header>
+        <div class="fact">
+          <small>Appointment</small>
+          <strong id="drawerDuration"></strong>
+        </div>
+        <div class="fact">
+          <small>Downtime</small>
+          <strong id="drawerDowntime"></strong>
+        </div>
+        <div class="fact">
+          <small>Best for</small>
+          <strong id="drawerBestFor"></strong>
+        </div>
+      </div>
 
-    <!-- Floating Sticky WhatsApp Button (High Local Conversion) -->
-    <a href="https://wa.me/60123456789" target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-slate-950 p-3.5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition duration-300">
-        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-    </a>
+      <ul id="drawerList" class="drawer-list"></ul>
 
-    <!-- ================= PAGE 1: HOME ================= -->
-    <main id="page-home" class="page-node active">
-        <!-- Hero Section with SEO Keywords -->
-        <section class="relative py-20 lg:py-28 overflow-hidden bg-slate-900/50">
-            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-xs font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">KUALA LUMPUR'S TOP RATED AESTHETIC CLINIC</span>
-                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white leading-tight">
-                        Science-Backed Rejuvenation in <span class="italic text-amber-400 font-serif">Bangsar & Mont Kiara.</span>
-                    </h1>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
-                        At LUMINA Aesthetics, our Ministry of Health (MOH) certified LCP doctors specialize in non-invasive face lifting, Pico laser pigmentation removal, and skin booster treatments tailored for Asian skin types.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <button onclick="routePage('book')" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition text-xs uppercase tracking-wider">Book Consultation</button>
-                        <button onclick="routePage('pricing')" class="bg-slate-800 hover:bg-slate-700 text-white font-medium px-7 py-3.5 rounded-xl border border-slate-700 transition text-xs uppercase tracking-wider">Browse Prices (MYR)</button>
-                    </div>
-                </div>
-                <div class="lg:col-span-5 relative">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=80" alt="Lumina Aesthetic Clinic Room Bangsar" class="rounded-2xl border border-slate-800 object-cover w-full h-[450px]">
-                </div>
-            </div>
-        </section>
+      <a id="drawerWhatsapp" class="btn btn-dark" href="#" target="_blank" rel="noopener noreferrer">
+        Ask About This Treatment
+      </a>
+    </div>
+  </aside>
 
-        <!-- Services Hub (SEO Silos) -->
-        <section class="max-w-7xl mx-auto px-6 py-20">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-serif text-3xl font-normal text-white">Core Aesthetic Specialties</h2>
-                <p class="text-slate-400 text-xs mt-2">FDA & KKM approved medical technologies for face, skin, and body.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <article class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition">
-                    <h3 class="font-serif text-xl text-white mb-2">Pico Laser Pigmentation</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Target melasma, freckles, acne scars, and uneven skin tone with zero downtime laser technology.</p>
-                    <button onclick="routePage('pico-laser')" class="text-xs text-amber-400 font-bold uppercase tracking-wider hover:underline">Read Full Treatment Guide &rarr;</button>
-                </article>
-                <article class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition">
-                    <h3 class="font-serif text-xl text-white mb-2">Profhilo® Bio-Remodeling</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Pure Hyaluronic Acid skin booster to cure crepey skin, restore collagen, and hydrate deeply.</p>
-                    <button onclick="routePage('profhilo')" class="text-xs text-amber-400 font-bold uppercase tracking-wider hover:underline">Read Full Treatment Guide &rarr;</button>
-                </article>
-                <article class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-amber-500/50 transition">
-                    <h3 class="font-serif text-xl text-white mb-2">Ultherapy® Non-Surgical Lift</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-4">Micro-focused ultrasound technology to lift sagging jawlines and double chins non-invasively.</p>
-                    <button onclick="routePage('pricing')" class="text-xs text-amber-400 font-bold uppercase tracking-wider hover:underline">View Pricing Menu &rarr;</button>
-                </article>
-            </div>
-        </section>
-    </main>
+  <script>
+    const validPages = [
+      "home",
+      "treatments",
+      "about",
+      "doctor",
+      "results",
+      "reviews",
+      "contact"
+    ];
 
-    <!-- ================= PAGE 2: PICO LASER (SEO SERVICE PAGE SILO) ================= -->
-    <main id="page-pico-laser" class="page-node">
-        <section class="max-w-5xl mx-auto px-6 py-16">
-            <nav class="text-xs text-slate-500 mb-6">Home / Services / Pico Laser Malaysia</nav>
-            <h1 class="font-serif text-4xl font-normal text-white mb-4">Pico Laser Treatment in Kuala Lumpur</h1>
-            <p class="text-slate-300 text-sm leading-relaxed mb-8">
-                Pico Laser is the gold-standard laser technology in Malaysia for treating obstinate pigmentation, acne scars, and enlarged pores. Utilizing picosecond laser pulses, it shatters melanin particles without causing heat damage to surrounding skin tissue.
-            </p>
+    function navigateTo(page, updateHash = true) {
+      if (!validPages.includes(page)) page = "home";
 
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                    <h2 class="text-lg font-bold text-amber-400 mb-3">Key Benefits</h2>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li>✓ Targets stubborn Asian Melasma & Post-Inflammatory Hyperpigmentation (PIH)</li>
-                        <li>✓ Stimulates elastin and collagen for pore refinement</li>
-                        <li>✓ Minimal to zero downtime (mild pinkish flush for 2–4 hours)</li>
-                        <li>✓ Administered strictly by MOH-licensed medical doctors</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl">
-                    <h2 class="text-lg font-bold text-amber-400 mb-3">Pico Laser Price Range (MYR)</h2>
-                    <div class="space-y-3 text-xs">
-                        <div class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>Trial Session (Full Face)</span>
-                            <span class="font-bold text-white">RM 680</span>
-                        </div>
-                        <div class="flex justify-between border-b border-slate-800 pb-2">
-                            <span>Standard 5-Session Package</span>
-                            <span class="font-bold text-amber-400">RM 2,800</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      document.querySelectorAll(".page").forEach(section => {
+        section.classList.toggle("active", section.dataset.page === page);
+      });
 
-            <!-- SEO FAQ Schema Section -->
-            <section class="border-t border-slate-800 pt-12">
-                <h2 class="font-serif text-2xl text-white mb-6">Frequently Asked Questions (Pico Laser KL)</h2>
-                <div class="space-y-4">
-                    <div class="bg-slate-900 p-5 rounded-xl border border-slate-800">
-                        <h3 class="font-bold text-sm text-white mb-1">How many Pico Laser sessions do I need for melasma?</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed">Most patients in Kuala Lumpur see visible brightening after 1 to 2 sessions. However, a clinical protocol of 4 to 6 sessions spaced 3 weeks apart is recommended for severe pigmentation.</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
+      document.querySelectorAll("[data-route]").forEach(button => {
+        button.classList.toggle("active", button.dataset.route === page);
+      });
 
-    <!-- ================= PAGE 3: PROFHILO (SEO SERVICE PAGE SILO) ================= -->
-    <main id="page-profhilo" class="page-node">
-        <section class="max-w-5xl mx-auto px-6 py-16">
-            <nav class="text-xs text-slate-500 mb-6">Home / Services / Profhilo Malaysia</nav>
-            <h1 class="font-serif text-4xl font-normal text-white mb-4">Profhilo® Skin Booster Treatment KL</h1>
-            <p class="text-slate-300 text-sm leading-relaxed mb-8">
-                Profhilo® is an injectable anti-aging treatment formulated with one of the highest concentrations of pure Hyaluronic Acid (HA) on the market. It bio-remodels skin structure by stimulating 4 types of collagen and elastin.
-            </p>
-            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl mb-8">
-                <h2 class="text-lg font-bold text-amber-400 mb-2">Profhilo® Cost in Malaysia</h2>
-                <p class="text-xs text-slate-300">1 Syringe (2ml): <strong>RM 2,200</strong> | Complete 2-Session Protocol: <strong>RM 3,900</strong></p>
-            </div>
-        </section>
-    </main>
+      if (updateHash) {
+        history.pushState({ page }, "", "#" + page);
+      }
 
-    <!-- ================= PAGE 4: TRANSPARENT MYR PRICE MENU ================= -->
-    <main id="page-pricing" class="page-node">
-        <section class="max-w-6xl mx-auto px-6 py-16">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-mono text-amber-400 uppercase">OFFICIAL CLINICAL PRICE INDEX</span>
-                <h1 class="font-serif text-3xl font-normal text-white mt-1">Transparent Treatment Pricing (MYR)</h1>
-                <p class="text-xs text-slate-400 mt-2">All treatments are performed by LCP-certified aesthetic physicians. No hidden charges.</p>
-            </div>
+      document.getElementById("mobileDrawerNav").classList.remove("open");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
-                <table class="w-full text-left text-xs">
-                    <thead class="bg-slate-800/60 text-amber-400 uppercase font-mono border-b border-slate-800">
-                        <tr>
-                            <th class="p-4">Medical Procedure</th>
-                            <th class="p-4">Target Area</th>
-                            <th class="p-4">Price (MYR)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-800 text-slate-300">
-                        <tr><td class="p-4 font-bold text-white">Pico Laser Pigmentation</td><td class="p-4">Full Face</td><td class="p-4 font-mono text-amber-400">RM 680 / session</td></tr>
-                        <tr><td class="p-4 font-bold text-white">Profhilo® Bio-Remodeling</td><td class="p-4">Face or Neck (2ml)</td><td class="p-4 font-mono text-amber-400">RM 2,200 / syringe</td></tr>
-                        <tr><td class="p-4 font-bold text-white">Botulinum Toxin Wrinkle Smoothing</td><td class="p-4">Forehead / Crow's Feet</td><td class="p-4 font-mono text-amber-400">RM 750 / area</td></tr>
-                        <tr><td class="p-4 font-bold text-white">Ultherapy® Non-Surgical Lift</td><td class="p-4">Lower Face & Jawline</td><td class="p-4 font-mono text-amber-400">RM 4,500 / protocol</td></tr>
-                        <tr><td class="p-4 font-bold text-white">Rejuran Healer (Salmon DNA)</td><td class="p-4">Full Face (2ml)</td><td class="p-4 font-mono text-amber-400">RM 1,500 / syringe</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+    document.querySelectorAll("[data-route]").forEach(element => {
+      element.addEventListener("click", event => {
+        event.preventDefault();
+        navigateTo(element.dataset.route);
+      });
+    });
 
-    <!-- ================= PAGE 5: DOCTORS & ACCREDITATION ================= -->
-    <main id="page-doctors" class="page-node">
-        <section class="max-w-5xl mx-auto px-6 py-16">
-            <h1 class="font-serif text-3xl text-white mb-2">Our MOH-Licensed LCP Aesthetic Physicians</h1>
-            <p class="text-xs text-slate-400 mb-12">In compliance with Ministry of Health Malaysia regulations, all medical procedures are strictly administered by registered doctors holding valid Letters of Credentialing & Privilege (LCP).</p>
+    document.getElementById("mobileMenuBtn").addEventListener("click", () => {
+      document.getElementById("mobileDrawerNav").classList.toggle("open");
+    });
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl flex gap-4 items-center">
-                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=300&q=80" alt="Dr. Sarah Tan Aesthetic Doctor KL" class="w-24 h-24 rounded-lg object-cover">
-                    <div>
-                        <span class="text-[10px] bg-amber-500/10 text-amber-400 font-mono px-2 py-0.5 rounded">LCP NO: AMP/2018/042</span>
-                        <h2 class="text-lg font-serif text-white mt-1">Dr. Sarah Tan</h2>
-                        <p class="text-xs text-slate-400">Medical Director & Senior Aesthetic Doctor</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    window.addEventListener("popstate", () => {
+      navigateTo(location.hash.replace("#", "") || "home", false);
+    });
 
-    <!-- ================= PAGE 6: BOOK APPOINTMENT ================= -->
-    <main id="page-book" class="page-node">
-        <section class="max-w-3xl mx-auto px-6 py-16">
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
-                <h1 class="font-serif text-2xl text-white mb-2">Book Consultation</h1>
-                <p class="text-xs text-slate-400 mb-6">Select your preferred branch and clinic date.</p>
-                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Appointment request transmitted successfully! Our executive will contact you via WhatsApp.');">
-                    <input type="text" placeholder="Full Name" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-500">
-                    <input type="tel" placeholder="WhatsApp Mobile (+60)" required class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-500">
-                    <select class="w-full bg-slate-950 border border-slate-800 rounded-lg p-3 text-xs text-white">
-                        <option>Bangsar Outlet (Jalan Telawi)</option>
-                        <option>Mont Kiara Outlet (1 Mont Kiara)</option>
-                    </select>
-                    <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3.5 rounded-lg text-xs uppercase tracking-wider">Confirm Booking</button>
-                </form>
-            </div>
-        </section>
-    </main>
+    const treatmentData = {
+      hifu: {
+        category: "Structural Lift",
+        title: "HIFU Sculpt",
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85&fm=jpg",
+        description: "A consultation-led lifting treatment focused on supporting facial firmness and definition while maintaining a natural-looking result.",
+        price: "From RM 1,288",
+        duration: "60–90 minutes",
+        downtime: "Minimal",
+        bestFor: "Jawline and lower face",
+        points: [
+          "Personal facial assessment before treatment",
+          "Targeted planning based on concern area",
+          "Aftercare guidance discussed during consultation"
+        ]
+      },
+      pico: {
+        category: "Skin Clarity",
+        title: "Pico Radiance",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=85&fm=jpg",
+        description: "A skin-renewal protocol focused on visible pigmentation, uneven tone and overall clarity.",
+        price: "From RM 688",
+        duration: "45–60 minutes",
+        downtime: "Varies by protocol",
+        bestFor: "Tone and texture",
+        points: [
+          "Skin concern review and suitability assessment",
+          "Protocol tailored to visible pigmentation",
+          "Post-treatment guidance provided"
+        ]
+      },
+      booster: {
+        category: "Hydration",
+        title: "Skin Booster",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85&fm=jpg",
+        description: "A skin-quality treatment designed to support hydration, smoother-looking texture and a refreshed appearance.",
+        price: "From RM 988",
+        duration: "45–75 minutes",
+        downtime: "Short-term visible marks possible",
+        bestFor: "Hydration and skin quality",
+        points: [
+          "Individual skin-quality assessment",
+          "Treatment areas discussed beforehand",
+          "Expected recovery explained clearly"
+        ]
+      },
+      facial: {
+        category: "Facial",
+        title: "Signature Facial",
+        image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=85&fm=jpg",
+        description: "A premium facial experience designed to support hydration, comfort and visible radiance.",
+        price: "From RM 388",
+        duration: "60–75 minutes",
+        downtime: "None expected",
+        bestFor: "Refresh and maintenance",
+        points: [
+          "Skin condition review",
+          "Customised facial steps",
+          "Home-care guidance after treatment"
+        ]
+      },
+      body: {
+        category: "Body",
+        title: "Contour Form",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85&fm=jpg",
+        description: "A body-focused consultation and treatment pathway designed to support selected contour and tone areas.",
+        price: "From RM 788",
+        duration: "45–90 minutes",
+        downtime: "Usually minimal",
+        bestFor: "Selected body areas",
+        points: [
+          "Target-area consultation",
+          "Personalised suitability review",
+          "Treatment frequency discussed individually"
+        ]
+      }
+    };
 
-    <!-- Global Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-center text-xs text-slate-600">
-        <p>&copy; 2026 LUMINA Medical Aesthetics Sdn. Bhd. All rights reserved. KKM Registered Practice.</p>
-    </footer>
+    const drawer = document.getElementById("treatmentDrawer");
+    const backdrop = document.getElementById("drawerBackdrop");
 
-    <!-- Native SPA Router Script -->
-    <script>
-        function routePage(pageId) {
-            document.querySelectorAll('.page-node').forEach(node => node.classList.remove('active'));
-            const activeTarget = document.getElementById('page-' + pageId);
-            if (activeTarget) activeTarget.classList.add('active');
+    function openDrawer(key) {
+      const data = treatmentData[key];
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('text-amber-400');
-                link.classList.add('text-slate-300');
-            });
-            const activeNav = document.getElementById('nl-' + pageId);
-            if (activeNav) {
-                activeNav.classList.add('text-amber-400');
-                activeNav.classList.remove('text-slate-300');
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.getElementById("drawerImage").src = data.image;
+      document.getElementById("drawerImage").alt = data.title;
+      document.getElementById("drawerCategory").textContent = data.category;
+      document.getElementById("drawerTitle").textContent = data.title;
+      document.getElementById("drawerDescription").textContent = data.description;
+      document.getElementById("drawerPrice").textContent = data.price;
+      document.getElementById("drawerDuration").textContent = data.duration;
+      document.getElementById("drawerDowntime").textContent = data.downtime;
+      document.getElementById("drawerBestFor").textContent = data.bestFor;
+
+      document.getElementById("drawerList").innerHTML = data.points
+        .map(point => `<li>${point}</li>`)
+        .join("");
+
+      document.getElementById("drawerWhatsapp").href =
+        "https://wa.me/60123456789?text=" +
+        encodeURIComponent("Hello Atelier Dermique, I would like to ask about " + data.title + ".");
+
+      drawer.classList.add("open");
+      backdrop.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+      document.body.classList.add("drawer-open");
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove("open");
+      backdrop.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("drawer-open");
+    }
+
+    document.querySelectorAll("[data-treatment]").forEach(card => {
+      card.addEventListener("click", () => openDrawer(card.dataset.treatment));
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openDrawer(card.dataset.treatment);
         }
-    </script>
+      });
+    });
+
+    document.getElementById("drawerClose").addEventListener("click", closeDrawer);
+    backdrop.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeDrawer();
+    });
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+      button.addEventListener("click", () => {
+        button.closest(".faq-item").classList.toggle("open");
+      });
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const locationChoice = document.getElementById("location").value;
+      const interest = document.getElementById("interest").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Hello Atelier Dermique, I would like to request a consultation.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+        "Preferred location: " + encodeURIComponent(locationChoice) + "%0A" +
+        "Treatment interest: " + encodeURIComponent(interest) + "%0A" +
+        "Message: " + encodeURIComponent(message || "No additional message");
+
+      window.open(
+        "https://wa.me/60123456789?text=" + text,
+        "_blank",
+        "noopener"
+      );
+    });
+
+    navigateTo(location.hash.replace("#", "") || "home", false);
+  </script>
 </body>
 </html>
+
