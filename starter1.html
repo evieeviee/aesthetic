@@ -1,180 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison Éclat | Haute Aesthetics & Wellness</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        gold: '#D4AF37',
-                        bronze: '#9A7B4F',
-                        champagne: '#FDFBF7',
-                        obsidian: '#121212',
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Maison Éclat | Aesthetic Clinic</title>
+  <meta
+    name="description"
+    content="Personalised facial, skin and body aesthetic treatments with a refined and natural-looking approach."
+  >
+
+  <meta property="og:title" content="Maison Éclat Aesthetic Clinic">
+  <meta
+    property="og:description"
+    content="Refined aesthetic treatments tailored to your individual goals."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1512290900676-26c2a6a095ae?auto=format&fit=crop&w=1200&q=85"
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif']
+          },
+          colors: {
+            gold: "#D4AF37",
+            bronze: "#9A7B4F",
+            champagne: "#FDFBF7",
+            obsidian: "#121212"
+          }
         }
-    </script>
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .font-serif {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .hero-glow {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(212, 175, 55, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 75%, rgba(154, 123, 79, 0.10), transparent 26%);
+    }
+  </style>
 </head>
-<body class="bg-champagne text-obsidian antialiased font-sans">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-obsidian text-champagne text-xs uppercase tracking-[0.2em] py-2.5 text-center font-light border-b border-white/10">
-        Private Consultations by Appointment Only — Limited Availability
-    </div>
+<body class="bg-champagne text-obsidian antialiased">
 
-    <!-- Navigation -->
-    <nav class="max-w-7xl mx-auto px-8 py-8 flex justify-between items-center border-b border-stone-200/60">
-        <div class="text-xs uppercase tracking-[0.3em] font-medium hidden md:block">New York &bull; London</div>
-        <a href="#" class="font-serif text-3xl tracking-widest text-obsidian uppercase font-medium">Maison Éclat</a>
-        <a href="#reserve" class="text-xs uppercase tracking-[0.2em] bg-obsidian text-champagne px-6 py-3 hover:bg-bronze transition-colors">
-            Reserve Suite
+  <!-- Announcement Bar -->
+  <div class="border-b border-white/10 bg-obsidian px-4 py-2.5 text-center text-[10px] font-light uppercase tracking-[0.22em] text-champagne sm:text-xs">
+    Private Consultations by Appointment
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-stone-200/70 bg-champagne/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
+      <a href="#home" class="font-serif text-2xl font-medium uppercase tracking-[0.18em] text-obsidian sm:text-3xl">
+        Maison Éclat
+      </a>
+
+      <nav class="hidden items-center gap-7 text-xs font-medium uppercase tracking-[0.16em] text-stone-600 md:flex">
+        <a href="#treatments" class="transition hover:text-bronze">
+          Treatments
         </a>
-    </nav>
 
-    <!-- Split Hero Section -->
-    <section class="max-w-7xl mx-auto px-6 py-12 md:py-20 grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-8">
-            <span class="text-xs font-semibold uppercase tracking-[0.3em] text-bronze block">The Science of Subtle Refinement</span>
-            <h1 class="font-serif text-5xl md:text-7xl font-light leading-[1.1] text-obsidian">
-                Artistry in <br><i class="font-serif italic font-normal">Facial Harmony</i> & Longevity.
-            </h1>
-            <p class="text-stone-600 font-light text-lg leading-relaxed max-w-xl">
-                Combining bespoke dermatological art with state-of-the-art medical technology. We craft refined, age-defying aesthetics engineered to honor your innate features.
+        <a href="#why" class="transition hover:text-bronze">
+          Why Us
+        </a>
+
+        <a href="#contact" class="transition hover:text-bronze">
+          Contact
+        </a>
+      </nav>
+
+      <a
+        href="#contact"
+        class="bg-obsidian px-5 py-3 text-[10px] font-medium uppercase tracking-[0.18em] text-champagne transition hover:bg-bronze sm:text-xs"
+      >
+        Book Consultation
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home" class="hero-glow overflow-hidden">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-12 lg:px-8 lg:py-20">
+
+        <div class="space-y-7 lg:col-span-7">
+          <span class="block text-xs font-semibold uppercase tracking-[0.3em] text-bronze">
+            The Art of Subtle Refinement
+          </span>
+
+          <h1 class="font-serif text-5xl font-light leading-[1.05] text-obsidian sm:text-6xl lg:text-7xl">
+            Refined beauty,
+            <br>
+            <i class="font-normal">naturally yours.</i>
+          </h1>
+
+          <p class="max-w-xl text-base font-light leading-8 text-stone-600 sm:text-lg">
+            Personalised facial, skin and body treatments designed to enhance your natural features with balance, confidence and care.
+          </p>
+
+          <div class="flex flex-col gap-4 pt-2 sm:flex-row">
+            <a
+              href="#contact"
+              class="bg-obsidian px-8 py-4 text-center text-xs font-medium uppercase tracking-[0.22em] text-champagne shadow-md transition hover:-translate-y-0.5 hover:bg-bronze"
+            >
+              Request Consultation
+            </a>
+
+            <a
+              href="#treatments"
+              class="border border-stone-300 bg-white px-8 py-4 text-center text-xs font-medium uppercase tracking-[0.22em] text-stone-700 transition hover:border-bronze hover:text-bronze"
+            >
+              View Treatments
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-x-6 gap-y-3 pt-2 text-xs uppercase tracking-[0.12em] text-stone-500">
+            <span>✓ Personal consultation</span>
+            <span>✓ Tailored treatment plan</span>
+            <span>✓ Natural-looking approach</span>
+          </div>
+        </div>
+
+        <div class="relative lg:col-span-5">
+          <div class="absolute -inset-4 bg-gold/10 blur-3xl"></div>
+
+          <div class="relative border border-stone-300 bg-white p-3 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=82&fm=jpg" loading="eager" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E9E1D4'/%3E%3Cstop offset='1' stop-color='%23C8B28A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='600' cy='320' r='110' fill='%23FDFBF7' opacity='.75'/%3E%3Cpath d='M390 620c75-145 155-215 210-215s135 70 210 215' fill='%23FDFBF7' opacity='.75'/%3E%3Ctext x='600' y='720' text-anchor='middle' fill='%239A7B4F' font-family='serif' font-size='34'%3EMaison Eclat%3C/text%3E%3C/svg%3E';" 
+              alt="Luxury aesthetic clinic treatment"
+              class="h-[470px] w-full bg-stone-200 object-cover grayscale transition duration-700 hover:grayscale-0 sm:h-[540px]"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="border-y border-stone-800 bg-obsidian py-9 text-champagne">
+      <div class="mx-auto grid max-w-6xl grid-cols-1 gap-7 px-5 text-center sm:grid-cols-3 lg:px-8">
+        <div>
+          <p class="font-serif text-3xl text-gold">Consultation First</p>
+          <p class="mt-2 text-[10px] uppercase tracking-[0.2em] text-stone-400">
+            Personal assessment before treatment
+          </p>
+        </div>
+
+        <div>
+          <p class="font-serif text-3xl text-gold">Bespoke Care</p>
+          <p class="mt-2 text-[10px] uppercase tracking-[0.2em] text-stone-400">
+            Recommendations tailored to you
+          </p>
+        </div>
+
+        <div>
+          <p class="font-serif text-3xl text-gold">Natural Focus</p>
+          <p class="mt-2 text-[10px] uppercase tracking-[0.2em] text-stone-400">
+            Refined and balanced results
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatments -->
+    <section id="treatments" class="bg-white py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mb-12 flex flex-col justify-between gap-5 border-b border-stone-200 pb-7 md:flex-row md:items-end">
+          <div>
+            <span class="block text-xs uppercase tracking-[0.3em] text-bronze">
+              Curated Treatments
+            </span>
+
+            <h2 class="font-serif mt-2 text-4xl font-light text-obsidian sm:text-5xl">
+              Signature Procedures
+            </h2>
+          </div>
+
+          <p class="max-w-sm text-sm font-light leading-6 text-stone-500">
+            Three core treatment categories, each personalised following a private consultation.
+          </p>
+        </div>
+
+        <div class="grid gap-9 md:grid-cols-3">
+
+          <article>
+            <div class="mb-5 overflow-hidden border border-stone-200">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=82&fm=jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E9E1D4'/%3E%3Cstop offset='1' stop-color='%23C8B28A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='600' cy='320' r='110' fill='%23FDFBF7' opacity='.75'/%3E%3Cpath d='M390 620c75-145 155-215 210-215s135 70 210 215' fill='%23FDFBF7' opacity='.75'/%3E%3Ctext x='600' y='720' text-anchor='middle' fill='%239A7B4F' font-family='serif' font-size='34'%3EMaison Eclat%3C/text%3E%3C/svg%3E';" 
+                alt="Facial rejuvenation treatment"
+                class="h-72 w-full bg-stone-200 object-cover transition duration-500 hover:scale-105"
+              >
+            </div>
+
+            <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">
+              01 / Facial
+            </span>
+
+            <h3 class="font-serif mt-2 text-2xl font-normal">
+              Facial Rejuvenation
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              Personalised options designed to refresh tired-looking skin and support a balanced, natural appearance.
             </p>
-            <div class="pt-4 flex items-center gap-8">
-                <a href="#reserve" class="bg-obsidian text-champagne text-xs uppercase tracking-[0.25em] px-8 py-4 hover:bg-bronze transition-all shadow-md">
-                    Request Consultation
-                </a>
-                <a href="#philosophy" class="font-serif italic text-lg text-stone-700 hover:text-bronze transition-colors border-b border-stone-400 pb-0.5">
-                    Our Philosophy
-                </a>
+          </article>
+
+          <article>
+            <div class="mb-5 overflow-hidden border border-stone-200">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=82&fm=jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E9E1D4'/%3E%3Cstop offset='1' stop-color='%23C8B28A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='600' cy='320' r='110' fill='%23FDFBF7' opacity='.75'/%3E%3Cpath d='M390 620c75-145 155-215 210-215s135 70 210 215' fill='%23FDFBF7' opacity='.75'/%3E%3Ctext x='600' y='720' text-anchor='middle' fill='%239A7B4F' font-family='serif' font-size='34'%3EMaison Eclat%3C/text%3E%3C/svg%3E';" 
+                alt="Laser skin renewal treatment"
+                class="h-72 w-full bg-stone-200 object-cover transition duration-500 hover:scale-105"
+              >
             </div>
-        </div>
-        <div class="lg:col-span-5 relative">
-            <div class="border border-stone-300 p-3 bg-white shadow-2xl">
-                <img src="https://images.unsplash.com/photo-1512290900676-26c2a6a095ae?auto=format&fit=crop&w=900&q=80" alt="High End Aesthetic Clinic" class="w-full h-[520px] object-cover filter grayscale contrast-[1.05] hover:grayscale-0 transition-all duration-700">
+
+            <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">
+              02 / Skin
+            </span>
+
+            <h3 class="font-serif mt-2 text-2xl font-normal">
+              Skin Renewal
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              Target texture, dullness, pigmentation and the appearance of acne-related marks.
+            </p>
+          </article>
+
+          <article>
+            <div class="mb-5 overflow-hidden border border-stone-200">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=82&fm=jpg" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='800' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E9E1D4'/%3E%3Cstop offset='1' stop-color='%23C8B28A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23g)'/%3E%3Ccircle cx='600' cy='320' r='110' fill='%23FDFBF7' opacity='.75'/%3E%3Cpath d='M390 620c75-145 155-215 210-215s135 70 210 215' fill='%23FDFBF7' opacity='.75'/%3E%3Ctext x='600' y='720' text-anchor='middle' fill='%239A7B4F' font-family='serif' font-size='34'%3EMaison Eclat%3C/text%3E%3C/svg%3E';" 
+                alt="Body contouring treatment"
+                class="h-72 w-full bg-stone-200 object-cover transition duration-500 hover:scale-105"
+              >
             </div>
+
+            <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">
+              03 / Body
+            </span>
+
+            <h3 class="font-serif mt-2 text-2xl font-normal">
+              Body Contouring
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              Non-invasive options that support toning, contouring and improved skin appearance.
+            </p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Stat Bar -->
-    <section class="bg-obsidian text-champagne py-12 border-y border-stone-800">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <p class="font-serif text-4xl text-gold">100%</p>
-                <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 mt-2">Physician Administered</p>
-            </div>
-            <div>
-                <p class="font-serif text-4xl text-gold">15+</p>
-                <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 mt-2">Years Clinical Excellence</p>
-            </div>
-            <div>
-                <p class="font-serif text-4xl text-gold">Bespoke</p>
-                <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 mt-2">Personalized Protocols</p>
-            </div>
-            <div>
-                <p class="font-serif text-4xl text-gold">VIP</p>
-                <p class="text-[10px] uppercase tracking-[0.2em] text-stone-400 mt-2">Discreet Private Suites</p>
-            </div>
+    <!-- Why Us -->
+    <section id="why" class="bg-stone-100 py-16">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="grid gap-6 md:grid-cols-3">
+
+          <div class="border border-stone-200 bg-white p-7">
+            <span class="font-serif text-3xl text-gold">01</span>
+
+            <h3 class="mt-4 text-sm font-semibold uppercase tracking-[0.14em]">
+              Personal Consultation
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              We begin by understanding your concerns before suggesting any suitable treatment.
+            </p>
+          </div>
+
+          <div class="border border-stone-200 bg-white p-7">
+            <span class="font-serif text-3xl text-gold">02</span>
+
+            <h3 class="mt-4 text-sm font-semibold uppercase tracking-[0.14em]">
+              Tailored Recommendations
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              Your treatment plan is shaped around your goals, preferences and individual suitability.
+            </p>
+          </div>
+
+          <div class="border border-stone-200 bg-white p-7">
+            <span class="font-serif text-3xl text-gold">03</span>
+
+            <h3 class="mt-4 text-sm font-semibold uppercase tracking-[0.14em]">
+              Clear Communication
+            </h3>
+
+            <p class="mt-3 text-sm font-light leading-6 text-stone-600">
+              Expected outcomes and aftercare are discussed clearly before you proceed.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Editorial Treatments Showcase -->
-    <section class="max-w-7xl mx-auto px-6 py-24">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 border-b border-stone-200 pb-8">
-            <div>
-                <span class="text-xs uppercase tracking-[0.3em] text-bronze block mb-2">Curated Treatments</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-light">Signature Procedures</h2>
-            </div>
-            <p class="text-stone-500 font-light text-sm max-w-xs mt-4 md:mt-0">Every treatment is uniquely tailored following an in-depth digital skin architecture assessment.</p>
+    <!-- Contact / WhatsApp -->
+    <section id="contact" class="bg-stone-900 py-20 text-champagne">
+      <div class="mx-auto grid max-w-5xl items-center gap-10 px-5 md:grid-cols-2 lg:px-8">
+
+        <div>
+          <span class="block text-xs uppercase tracking-[0.3em] text-gold">
+            Private Consultation
+          </span>
+
+          <h2 class="font-serif mt-3 text-4xl font-light sm:text-5xl">
+            Begin your aesthetic journey
+          </h2>
+
+          <p class="mt-5 max-w-lg text-sm font-light leading-7 text-stone-300">
+            Speak with our team through WhatsApp to ask about treatments, availability or your personal concerns.
+          </p>
+
+          <div class="mt-7 space-y-3 text-sm font-light text-stone-300">
+            <p>Maison Éclat Aesthetic Clinic</p>
+            <p>123 Wellness Avenue, Kuala Lumpur</p>
+            <p>Monday – Saturday · 10:00 AM – 7:00 PM</p>
+          </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-12">
-            <!-- Item 1 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-6 border border-stone-200">
-                    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=700&q=80" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">01 / Architectural Facial</span>
-                <h3 class="font-serif text-2xl font-normal mt-1 mb-3">Structural Volumization</h3>
-                <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">Precision micro-injectable dermal restoration designed to highlight cheekbone contours and redefine jawline symmetry seamlessly.</p>
-            </div>
-            <!-- Item 2 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-6 border border-stone-200">
-                    <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=700&q=80" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">02 / Laser Science</span>
-                <h3 class="font-serif text-2xl font-normal mt-1 mb-3">Fractional Photorejuvenation</h3>
-                <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">Medical-grade targeted laser therapy that stimulates cellular collagen production, erasing pigmentation and refining skin canvas texture.</p>
-            </div>
-            <!-- Item 3 -->
-            <div class="group cursor-pointer">
-                <div class="overflow-hidden mb-6 border border-stone-200">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=700&q=80" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
-                </div>
-                <span class="text-[10px] uppercase tracking-[0.2em] text-bronze">03 / Body Architecture</span>
-                <h3 class="font-serif text-2xl font-normal mt-1 mb-3">Targeted Cryo-Sculpting</h3>
-                <p class="text-stone-600 font-light text-sm leading-relaxed mb-4">Advanced non-surgical body contouring protocols engineered to sculpt, firm, and refine body contours with absolute discretion.</p>
-            </div>
+        <div class="border border-stone-700 bg-obsidian p-8 text-center">
+          <p class="font-serif text-3xl text-gold">
+            Private Enquiry
+          </p>
+
+          <p class="mt-4 text-sm font-light leading-6 text-stone-400">
+            Send a direct WhatsApp message to request a consultation.
+          </p>
+
+          <a
+            href="https://wa.me/60123456789?text=Hello%20Maison%20Eclat%2C%20I%20would%20like%20to%20request%20a%20consultation."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-7 inline-flex w-full items-center justify-center bg-gold px-7 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-obsidian transition hover:bg-white"
+          >
+            Chat on WhatsApp
+          </a>
+
+          <p class="mt-4 text-[10px] uppercase tracking-[0.14em] text-stone-500">
+            Replace the demo WhatsApp number before publishing
+          </p>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Luxury Reservation Form Section -->
-    <section id="reserve" class="bg-stone-900 text-champagne py-24">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <span class="text-xs uppercase tracking-[0.3em] text-gold block mb-2">Private Consultation</span>
-                <h2 class="font-serif text-4xl md:text-5xl font-light">Begin Your Aesthetic Journey</h2>
-            </div>
-            <form class="space-y-8" onsubmit="event.preventDefault();">
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-2">Full Name</label>
-                        <input type="text" class="w-full bg-transparent border-b border-stone-700 py-3 text-sm focus:outline-none focus:border-gold transition-colors text-white">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-2">Telephone Number</label>
-                        <input type="tel" class="w-full bg-transparent border-b border-stone-700 py-3 text-sm focus:outline-none focus:border-gold transition-colors text-white">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-2">Email Address</label>
-                    <input type="email" class="w-full bg-transparent border-b border-stone-700 py-3 text-sm focus:outline-none focus:border-gold transition-colors text-white">
-                </div>
-                <div>
-                    <label class="block text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-2">Primary Treatment Focus</label>
-                    <select class="w-full bg-stone-900 border-b border-stone-700 py-3 text-sm text-stone-300 focus:outline-none focus:border-gold">
-                        <option>Facial Volumization & Contour</option>
-                        <option>Laser Resurfacing & Tone Correction</option>
-                        <option>Body Contouring & Tightening</option>
-                        <option>Full Aesthetic Evaluation</option>
-                    </select>
-                </div>
-                <div class="text-center pt-6">
-                    <button type="submit" class="bg-gold text-obsidian text-xs uppercase tracking-[0.3em] font-semibold px-10 py-4 hover:bg-white transition-colors">
-                        Request Reservation
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
+  <!-- Footer -->
+  <footer class="border-t border-stone-800 bg-obsidian py-8 text-center">
+    <p class="text-[10px] uppercase tracking-[0.18em] text-stone-500">
+      © <span id="year"></span> Maison Éclat Aesthetic Clinic. All Rights Reserved.
+    </p>
 
-    <!-- Footer -->
-    <footer class="bg-obsidian text-stone-500 py-12 text-center text-xs tracking-widest uppercase border-t border-stone-800">
-        <p>&copy; 2026 Maison Éclat Haute Aesthetics. All Rights Reserved.</p>
-    </footer>
+    <p class="mx-auto mt-3 max-w-2xl px-5 text-[10px] leading-5 text-stone-600">
+      Information shown is general and does not replace a professional medical consultation.
+    </p>
+  </footer>
 
+  <!-- Floating WhatsApp -->
+  <a
+    href="https://wa.me/60123456789?text=Hello%20Maison%20Eclat%2C%20I%20would%20like%20to%20ask%20about%20your%20treatments."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-xl text-white shadow-2xl transition hover:scale-110"
+  >
+    ☏
+  </a>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
