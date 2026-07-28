@@ -1,1486 +1,2612 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AURA Aesthetic Clinic Malaysia — Korean-inspired skin and facial aesthetic treatments in Kuala Lumpur." />
-  <title>AURA Aesthetic Clinic | Korean-Inspired Beauty Malaysia</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AURA Aesthetic Clinic | Aurora Pearl Signature</title>
+  <meta
+    name="description"
+    content="A premium bilingual seven-page aesthetic clinic experience in Kuala Lumpur with personalised skin concerns, treatments, doctors, results, reviews and WhatsApp booking."
+  >
+
+  <meta property="og:title" content="AURA Aesthetic Clinic">
+  <meta
+    property="og:description"
+    content="Korean-inspired aesthetic care with personalised consultation, treatment planning and bilingual support."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Gloock&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    :root{
-      --bg:#fffafc;
-      --bg-soft:#f8f4ff;
-      --pink:#f4dce8;
-      --pink-strong:#d98baa;
-      --lav:#ddd7fb;
-      --lav-strong:#8a7bd3;
-      --mint:#dff2ea;
-      --mint-strong:#73aa96;
-      --peach:#f7e2d7;
-      --ink:#312d39;
-      --muted:#777181;
-      --white:#ffffff;
-      --line:rgba(49,45,57,.1);
-      --shadow:0 24px 70px rgba(86,69,104,.12);
-      --radius:30px;
+    :root {
+      --night: #181226;
+      --night-2: #241935;
+      --plum: #5d3f78;
+      --violet: #8f79dd;
+      --aqua: #78d9d1;
+      --coral: #ef9f9b;
+      --pearl: #f9f7ff;
+      --pearl-soft: #eeebf7;
+      --ink: #252033;
+      --muted: #777085;
+      --glass: rgba(255,255,255,.74);
+      --line: rgba(255,255,255,.38);
+      --line-dark: rgba(49,39,68,.12);
+      --shadow: 0 30px 90px rgba(48,30,74,.16);
+      --sans: "DM Sans", "Noto Sans SC", sans-serif;
+      --serif: "Gloock", "Noto Sans SC", serif;
+      --ease: cubic-bezier(.22, 1, .36, 1);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      min-height:100vh;
-      color:var(--ink);
-      font-family:"DM Sans","Noto Sans SC",sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    body {
+      color: var(--ink);
+      font-family: var(--sans);
       background:
-        radial-gradient(circle at 8% 8%, rgba(244,220,232,.9), transparent 24%),
-        radial-gradient(circle at 92% 12%, rgba(221,215,251,.72), transparent 23%),
-        radial-gradient(circle at 84% 88%, rgba(223,242,234,.85), transparent 25%),
-        var(--bg);
-      overflow-x:hidden;
+        radial-gradient(circle at 8% 4%, rgba(143,121,221,.35), transparent 25%),
+        radial-gradient(circle at 88% 8%, rgba(120,217,209,.30), transparent 25%),
+        radial-gradient(circle at 70% 88%, rgba(239,159,155,.22), transparent 28%),
+        linear-gradient(135deg, #f9f7ff 0%, #f2eefb 45%, #eef8f7 100%);
+      overflow-x: hidden;
     }
 
-    button,a,input{font:inherit}
-    a{text-decoration:none;color:inherit}
-    img{display:block;width:100%}
-    h1,h2,h3,h4,p{margin-top:0}
-    button{cursor:pointer}
-
-    .grain{
-      position:fixed;
-      inset:0;
-      pointer-events:none;
-      opacity:.035;
-      z-index:1;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    body.modal-open {
+      overflow: hidden;
     }
 
-    .site{position:relative;z-index:2;min-height:100vh}
-
-    .header{
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:1000;
-      padding:16px 4vw;
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
     }
 
-    .nav{
-      max-width:1420px;
-      margin:auto;
-      min-height:72px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:22px;
-      padding:10px 12px 10px 18px;
-      border-radius:22px;
-      background:rgba(255,255,255,.82);
-      backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,.82);
-      box-shadow:0 16px 45px rgba(87,72,105,.08);
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      cursor:pointer;
-      min-width:220px;
+    button {
+      cursor: pointer;
     }
 
-    .brand-mark{
-      width:48px;height:48px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(145deg,var(--pink),var(--lav));
-      color:var(--ink);
-      font-family:"Playfair Display",serif;
-      font-size:23px;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,.65);
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .brand-copy strong{
-      display:block;
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:20px;
-      letter-spacing:.6px;
+    .aurora {
+      position: fixed;
+      inset: -20%;
+      z-index: -2;
+      pointer-events: none;
+      filter: blur(80px);
+      opacity: .45;
+      background:
+        radial-gradient(circle at 25% 35%, rgba(143,121,221,.55), transparent 20%),
+        radial-gradient(circle at 65% 20%, rgba(120,217,209,.48), transparent 22%),
+        radial-gradient(circle at 75% 70%, rgba(239,159,155,.38), transparent 20%);
+      animation: auroraMove 16s ease-in-out infinite alternate;
     }
 
-    .brand-copy span{
-      display:block;
-      margin-top:3px;
-      font-size:9px;
-      text-transform:uppercase;
-      letter-spacing:2.3px;
-      color:var(--muted);
+    @keyframes auroraMove {
+      0% { transform: translate3d(-2%, -1%, 0) scale(1); }
+      50% { transform: translate3d(4%, 2%, 0) scale(1.08); }
+      100% { transform: translate3d(-1%, 4%, 0) scale(.98); }
     }
 
-    .desktop-nav{
-      display:flex;
-      align-items:center;
-      gap:4px;
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .035;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
     }
 
-    .nav-link{
-      border:0;
-      background:transparent;
-      color:var(--muted);
-      padding:11px 13px;
-      border-radius:14px;
-      font-size:13px;
-      font-weight:700;
-      transition:.25s ease;
+    .shell {
+      width: min(1420px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .nav-link:hover,
-    .nav-link.active{
-      color:var(--ink);
-      background:var(--bg-soft);
+    .announcement {
+      position: relative;
+      z-index: 90;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, var(--night), #39234c, var(--night));
+      color: rgba(255,255,255,.72);
+      text-align: center;
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
-    .nav-actions{
-      display:flex;
-      align-items:center;
-      gap:9px;
+    .announcement strong {
+      color: var(--aqua);
     }
 
-    .lang-switch{
-      display:flex;
-      padding:4px;
-      border-radius:14px;
-      background:#f5f1fa;
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      padding: 14px 18px;
     }
 
-    .lang-btn{
-      border:0;
-      background:transparent;
-      color:var(--muted);
-      padding:8px 10px;
-      border-radius:10px;
-      font-size:11px;
-      font-weight:800;
+    .nav-wrap {
+      min-height: 76px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 10px 12px 10px 16px;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 24px;
+      background: rgba(250,248,255,.78);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 18px 60px rgba(59,38,86,.10);
     }
 
-    .lang-btn.active{
-      color:var(--ink);
-      background:#fff;
-      box-shadow:0 6px 14px rgba(86,69,104,.08);
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .top-cta{
-      min-height:44px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:0 16px;
-      border-radius:14px;
-      color:#fff;
-      font-size:12px;
-      font-weight:900;
-      background:linear-gradient(90deg,var(--pink-strong),var(--lav-strong));
-      box-shadow:0 14px 28px rgba(154,122,185,.22);
+    .brand-mark {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.28), rgba(255,255,255,.06)),
+        linear-gradient(135deg, var(--violet), var(--aqua));
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.5),
+        0 12px 28px rgba(101,77,160,.25);
     }
 
-    .menu-btn{
-      display:none;
-      width:44px;height:44px;
-      border:0;
-      border-radius:14px;
-      background:var(--ink);
-      color:#fff;
+    .brand-copy strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      letter-spacing: .04em;
     }
 
-    .mobile-drawer{
-      position:fixed;
-      inset:0;
-      z-index:950;
-      background:rgba(49,45,57,.34);
-      opacity:0;
-      visibility:hidden;
-      transition:.25s ease;
+    .brand-copy span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .52rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
     }
 
-    .mobile-drawer.open{
-      opacity:1;
-      visibility:visible;
+    .desktop-nav {
+      display: flex;
+      justify-content: center;
+      gap: 3px;
     }
 
-    .drawer{
-      position:absolute;
-      top:94px;left:16px;right:16px;
-      padding:18px;
-      border-radius:24px;
-      background:rgba(255,255,255,.97);
-      box-shadow:var(--shadow);
-      transform:translateY(-10px);
-      transition:.25s ease;
+    .nav-btn {
+      border: 0;
+      border-radius: 13px;
+      background: transparent;
+      color: var(--muted);
+      padding: 10px 11px;
+      font-size: .7rem;
+      font-weight: 700;
+      transition: .3s ease;
     }
 
-    .mobile-drawer.open .drawer{transform:none}
-
-    .drawer-link{
-      width:100%;
-      padding:15px 12px;
-      border:0;
-      border-bottom:1px solid var(--line);
-      background:transparent;
-      color:var(--ink);
-      text-align:left;
-      font-weight:800;
+    .nav-btn:hover,
+    .nav-btn.active {
+      color: var(--ink);
+      background: rgba(143,121,221,.12);
     }
 
-    .drawer-bottom{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-top:16px;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    main{min-height:100vh}
-
-    .page{
-      display:none;
-      min-height:100vh;
-      padding:112px 4vw 34px;
-      animation:fadeIn .45s ease;
+    .lang-switch {
+      display: flex;
+      gap: 3px;
+      padding: 4px;
+      border-radius: 13px;
+      background: rgba(93,63,120,.08);
     }
 
-    .page.active{display:block}
-
-    @keyframes fadeIn{
-      from{opacity:0;transform:translateY(12px)}
-      to{opacity:1;transform:none}
+    .lang-btn {
+      border: 0;
+      border-radius: 9px;
+      background: transparent;
+      color: var(--muted);
+      padding: 7px 9px;
+      font-size: .65rem;
+      font-weight: 800;
     }
 
-    .shell{
-      max-width:1420px;
-      margin:auto;
-      min-height:calc(100vh - 146px);
+    .lang-btn.active {
+      background: white;
+      color: var(--plum);
+      box-shadow: 0 6px 16px rgba(74,47,101,.10);
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:9px;
-      color:var(--pink-strong);
-      font-size:11px;
-      font-weight:900;
-      letter-spacing:2px;
-      text-transform:uppercase;
+    .header-cta {
+      min-height: 43px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border-radius: 13px;
+      background: linear-gradient(90deg, var(--violet), var(--plum));
+      color: white;
+      font-size: .68rem;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(93,63,120,.22);
     }
 
-    .eyebrow:before{
-      content:"";
-      width:28px;height:1px;
-      background:linear-gradient(90deg,var(--pink-strong),transparent);
+    .menu-btn {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border: 0;
+      border-radius: 13px;
+      background: var(--night);
+      color: white;
     }
 
-    .display{
-      max-width:880px;
-      margin:22px 0 24px;
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:clamp(58px,7vw,108px);
-      line-height:.95;
-      letter-spacing:-3.8px;
+    .mobile-menu {
+      display: none;
+      margin-top: 10px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 22px;
+      background: rgba(250,248,255,.96);
+      box-shadow: var(--shadow);
     }
 
-    .display .highlight{
-      background:linear-gradient(90deg,var(--pink-strong),var(--lav-strong),var(--mint-strong));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+    .mobile-menu.open {
+      display: grid;
+      gap: 8px;
     }
 
-    .section-title{
-      margin:18px 0;
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:clamp(42px,5vw,74px);
-      line-height:1;
-      letter-spacing:-2px;
+    .mobile-menu button {
+      padding: 13px 12px;
+      border: 0;
+      border-bottom: 1px solid var(--line-dark);
+      background: transparent;
+      text-align: left;
+      font-weight: 700;
     }
 
-    .lead{
-      max-width:650px;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.75;
+    .page {
+      display: none;
+      min-height: calc(100vh - 120px);
+      padding: 34px 0 60px;
+      animation: pageIn .5s var(--ease);
     }
 
-    .btn-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:30px;
+    .page.active {
+      display: block;
     }
 
-    .btn{
-      min-height:54px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:0 22px;
-      border-radius:16px;
-      border:1px solid transparent;
-      font-weight:900;
-      transition:.25s ease;
+    @keyframes pageIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
-    .btn-primary{
-      background:var(--ink);
-      color:#fff;
-      box-shadow:0 14px 30px rgba(49,45,57,.16);
+    .glass {
+      border: 1px solid rgba(255,255,255,.76);
+      background: rgba(255,255,255,.64);
+      backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
     }
 
-    .btn-primary:hover{transform:translateY(-3px)}
-    .btn-soft{
-      background:rgba(255,255,255,.8);
-      border-color:var(--line);
-      color:var(--ink);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--plum);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--coral), var(--violet));
+    }
+
+    .display {
+      margin-top: 22px;
+      font-family: var(--serif);
+      font-size: clamp(4rem, 7.5vw, 8.4rem);
+      line-height: .9;
+      letter-spacing: -.045em;
+    }
+
+    .display .gradient {
+      background: linear-gradient(90deg, var(--plum), var(--violet), var(--aqua));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: .96;
+      letter-spacing: -.03em;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.9;
+    }
+
+    .btn {
+      min-height: 50px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 15px;
+      font-size: .69rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: .35s var(--ease);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--plum), var(--violet));
+      color: white;
+      box-shadow: 0 14px 30px rgba(93,63,120,.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(93,63,120,.3);
+    }
+
+    .btn-soft {
+      border-color: var(--line-dark);
+      background: rgba(255,255,255,.72);
+    }
+
+    .btn-soft:hover {
+      border-color: var(--violet);
+      color: var(--plum);
+      transform: translateY(-3px);
+    }
+
+    .page-head {
+      display: grid;
+      grid-template-columns: 1fr .75fr;
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 30px;
+      padding: 22px 4px;
+      border-bottom: 1px solid rgba(49,39,68,.12);
+    }
+
+    .page-head .lead {
+      justify-self: end;
+      max-width: 470px;
     }
 
     /* HOME */
-    .hero{
-      display:grid;
-      grid-template-columns:.94fr 1.06fr;
-      gap:26px;
-      align-items:center;
-      min-height:calc(100vh - 146px);
+    .hero {
+      min-height: calc(100vh - 180px);
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 26px;
+      align-items: stretch;
     }
 
-    .hero-copy{
-      padding:3vh 2vw 3vh 0;
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 44px 10px 44px 0;
     }
 
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:32px;
+    .hero-copy .lead {
+      max-width: 620px;
+      margin-top: 28px;
     }
 
-    .pill{
-      padding:11px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,.74);
-      border:1px solid rgba(255,255,255,.9);
-      color:var(--muted);
-      font-size:11px;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(86,69,104,.06);
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
     }
 
-    .hero-visual{
-      position:relative;
-      min-height:650px;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 30px;
     }
 
-    .main-photo{
-      position:absolute;
-      inset:0 13% 0 0;
-      border-radius:38px;
-      overflow:hidden;
+    .pill {
+      padding: 10px 13px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 999px;
+      background: rgba(255,255,255,.58);
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(74,47,101,.06);
+    }
+
+    .hero-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 650px;
+      border-radius: 36px;
+    }
+
+    .hero-stage img {
+      height: 100%;
+      filter: saturate(.9);
+    }
+
+    .hero-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
       background:
-        linear-gradient(to top,rgba(49,45,57,.34),transparent 55%),
-        url("https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=1400&q=88") center/cover;
-      box-shadow:var(--shadow);
+        linear-gradient(180deg, transparent 50%, rgba(24,18,38,.50)),
+        linear-gradient(90deg, rgba(143,121,221,.08), transparent 40%);
     }
 
-    .floating-info{
-      position:absolute;
-      right:0;
-      width:245px;
-      padding:22px;
-      border-radius:26px;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(18px);
-      border:1px solid rgba(255,255,255,.85);
-      box-shadow:var(--shadow);
+    .hero-card {
+      position: absolute;
+      z-index: 3;
+      width: 250px;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: var(--shadow);
     }
 
-    .floating-info.top{top:56px}
-    .floating-info.bottom{bottom:52px}
-
-    .floating-info strong{
-      display:block;
-      font-family:"Playfair Display",serif;
-      font-size:23px;
-      margin-bottom:7px;
+    .hero-card.top {
+      top: 26px;
+      right: 26px;
     }
 
-    .floating-info span{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
+    .hero-card.bottom {
+      left: 26px;
+      bottom: 26px;
     }
 
-    .mini-dots{
-      display:flex;
-      gap:7px;
-      margin-top:16px;
+    .hero-card strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.45rem;
     }
 
-    .mini-dots i{
-      width:10px;height:10px;border-radius:50%;
-      display:block;
+    .hero-card span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .75rem;
+      line-height: 1.65;
     }
 
-    .mini-dots i:nth-child(1){background:var(--pink)}
-    .mini-dots i:nth-child(2){background:var(--lav)}
-    .mini-dots i:nth-child(3){background:var(--mint)}
-
-    /* SKIN SELECTOR */
-    .selector-wrap{
-      margin-top:28px;
-      padding:28px;
-      border-radius:32px;
-      background:rgba(255,255,255,.78);
-      border:1px solid rgba(255,255,255,.9);
-      box-shadow:var(--shadow);
+    .colour-dots {
+      display: flex;
+      gap: 7px;
+      margin-top: 15px;
     }
 
-    .concern-tabs{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin:22px 0;
+    .colour-dots i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
 
-    .concern-btn{
-      border:1px solid var(--line);
-      background:#fff;
-      color:var(--muted);
-      padding:12px 16px;
-      border-radius:999px;
-      font-size:12px;
-      font-weight:800;
-      transition:.2s ease;
+    .colour-dots i:nth-child(1) { background: var(--violet); }
+    .colour-dots i:nth-child(2) { background: var(--aqua); }
+    .colour-dots i:nth-child(3) { background: var(--coral); }
+
+    /* CONCERNS */
+    .concern-layout {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 22px;
+      min-height: 620px;
     }
 
-    .concern-btn.active{
-      color:#fff;
-      border-color:transparent;
-      background:linear-gradient(90deg,var(--pink-strong),var(--lav-strong));
+    .concern-menu {
+      padding: 30px;
+      border-radius: 30px;
     }
 
-    .result-panel{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:20px;
-      align-items:stretch;
+    .concern-menu .lead {
+      margin: 18px 0 24px;
     }
 
-    .result-visual{
-      min-height:320px;
-      border-radius:26px;
-      overflow:hidden;
-      background-position:center;
-      background-size:cover;
-      box-shadow:0 18px 42px rgba(86,69,104,.1);
+    .concern-list {
+      display: grid;
+      gap: 10px;
     }
 
-    .result-copy{
-      padding:28px;
-      border-radius:26px;
-      background:linear-gradient(145deg,var(--bg-soft),#fff);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    .concern-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 18px;
+      border: 1px solid var(--line-dark);
+      border-radius: 16px;
+      background: rgba(255,255,255,.62);
+      color: var(--ink);
+      text-align: left;
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      transition: .3s ease;
     }
 
-    .result-copy h3{
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:36px;
-      margin-bottom:12px;
+    .concern-btn:hover,
+    .concern-btn.active {
+      border-color: transparent;
+      background: linear-gradient(90deg, rgba(143,121,221,.18), rgba(120,217,209,.18));
+      transform: translateX(5px);
     }
 
-    .result-copy p{
-      color:var(--muted);
-      line-height:1.7;
-      margin-bottom:18px;
+    .concern-stage {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
     }
 
-    .result-tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
+    .concern-panel {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: .4s var(--ease);
     }
 
-    .result-tags span{
-      padding:8px 11px;
-      border-radius:999px;
-      font-size:11px;
-      background:#fff;
-      border:1px solid var(--line);
-      color:var(--muted);
-      font-weight:700;
+    .concern-panel.active {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
     }
 
-    /* INNER PAGES */
-    .page-head{
-      display:grid;
-      grid-template-columns:1fr .75fr;
-      gap:30px;
-      align-items:end;
-      padding:30px 0 24px;
+    .concern-panel img {
+      height: 100%;
+      min-height: 620px;
     }
 
-    .page-head .lead{justify-self:end}
-
-    .treatment-grid{
-      display:grid;
-      grid-template-columns:repeat(12,1fr);
-      gap:18px;
-      margin-top:20px;
+    .concern-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 38px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.86), rgba(245,240,255,.74));
     }
 
-    .treatment-card{
-      position:relative;
-      min-height:290px;
-      padding:26px;
-      border-radius:28px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.9);
-      box-shadow:0 14px 40px rgba(86,69,104,.08);
-      transition:.3s ease;
+    .concern-copy h3 {
+      margin: 12px 0 16px;
+      font-family: var(--serif);
+      font-size: 2.45rem;
+      line-height: 1.05;
     }
 
-    .treatment-card:hover{transform:translateY(-6px)}
-    .treatment-card.large{grid-column:span 7;background:linear-gradient(145deg,#fbe9f1,#fff)}
-    .treatment-card.medium{grid-column:span 5;background:linear-gradient(145deg,#eeeaff,#fff)}
-    .treatment-card.third{grid-column:span 4}
-    .treatment-card:nth-child(3){background:linear-gradient(145deg,#ecf8f3,#fff)}
-    .treatment-card:nth-child(4){background:linear-gradient(145deg,#f9e9df,#fff)}
-    .treatment-card:nth-child(5){background:linear-gradient(145deg,#f5edff,#fff)}
-
-    .treatment-card h3{
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:32px;
-      margin:54px 0 10px;
+    .concern-copy p {
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.8;
     }
 
-    .treatment-card p{
-      max-width:520px;
-      color:var(--muted);
-      line-height:1.65;
-      font-size:13px;
-      margin-bottom:0;
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 28px;
     }
 
-    .treatment-label{
-      font-size:11px;
-      letter-spacing:1.8px;
-      font-weight:900;
-      color:var(--pink-strong);
+    .tag {
+      padding: 8px 10px;
+      border: 1px solid var(--line-dark);
+      border-radius: 999px;
+      background: white;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 700;
     }
 
-    .journey-grid{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:22px;
-      margin-top:22px;
+    /* TREATMENTS */
+    .treatment-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
     }
 
-    .journey-photo{
-      min-height:590px;
-      border-radius:34px;
-      background:url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1400&q=88") center/cover;
-      box-shadow:var(--shadow);
+    .treatment-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      border-radius: 28px;
+      cursor: pointer;
+      transition: .42s var(--ease);
     }
 
-    .journey-panel{
-      padding:38px;
-      border-radius:34px;
-      background:rgba(255,255,255,.82);
-      border:1px solid rgba(255,255,255,.9);
-      box-shadow:var(--shadow);
+    .treatment-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 34px 80px rgba(66,43,95,.20);
     }
 
-    .journey-steps{
-      display:grid;
-      gap:12px;
-      margin-top:28px;
+    .treatment-card.large {
+      grid-column: span 7;
+      min-height: 470px;
     }
 
-    .journey-step{
-      display:grid;
-      grid-template-columns:52px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:16px 0;
-      border-bottom:1px solid var(--line);
+    .treatment-card.medium {
+      grid-column: span 5;
+      min-height: 470px;
     }
 
-    .journey-no{
-      width:52px;height:52px;
-      border-radius:18px;
-      display:grid;place-items:center;
-      font-weight:900;
-      background:linear-gradient(145deg,var(--pink),var(--lav));
+    .treatment-card.small {
+      grid-column: span 4;
     }
 
-    .journey-step strong{
-      display:block;
-      margin-bottom:5px;
-      font-size:16px;
+    .treatment-card img {
+      height: 100%;
+      transition: .7s var(--ease);
     }
 
-    .journey-step span{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
+    .treatment-card:hover img {
+      transform: scale(1.05);
     }
 
-    .doctor-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:22px;
+    .treatment-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 38%, rgba(31,22,45,.78));
     }
 
-    .doctor-card{
-      padding:16px;
-      border-radius:28px;
-      background:rgba(255,255,255,.84);
-      border:1px solid rgba(255,255,255,.92);
-      box-shadow:0 16px 42px rgba(86,69,104,.08);
+    .treatment-info {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      color: white;
     }
 
-    .doctor-card img{
-      height:350px;
-      object-fit:cover;
-      border-radius:20px;
-      margin-bottom:18px;
+    .treatment-info span {
+      color: var(--aqua);
+      font-size: .61rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
 
-    .doctor-card h3{
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:28px;
-      margin-bottom:6px;
+    .treatment-info h3 {
+      margin: 8px 0 9px;
+      font-family: var(--serif);
+      font-size: 1.9rem;
     }
 
-    .doctor-card p{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.55;
-      margin-bottom:0;
+    .treatment-info p {
+      max-width: 500px;
+      color: rgba(255,255,255,.72);
+      font-size: .75rem;
+      line-height: 1.7;
     }
 
-    .contact-layout{
-      display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      gap:22px;
-      margin-top:22px;
-      min-height:600px;
+    .price-chip {
+      display: inline-flex;
+      margin-top: 13px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.11);
+      font-size: .66rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
     }
 
-    .contact-card{
-      padding:36px;
-      border-radius:32px;
-      background:rgba(255,255,255,.84);
-      border:1px solid rgba(255,255,255,.92);
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
+    /* JOURNEY */
+    .journey-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 22px;
     }
 
-    .contact-card h3{
-      font-family:"Playfair Display","Noto Sans SC",serif;
-      font-size:36px;
-      margin-bottom:10px;
+    .journey-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      border-radius: 32px;
     }
 
-    .contact-card>div>p{
-      color:var(--muted);
-      line-height:1.7;
+    .journey-visual img {
+      height: 100%;
+      min-height: 620px;
     }
 
-    .contact-list{
-      display:grid;
-      gap:14px;
-      margin-top:24px;
+    .journey-note {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 22px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.76);
+      backdrop-filter: blur(18px);
     }
 
-    .contact-item{
-      display:grid;
-      grid-template-columns:46px 1fr;
-      gap:14px;
-      align-items:start;
-      padding:15px 0;
-      border-bottom:1px solid var(--line);
+    .journey-note strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.45rem;
     }
 
-    .contact-icon{
-      width:46px;height:46px;
-      border-radius:16px;
-      display:grid;place-items:center;
-      background:linear-gradient(145deg,var(--pink),var(--lav));
-      font-weight:900;
+    .journey-note span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .75rem;
+      line-height: 1.6;
     }
 
-    .contact-item strong{display:block;margin-bottom:4px}
-    .contact-item span{font-size:13px;color:var(--muted);line-height:1.5}
-
-    .map-wrap{
-      min-height:600px;
-      border-radius:32px;
-      overflow:hidden;
-      border:8px solid rgba(255,255,255,.8);
-      box-shadow:var(--shadow);
+    .journey-panel {
+      padding: 34px;
+      border-radius: 32px;
     }
 
-    .map-wrap iframe{
-      width:100%;
-      height:100%;
-      min-height:600px;
-      border:0;
+    .steps {
+      display: grid;
+      gap: 11px;
+      margin-top: 26px;
     }
 
-    .wa-float{
-      position:fixed;
-      right:24px;
-      bottom:24px;
-      z-index:900;
-      width:60px;height:60px;
-      border-radius:20px;
-      display:grid;place-items:center;
-      background:#25D366;
-      color:#fff;
-      border:5px solid rgba(255,255,255,.84);
-      box-shadow:0 16px 36px rgba(37,211,102,.24);
-      font-size:24px;
-      transition:.25s ease;
+    .step {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 17px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.56);
+      transition: .3s ease;
     }
 
-    .wa-float:hover{transform:translateY(-4px)}
-
-    @media(max-width:1080px){
-      .desktop-nav,.top-cta{display:none}
-      .menu-btn{display:grid;place-items:center}
-      .hero,.page-head,.result-panel,.journey-grid,.contact-layout{grid-template-columns:1fr}
-      .page-head .lead{justify-self:start}
-      .hero-visual{min-height:560px}
-      .doctor-grid{grid-template-columns:repeat(2,1fr)}
-      .map-wrap,.map-wrap iframe{min-height:480px}
+    .step:hover {
+      transform: translateX(5px);
+      background: rgba(255,255,255,.82);
     }
 
-    @media(max-width:700px){
-      .header{padding:12px}
-      .nav{padding:9px 10px 9px 13px}
-      .brand{min-width:0}
-      .brand-copy strong{font-size:16px}
-      .brand-copy span{font-size:8px}
-      .brand-mark{width:42px;height:42px}
-      .lang-switch.desktop-only{display:none}
-      .page{padding:96px 14px 24px}
-      .display{font-size:56px;letter-spacing:-2.6px}
-      .section-title{font-size:44px}
-      .lead{font-size:15px}
-      .hero{gap:18px}
-      .hero-copy{padding-top:28px}
-      .hero-visual{min-height:500px}
-      .main-photo{inset:0 0 70px 0}
-      .floating-info{width:210px;padding:18px}
-      .floating-info.top{top:18px;right:8px}
-      .floating-info.bottom{bottom:0;left:8px;right:auto}
-      .selector-wrap{padding:20px}
-      .result-visual{min-height:260px}
+    .step-no {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 17px;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(145deg, var(--violet), var(--aqua));
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .9rem;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: .75rem;
+      line-height: 1.65;
+    }
+
+    /* DOCTORS */
+    .doctor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .doctor-card {
+      overflow: hidden;
+      border-radius: 28px;
+      transition: .4s var(--ease);
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .doctor-card img {
+      height: 370px;
+    }
+
+    .doctor-copy {
+      padding: 22px;
+    }
+
+    .doctor-copy h3 {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+    }
+
+    .doctor-copy p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .75rem;
+      line-height: 1.6;
+    }
+
+    /* RESULTS */
+    .results-layout {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+    }
+
+    .results-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .result-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 290px;
+      border-radius: 26px;
+    }
+
+    .result-card.large {
+      grid-column: span 2;
+      min-height: 390px;
+    }
+
+    .result-card img {
+      height: 100%;
+    }
+
+    .result-caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(31,22,45,.74);
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .result-caption small {
+      color: var(--aqua);
+      font-size: .6rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .result-caption strong {
+      display: block;
+      margin-top: 5px;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+    }
+
+    .story-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px;
+      border-radius: 30px;
+    }
+
+    .story-slide {
+      display: none;
+      margin-top: 28px;
+    }
+
+    .story-slide.active {
+      display: block;
+      animation: pageIn .4s ease;
+    }
+
+    .stars {
+      color: var(--coral);
+      letter-spacing: .14em;
+    }
+
+    .story-slide blockquote {
+      margin-top: 18px;
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1.35;
+    }
+
+    .story-slide footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .story-nav {
+      display: flex;
+      gap: 9px;
+      margin-top: 26px;
+    }
+
+    .story-nav button {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line-dark);
+      border-radius: 50%;
+      background: white;
+      color: var(--plum);
+    }
+
+    /* CONTACT */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 22px;
+    }
+
+    .contact-panel {
+      padding: 34px;
+      border-radius: 30px;
+      color: white;
+      background:
+        radial-gradient(circle at top right, rgba(120,217,209,.18), transparent 35%),
+        linear-gradient(145deg, var(--night), var(--night-2));
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel .eyebrow {
+      color: var(--aqua);
+    }
+
+    .contact-panel .lead {
+      margin: 20px 0 26px;
+      color: rgba(255,255,255,.65);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      color: rgba(255,255,255,.8);
+      font-size: .78rem;
+      line-height: 1.7;
+    }
+
+    .social-list {
+      display: grid;
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+    }
+
+    .social-list a {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-size: .66rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .social-list a:last-child {
+      border-bottom: 0;
+    }
+
+    .social-list a:hover {
+      background: rgba(255,255,255,.08);
+      padding-left: 21px;
+    }
+
+    .booking-form {
+      display: grid;
+      align-content: center;
+      gap: 16px;
+      padding: 36px;
+      border-radius: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: var(--muted);
+      font-size: .61rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 14px 15px;
+      border: 1px solid var(--line-dark);
+      border-radius: 14px;
+      background: rgba(255,255,255,.76);
+      outline: none;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--violet);
+      background: white;
+    }
+
+    /* MODAL */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 140;
+      background: rgba(24,18,38,.56);
+      backdrop-filter: blur(12px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .35s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 50% auto auto 50%;
+      z-index: 150;
+      width: min(960px, calc(100% - 28px));
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 30px;
+      background: rgba(249,247,255,.95);
+      box-shadow: 0 35px 100px rgba(31,22,45,.35);
+      transform: translate(-50%, -46%) scale(.97);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: .4s var(--ease);
+    }
+
+    .modal.open {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+    }
+
+    .modal-image {
+      min-height: 620px;
+    }
+
+    .modal-image img {
+      height: 100%;
+      min-height: 620px;
+    }
+
+    .modal-copy {
+      position: relative;
+      padding: 42px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line-dark);
+      border-radius: 50%;
+      background: white;
+      color: var(--plum);
+      font-size: 1.25rem;
+    }
+
+    .modal-copy h3 {
+      margin: 10px 0 16px;
+      font-family: var(--serif);
+      font-size: 2.75rem;
+      line-height: 1;
+    }
+
+    .modal-copy > p {
+      color: var(--muted);
+      font-size: .83rem;
+      line-height: 1.8;
+    }
+
+    .fact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .fact {
+      padding: 15px;
+      border-radius: 14px;
+      background: rgba(143,121,221,.08);
+    }
+
+    .fact small {
+      display: block;
+      color: var(--muted);
+      font-size: .59rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .fact strong {
+      display: block;
+      margin-top: 5px;
+      font-size: .81rem;
+    }
+
+    .modal-list {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: .79rem;
+      list-style: none;
+    }
+
+    .modal-list li::before {
+      content: "✦";
+      color: var(--coral);
+      margin-right: 9px;
+    }
+
+    .floating-social {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 70;
+      display: flex;
+      gap: 8px;
+    }
+
+    .floating-social a {
+      min-width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 15px;
+      background: rgba(255,255,255,.78);
+      color: var(--plum);
+      font-size: .61rem;
+      font-weight: 800;
+      backdrop-filter: blur(16px);
+      transition: .3s ease;
+    }
+
+    .floating-social a:hover {
+      color: white;
+      background: linear-gradient(145deg, var(--violet), var(--plum));
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 1120px) {
+      .desktop-nav,
+      .header-cta {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero,
+      .concern-layout,
+      .journey-layout,
+      .results-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stage {
+        min-height: 580px;
+      }
+
+      .concern-stage {
+        min-height: 620px;
+      }
+
+      .doctor-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 24px, 1420px);
+      }
+
+      .site-header {
+        padding: 10px;
+      }
+
+      .nav-wrap {
+        min-height: 70px;
+      }
+
+      .brand-copy strong {
+        font-size: 1rem;
+      }
+
+      .brand-copy span {
+        font-size: .45rem;
+      }
+
+      .lang-switch.desktop-lang {
+        display: none;
+      }
+
+      .page {
+        padding-top: 18px;
+      }
+
+      .display {
+        font-size: 3.7rem;
+      }
+
+      .page-head {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .page-head .lead {
+        justify-self: start;
+      }
+
+      .hero-copy {
+        padding: 30px 0;
+      }
+
+      .hero-stage {
+        min-height: 510px;
+      }
+
+      .hero-card {
+        width: 205px;
+        padding: 17px;
+      }
+
+      .hero-card.top {
+        top: 15px;
+        right: 15px;
+      }
+
+      .hero-card.bottom {
+        left: 15px;
+        bottom: 15px;
+      }
+
+      .concern-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .concern-panel img {
+        min-height: 290px;
+      }
+
+      .concern-copy {
+        padding: 26px;
+      }
+
       .treatment-card.large,
       .treatment-card.medium,
-      .treatment-card.third{grid-column:span 12}
-      .doctor-grid{grid-template-columns:1fr}
-      .doctor-card img{height:320px}
-      .journey-photo{min-height:420px}
-      .journey-panel,.contact-card{padding:28px;border-radius:26px}
-      .map-wrap{border-radius:26px}
-      .wa-float{right:16px;bottom:16px;width:56px;height:56px}
+      .treatment-card.small {
+        grid-column: span 12;
+        min-height: 400px;
+      }
+
+      .doctor-grid,
+      .results-gallery,
+      .form-row,
+      .fact-grid,
+      .modal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result-card.large {
+        grid-column: span 1;
+      }
+
+      .modal-image {
+        min-height: 280px;
+      }
+
+      .modal-image img {
+        min-height: 280px;
+      }
+
+      .modal-copy {
+        padding: 30px 22px 26px;
+      }
     }
   </style>
 </head>
+
 <body>
-<div class="grain"></div>
-<div class="site">
+  <div class="aurora"></div>
+  <div class="noise"></div>
 
-  <header class="header">
-    <div class="nav">
-      <div class="brand" onclick="showPage('home')">
-        <div class="brand-mark">A</div>
-        <div class="brand-copy">
-          <strong>AURA AESTHETICS</strong>
-          <span data-i18n="brandSub">Korean-Inspired Skin Clinic</span>
-        </div>
-      </div>
+  <div class="announcement">
+    <strong>Signature Experience:</strong> Korean-inspired bilingual aesthetic care in Kuala Lumpur
+  </div>
 
-      <nav class="desktop-nav">
-        <button class="nav-link active" data-page="home" data-i18n="navHome">Home</button>
-        <button class="nav-link" data-page="concerns" data-i18n="navConcerns">Skin Concerns</button>
-        <button class="nav-link" data-page="treatments" data-i18n="navTreatments">Treatments</button>
-        <button class="nav-link" data-page="journey" data-i18n="navJourney">Your Journey</button>
-        <button class="nav-link" data-page="doctors" data-i18n="navDoctors">Doctors</button>
-        <button class="nav-link" data-page="contact" data-i18n="navContact">Contact</button>
-      </nav>
-
-      <div class="nav-actions">
-        <div class="lang-switch desktop-only">
-          <button class="lang-btn active" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="zh">中文</button>
-        </div>
-
-        <a class="top-cta" href="https://wa.me/60123456789?text=Hi%20AURA%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank">
-          <span>✦</span>
-          <span data-i18n="bookNow">Book Consultation</span>
+  <header class="site-header">
+    <div class="shell">
+      <div class="nav-wrap">
+        <a href="#home" class="brand" data-route="home">
+          <span class="brand-mark">A</span>
+          <span class="brand-copy">
+            <strong>AURA AESTHETICS</strong>
+            <span data-i18n="brandSub">Aurora Pearl Signature Clinic</span>
+          </span>
         </a>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <nav class="desktop-nav">
+          <button class="nav-btn active" data-route="home" data-i18n="navHome">Home</button>
+          <button class="nav-btn" data-route="concerns" data-i18n="navConcerns">Concerns</button>
+          <button class="nav-btn" data-route="treatments" data-i18n="navTreatments">Treatments</button>
+          <button class="nav-btn" data-route="journey" data-i18n="navJourney">Journey</button>
+          <button class="nav-btn" data-route="doctors" data-i18n="navDoctors">Doctors</button>
+          <button class="nav-btn" data-route="results" data-i18n="navResults">Results</button>
+          <button class="nav-btn" data-route="contact" data-i18n="navContact">Contact</button>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="lang-switch desktop-lang">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">中文</button>
+          </div>
+
+          <a
+            class="header-cta"
+            href="https://wa.me/60123456789?text=Hello%20AURA%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="bookNow"
+          >
+            Book Consultation
+          </a>
+
+          <button id="menuBtn" class="menu-btn" type="button">☰</button>
+        </div>
       </div>
-    </div>
-  </header>
 
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="drawer">
-      <button class="drawer-link" data-page="home" data-i18n="navHome">Home</button>
-      <button class="drawer-link" data-page="concerns" data-i18n="navConcerns">Skin Concerns</button>
-      <button class="drawer-link" data-page="treatments" data-i18n="navTreatments">Treatments</button>
-      <button class="drawer-link" data-page="journey" data-i18n="navJourney">Your Journey</button>
-      <button class="drawer-link" data-page="doctors" data-i18n="navDoctors">Doctors</button>
-      <button class="drawer-link" data-page="contact" data-i18n="navContact">Contact</button>
+      <nav id="mobileMenu" class="mobile-menu">
+        <button data-route="home" data-i18n="navHome">Home</button>
+        <button data-route="concerns" data-i18n="navConcerns">Concerns</button>
+        <button data-route="treatments" data-i18n="navTreatments">Treatments</button>
+        <button data-route="journey" data-i18n="navJourney">Journey</button>
+        <button data-route="doctors" data-i18n="navDoctors">Doctors</button>
+        <button data-route="results" data-i18n="navResults">Results</button>
+        <button data-route="contact" data-i18n="navContact">Contact</button>
 
-      <div class="drawer-bottom">
         <div class="lang-switch">
           <button class="lang-btn active" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="zh">中文</button>
         </div>
-        <a class="btn btn-primary" style="min-height:44px;padding:0 15px" href="https://wa.me/60123456789" target="_blank" data-i18n="whatsappUs">WhatsApp Us</a>
-      </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
   <main>
-
-    <section class="page active" id="home">
+    <!-- PAGE 1 -->
+    <section class="page active" id="page-home" data-page="home">
       <div class="shell hero">
         <div class="hero-copy">
-          <div class="eyebrow" data-i18n="homeEyebrow">Korean-inspired aesthetic care in Kuala Lumpur</div>
+          <span class="eyebrow" data-i18n="homeEyebrow">Korean-inspired clinical beauty</span>
 
           <h1 class="display">
             <span data-i18n="homeTitleOne">Healthy skin.</span>
-            <span class="highlight" data-i18n="homeTitleTwo">Soft confidence.</span>
+            <span class="gradient" data-i18n="homeTitleTwo">Luminous confidence.</span>
           </h1>
 
           <p class="lead" data-i18n="homeLead">
-            Personalised skin and facial treatments designed around your concerns, comfort and natural beauty.
+            Personalised skin and facial treatment planning designed around your concerns, comfort and natural proportions.
           </p>
 
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://wa.me/60123456789?text=Hi%20AURA%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" data-i18n="consultBtn">Consult via WhatsApp</a>
-            <button class="btn btn-soft" onclick="showPage('concerns')" data-i18n="findBtn">Find My Skin Concern</button>
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-route="concerns" data-i18n="findConcern">Find My Concern</button>
+            <button class="btn btn-soft" data-route="contact" data-i18n="reserveConsultation">Reserve Consultation</button>
           </div>
 
           <div class="pill-row">
-            <div class="pill" data-i18n="pillOne">Doctor-led consultation</div>
-            <div class="pill" data-i18n="pillTwo">Natural treatment planning</div>
-            <div class="pill" data-i18n="pillThree">EN / 中文 support</div>
+            <span class="pill" data-i18n="pillOne">Doctor-led consultation</span>
+            <span class="pill" data-i18n="pillTwo">Natural treatment planning</span>
+            <span class="pill" data-i18n="pillThree">EN / 中文 support</span>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="main-photo"></div>
+        <div class="hero-stage glass">
+          <img
+            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=85"
+            alt="Modern Korean-inspired aesthetic clinic"
+            loading="eager"
+          >
 
-          <div class="floating-info top">
-            <strong data-i18n="floatOneTitle">Glow Consultation</strong>
-            <span data-i18n="floatOneText">A calm, personalised review of your skin goals and concerns.</span>
-            <div class="mini-dots"><i></i><i></i><i></i></div>
+          <div class="hero-card top">
+            <strong data-i18n="heroCardOneTitle">Aurora Skin Scan</strong>
+            <span data-i18n="heroCardOneText">A personalised review of your goals, concerns and treatment suitability.</span>
+            <div class="colour-dots"><i></i><i></i><i></i></div>
           </div>
 
-          <div class="floating-info bottom">
-            <strong data-i18n="floatTwoTitle">K-Beauty Inspired</strong>
-            <span data-i18n="floatTwoText">Treatment plans focused on hydration, balance and natural refinement.</span>
+          <div class="hero-card bottom">
+            <strong data-i18n="heroCardTwoTitle">Soft Refinement</strong>
+            <span data-i18n="heroCardTwoText">Treatment planning focused on hydration, balance and believable results.</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page" id="concerns">
+    <!-- PAGE 2 -->
+    <section class="page" id="page-concerns" data-page="concerns">
       <div class="shell">
         <div class="page-head">
           <div>
-            <div class="eyebrow" data-i18n="concernEyebrow">Choose your main concern</div>
-            <h2 class="section-title" data-i18n="concernTitle">Start with what you notice most.</h2>
+            <span class="eyebrow" data-i18n="concernEyebrow">Interactive concern finder</span>
+            <h2 class="title" data-i18n="concernTitle">Begin with what you notice most.</h2>
           </div>
+
           <p class="lead" data-i18n="concernLead">
-            Select a concern below to view a recommended treatment direction. Final recommendations require a consultation.
+            Select your main concern to preview a suggested consultation direction. Final suitability requires professional assessment.
           </p>
         </div>
 
-        <div class="selector-wrap">
-          <div class="concern-tabs">
-            <button class="concern-btn active" data-concern="acne" data-i18n="acneBtn">Acne</button>
-            <button class="concern-btn" data-concern="pigmentation" data-i18n="pigmentBtn">Pigmentation</button>
-            <button class="concern-btn" data-concern="ageing" data-i18n="ageBtn">Ageing</button>
-            <button class="concern-btn" data-concern="pores" data-i18n="poresBtn">Pores & Texture</button>
-            <button class="concern-btn" data-concern="contour" data-i18n="contourBtn">Facial Contour</button>
-            <button class="concern-btn" data-concern="hydration" data-i18n="hydrationBtn">Hydration</button>
+        <div class="concern-layout">
+          <div class="concern-menu glass">
+            <span class="eyebrow" data-i18n="chooseConcern">Choose a concern</span>
+            <p class="lead" data-i18n="chooseConcernText">
+              Your selection updates the suggested skin pathway instantly.
+            </p>
+
+            <div class="concern-list">
+              <button class="concern-btn active" data-concern="acne">
+                <span data-i18n="acne">Acne & Congestion</span><span>→</span>
+              </button>
+
+              <button class="concern-btn" data-concern="pigment">
+                <span data-i18n="pigment">Pigmentation & Tone</span><span>→</span>
+              </button>
+
+              <button class="concern-btn" data-concern="ageing">
+                <span data-i18n="ageing">Fine Lines & Firmness</span><span>→</span>
+              </button>
+
+              <button class="concern-btn" data-concern="pores">
+                <span data-i18n="pores">Pores & Texture</span><span>→</span>
+              </button>
+
+              <button class="concern-btn" data-concern="contour">
+                <span data-i18n="contour">Facial Contour</span><span>→</span>
+              </button>
+
+              <button class="concern-btn" data-concern="hydration">
+                <span data-i18n="hydration">Dryness & Dullness</span><span>→</span>
+              </button>
+            </div>
           </div>
 
-          <div class="result-panel">
-            <div class="result-visual" id="resultVisual"></div>
-            <div class="result-copy">
-              <div class="eyebrow" data-i18n="recommendedLabel">Suggested direction</div>
-              <h3 id="resultTitle">Acne & Congestion Care</h3>
-              <p id="resultText">A structured skin plan focused on calming active breakouts, reducing congestion and supporting clearer skin over time.</p>
-              <div class="result-tags" id="resultTags"></div>
-            </div>
+          <div class="concern-stage glass">
+            <article class="concern-panel active" id="concern-acne">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85" alt="Acne care">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="acneTitle">Clear-Skin Recovery Plan</h3>
+                <p data-i18n="acneText">A structured pathway focused on congestion, active breakouts, visible marks and long-term skin balance.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagAcne">Acne control</span>
+                  <span class="tag" data-i18n="tagPore">Pore care</span>
+                  <span class="tag" data-i18n="tagScar">Scar support</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
+
+            <article class="concern-panel" id="concern-pigment">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1000&q=85" alt="Pigmentation care">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="pigmentTitle">Tone & Pigment Programme</h3>
+                <p data-i18n="pigmentText">A personalised direction for uneven tone, visible pigmentation and post-inflammatory marks.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagTone">Tone balancing</span>
+                  <span class="tag" data-i18n="tagBright">Brightening</span>
+                  <span class="tag" data-i18n="tagSun">Sun spots</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
+
+            <article class="concern-panel" id="concern-ageing">
+              <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=85" alt="Ageing care">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="ageingTitle">Firmness & Renewal Plan</h3>
+                <p data-i18n="ageingText">A gentle combination approach focused on firmness, fine lines and refreshed-looking skin.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagFirmness">Firmness</span>
+                  <span class="tag" data-i18n="tagLines">Fine lines</span>
+                  <span class="tag" data-i18n="tagQuality">Skin quality</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
+
+            <article class="concern-panel" id="concern-pores">
+              <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1000&q=85" alt="Texture care">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="poresTitle">Texture Refinement Plan</h3>
+                <p data-i18n="poresText">A treatment direction focused on smoother-looking texture, visible pores and overall skin balance.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagTexture">Texture</span>
+                  <span class="tag" data-i18n="tagPore">Pore care</span>
+                  <span class="tag" data-i18n="tagResurface">Resurfacing</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
+
+            <article class="concern-panel" id="concern-contour">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85" alt="Facial contour">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="contourTitle">Natural Contour Planning</h3>
+                <p data-i18n="contourText">A proportion-focused pathway designed to support a softer, more balanced facial profile.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagBalance">Facial balance</span>
+                  <span class="tag" data-i18n="tagDefinition">Definition</span>
+                  <span class="tag" data-i18n="tagNatural">Natural profile</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
+
+            <article class="concern-panel" id="concern-hydration">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1000&q=85" alt="Hydration treatment">
+              <div class="concern-copy">
+                <span class="eyebrow" data-i18n="suggestedDirection">Suggested direction</span>
+                <h3 data-i18n="hydrationTitle">Hydration & Glow Plan</h3>
+                <p data-i18n="hydrationText">A replenishing direction for dryness, dullness and tired-looking skin.</p>
+                <div class="tag-row">
+                  <span class="tag" data-i18n="tagHydration">Hydration</span>
+                  <span class="tag" data-i18n="tagGlow">Glow</span>
+                  <span class="tag" data-i18n="tagBooster">Skin booster</span>
+                </div>
+                <button class="btn btn-primary" data-route="contact" data-i18n="askConsultation">Ask for a Consultation</button>
+              </div>
+            </article>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page" id="treatments">
+    <!-- PAGE 3 -->
+    <section class="page" id="page-treatments" data-page="treatments">
       <div class="shell">
         <div class="page-head">
           <div>
-            <div class="eyebrow" data-i18n="treatEyebrow">Our treatment menu</div>
-            <h2 class="section-title" data-i18n="treatTitle">A softer, smarter approach to aesthetics.</h2>
+            <span class="eyebrow" data-i18n="treatEyebrow">Signature treatment collection</span>
+            <h2 class="title" data-i18n="treatTitle">A luminous approach to modern aesthetics.</h2>
           </div>
+
           <p class="lead" data-i18n="treatLead">
-            Each plan is personalised after consultation and may combine several treatment types for a more balanced result.
+            Select any treatment to open its detailed overview, appointment guidance, downtime and WhatsApp enquiry.
           </p>
         </div>
 
         <div class="treatment-grid">
-          <article class="treatment-card large">
-            <div class="treatment-label">01 · SKIN GLOW</div>
-            <h3 data-i18n="s1Title">Hydration & Skin Booster</h3>
-            <p data-i18n="s1Text">Support smoother, more hydrated and refreshed-looking skin with a treatment plan selected for your skin condition.</p>
+          <article class="treatment-card large" data-treatment="booster" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85" alt="Skin booster">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span data-i18n="skinQuality">Skin Quality</span>
+              <h3 data-i18n="boosterName">Aurora Skin Booster</h3>
+              <p data-i18n="boosterShort">Hydration-focused skin-quality care for a smoother and refreshed appearance.</p>
+              <div class="price-chip">From RM 988</div>
+            </div>
           </article>
 
-          <article class="treatment-card medium">
-            <div class="treatment-label">02 · CLEAR</div>
-            <h3 data-i18n="s2Title">Acne & Scar Care</h3>
-            <p data-i18n="s2Text">A phased programme designed for active acne, congestion, enlarged pores and visible acne marks.</p>
+          <article class="treatment-card medium" data-treatment="pico" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1100&q=85" alt="Pico treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span data-i18n="skinClarity">Skin Clarity</span>
+              <h3 data-i18n="picoName">Pico Lumière</h3>
+              <p data-i18n="picoShort">A targeted skin-renewal approach for tone, texture and visible pigmentation.</p>
+              <div class="price-chip">From RM 688</div>
+            </div>
           </article>
 
-          <article class="treatment-card third">
-            <div class="treatment-label">03 · EVEN</div>
-            <h3 data-i18n="s3Title">Pigmentation Programme</h3>
-            <p data-i18n="s3Text">Personalised support for uneven skin tone, sun spots and post-inflammatory pigmentation.</p>
+          <article class="treatment-card small" data-treatment="hifu" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85" alt="HIFU treatment">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span data-i18n="structuralLift">Structural Lift</span>
+              <h3 data-i18n="hifuName">HIFU Cloud Lift</h3>
+              <div class="price-chip">From RM 1,288</div>
+            </div>
           </article>
 
-          <article class="treatment-card third">
-            <div class="treatment-label">04 · LIFT</div>
-            <h3 data-i18n="s4Title">Skin Tightening</h3>
-            <p data-i18n="s4Text">Non-surgical treatment options to support firmness and natural facial definition.</p>
+          <article class="treatment-card small" data-treatment="facial" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=900&q=85" alt="Signature facial">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span data-i18n="facial">Facial</span>
+              <h3 data-i18n="facialName">Pearl Dew Facial</h3>
+              <div class="price-chip">From RM 388</div>
+            </div>
           </article>
 
-          <article class="treatment-card third">
-            <div class="treatment-label">05 · BALANCE</div>
-            <h3 data-i18n="s5Title">Facial Contouring</h3>
-            <p data-i18n="s5Text">Subtle, proportion-led planning for a softer and more balanced facial profile.</p>
+          <article class="treatment-card small" data-treatment="body" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85" alt="Body contour">
+            <div class="treatment-overlay"></div>
+            <div class="treatment-info">
+              <span data-i18n="body">Body</span>
+              <h3 data-i18n="bodyName">Aqua Contour</h3>
+              <div class="price-chip">From RM 788</div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="page" id="journey">
+    <!-- PAGE 4 -->
+    <section class="page" id="page-journey" data-page="journey">
       <div class="shell">
         <div class="page-head">
           <div>
-            <div class="eyebrow" data-i18n="journeyEyebrow">Your AURA experience</div>
-            <h2 class="section-title" data-i18n="journeyTitle">Gentle guidance from consultation to aftercare.</h2>
+            <span class="eyebrow" data-i18n="journeyEyebrow">Your AURA journey</span>
+            <h2 class="title" data-i18n="journeyTitle">Thoughtful care from consultation to aftercare.</h2>
           </div>
+
           <p class="lead" data-i18n="journeyLead">
-            We keep the process clear, calm and personalised so you understand every recommendation before deciding.
+            Every step is designed to feel calm, clear and personal so you can make informed treatment decisions.
           </p>
         </div>
 
-        <div class="journey-grid">
-          <div class="journey-photo"></div>
+        <div class="journey-layout">
+          <div class="journey-visual glass">
+            <img src="https://images.unsplash.com/photo-1631217872822-1c2546d6b864?auto=format&fit=crop&w=1100&q=85" alt="Consultation journey">
+            <div class="journey-note">
+              <strong data-i18n="journeyNoteTitle">No pressure. No rushed decisions.</strong>
+              <span data-i18n="journeyNoteText">Your goals, comfort and suitability remain at the centre of every recommendation.</span>
+            </div>
+          </div>
 
-          <div class="journey-panel">
-            <div class="eyebrow" data-i18n="journeyPanelEyebrow">Your personalised process</div>
-            <h3 class="section-title" style="font-size:48px" data-i18n="journeyPanelTitle">No pressure. No rushed decisions.</h3>
-            <p class="lead" data-i18n="journeyPanelText">
-              Your doctor will review your skin, discuss your goals and explain suitable options with realistic expectations.
-            </p>
+          <div class="journey-panel glass">
+            <span class="eyebrow" data-i18n="journeyProcess">The personalised process</span>
+            <h3 class="title" style="font-size:3rem;margin-top:14px" data-i18n="journeyPanelTitle">A clear four-step experience.</h3>
 
-            <div class="journey-steps">
-              <div class="journey-step">
-                <div class="journey-no">01</div>
+            <div class="steps">
+              <article class="step">
+                <div class="step-no">01</div>
                 <div>
-                  <strong data-i18n="step1Title">Skin Consultation</strong>
-                  <span data-i18n="step1Text">Discuss your concerns, routine, previous treatments and preferred outcome.</span>
+                  <strong data-i18n="stepOneTitle">Skin Consultation</strong>
+                  <span data-i18n="stepOneText">Discuss your concerns, routine, previous treatments and desired outcome.</span>
                 </div>
-              </div>
+              </article>
 
-              <div class="journey-step">
-                <div class="journey-no">02</div>
+              <article class="step">
+                <div class="step-no">02</div>
                 <div>
-                  <strong data-i18n="step2Title">Personalised Recommendation</strong>
-                  <span data-i18n="step2Text">Review the proposed treatment approach, timing and expected progress.</span>
+                  <strong data-i18n="stepTwoTitle">Personalised Recommendation</strong>
+                  <span data-i18n="stepTwoText">Review suitable options, estimated timing and realistic expectations.</span>
                 </div>
-              </div>
+              </article>
 
-              <div class="journey-step">
-                <div class="journey-no">03</div>
+              <article class="step">
+                <div class="step-no">03</div>
                 <div>
-                  <strong data-i18n="step3Title">Comfort-Focused Treatment</strong>
-                  <span data-i18n="step3Text">Receive your selected treatment in a private and calming clinical environment.</span>
+                  <strong data-i18n="stepThreeTitle">Comfort-Focused Treatment</strong>
+                  <span data-i18n="stepThreeText">Receive treatment in a private, calming and carefully prepared environment.</span>
                 </div>
-              </div>
+              </article>
 
-              <div class="journey-step">
-                <div class="journey-no">04</div>
+              <article class="step">
+                <div class="step-no">04</div>
                 <div>
-                  <strong data-i18n="step4Title">Aftercare & Review</strong>
-                  <span data-i18n="step4Text">Get clear aftercare instructions and follow-up support for your treatment journey.</span>
+                  <strong data-i18n="stepFourTitle">Aftercare & Review</strong>
+                  <span data-i18n="stepFourText">Receive clear aftercare instructions and follow-up guidance.</span>
                 </div>
-              </div>
+              </article>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="page" id="doctors">
+    <!-- PAGE 5 -->
+    <section class="page" id="page-doctors" data-page="doctors">
       <div class="shell">
         <div class="page-head">
           <div>
-            <div class="eyebrow" data-i18n="doctorEyebrow">Meet our doctors</div>
-            <h2 class="section-title" data-i18n="doctorTitle">Clinical care with a gentle aesthetic eye.</h2>
+            <span class="eyebrow" data-i18n="doctorEyebrow">Meet the medical team</span>
+            <h2 class="title" data-i18n="doctorTitle">Clinical judgement with a gentle aesthetic eye.</h2>
           </div>
+
           <p class="lead" data-i18n="doctorLead">
-            Our doctors focus on natural-looking outcomes, clear explanations and responsible treatment planning.
+            Replace these demonstration profiles with the clinic's approved doctor information and credentials.
           </p>
         </div>
 
         <div class="doctor-grid">
-          <article class="doctor-card">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=88" alt="Aesthetic doctor">
-            <h3 data-i18n="doc1Name">Dr. Elaine Lim</h3>
-            <p data-i18n="doc1Role">Medical Director · Skin Rejuvenation · Facial Aesthetics</p>
+          <article class="doctor-card glass">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=900&q=85" alt="Doctor">
+            <div class="doctor-copy">
+              <h3 data-i18n="doctorOneName">Dr. Elaine Lim</h3>
+              <p data-i18n="doctorOneRole">Medical Director · Skin Rejuvenation · Facial Aesthetics</p>
+            </div>
           </article>
 
-          <article class="doctor-card">
-            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=88" alt="Aesthetic doctor">
-            <h3 data-i18n="doc2Name">Dr. Chloe Lee</h3>
-            <p data-i18n="doc2Role">Acne & Pigmentation · Laser Care · Skin Health</p>
+          <article class="doctor-card glass">
+            <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=900&q=85" alt="Doctor">
+            <div class="doctor-copy">
+              <h3 data-i18n="doctorTwoName">Dr. Chloe Lee</h3>
+              <p data-i18n="doctorTwoRole">Acne & Pigmentation · Laser Care · Skin Health</p>
+            </div>
           </article>
 
-          <article class="doctor-card">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=88" alt="Aesthetic doctor">
-            <h3 data-i18n="doc3Name">Dr. Jason Wong</h3>
-            <p data-i18n="doc3Role">Facial Contouring · Skin Tightening · Men's Aesthetics</p>
+          <article class="doctor-card glass">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=85" alt="Doctor">
+            <div class="doctor-copy">
+              <h3 data-i18n="doctorThreeName">Dr. Jason Wong</h3>
+              <p data-i18n="doctorThreeRole">Facial Contouring · Skin Tightening · Men's Aesthetics</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="page" id="contact">
+    <!-- PAGE 6 -->
+    <section class="page" id="page-results" data-page="results">
       <div class="shell">
         <div class="page-head">
           <div>
-            <div class="eyebrow" data-i18n="contactEyebrow">Visit AURA Aesthetics</div>
-            <h2 class="section-title" data-i18n="contactTitle">Your skin journey can start with one message.</h2>
+            <span class="eyebrow" data-i18n="resultsEyebrow">Results & client stories</span>
+            <h2 class="title" data-i18n="resultsTitle">Visible care, remembered experiences.</h2>
           </div>
+
+          <p class="lead" data-i18n="resultsLead">
+            Replace demo images and reviews with approved clinic photography and verified client feedback.
+          </p>
+        </div>
+
+        <div class="results-layout">
+          <div class="results-gallery">
+            <article class="result-card large">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85" alt="Facial treatment">
+              <div class="result-caption">
+                <small data-i18n="resultLabelOne">Skin Renewal</small>
+                <strong data-i18n="resultOne">Hydration and texture-focused care</strong>
+              </div>
+            </article>
+
+            <article class="result-card">
+              <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85" alt="Pigmentation treatment">
+              <div class="result-caption">
+                <small data-i18n="resultLabelTwo">Tone Care</small>
+                <strong data-i18n="resultTwo">Clarity and pigmentation support</strong>
+              </div>
+            </article>
+
+            <article class="result-card">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85" alt="Body treatment">
+              <div class="result-caption">
+                <small data-i18n="resultLabelThree">Body Care</small>
+                <strong data-i18n="resultThree">Contour and tone support</strong>
+              </div>
+            </article>
+          </div>
+
+          <div class="story-panel glass">
+            <span class="eyebrow" data-i18n="clientStories">Client Stories</span>
+            <h3 class="title" style="font-size:3rem;margin-top:14px" data-i18n="storiesTitle">What clients remember.</h3>
+
+            <article class="story-slide active">
+              <div class="stars">★★★★★</div>
+              <blockquote data-i18n="reviewOne">“The consultation felt detailed, calm and never rushed.”</blockquote>
+              <footer data-i18n="reviewOneFooter">Client Review · Mont Kiara</footer>
+            </article>
+
+            <article class="story-slide">
+              <div class="stars">★★★★★</div>
+              <blockquote data-i18n="reviewTwo">“I appreciated the natural approach and clear explanation.”</blockquote>
+              <footer data-i18n="reviewTwoFooter">Client Review · Kuala Lumpur</footer>
+            </article>
+
+            <article class="story-slide">
+              <div class="stars">★★★★★</div>
+              <blockquote data-i18n="reviewThree">“The clinic feels private, polished and thoughtfully designed.”</blockquote>
+              <footer data-i18n="reviewThreeFooter">Client Review · Bangsar</footer>
+            </article>
+
+            <div class="story-nav">
+              <button id="storyPrev" type="button">←</button>
+              <button id="storyNext" type="button">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 7 -->
+    <section class="page" id="page-contact" data-page="contact">
+      <div class="shell">
+        <div class="page-head">
+          <div>
+            <span class="eyebrow" data-i18n="contactEyebrow">Private concierge</span>
+            <h2 class="title" data-i18n="contactTitle">Your skin journey can begin with one message.</h2>
+          </div>
+
           <p class="lead" data-i18n="contactLead">
-            Contact our care team on WhatsApp for consultation, pricing guidance or appointment availability.
+            Share your concern and preferred appointment details. The form continues directly to WhatsApp.
           </p>
         </div>
 
         <div class="contact-layout">
-          <div class="contact-card">
-            <div>
-              <h3 data-i18n="contactCardTitle">Clinic Information</h3>
-              <p data-i18n="contactCardText">A Korean-inspired aesthetic clinic in Kuala Lumpur with a calm and private environment.</p>
+          <div class="contact-panel">
+            <span class="eyebrow" data-i18n="visitAura">Visit AURA</span>
+            <h3 class="title" style="font-size:3rem;margin-top:14px" data-i18n="clinicInformation">Clinic Information</h3>
 
-              <div class="contact-list">
-                <div class="contact-item">
-                  <div class="contact-icon">⌖</div>
-                  <div>
-                    <strong data-i18n="addressLabel">Address</strong>
-                    <span data-i18n="addressText">Mont Kiara, Kuala Lumpur, Malaysia</span>
-                  </div>
-                </div>
+            <p class="lead" data-i18n="clinicDescription">
+              A Korean-inspired aesthetic clinic in Kuala Lumpur with a calm, private and bilingual environment.
+            </p>
 
-                <div class="contact-item">
-                  <div class="contact-icon">◷</div>
-                  <div>
-                    <strong data-i18n="hoursLabel">Opening Hours</strong>
-                    <span data-i18n="hoursText">Monday–Saturday, 10:00 AM–7:00 PM</span>
-                  </div>
-                </div>
+            <div class="contact-list">
+              <span data-i18n="address">Mont Kiara · Kuala Lumpur</span>
+              <span data-i18n="hours">Monday–Saturday · 10:00 AM–7:00 PM</span>
+              <span>+60 12-345 6789</span>
+              <span>hello@auraaesthetics.my</span>
+            </div>
 
-                <div class="contact-item">
-                  <div class="contact-icon">✆</div>
-                  <div>
-                    <strong data-i18n="phoneLabel">WhatsApp / Phone</strong>
-                    <span>+60 12-345 6789</span>
-                  </div>
-                </div>
+            <div class="social-list">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span>↗</span></a>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><span>Facebook</span><span>↗</span></a>
+              <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer"><span>TikTok</span><span>↗</span></a>
+              <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer"><span>WhatsApp</span><span>↗</span></a>
+            </div>
+          </div>
+
+          <form id="bookingForm" class="booking-form glass">
+            <div class="form-row">
+              <div class="field">
+                <label for="name" data-i18n="fullName">Full Name</label>
+                <input id="name" type="text" required>
+              </div>
+
+              <div class="field">
+                <label for="phone" data-i18n="whatsappNumber">WhatsApp Number</label>
+                <input id="phone" type="tel" required>
               </div>
             </div>
 
-            <a class="btn btn-primary" style="width:100%;margin-top:28px" href="https://wa.me/60123456789?text=Hi%20AURA%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" data-i18n="contactBtn">Book via WhatsApp</a>
-          </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="location" data-i18n="preferredLocation">Preferred Location</label>
+                <select id="location">
+                  <option>Mont Kiara</option>
+                  <option>Bangsar</option>
+                </select>
+              </div>
 
-          <div class="map-wrap">
-            <iframe
-              src="https://www.google.com/maps?q=Mont%20Kiara%20Kuala%20Lumpur&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="AURA Aesthetics Location">
-            </iframe>
-          </div>
+              <div class="field">
+                <label for="interest" data-i18n="treatmentInterest">Treatment Interest</label>
+                <select id="interest">
+                  <option data-i18n="notSure">Not sure yet</option>
+                  <option>Aurora Skin Booster</option>
+                  <option>Pico Lumière</option>
+                  <option>HIFU Cloud Lift</option>
+                  <option>Pearl Dew Facial</option>
+                  <option>Aqua Contour</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message" data-i18n="message">Message</label>
+              <textarea id="message" data-i18n-placeholder="messagePlaceholder" placeholder="Share your main concern or preferred appointment time."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit" data-i18n="continueWhatsApp">Continue on WhatsApp</button>
+          </form>
         </div>
       </div>
     </section>
-
   </main>
 
-  <a class="wa-float" href="https://wa.me/60123456789?text=Hi%20AURA%20Aesthetics%2C%20I%20would%20like%20to%20make%20an%20appointment." target="_blank" aria-label="WhatsApp">✆</a>
-</div>
+  <div id="modalBackdrop" class="modal-backdrop"></div>
 
-<script>
-  const translations = {
-    en:{
-      brandSub:"Korean-Inspired Skin Clinic",
-      navHome:"Home",
-      navConcerns:"Skin Concerns",
-      navTreatments:"Treatments",
-      navJourney:"Your Journey",
-      navDoctors:"Doctors",
-      navContact:"Contact",
-      bookNow:"Book Consultation",
-      whatsappUs:"WhatsApp Us",
+  <div id="treatmentModal" class="modal" aria-hidden="true">
+    <div class="modal-grid">
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+      </div>
 
-      homeEyebrow:"Korean-inspired aesthetic care in Kuala Lumpur",
-      homeTitleOne:"Healthy skin.",
-      homeTitleTwo:"Soft confidence.",
-      homeLead:"Personalised skin and facial treatments designed around your concerns, comfort and natural beauty.",
-      consultBtn:"Consult via WhatsApp",
-      findBtn:"Find My Skin Concern",
-      pillOne:"Doctor-led consultation",
-      pillTwo:"Natural treatment planning",
-      pillThree:"EN / 中文 support",
-      floatOneTitle:"Glow Consultation",
-      floatOneText:"A calm, personalised review of your skin goals and concerns.",
-      floatTwoTitle:"K-Beauty Inspired",
-      floatTwoText:"Treatment plans focused on hydration, balance and natural refinement.",
+      <div class="modal-copy">
+        <button id="modalClose" class="modal-close" type="button">×</button>
+        <span id="modalCategory" class="eyebrow"></span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
 
-      concernEyebrow:"Choose your main concern",
-      concernTitle:"Start with what you notice most.",
-      concernLead:"Select a concern below to view a recommended treatment direction. Final recommendations require a consultation.",
-      acneBtn:"Acne",
-      pigmentBtn:"Pigmentation",
-      ageBtn:"Ageing",
-      poresBtn:"Pores & Texture",
-      contourBtn:"Facial Contour",
-      hydrationBtn:"Hydration",
-      recommendedLabel:"Suggested direction",
+        <div class="fact-grid">
+          <div class="fact">
+            <small data-i18n="investment">Investment</small>
+            <strong id="modalPrice"></strong>
+          </div>
 
-      treatEyebrow:"Our treatment menu",
-      treatTitle:"A softer, smarter approach to aesthetics.",
-      treatLead:"Each plan is personalised after consultation and may combine several treatment types for a more balanced result.",
-      s1Title:"Hydration & Skin Booster",
-      s1Text:"Support smoother, more hydrated and refreshed-looking skin with a treatment plan selected for your skin condition.",
-      s2Title:"Acne & Scar Care",
-      s2Text:"A phased programme designed for active acne, congestion, enlarged pores and visible acne marks.",
-      s3Title:"Pigmentation Programme",
-      s3Text:"Personalised support for uneven skin tone, sun spots and post-inflammatory pigmentation.",
-      s4Title:"Skin Tightening",
-      s4Text:"Non-surgical treatment options to support firmness and natural facial definition.",
-      s5Title:"Facial Contouring",
-      s5Text:"Subtle, proportion-led planning for a softer and more balanced facial profile.",
+          <div class="fact">
+            <small data-i18n="appointment">Appointment</small>
+            <strong id="modalDuration"></strong>
+          </div>
 
-      journeyEyebrow:"Your AURA experience",
-      journeyTitle:"Gentle guidance from consultation to aftercare.",
-      journeyLead:"We keep the process clear, calm and personalised so you understand every recommendation before deciding.",
-      journeyPanelEyebrow:"Your personalised process",
-      journeyPanelTitle:"No pressure. No rushed decisions.",
-      journeyPanelText:"Your doctor will review your skin, discuss your goals and explain suitable options with realistic expectations.",
-      step1Title:"Skin Consultation",
-      step1Text:"Discuss your concerns, routine, previous treatments and preferred outcome.",
-      step2Title:"Personalised Recommendation",
-      step2Text:"Review the proposed treatment approach, timing and expected progress.",
-      step3Title:"Comfort-Focused Treatment",
-      step3Text:"Receive your selected treatment in a private and calming clinical environment.",
-      step4Title:"Aftercare & Review",
-      step4Text:"Get clear aftercare instructions and follow-up support for your treatment journey.",
+          <div class="fact">
+            <small data-i18n="downtime">Downtime</small>
+            <strong id="modalDowntime"></strong>
+          </div>
 
-      doctorEyebrow:"Meet our doctors",
-      doctorTitle:"Clinical care with a gentle aesthetic eye.",
-      doctorLead:"Our doctors focus on natural-looking outcomes, clear explanations and responsible treatment planning.",
-      doc1Name:"Dr. Elaine Lim",
-      doc1Role:"Medical Director · Skin Rejuvenation · Facial Aesthetics",
-      doc2Name:"Dr. Chloe Lee",
-      doc2Role:"Acne & Pigmentation · Laser Care · Skin Health",
-      doc3Name:"Dr. Jason Wong",
-      doc3Role:"Facial Contouring · Skin Tightening · Men's Aesthetics",
+          <div class="fact">
+            <small data-i18n="bestFor">Best For</small>
+            <strong id="modalBestFor"></strong>
+          </div>
+        </div>
 
-      contactEyebrow:"Visit AURA Aesthetics",
-      contactTitle:"Your skin journey can start with one message.",
-      contactLead:"Contact our care team on WhatsApp for consultation, pricing guidance or appointment availability.",
-      contactCardTitle:"Clinic Information",
-      contactCardText:"A Korean-inspired aesthetic clinic in Kuala Lumpur with a calm and private environment.",
-      addressLabel:"Address",
-      addressText:"Mont Kiara, Kuala Lumpur, Malaysia",
-      hoursLabel:"Opening Hours",
-      hoursText:"Monday–Saturday, 10:00 AM–7:00 PM",
-      phoneLabel:"WhatsApp / Phone",
-      contactBtn:"Book via WhatsApp"
-    },
+        <ul id="modalList" class="modal-list"></ul>
 
-    zh:{
-      brandSub:"韩系肌肤医美诊所",
-      navHome:"首页",
-      navConcerns:"肌肤困扰",
-      navTreatments:"医美疗程",
-      navJourney:"疗程过程",
-      navDoctors:"医生团队",
-      navContact:"联系我们",
-      bookNow:"预约咨询",
-      whatsappUs:"WhatsApp 咨询",
+        <a id="modalWhatsApp" href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="askTreatment">
+          Ask About This Treatment
+        </a>
+      </div>
+    </div>
+  </div>
 
-      homeEyebrow:"吉隆坡韩系医美护理",
-      homeTitleOne:"健康肌肤。",
-      homeTitleTwo:"自然自信。",
-      homeLead:"根据您的肌肤困扰、舒适度与自然美感，规划个性化肌肤与面部疗程。",
-      consultBtn:"WhatsApp 咨询",
-      findBtn:"寻找适合的肌肤方案",
-      pillOne:"医生专业咨询",
-      pillTwo:"自然疗程规划",
-      pillThree:"中英文服务",
-      floatOneTitle:"焕亮肌肤咨询",
-      floatOneText:"以轻松方式了解您的肌肤目标与主要困扰。",
-      floatTwoTitle:"韩系美学理念",
-      floatTwoText:"专注保湿、平衡与自然精致感的疗程规划。",
+  <div class="floating-social">
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">IG</a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">FB</a>
+    <a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer">WA</a>
+  </div>
 
-      concernEyebrow:"选择您的主要困扰",
-      concernTitle:"从最在意的问题开始。",
-      concernLead:"请选择以下肌肤困扰，查看建议疗程方向。最终方案需经过医生面诊。",
-      acneBtn:"痘痘",
-      pigmentBtn:"色素与斑点",
-      ageBtn:"老化",
-      poresBtn:"毛孔与肤质",
-      contourBtn:"面部轮廓",
-      hydrationBtn:"保湿",
-      recommendedLabel:"建议方向",
+  <script>
+    const validPages = ["home","concerns","treatments","journey","doctors","results","contact"];
 
-      treatEyebrow:"我们的疗程",
-      treatTitle:"更温和、更聪明的医美方式。",
-      treatLead:"每项方案都会在咨询后个性化制定，并可能结合不同疗程以达到更协调的效果。",
-      s1Title:"保湿与肌肤水光护理",
-      s1Text:"根据肌肤状况，帮助提升保湿度、平滑度与整体焕亮感。",
-      s2Title:"痘痘与痘疤护理",
-      s2Text:"为活跃痘痘、毛孔堵塞、粗大毛孔与痘印制定阶段性方案。",
-      s3Title:"色素管理疗程",
-      s3Text:"针对肤色不均、晒斑与炎症后色沉提供个人化护理。",
-      s4Title:"肌肤紧致疗程",
-      s4Text:"通过非手术方式支持紧致度与自然面部轮廓。",
-      s5Title:"面部轮廓调整",
-      s5Text:"以比例为核心，打造更柔和、更协调的面部线条。",
-
-      journeyEyebrow:"您的 AURA 体验",
-      journeyTitle:"从咨询到护理，全程温和清楚。",
-      journeyLead:"我们会以清楚、轻松与个人化的方式说明每项建议，让您了解后再决定。",
-      journeyPanelEyebrow:"您的专属过程",
-      journeyPanelTitle:"没有压力，也不仓促决定。",
-      journeyPanelText:"医生会评估您的肌肤、了解目标，并以合理预期说明合适选项。",
-      step1Title:"肌肤咨询",
-      step1Text:"讨论您的困扰、日常护理、过往疗程与理想效果。",
-      step2Title:"个性化建议",
-      step2Text:"了解建议疗程、时间安排与预期改善过程。",
-      step3Title:"舒适疗程",
-      step3Text:"在私密舒适的环境中接受所选择的护理。",
-      step4Title:"术后护理与复诊",
-      step4Text:"获得清楚护理说明与后续支持。",
-
-      doctorEyebrow:"认识我们的医生",
-      doctorTitle:"医学专业，也保留温柔审美。",
-      doctorLead:"我们的医生专注自然效果、清楚沟通与负责任的疗程规划。",
-      doc1Name:"林医生 Dr. Elaine Lim",
-      doc1Role:"医疗总监 · 肌肤焕活 · 面部医美",
-      doc2Name:"李医生 Dr. Chloe Lee",
-      doc2Role:"痘痘与色素 · 激光护理 · 肌肤健康",
-      doc3Name:"黄医生 Dr. Jason Wong",
-      doc3Role:"面部轮廓 · 肌肤紧致 · 男士医美",
-
-      contactEyebrow:"到访 AURA Aesthetics",
-      contactTitle:"您的肌肤旅程，可以从一则信息开始。",
-      contactLead:"欢迎通过 WhatsApp 查询疗程、价格范围或预约时间。",
-      contactCardTitle:"诊所资料",
-      contactCardText:"位于吉隆坡的韩系医美诊所，环境安静且私密。",
-      addressLabel:"地址",
-      addressText:"马来西亚吉隆坡 Mont Kiara",
-      hoursLabel:"营业时间",
-      hoursText:"星期一至星期六，上午 10:00 至晚上 7:00",
-      phoneLabel:"WhatsApp / 电话",
-      contactBtn:"通过 WhatsApp 预约"
-    }
-  };
-
-  const concernData = {
-    en:{
-      acne:{
-        title:"Acne & Congestion Care",
-        text:"A structured skin plan focused on calming active breakouts, reducing congestion and supporting clearer skin over time.",
-        tags:["Acne control","Pore care","Scar support"],
-        image:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=88"
+    const translations = {
+      en: {
+        brandSub: "Aurora Pearl Signature Clinic",
+        navHome: "Home",
+        navConcerns: "Concerns",
+        navTreatments: "Treatments",
+        navJourney: "Journey",
+        navDoctors: "Doctors",
+        navResults: "Results",
+        navContact: "Contact",
+        bookNow: "Book Consultation",
+        homeEyebrow: "Korean-inspired clinical beauty",
+        homeTitleOne: "Healthy skin.",
+        homeTitleTwo: "Luminous confidence.",
+        homeLead: "Personalised skin and facial treatment planning designed around your concerns, comfort and natural proportions.",
+        findConcern: "Find My Concern",
+        reserveConsultation: "Reserve Consultation",
+        pillOne: "Doctor-led consultation",
+        pillTwo: "Natural treatment planning",
+        pillThree: "EN / 中文 support",
+        heroCardOneTitle: "Aurora Skin Scan",
+        heroCardOneText: "A personalised review of your goals, concerns and treatment suitability.",
+        heroCardTwoTitle: "Soft Refinement",
+        heroCardTwoText: "Treatment planning focused on hydration, balance and believable results.",
+        concernEyebrow: "Interactive concern finder",
+        concernTitle: "Begin with what you notice most.",
+        concernLead: "Select your main concern to preview a suggested consultation direction. Final suitability requires professional assessment.",
+        chooseConcern: "Choose a concern",
+        chooseConcernText: "Your selection updates the suggested skin pathway instantly.",
+        acne: "Acne & Congestion",
+        pigment: "Pigmentation & Tone",
+        ageing: "Fine Lines & Firmness",
+        pores: "Pores & Texture",
+        contour: "Facial Contour",
+        hydration: "Dryness & Dullness",
+        suggestedDirection: "Suggested direction",
+        acneTitle: "Clear-Skin Recovery Plan",
+        acneText: "A structured pathway focused on congestion, active breakouts, visible marks and long-term skin balance.",
+        pigmentTitle: "Tone & Pigment Programme",
+        pigmentText: "A personalised direction for uneven tone, visible pigmentation and post-inflammatory marks.",
+        ageingTitle: "Firmness & Renewal Plan",
+        ageingText: "A gentle combination approach focused on firmness, fine lines and refreshed-looking skin.",
+        poresTitle: "Texture Refinement Plan",
+        poresText: "A treatment direction focused on smoother-looking texture, visible pores and overall skin balance.",
+        contourTitle: "Natural Contour Planning",
+        contourText: "A proportion-focused pathway designed to support a softer, more balanced facial profile.",
+        hydrationTitle: "Hydration & Glow Plan",
+        hydrationText: "A replenishing direction for dryness, dullness and tired-looking skin.",
+        tagAcne: "Acne control",
+        tagPore: "Pore care",
+        tagScar: "Scar support",
+        tagTone: "Tone balancing",
+        tagBright: "Brightening",
+        tagSun: "Sun spots",
+        tagFirmness: "Firmness",
+        tagLines: "Fine lines",
+        tagQuality: "Skin quality",
+        tagTexture: "Texture",
+        tagResurface: "Resurfacing",
+        tagBalance: "Facial balance",
+        tagDefinition: "Definition",
+        tagNatural: "Natural profile",
+        tagHydration: "Hydration",
+        tagGlow: "Glow",
+        tagBooster: "Skin booster",
+        askConsultation: "Ask for a Consultation",
+        treatEyebrow: "Signature treatment collection",
+        treatTitle: "A luminous approach to modern aesthetics.",
+        treatLead: "Select any treatment to open its detailed overview, appointment guidance, downtime and WhatsApp enquiry.",
+        skinQuality: "Skin Quality",
+        boosterName: "Aurora Skin Booster",
+        boosterShort: "Hydration-focused skin-quality care for a smoother and refreshed appearance.",
+        skinClarity: "Skin Clarity",
+        picoName: "Pico Lumière",
+        picoShort: "A targeted skin-renewal approach for tone, texture and visible pigmentation.",
+        structuralLift: "Structural Lift",
+        hifuName: "HIFU Cloud Lift",
+        facial: "Facial",
+        facialName: "Pearl Dew Facial",
+        body: "Body",
+        bodyName: "Aqua Contour",
+        journeyEyebrow: "Your AURA journey",
+        journeyTitle: "Thoughtful care from consultation to aftercare.",
+        journeyLead: "Every step is designed to feel calm, clear and personal so you can make informed treatment decisions.",
+        journeyNoteTitle: "No pressure. No rushed decisions.",
+        journeyNoteText: "Your goals, comfort and suitability remain at the centre of every recommendation.",
+        journeyProcess: "The personalised process",
+        journeyPanelTitle: "A clear four-step experience.",
+        stepOneTitle: "Skin Consultation",
+        stepOneText: "Discuss your concerns, routine, previous treatments and desired outcome.",
+        stepTwoTitle: "Personalised Recommendation",
+        stepTwoText: "Review suitable options, estimated timing and realistic expectations.",
+        stepThreeTitle: "Comfort-Focused Treatment",
+        stepThreeText: "Receive treatment in a private, calming and carefully prepared environment.",
+        stepFourTitle: "Aftercare & Review",
+        stepFourText: "Receive clear aftercare instructions and follow-up guidance.",
+        doctorEyebrow: "Meet the medical team",
+        doctorTitle: "Clinical judgement with a gentle aesthetic eye.",
+        doctorLead: "Replace these demonstration profiles with the clinic's approved doctor information and credentials.",
+        doctorOneName: "Dr. Elaine Lim",
+        doctorOneRole: "Medical Director · Skin Rejuvenation · Facial Aesthetics",
+        doctorTwoName: "Dr. Chloe Lee",
+        doctorTwoRole: "Acne & Pigmentation · Laser Care · Skin Health",
+        doctorThreeName: "Dr. Jason Wong",
+        doctorThreeRole: "Facial Contouring · Skin Tightening · Men's Aesthetics",
+        resultsEyebrow: "Results & client stories",
+        resultsTitle: "Visible care, remembered experiences.",
+        resultsLead: "Replace demo images and reviews with approved clinic photography and verified client feedback.",
+        resultLabelOne: "Skin Renewal",
+        resultOne: "Hydration and texture-focused care",
+        resultLabelTwo: "Tone Care",
+        resultTwo: "Clarity and pigmentation support",
+        resultLabelThree: "Body Care",
+        resultThree: "Contour and tone support",
+        clientStories: "Client Stories",
+        storiesTitle: "What clients remember.",
+        reviewOne: "“The consultation felt detailed, calm and never rushed.”",
+        reviewOneFooter: "Client Review · Mont Kiara",
+        reviewTwo: "“I appreciated the natural approach and clear explanation.”",
+        reviewTwoFooter: "Client Review · Kuala Lumpur",
+        reviewThree: "“The clinic feels private, polished and thoughtfully designed.”",
+        reviewThreeFooter: "Client Review · Bangsar",
+        contactEyebrow: "Private concierge",
+        contactTitle: "Your skin journey can begin with one message.",
+        contactLead: "Share your concern and preferred appointment details. The form continues directly to WhatsApp.",
+        visitAura: "Visit AURA",
+        clinicInformation: "Clinic Information",
+        clinicDescription: "A Korean-inspired aesthetic clinic in Kuala Lumpur with a calm, private and bilingual environment.",
+        address: "Mont Kiara · Kuala Lumpur",
+        hours: "Monday–Saturday · 10:00 AM–7:00 PM",
+        fullName: "Full Name",
+        whatsappNumber: "WhatsApp Number",
+        preferredLocation: "Preferred Location",
+        treatmentInterest: "Treatment Interest",
+        notSure: "Not sure yet",
+        message: "Message",
+        messagePlaceholder: "Share your main concern or preferred appointment time.",
+        continueWhatsApp: "Continue on WhatsApp",
+        investment: "Investment",
+        appointment: "Appointment",
+        downtime: "Downtime",
+        bestFor: "Best For",
+        askTreatment: "Ask About This Treatment"
       },
-      pigmentation:{
-        title:"Pigmentation & Tone Programme",
-        text:"A personalised direction for uneven skin tone, sun spots and post-inflammatory pigmentation.",
-        tags:["Tone balancing","Sun spots","Brightening"],
-        image:"https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=88"
-      },
-      ageing:{
-        title:"Age-Defying Skin Plan",
-        text:"A gentle combination approach to support firmness, fine lines and a fresher-looking appearance.",
-        tags:["Firmness","Fine lines","Skin quality"],
-        image:"https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=88"
-      },
-      pores:{
-        title:"Pores & Texture Refinement",
-        text:"A treatment direction focused on smoother texture, refined pores and more balanced skin.",
-        tags:["Texture","Pore care","Resurfacing"],
-        image:"https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=1200&q=88"
-      },
-      contour:{
-        title:"Natural Facial Contouring",
-        text:"A proportion-focused plan to support a softer, more balanced and naturally defined facial profile.",
-        tags:["Facial balance","Definition","Natural profile"],
-        image:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=88"
-      },
-      hydration:{
-        title:"Hydration & Glow Boost",
-        text:"A skin-replenishing direction for dryness, dullness and tired-looking skin.",
-        tags:["Hydration","Glow","Skin booster"],
-        image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1200&q=88"
+
+      zh: {
+        brandSub: "极光珍珠韩系医美诊所",
+        navHome: "首页",
+        navConcerns: "肌肤困扰",
+        navTreatments: "医美疗程",
+        navJourney: "疗程过程",
+        navDoctors: "医生团队",
+        navResults: "案例与评价",
+        navContact: "联系我们",
+        bookNow: "预约咨询",
+        homeEyebrow: "韩系临床美学护理",
+        homeTitleOne: "健康肌肤。",
+        homeTitleTwo: "自然发光的自信。",
+        homeLead: "根据您的肌肤困扰、舒适度与自然比例，规划个人化肌肤与面部疗程。",
+        findConcern: "寻找肌肤方案",
+        reserveConsultation: "预约咨询",
+        pillOne: "医生专业咨询",
+        pillTwo: "自然疗程规划",
+        pillThree: "中英文服务",
+        heroCardOneTitle: "极光肌肤评估",
+        heroCardOneText: "了解您的目标、肌肤困扰与疗程适合度。",
+        heroCardTwoTitle: "柔和精致",
+        heroCardTwoText: "专注补水、平衡与自然可信的改善效果。",
+        concernEyebrow: "互动肌肤困扰选择",
+        concernTitle: "从您最在意的问题开始。",
+        concernLead: "选择主要困扰以查看建议咨询方向。最终适合度需经过专业评估。",
+        chooseConcern: "选择肌肤困扰",
+        chooseConcernText: "您的选择会即时更新建议方向。",
+        acne: "痘痘与堵塞",
+        pigment: "色素与肤色",
+        ageing: "细纹与紧致",
+        pores: "毛孔与肤质",
+        contour: "面部轮廓",
+        hydration: "干燥与暗沉",
+        suggestedDirection: "建议方向",
+        acneTitle: "净肤修复方案",
+        acneText: "针对堵塞、活跃痘痘、可见痘印与长期肌肤平衡的阶段性方案。",
+        pigmentTitle: "肤色与色素管理",
+        pigmentText: "针对肤色不均、可见色素与炎症后印记的个人化方向。",
+        ageingTitle: "紧致焕活方案",
+        ageingText: "以温和组合方式支持紧致度、细纹与清新肤感。",
+        poresTitle: "肤质细致方案",
+        poresText: "专注改善肤质、可见毛孔与整体肌肤平衡。",
+        contourTitle: "自然轮廓规划",
+        contourText: "以比例为重点，支持更柔和、更协调的面部轮廓。",
+        hydrationTitle: "保湿焕亮方案",
+        hydrationText: "针对干燥、暗沉与疲惫肌肤的补水方向。",
+        tagAcne: "痘痘管理",
+        tagPore: "毛孔护理",
+        tagScar: "痘印支持",
+        tagTone: "均匀肤色",
+        tagBright: "焕亮",
+        tagSun: "晒斑护理",
+        tagFirmness: "紧致",
+        tagLines: "细纹",
+        tagQuality: "肤质",
+        tagTexture: "肤质改善",
+        tagResurface: "焕肤",
+        tagBalance: "面部平衡",
+        tagDefinition: "轮廓",
+        tagNatural: "自然线条",
+        tagHydration: "保湿",
+        tagGlow: "焕亮",
+        tagBooster: "水光护理",
+        askConsultation: "预约咨询",
+        treatEyebrow: "Signature 精选疗程",
+        treatTitle: "更明亮、更现代的医美体验。",
+        treatLead: "点击任何疗程以查看详细说明、时间、恢复期与 WhatsApp 咨询。",
+        skinQuality: "肤质护理",
+        boosterName: "极光水光护理",
+        boosterShort: "专注补水与肤质的护理，支持更平滑、更清新的肌肤状态。",
+        skinClarity: "肌肤透亮",
+        picoName: "Pico Lumière",
+        picoShort: "针对肤色、肤质与可见色素的焕肤方向。",
+        structuralLift: "结构紧致",
+        hifuName: "HIFU 云端紧致",
+        facial: "面部护理",
+        facialName: "珍珠露焕亮护理",
+        body: "身体护理",
+        bodyName: "水感轮廓管理",
+        journeyEyebrow: "您的 AURA 过程",
+        journeyTitle: "从咨询到护理，细心陪伴。",
+        journeyLead: "每个步骤都保持轻松、清楚与个人化，让您安心做决定。",
+        journeyNoteTitle: "没有压力，也不仓促。",
+        journeyNoteText: "您的目标、舒适度与适合度始终是每项建议的核心。",
+        journeyProcess: "个人化过程",
+        journeyPanelTitle: "清楚的四步骤体验。",
+        stepOneTitle: "肌肤咨询",
+        stepOneText: "讨论困扰、日常护理、过往疗程与理想效果。",
+        stepTwoTitle: "个人化建议",
+        stepTwoText: "了解合适方案、时间安排与合理预期。",
+        stepThreeTitle: "舒适疗程",
+        stepThreeText: "在私密、放松与细心准备的环境中接受疗程。",
+        stepFourTitle: "术后护理与复诊",
+        stepFourText: "获得清楚的护理说明与后续支持。",
+        doctorEyebrow: "认识医疗团队",
+        doctorTitle: "专业判断，也保留温柔审美。",
+        doctorLead: "请将示范资料更换为诊所核准的医生信息与资历。",
+        doctorOneName: "林医生 Dr. Elaine Lim",
+        doctorOneRole: "医疗总监 · 肌肤焕活 · 面部医美",
+        doctorTwoName: "李医生 Dr. Chloe Lee",
+        doctorTwoRole: "痘痘与色素 · 激光护理 · 肌肤健康",
+        doctorThreeName: "黄医生 Dr. Jason Wong",
+        doctorThreeRole: "面部轮廓 · 肌肤紧致 · 男士医美",
+        resultsEyebrow: "案例与客户故事",
+        resultsTitle: "看得见的护理，记得住的体验。",
+        resultsLead: "请以诊所核准照片与真实客户评价替换示范内容。",
+        resultLabelOne: "肌肤焕活",
+        resultOne: "保湿与肤质护理",
+        resultLabelTwo: "肤色管理",
+        resultTwo: "透亮与色素支持",
+        resultLabelThree: "身体护理",
+        resultThree: "轮廓与紧致支持",
+        clientStories: "客户评价",
+        storiesTitle: "客户最记得的体验。",
+        reviewOne: "“咨询过程非常详细、轻松，也不会催促。”",
+        reviewOneFooter: "客户评价 · Mont Kiara",
+        reviewTwo: "“我喜欢自然的方向，也解释得很清楚。”",
+        reviewTwoFooter: "客户评价 · 吉隆坡",
+        reviewThree: "“诊所私密、精致，而且每个细节都很用心。”",
+        reviewThreeFooter: "客户评价 · Bangsar",
+        contactEyebrow: "私人咨询服务",
+        contactTitle: "您的肌肤旅程，可以从一则信息开始。",
+        contactLead: "填写您的困扰与预约偏好，表单会直接连接 WhatsApp。",
+        visitAura: "到访 AURA",
+        clinicInformation: "诊所资料",
+        clinicDescription: "位于吉隆坡的韩系医美诊所，环境安静、私密并提供中英文服务。",
+        address: "Mont Kiara · 吉隆坡",
+        hours: "星期一至星期六 · 上午10点至晚上7点",
+        fullName: "姓名",
+        whatsappNumber: "WhatsApp 号码",
+        preferredLocation: "首选地点",
+        treatmentInterest: "感兴趣的疗程",
+        notSure: "尚未确定",
+        message: "信息",
+        messagePlaceholder: "请分享主要困扰或理想预约时间。",
+        continueWhatsApp: "通过 WhatsApp 继续",
+        investment: "价格参考",
+        appointment: "疗程时间",
+        downtime: "恢复期",
+        bestFor: "适合",
+        askTreatment: "咨询此疗程"
       }
-    },
-    zh:{
-      acne:{
-        title:"痘痘与毛孔堵塞护理",
-        text:"通过阶段性肌肤方案，帮助舒缓活跃痘痘、减少堵塞，并逐步支持更清透的肌肤状态。",
-        tags:["痘痘管理","毛孔护理","痘疤支持"],
-        image:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=88"
+    };
+
+    const treatmentData = {
+      booster: {
+        category: "Skin Quality",
+        title: "Aurora Skin Booster",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85",
+        description: "A skin-quality treatment designed to support hydration, smoothness and a refreshed-looking complexion.",
+        price: "From RM 988",
+        duration: "45–75 minutes",
+        downtime: "Temporary visible marks possible",
+        bestFor: "Hydration and skin quality",
+        points: [
+          "Individual skin-quality assessment",
+          "Treatment areas discussed beforehand",
+          "Aftercare guidance provided"
+        ]
       },
-      pigmentation:{
-        title:"色素与肤色管理",
-        text:"针对肤色不均、晒斑与炎症后色沉，制定个人化改善方向。",
-        tags:["均匀肤色","晒斑护理","焕亮"],
-        image:"https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=88"
+      pico: {
+        category: "Skin Clarity",
+        title: "Pico Lumière",
+        image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=85",
+        description: "A targeted skin-renewal protocol focused on visible pigmentation, uneven tone and overall clarity.",
+        price: "From RM 688",
+        duration: "45–60 minutes",
+        downtime: "Varies by protocol",
+        bestFor: "Tone and pigmentation",
+        points: [
+          "Skin concern review",
+          "Personalised treatment planning",
+          "Post-treatment care guidance"
+        ]
       },
-      ageing:{
-        title:"抗老焕活方案",
-        text:"通过温和组合疗程，支持紧致度、细纹与整体年轻感。",
-        tags:["紧致","细纹","肤质"],
-        image:"https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1200&q=88"
+      hifu: {
+        category: "Structural Lift",
+        title: "HIFU Cloud Lift",
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=85",
+        description: "A consultation-led lifting treatment designed to support facial firmness and definition.",
+        price: "From RM 1,288",
+        duration: "60–90 minutes",
+        downtime: "Minimal",
+        bestFor: "Jawline and lower face",
+        points: [
+          "Facial proportion assessment",
+          "Targeted treatment planning",
+          "Expected-outcome discussion"
+        ]
       },
-      pores:{
-        title:"毛孔与肤质改善",
-        text:"专注平滑肤质、细致毛孔与改善肌肤不均。",
-        tags:["肤质","毛孔护理","焕肤"],
-        image:"https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=1200&q=88"
+      facial: {
+        category: "Facial",
+        title: "Pearl Dew Facial",
+        image: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=85",
+        description: "A premium facial experience designed to support hydration, comfort and visible radiance.",
+        price: "From RM 388",
+        duration: "60–75 minutes",
+        downtime: "None expected",
+        bestFor: "Refresh and maintenance",
+        points: [
+          "Skin condition review",
+          "Customised facial steps",
+          "Home-care guidance"
+        ]
       },
-      contour:{
-        title:"自然面部轮廓调整",
-        text:"以比例为重点，支持更柔和、协调与自然立体的面部线条。",
-        tags:["面部平衡","轮廓","自然线条"],
-        image:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=88"
-      },
-      hydration:{
-        title:"保湿与焕亮护理",
-        text:"为干燥、暗沉与疲惫肌肤提供补水与焕亮方向。",
-        tags:["保湿","焕亮","水光护理"],
-        image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=1200&q=88"
+      body: {
+        category: "Body",
+        title: "Aqua Contour",
+        image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85",
+        description: "A body-focused consultation pathway designed to support selected contour and tone areas.",
+        price: "From RM 788",
+        duration: "45–90 minutes",
+        downtime: "Usually minimal",
+        bestFor: "Selected body areas",
+        points: [
+          "Target-area consultation",
+          "Suitability review",
+          "Treatment frequency planning"
+        ]
       }
+    };
+
+    let currentLanguage = localStorage.getItem("auraSignatureLanguage") || "en";
+    let storyIndex = 0;
+
+    function navigateTo(page, updateHash = true) {
+      if (!validPages.includes(page)) page = "home";
+
+      document.querySelectorAll(".page").forEach(section => {
+        section.classList.toggle("active", section.dataset.page === page);
+      });
+
+      document.querySelectorAll(".nav-btn").forEach(button => {
+        button.classList.toggle("active", button.dataset.route === page);
+      });
+
+      if (updateHash) {
+        history.pushState({ page }, "", "#" + page);
+      }
+
+      document.getElementById("mobileMenu").classList.remove("open");
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  };
 
-  const pages = document.querySelectorAll(".page");
-  const navLinks = document.querySelectorAll("[data-page]");
-  const langButtons = document.querySelectorAll("[data-lang]");
-  const concernButtons = document.querySelectorAll("[data-concern]");
-  const mobileDrawer = document.getElementById("mobileDrawer");
-  const menuBtn = document.getElementById("menuBtn");
-  const resultVisual = document.getElementById("resultVisual");
-  const resultTitle = document.getElementById("resultTitle");
-  const resultText = document.getElementById("resultText");
-  const resultTags = document.getElementById("resultTags");
-
-  let currentLang = localStorage.getItem("auraLanguage") || "en";
-  let currentConcern = "acne";
-
-  function showPage(pageId){
-    pages.forEach(page => page.classList.toggle("active", page.id === pageId));
-    document.querySelectorAll(".nav-link").forEach(link => {
-      link.classList.toggle("active", link.dataset.page === pageId);
-    });
-    mobileDrawer.classList.remove("open");
-    window.scrollTo({top:0,behavior:"smooth"});
-    history.replaceState(null,"","#" + pageId);
-  }
-
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => showPage(link.dataset.page));
-  });
-
-  menuBtn.addEventListener("click", () => mobileDrawer.classList.toggle("open"));
-
-  mobileDrawer.addEventListener("click", e => {
-    if(e.target === mobileDrawer) mobileDrawer.classList.remove("open");
-  });
-
-  function updateConcern(){
-    const data = concernData[currentLang][currentConcern];
-    resultVisual.style.backgroundImage = `url("${data.image}")`;
-    resultTitle.textContent = data.title;
-    resultText.textContent = data.text;
-    resultTags.innerHTML = data.tags.map(tag => `<span>${tag}</span>`).join("");
-  }
-
-  concernButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      currentConcern = btn.dataset.concern;
-      concernButtons.forEach(item => item.classList.toggle("active", item === btn));
-      updateConcern();
-    });
-  });
-
-  function setLanguage(lang){
-    currentLang = lang;
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
-
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.dataset.i18n;
-      if(translations[lang][key]) el.textContent = translations[lang][key];
+    document.querySelectorAll("[data-route]").forEach(element => {
+      element.addEventListener("click", event => {
+        event.preventDefault();
+        navigateTo(element.dataset.route);
+      });
     });
 
-    langButtons.forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("mobileMenu").classList.toggle("open");
     });
 
-    localStorage.setItem("auraLanguage",lang);
-    updateConcern();
-  }
+    window.addEventListener("popstate", () => {
+      navigateTo(location.hash.replace("#", "") || "home", false);
+    });
 
-  langButtons.forEach(btn => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-  });
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
 
-  setLanguage(currentLang);
+      document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        if (translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
 
-  const initialPage = location.hash.replace("#","") || "home";
-  if(document.getElementById(initialPage)) showPage(initialPage);
-</script>
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(element => {
+        const key = element.dataset.i18nPlaceholder;
+        if (translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+
+      document.querySelectorAll("[data-lang]").forEach(button => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+      });
+
+      localStorage.setItem("auraSignatureLanguage", lang);
+    }
+
+    document.querySelectorAll("[data-lang]").forEach(button => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    document.querySelectorAll("[data-concern]").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-concern]").forEach(item => item.classList.remove("active"));
+        document.querySelectorAll(".concern-panel").forEach(panel => panel.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById("concern-" + button.dataset.concern).classList.add("active");
+      });
+    });
+
+    const modal = document.getElementById("treatmentModal");
+    const modalBackdrop = document.getElementById("modalBackdrop");
+
+    function openTreatment(key) {
+      const data = treatmentData[key];
+
+      document.getElementById("modalImage").src = data.image;
+      document.getElementById("modalImage").alt = data.title;
+      document.getElementById("modalCategory").textContent = data.category;
+      document.getElementById("modalTitle").textContent = data.title;
+      document.getElementById("modalDescription").textContent = data.description;
+      document.getElementById("modalPrice").textContent = data.price;
+      document.getElementById("modalDuration").textContent = data.duration;
+      document.getElementById("modalDowntime").textContent = data.downtime;
+      document.getElementById("modalBestFor").textContent = data.bestFor;
+
+      document.getElementById("modalList").innerHTML = data.points
+        .map(point => `<li>${point}</li>`)
+        .join("");
+
+      document.getElementById("modalWhatsApp").href =
+        "https://wa.me/60123456789?text=" +
+        encodeURIComponent("Hello AURA Aesthetics, I would like to ask about " + data.title + ".");
+
+      modal.classList.add("open");
+      modalBackdrop.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeTreatment() {
+      modal.classList.remove("open");
+      modalBackdrop.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll("[data-treatment]").forEach(card => {
+      card.addEventListener("click", () => openTreatment(card.dataset.treatment));
+
+      card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openTreatment(card.dataset.treatment);
+        }
+      });
+    });
+
+    document.getElementById("modalClose").addEventListener("click", closeTreatment);
+    modalBackdrop.addEventListener("click", closeTreatment);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeTreatment();
+    });
+
+    const storySlides = document.querySelectorAll(".story-slide");
+
+    function showStory() {
+      storySlides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === storyIndex);
+      });
+    }
+
+    document.getElementById("storyNext").addEventListener("click", () => {
+      storyIndex = (storyIndex + 1) % storySlides.length;
+      showStory();
+    });
+
+    document.getElementById("storyPrev").addEventListener("click", () => {
+      storyIndex = (storyIndex - 1 + storySlides.length) % storySlides.length;
+      showStory();
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const locationChoice = document.getElementById("location").value;
+      const interest = document.getElementById("interest").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Hello AURA Aesthetics, I would like to request a consultation.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "WhatsApp: " + encodeURIComponent(phone) + "%0A" +
+        "Preferred location: " + encodeURIComponent(locationChoice) + "%0A" +
+        "Treatment interest: " + encodeURIComponent(interest) + "%0A" +
+        "Message: " + encodeURIComponent(message || "No additional message");
+
+      window.open(
+        "https://wa.me/60123456789?text=" + text,
+        "_blank",
+        "noopener"
+      );
+    });
+
+    setLanguage(currentLanguage);
+    navigateTo(location.hash.replace("#", "") || "home", false);
+  </script>
 </body>
 </html>
