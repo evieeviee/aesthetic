@@ -1,153 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solis Medical Aesthetics | Bangsar & KLCC</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['"Tenor Sans"', 'serif'],
-                    },
-                    colors: {
-                        sand: { 50: '#FAF8F5', 100: '#F3EFEA', 200: '#E6DFD5', 800: '#4A443C' },
-                        sage: { 500: '#7A8B7B', 600: '#637364', 900: '#2C352D' },
-                        terracotta: '#C87D55'
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-sand-50 text-sand-800 font-sans antialiased">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Top Announcement -->
-    <div class="bg-sage-900 text-sand-100 text-xs py-2.5 px-4 text-center tracking-wide">
-        🌿 <strong>First-Time Visitor Special:</strong> Complimentary VISIA™ 7th-Gen Skin Analysis (Worth RM280) with any doctor consultation.
+  <title>Solis Medical Aesthetics | Bangsar & KLCC</title>
+  <meta
+    name="description"
+    content="Personalised medical aesthetic consultations and skin treatments in Bangsar and KLCC, Kuala Lumpur."
+  >
+
+  <meta property="og:title" content="Solis Medical Aesthetics">
+  <meta
+    property="og:description"
+    content="Evidence-based skin, facial and body treatments tailored to your natural features."
+  >
+  <meta property="og:type" content="website">
+  <meta
+    property="og:image"
+    content="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85&fm=jpg"
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Tenor+Sans&display=swap"
+    rel="stylesheet"
+  >
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Outfit", "sans-serif"],
+            serif: ['"Tenor Sans"', "serif"]
+          },
+          colors: {
+            sand: {
+              50: "#FAF8F5",
+              100: "#F3EFEA",
+              200: "#E6DFD5",
+              800: "#4A443C"
+            },
+            sage: {
+              500: "#7A8B7B",
+              600: "#637364",
+              900: "#2C352D"
+            },
+            terracotta: "#C87D55"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      font-family: "Outfit", sans-serif;
+    }
+
+    .font-serif {
+      font-family: "Tenor Sans", serif;
+    }
+
+    .hero-pattern {
+      background:
+        radial-gradient(circle at 15% 18%, rgba(122, 139, 123, 0.12), transparent 30%),
+        radial-gradient(circle at 84% 72%, rgba(200, 125, 85, 0.10), transparent 28%);
+    }
+  </style>
+</head>
+
+<body class="bg-sand-50 text-sand-800 antialiased">
+
+  <!-- Top Announcement -->
+  <div class="bg-sage-900 px-4 py-2.5 text-center text-xs tracking-wide text-sand-100">
+    First-Time Visitor Special: Complimentary skin analysis with selected doctor consultations.
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-sand-200 bg-sand-50/95 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#home" class="font-serif text-2xl uppercase tracking-[0.15em] text-sage-900">
+        Solis
+        <span class="mt-0.5 block font-sans text-[10px] font-normal normal-case tracking-[0.14em] text-terracotta">
+          Aesthetics KL
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm font-medium text-sand-800 md:flex">
+        <a href="#treatments" class="transition hover:text-sage-600">
+          Treatments
+        </a>
+
+        <a href="#why" class="transition hover:text-sage-600">
+          Why Solis
+        </a>
+
+        <a href="#contact" class="transition hover:text-sage-600">
+          Contact
+        </a>
+      </nav>
+
+      <a
+        href="#contact"
+        class="rounded-full bg-sage-500 px-5 py-3 text-xs font-semibold uppercase tracking-wider text-white shadow-sm transition hover:bg-sage-600"
+      >
+        Book Consult
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="home" class="hero-pattern">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-2 lg:px-8 lg:py-20">
+
+        <div class="space-y-6">
+          <span class="inline-flex rounded-full bg-terracotta/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-terracotta">
+            Consultation-Led Aesthetic Care
+          </span>
+
+          <h1 class="font-serif text-4xl leading-tight text-sage-900 sm:text-5xl lg:text-6xl">
+            Restoring skin confidence from the inside out.
+          </h1>
+
+          <p class="max-w-xl text-base leading-8 text-sand-800/80">
+            Personalised skin, facial and body treatments designed around your concerns, lifestyle and natural proportions.
+          </p>
+
+          <div class="flex flex-col gap-4 pt-2 sm:flex-row">
+            <a
+              href="#contact"
+              class="rounded-full bg-sage-900 px-7 py-3.5 text-center text-xs font-semibold uppercase tracking-wider text-sand-50 transition hover:bg-sage-600"
+            >
+              Book Appointment
+            </a>
+
+            <a
+              href="https://wa.me/60123456789?text=Hello%20Solis%20Aesthetics%2C%20I%20would%20like%20to%20ask%20about%20your%20treatments."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-full border border-emerald-700/20 bg-emerald-700/10 px-6 py-3.5 text-center text-xs font-semibold text-emerald-800 transition hover:bg-emerald-700 hover:text-white"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-x-6 gap-y-3 pt-2 text-xs text-sand-800/65">
+            <span>✓ Personal consultation</span>
+            <span>✓ Tailored treatment plan</span>
+            <span>✓ Clear aftercare guidance</span>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[2rem] bg-sage-500/10 blur-3xl"></div>
+
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85&fm=jpg"
+            alt="Modern aesthetic treatment room"
+            loading="eager"
+            decoding="async"
+            referrerpolicy="no-referrer"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221000%22 height=%22700%22 viewBox=%220 0 1000 700%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%23F3EFEA%22/%3E%3Cstop offset=%221%22 stop-color=%22%237A8B7B%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%221000%22 height=%22700%22 fill=%22url(%23g)%22/%3E%3Ctext x=%22500%22 y=%22360%22 text-anchor=%22middle%22 fill=%22%232C352D%22 font-size=%2240%22 font-family=%22Arial%22%3ESolis Aesthetics%3C/text%3E%3C/svg%3E';"
+            class="relative h-[440px] w-full rounded-3xl bg-sand-200 object-cover shadow-xl sm:h-[500px]"
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="border-y border-sand-200 bg-white py-8">
+      <div class="mx-auto grid max-w-6xl gap-7 px-5 text-center sm:grid-cols-3 lg:px-8">
+        <div>
+          <p class="font-serif text-2xl text-sage-900">Consultation First</p>
+          <p class="mt-2 text-xs uppercase tracking-wider text-sand-800/55">
+            Understand your concerns clearly
+          </p>
+        </div>
+
+        <div>
+          <p class="font-serif text-2xl text-sage-900">Tailored Care</p>
+          <p class="mt-2 text-xs uppercase tracking-wider text-sand-800/55">
+            Personalised treatment recommendations
+          </p>
+        </div>
+
+        <div>
+          <p class="font-serif text-2xl text-sage-900">Natural Focus</p>
+          <p class="mt-2 text-xs uppercase tracking-wider text-sand-800/55">
+            Balanced and refined results
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Treatments -->
+    <section id="treatments" class="bg-sand-100 py-20">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        <div class="mx-auto max-w-3xl text-center">
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">
+            Core Treatments
+          </span>
+
+          <h2 class="font-serif mt-2 text-3xl text-sage-900 sm:text-4xl">
+            Personalised care for skin, face and body
+          </h2>
+
+          <p class="mt-4 text-sm leading-7 text-sand-800/70">
+            Every treatment begins with a consultation to understand your goals and suitability.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-7 md:grid-cols-3">
+
+          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Skin renewal treatment"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3ESkin Renewal%3C/text%3E%3C/svg%3E';"
+              class="h-64 w-full bg-sand-200 object-cover"
+            >
+
+            <div class="p-6">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                Skin
+              </span>
+
+              <h3 class="font-serif mt-2 text-2xl text-sage-900">
+                Skin Renewal
+              </h3>
+
+              <p class="mt-3 text-sm leading-6 text-sand-800/70">
+                Support brighter-looking skin, smoother texture and a more even appearance.
+              </p>
+            </div>
+          </article>
+
+          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Facial rejuvenation treatment"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EFacial Care%3C/text%3E%3C/svg%3E';"
+              class="h-64 w-full bg-sand-200 object-cover"
+            >
+
+            <div class="p-6">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                Face
+              </span>
+
+              <h3 class="font-serif mt-2 text-2xl text-sage-900">
+                Facial Rejuvenation
+              </h3>
+
+              <p class="mt-3 text-sm leading-6 text-sand-800/70">
+                Refresh tired-looking features while maintaining a soft and natural appearance.
+              </p>
+            </div>
+          </article>
+
+          <article class="overflow-hidden rounded-3xl border border-sand-200 bg-white shadow-sm">
+            <img
+              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85&fm=jpg"
+              alt="Body contouring treatment"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+              onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22900%22 height=%22600%22 viewBox=%220 0 900 600%22%3E%3Crect width=%22900%22 height=%22600%22 fill=%22%23E6DFD5%22/%3E%3Ctext x=%22450%22 y=%22315%22 text-anchor=%22middle%22 fill=%22%23637364%22 font-size=%2232%22 font-family=%22Arial%22%3EBody Care%3C/text%3E%3C/svg%3E';"
+              class="h-64 w-full bg-sand-200 object-cover"
+            >
+
+            <div class="p-6">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-terracotta">
+                Body
+              </span>
+
+              <h3 class="font-serif mt-2 text-2xl text-sage-900">
+                Body Contouring
+              </h3>
+
+              <p class="mt-3 text-sm leading-6 text-sand-800/70">
+                Non-invasive options designed to support contour, tone and skin appearance.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Solis -->
+    <section id="why" class="bg-white py-16">
+      <div class="mx-auto max-w-6xl px-5 lg:px-8">
+        <div class="grid gap-6 md:grid-cols-3">
+
+          <div class="rounded-3xl border border-sand-200 p-7">
+            <span class="font-serif text-3xl text-terracotta">01</span>
+
+            <h3 class="mt-4 font-semibold text-sage-900">
+              Personal Assessment
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-sand-800/70">
+              We begin by understanding your concerns and treatment expectations.
+            </p>
+          </div>
+
+          <div class="rounded-3xl border border-sand-200 p-7">
+            <span class="font-serif text-3xl text-terracotta">02</span>
+
+            <h3 class="mt-4 font-semibold text-sage-900">
+              Tailored Recommendations
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-sand-800/70">
+              Your treatment plan is shaped around your goals and individual suitability.
+            </p>
+          </div>
+
+          <div class="rounded-3xl border border-sand-200 p-7">
+            <span class="font-serif text-3xl text-terracotta">03</span>
+
+            <h3 class="mt-4 font-semibold text-sage-900">
+              Clear Communication
+            </h3>
+
+            <p class="mt-3 text-sm leading-6 text-sand-800/70">
+              Expected outcomes and aftercare are discussed before you proceed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-sage-900 py-20 text-sand-50">
+      <div class="mx-auto grid max-w-5xl items-center gap-10 px-5 md:grid-cols-2 lg:px-8">
+
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-terracotta">
+            Book a Consultation
+          </span>
+
+          <h2 class="font-serif mt-2 text-3xl sm:text-4xl">
+            Start your skin journey with Solis
+          </h2>
+
+          <p class="mt-5 text-sm leading-7 text-sand-200/80">
+            Send your enquiry through WhatsApp and our clinic team will assist with availability and treatment information.
+          </p>
+
+          <div class="mt-7 space-y-3 text-sm text-sand-200/80">
+            <p>Bangsar · Jalan Telawi</p>
+            <p>KLCC · Marc Residence</p>
+            <p>Monday – Saturday · 10:00 AM – 7:00 PM</p>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-white/10 bg-white/5 p-8 text-center">
+          <p class="font-serif text-2xl">
+            Private WhatsApp Enquiry
+          </p>
+
+          <p class="mt-3 text-sm leading-6 text-sand-200/75">
+            Ask about consultation slots, treatments or clinic locations.
+          </p>
+
+          <a
+            href="https://wa.me/60123456789?text=Hello%20Solis%20Aesthetics%2C%20I%20would%20like%20to%20book%20a%20consultation."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-terracotta px-7 py-4 text-xs font-bold uppercase tracking-wider text-white transition hover:bg-white hover:text-sage-900"
+          >
+            Request via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-sage-600/40 bg-sage-900 py-9 text-sand-200/65">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 text-center md:flex-row md:text-left lg:px-8">
+
+      <div>
+        <p class="font-serif text-lg text-white">
+          Solis Aesthetics KL
+        </p>
+
+        <p class="mt-2 text-xs">
+          © <span id="year"></span> Solis Medical Aesthetics. All rights reserved.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-sm font-bold text-white transition hover:border-terracotta hover:bg-terracotta"
+        >
+          f
+        </a>
+
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-terracotta hover:bg-terracotta"
+        >
+          IG
+        </a>
+
+        <a
+          href="https://wa.me/60123456789"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-xs font-bold text-white transition hover:border-terracotta hover:bg-terracotta"
+        >
+          WA
+        </a>
+      </div>
     </div>
 
-    <!-- Nav Bar -->
-    <nav class="bg-sand-50/90 backdrop-blur-md sticky top-0 z-50 border-b border-sand-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl tracking-widest text-sage-900 font-bold uppercase">Solis <span class="text-xs font-sans tracking-normal font-normal text-terracotta block">Aesthetics KL</span></a>
-            <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#about" class="hover:text-sage-600 transition">Our Philosophy</a>
-                <a href="#calculator" class="hover:text-sage-600 transition">Cost Estimator</a>
-                <a href="#treatments" class="hover:text-sage-600 transition">Treatments</a>
-            </div>
-            <a href="#book" class="bg-sage-500 hover:bg-sage-600 text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-full transition shadow-sm">
-                Book Consult
-            </a>
-        </div>
-    </nav>
+    <p class="mx-auto mt-6 max-w-3xl px-5 text-center text-[10px] leading-5 text-sand-200/40">
+      Information on this website is general and does not replace a professional medical consultation.
+    </p>
+  </footer>
 
-    <!-- Hero Section -->
-    <section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-            <span class="text-xs font-semibold uppercase tracking-widest text-terracotta bg-terracotta/10 px-3 py-1 rounded-full">KKM & LCP Certified Medical Clinic</span>
-            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-sage-900 leading-tight">
-                Restoring Skin Health from the Inside Out.
-            </h1>
-            <p class="text-sand-800/80 leading-relaxed text-base">
-                An evidence-based aesthetic practice in Kuala Lumpur combining non-invasive skin lasers, collagen boosters, and facial contouring tailored to your natural proportions.
-            </p>
-            <div class="flex items-center gap-4 pt-2">
-                <a href="#book" class="bg-sage-900 text-sand-50 hover:bg-sage-600 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider transition">Book Appointment</a>
-                <a href="https://wa.me/60123456789" class="bg-emerald-700/10 text-emerald-800 border border-emerald-700/20 px-6 py-3.5 rounded-full text-xs font-semibold transition">WhatsApp Us</a>
-            </div>
-        </div>
-        <div class="relative">
-            <img src="https://images.unsplash.com/photo-1512290900676-26c2a6a095ae?auto=format&fit=crop&w=900&q=80" alt="Solis Clinic Suite" class="rounded-3xl shadow-xl w-full h-[450px] object-cover">
-        </div>
-    </section>
+  <!-- Floating WhatsApp -->
+  <a
+    href="https://wa.me/60123456789?text=Hello%20Solis%20Aesthetics%2C%20I%20would%20like%20to%20ask%20about%20your%20services."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white shadow-2xl transition hover:scale-110 hover:bg-emerald-700"
+  >
+    WA
+  </a>
 
-    <!-- Interactive MYR Cost Estimator -->
-    <section id="calculator" class="bg-sand-100 py-20 border-y border-sand-200">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-10">
-                <span class="text-xs font-semibold uppercase tracking-widest text-terracotta block">Interactive Estimator</span>
-                <h2 class="font-serif text-3xl text-sage-900 mt-1">Estimate Your Treatment Cost (MYR)</h2>
-                <p class="text-xs text-sand-800/70 mt-2">Select your area of concern to preview estimated pricing before your visit.</p>
-            </div>
-
-            <div class="bg-white p-8 rounded-3xl shadow-sm border border-sand-200 space-y-6">
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-sage-900 mb-2">1. Select Target Concern</label>
-                    <select id="concern-select" onchange="calculateCost()" class="w-full bg-sand-50 border border-sand-200 rounded-xl p-3 text-sm focus:outline-none">
-                        <option value="pico">Pigmentation & Dark Spots (Pico Laser)</option>
-                        <option value="profhilo">Skin Crepey-ness & Dryness (Profhilo Bio-Remodeling)</option>
-                        <option value="botox">Fine Lines & Dynamic Wrinkles (Botulinum Toxin)</option>
-                        <option value="ultherapy">Sagging Jawline & Double Chin (Ultherapy Lift)</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-sage-900 mb-2">2. Desired Sessions</label>
-                    <input type="range" id="sessions-range" min="1" max="5" value="1" oninput="calculateCost()" class="w-full accent-sage-600">
-                    <div class="flex justify-between text-xs text-sand-800/70 mt-1">
-                        <span>1 Session (Trial)</span>
-                        <span id="session-count-label" class="font-bold text-sage-900">1 Session</span>
-                        <span>5 Sessions (Full Protocol)</span>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-sand-50 rounded-2xl flex justify-between items-center border border-sand-200">
-                    <div>
-                        <span class="text-xs text-sand-800/70 uppercase font-semibold">Estimated Total</span>
-                        <p class="text-xs text-sand-800/60">*Includes doctor consultation & Visia Scan</p>
-                    </div>
-                    <span id="cost-display" class="font-serif text-3xl font-bold text-sage-900">RM 650</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Section -->
-    <section id="book" class="max-w-4xl mx-auto px-6 py-20">
-        <div class="bg-sage-900 text-sand-50 p-8 sm:p-12 rounded-3xl">
-            <h2 class="font-serif text-3xl mb-2">Schedule Your Medical Consultation</h2>
-            <p class="text-xs text-sand-200/80 mb-8">Our clinic liaison will reach out via WhatsApp to confirm doctor availability.</p>
-            <form class="space-y-4" onsubmit="event.preventDefault(); alert('Appointment requested successfully!');">
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Full Name" required class="bg-sage-600/30 border border-sage-500/30 rounded-xl p-3 text-xs text-white placeholder-sand-200 focus:outline-none">
-                    <input type="tel" placeholder="WhatsApp Phone No. (+60)" required class="bg-sage-600/30 border border-sage-500/30 rounded-xl p-3 text-xs text-white placeholder-sand-200 focus:outline-none">
-                </div>
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <select class="bg-sage-600/30 border border-sage-500/30 rounded-xl p-3 text-xs text-white focus:outline-none">
-                        <option class="text-slate-900">Bangsar Outlet (Jalan Telawi)</option>
-                        <option class="text-slate-900">KLCC Outlet (Marc Residence)</option>
-                    </select>
-                    <input type="date" class="bg-sage-600/30 border border-sage-500/30 rounded-xl p-3 text-xs text-white focus:outline-none">
-                </div>
-                <button type="submit" class="w-full bg-terracotta hover:bg-terracotta/90 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider transition">Confirm Booking Request</button>
-            </form>
-        </div>
-    </section>
-
-    <footer class="text-center py-8 text-xs text-sand-800/60 border-t border-sand-200">
-        &copy; 2026 Solis Aesthetics Medical Clinic Sdn. Bhd. KKM Approved & LCP Certified Practice.
-    </footer>
-
-    <script>
-        function calculateCost() {
-            const concern = document.getElementById('concern-select').value;
-            const sessions = parseInt(document.getElementById('sessions-range').value);
-            document.getElementById('session-count-label').innerText = sessions + (sessions > 1 ? ' Sessions' : ' Session');
-
-            let basePrice = 650;
-            if (concern === 'pico') basePrice = 650;
-            if (concern === 'profhilo') basePrice = 2100;
-            if (concern === 'botox') basePrice = 800;
-            if (concern === 'ultherapy') basePrice = 4200;
-
-            const total = basePrice * sessions;
-            document.getElementById('cost-display').innerText = 'RM ' + total.toLocaleString();
-        }
-    </script>
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
